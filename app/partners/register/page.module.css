@@ -108,39 +108,71 @@
 }
 
 /* Section Titles */
-.formWrapper :global(h3),
-.formWrapper :global(.section-title) {
+.formWrapper :global(.title) {
   font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
   color: var(--color-primary);
+  margin-top: var(--space-10);
   margin-bottom: var(--space-6);
   padding-bottom: var(--space-3);
   border-bottom: 1.5px solid var(--color-gray-200);
 }
 
+.formWrapper :global(.title:first-child) {
+  margin-top: 0;
+}
+
 /* Text Sections */
-.formWrapper :global(p),
-.formWrapper :global(.text-content) {
+.formWrapper :global(.text) {
   color: var(--color-gray-600);
   line-height: var(--leading-relaxed);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-6);
+  font-size: var(--text-sm);
+}
+
+.formWrapper :global(.text) i {
+  color: var(--color-gray-500);
 }
 
 /* Radio Buttons and Checkboxes */
-.formWrapper :global(input[type="radio"]),
-.formWrapper :global(input[type="checkbox"]) {
-  width: auto;
-  margin-right: var(--space-2);
-  accent-color: var(--color-primary);
+.formWrapper :global(.infusion-radio) {
+  margin-top: var(--space-3);
 }
 
-.formWrapper :global(.infusion-radio),
-.formWrapper :global(.infusion-checkbox) {
+.formWrapper :global(.options-container) {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.formWrapper :global(.infusion-option) {
   display: flex;
   align-items: center;
-  margin-bottom: var(--space-3);
+  gap: var(--space-2);
+}
+
+.formWrapper :global(.infusion-option input[type="radio"]) {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.formWrapper :global(.infusion-option label) {
+  position: static;
+  transform: none;
+  font-size: var(--text-base);
+  color: var(--color-gray-700);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 /* Submit Button */
+.formWrapper :global(.infusion-submit) {
+  margin-top: var(--space-8);
+}
+
 .formWrapper :global(button[type="submit"]),
 .formWrapper :global(input[type="submit"]) {
   width: 100%;
@@ -154,7 +186,6 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: var(--shadow-md);
-  margin-top: var(--space-6);
 }
 
 .formWrapper :global(button[type="submit"]:hover),
@@ -177,7 +208,8 @@
 }
 
 /* Honeypot (Hidden) */
-.formWrapper :global(.infusion-field.webform-pii-honey) {
+.formWrapper :global(.infusion-field.webform-pii-honey),
+.formWrapper :global(input[name="inf-sbt"]) {
   display: none !important;
 }
 
