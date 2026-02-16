@@ -65,13 +65,6 @@ export default function PartnerRegister() {
               className="infusion-form" 
               id="inf_form_4c9b8b75fc0b1e19505d18dac0e1a6ab" 
               method="POST"
-              onSubmit={(e) => {
-                // Inline validation to ensure it runs before any other handlers
-                if (typeof window !== 'undefined' && 'validatePartnerForm' in window) {
-                  return (window as typeof window & { validatePartnerForm: (e: React.FormEvent) => boolean }).validatePartnerForm(e);
-                }
-                return true;
-              }}
             >
               <input name="inf_form_xid" type="hidden" value="4c9b8b75fc0b1e19505d18dac0e1a6ab" />
               <input name="inf_form_name" type="hidden" value="Emotional Freedom Challenge&#xa;Referral Sign-up submitted" />
@@ -211,12 +204,11 @@ export default function PartnerRegister() {
               strategy="afterInteractive"
             />
             
-            {/* Client-side validation script */}
-            <Script id="partner-form-validation" strategy="lazyOnload">
+            {/* Client-side validation script - must run immediately before form submission */}
+            <Script id="partner-form-validation" strategy="beforeInteractive">
               {`
                 (function() {
-                  // Define validation function globally so it can be called from onSubmit
-                  window.validatePartnerForm = function(e) {
+                  function validatePartnerForm(e) {
                     const fields = [
                       { id: 'inf_field_FirstName', name: 'First Name', type: 'text' },
                       { id: 'inf_field_LastName', name: 'Last Name', type: 'text' },
@@ -228,70 +220,63 @@ export default function PartnerRegister() {
                     ];
                     
                     function validateEmail(email) {
-                      const re = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+                      var re = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
                       return re.test(String(email).toLowerCase());
                     }
                     
                     function showError(field, message) {
-                      const container = field.closest('.infusion-field');
+                      var container = field.closest('.infusion-field');
                       if (!container) return;
                       
-                      // Remove existing error
-                      const existingError = container.querySelector('.field-error');
+                      var existingError = container.querySelector('.field-error');
                       if (existingError) existingError.remove();
                       
-                      // Add error class to field
                       field.classList.add('error');
                       
-                      // Create error message
-                      const errorDiv = document.createElement('div');
+                      var errorDiv = document.createElement('div');
                       errorDiv.className = 'field-error';
                       errorDiv.textContent = message;
                       container.appendChild(errorDiv);
                     }
                     
                     function clearError(field) {
-                      const container = field.closest('.infusion-field');
+                      var container = field.closest('.infusion-field');
                       if (!container) return;
                       
                       field.classList.remove('error');
-                      const errorDiv = container.querySelector('.field-error');
+                      var errorDiv = container.querySelector('.field-error');
                       if (errorDiv) errorDiv.remove();
                     }
                     
-                    let isValid = true;
-                    let firstInvalidField = null;
+                    var isValid = true;
+                    var firstInvalidField = null;
                     
-                    // Clear all existing errors
-                    fields.forEach(function(fieldConfig) {
-                      const field = document.getElementById(fieldConfig.id);
+                    for (var i = 0; i < fields.length; i++) {
+                      var fieldConfig = fields[i];
+                      var field = document.getElementById(fieldConfig.id);
                       if (field) clearError(field);
-                    });
+                    }
                     
-                    // Validate each field
-                    fields.forEach(function(fieldConfig) {
-                      const field = document.getElementById(fieldConfig.id);
-                      if (!field) return;
+                    for (var i = 0; i < fields.length; i++) {
+                      var fieldConfig = fields[i];
+                      var field = document.getElementById(fieldConfig.id);
+                      if (!field) continue;
                       
-                      const value = field.value.trim();
+                      var value = field.value.trim();
                       
-                      // Check if empty
                       if (!value) {
                         showError(field, 'Please enter your ' + fieldConfig.name.toLowerCase() + '.');
                         isValid = false;
                         if (!firstInvalidField) firstInvalidField = field;
-                      }
-                      // Validate email format
-                      else if (fieldConfig.type === 'email' && !validateEmail(value)) {
+                      } else if (fieldConfig.type === 'email' && !validateEmail(value)) {
                         showError(field, 'Please enter a valid email address.');
                         isValid = false;
                         if (!firstInvalidField) firstInvalidField = field;
                       }
-                    });
+                    }
                     
-                    // Check password match
-                    const password = document.getElementById('inf_other_Password');
-                    const confirmPassword = document.getElementById('inf_other_RetypePassword');
+                    var password = document.getElementById('inf_other_Password');
+                    var confirmPassword = document.getElementById('inf_other_RetypePassword');
                     
                     if (password && confirmPassword && password.value && confirmPassword.value) {
                       if (password.value !== confirmPassword.value) {
@@ -301,7 +286,6 @@ export default function PartnerRegister() {
                       }
                     }
                     
-                    // If validation failed, prevent submission and scroll to first error
                     if (!isValid) {
                       if (e) {
                         e.preventDefault();
@@ -315,48 +299,61 @@ export default function PartnerRegister() {
                           block: 'center' 
                         });
                         
-                        // Focus the field after scroll
                         setTimeout(function() { firstInvalidField.focus(); }, 300);
                       }
                       
                       return false;
                     }
                     
-                    // Validation passed - allow form submission
                     return true;
-                  };
+                  }
                   
-                  // Also add event listener as backup
                   function attachValidation() {
-                    const form = document.getElementById('inf_form_4c9b8b75fc0b1e19505d18dac0e1a6ab');
+                    var form = document.getElementById('inf_form_4c9b8b75fc0b1e19505d18dac0e1a6ab');
                     if (!form) {
-                      setTimeout(attachValidation, 100);
+                      setTimeout(attachValidation, 50);
                       return;
                     }
                     
+                    if (form.dataset.validationAttached) return;
+                    form.dataset.validationAttached = 'true';
+                    
+                    // Override form's submit method to intercept programmatic submissions
+                    var originalSubmit = form.submit.bind(form);
+                    form.submit = function() {
+                      if (validatePartnerForm(null)) {
+                        originalSubmit();
+                      }
+                    };
+                    
+                    // Attach event listener with highest priority (capture phase)
+                    form.addEventListener('submit', validatePartnerForm, true);
+                    
+                    // Also attach in bubble phase as backup
+                    form.addEventListener('submit', validatePartnerForm, false);
+                    
                     // Attach to clear errors on input
-                    const fields = [
+                    var fieldIds = [
                       'inf_field_FirstName', 'inf_field_LastName', 'inf_field_Email',
                       'inf_custom_PayPalEmail', 'inf_other_Username', 
                       'inf_other_Password', 'inf_other_RetypePassword'
                     ];
                     
-                    fields.forEach(function(fieldId) {
-                      const field = document.getElementById(fieldId);
+                    for (var i = 0; i < fieldIds.length; i++) {
+                      var field = document.getElementById(fieldIds[i]);
                       if (field) {
                         field.addEventListener('input', function() {
-                          const container = this.closest('.infusion-field');
+                          var container = this.closest('.infusion-field');
                           if (container) {
                             this.classList.remove('error');
-                            const errorDiv = container.querySelector('.field-error');
+                            var errorDiv = container.querySelector('.field-error');
                             if (errorDiv) errorDiv.remove();
                           }
                         });
                       }
-                    });
+                    }
                   }
                   
-                  // Initialize
                   if (document.readyState === 'loading') {
                     document.addEventListener('DOMContentLoaded', attachValidation);
                   } else {
