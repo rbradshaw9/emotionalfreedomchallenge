@@ -59,7 +59,20 @@ export default function PartnerRegister() {
         <div className="container container-content">
           <div className={styles.formWrapper}>
             {/* Keap Referral Partner Form Embed Goes Here */}
-            <form accept-charset="UTF-8" action="https://bl843.infusionsoft.com/app/form/process/4c9b8b75fc0b1e19505d18dac0e1a6ab" className="infusion-form" id="inf_form_4c9b8b75fc0b1e19505d18dac0e1a6ab" method="POST">
+            <form 
+              accept-charset="UTF-8" 
+              action="https://bl843.infusionsoft.com/app/form/process/4c9b8b75fc0b1e19505d18dac0e1a6ab" 
+              className="infusion-form" 
+              id="inf_form_4c9b8b75fc0b1e19505d18dac0e1a6ab" 
+              method="POST"
+              onSubmit={(e) => {
+                // Inline validation to ensure it runs before any other handlers
+                if (typeof window !== 'undefined' && 'validatePartnerForm' in window) {
+                  return (window as typeof window & { validatePartnerForm: (e: React.FormEvent) => boolean }).validatePartnerForm(e);
+                }
+                return true;
+              }}
+            >
               <input name="inf_form_xid" type="hidden" value="4c9b8b75fc0b1e19505d18dac0e1a6ab" />
               <input name="inf_form_name" type="hidden" value="Emotional Freedom Challenge&#xa;Referral Sign-up submitted" />
               <input name="infusionsoft_version" type="hidden" value="1.70.0.902929" />
@@ -199,22 +212,11 @@ export default function PartnerRegister() {
             />
             
             {/* Client-side validation script */}
-            <Script id="partner-form-validation" strategy="afterInteractive">
+            <Script id="partner-form-validation" strategy="lazyOnload">
               {`
                 (function() {
-                  function initFormValidation() {
-                    const form = document.getElementById('inf_form_4c9b8b75fc0b1e19505d18dac0e1a6ab');
-                    if (!form) {
-                      // Form not found, retry after a short delay
-                      setTimeout(initFormValidation, 100);
-                      return;
-                    }
-                    
-                    // Track if validation is already attached
-                    if (form.dataset.validationAttached) return;
-                    form.dataset.validationAttached = 'true';
-                    
-                    // Field configurations
+                  // Define validation function globally so it can be called from onSubmit
+                  window.validatePartnerForm = function(e) {
                     const fields = [
                       { id: 'inf_field_FirstName', name: 'First Name', type: 'text' },
                       { id: 'inf_field_LastName', name: 'Last Name', type: 'text' },
@@ -226,7 +228,7 @@ export default function PartnerRegister() {
                     ];
                     
                     function validateEmail(email) {
-                      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                      const re = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
                       return re.test(String(email).toLowerCase());
                     }
                     
@@ -257,90 +259,108 @@ export default function PartnerRegister() {
                       if (errorDiv) errorDiv.remove();
                     }
                     
-                    function validateForm(e) {
-                      let isValid = true;
-                      let firstInvalidField = null;
+                    let isValid = true;
+                    let firstInvalidField = null;
+                    
+                    // Clear all existing errors
+                    fields.forEach(function(fieldConfig) {
+                      const field = document.getElementById(fieldConfig.id);
+                      if (field) clearError(field);
+                    });
+                    
+                    // Validate each field
+                    fields.forEach(function(fieldConfig) {
+                      const field = document.getElementById(fieldConfig.id);
+                      if (!field) return;
                       
-                      // Clear all existing errors
-                      fields.forEach(fieldConfig => {
-                        const field = document.getElementById(fieldConfig.id);
-                        if (field) clearError(field);
-                      });
+                      const value = field.value.trim();
                       
-                      // Validate each field
-                      fields.forEach(fieldConfig => {
-                        const field = document.getElementById(fieldConfig.id);
-                        if (!field) return;
-                        
-                        const value = field.value.trim();
-                        
-                        // Check if empty
-                        if (!value) {
-                          showError(field, \`Please enter your \${fieldConfig.name.toLowerCase()}.\`);
-                          isValid = false;
-                          if (!firstInvalidField) firstInvalidField = field;
-                        }
-                        // Validate email format
-                        else if (fieldConfig.type === 'email' && !validateEmail(value)) {
-                          showError(field, 'Please enter a valid email address.');
-                          isValid = false;
-                          if (!firstInvalidField) firstInvalidField = field;
-                        }
-                      });
-                      
-                      // Check password match
-                      const password = document.getElementById('inf_other_Password');
-                      const confirmPassword = document.getElementById('inf_other_RetypePassword');
-                      
-                      if (password && confirmPassword && password.value && confirmPassword.value) {
-                        if (password.value !== confirmPassword.value) {
-                          showError(confirmPassword, 'Passwords do not match.');
-                          isValid = false;
-                          if (!firstInvalidField) firstInvalidField = confirmPassword;
-                        }
+                      // Check if empty
+                      if (!value) {
+                        showError(field, 'Please enter your ' + fieldConfig.name.toLowerCase() + '.');
+                        isValid = false;
+                        if (!firstInvalidField) firstInvalidField = field;
                       }
-                      
-                      // If validation failed, prevent submission and scroll to first error
-                      if (!isValid) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        
-                        if (firstInvalidField) {
-                          firstInvalidField.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'center' 
-                          });
-                          
-                          // Focus the field after scroll
-                          setTimeout(() => firstInvalidField.focus(), 300);
-                        }
-                        
-                        return false;
+                      // Validate email format
+                      else if (fieldConfig.type === 'email' && !validateEmail(value)) {
+                        showError(field, 'Please enter a valid email address.');
+                        isValid = false;
+                        if (!firstInvalidField) firstInvalidField = field;
                       }
-                      
-                      // Validation passed - allow form submission
-                      return true;
+                    });
+                    
+                    // Check password match
+                    const password = document.getElementById('inf_other_Password');
+                    const confirmPassword = document.getElementById('inf_other_RetypePassword');
+                    
+                    if (password && confirmPassword && password.value && confirmPassword.value) {
+                      if (password.value !== confirmPassword.value) {
+                        showError(confirmPassword, 'Passwords do not match.');
+                        isValid = false;
+                        if (!firstInvalidField) firstInvalidField = confirmPassword;
+                      }
                     }
                     
-                    // Attach validation to form submit
-                    form.addEventListener('submit', validateForm, true);
+                    // If validation failed, prevent submission and scroll to first error
+                    if (!isValid) {
+                      if (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        e.stopImmediatePropagation();
+                      }
+                      
+                      if (firstInvalidField) {
+                        firstInvalidField.scrollIntoView({ 
+                          behavior: 'smooth', 
+                          block: 'center' 
+                        });
+                        
+                        // Focus the field after scroll
+                        setTimeout(function() { firstInvalidField.focus(); }, 300);
+                      }
+                      
+                      return false;
+                    }
                     
-                    // Clear errors on input
-                    fields.forEach(fieldConfig => {
-                      const field = document.getElementById(fieldConfig.id);
+                    // Validation passed - allow form submission
+                    return true;
+                  };
+                  
+                  // Also add event listener as backup
+                  function attachValidation() {
+                    const form = document.getElementById('inf_form_4c9b8b75fc0b1e19505d18dac0e1a6ab');
+                    if (!form) {
+                      setTimeout(attachValidation, 100);
+                      return;
+                    }
+                    
+                    // Attach to clear errors on input
+                    const fields = [
+                      'inf_field_FirstName', 'inf_field_LastName', 'inf_field_Email',
+                      'inf_custom_PayPalEmail', 'inf_other_Username', 
+                      'inf_other_Password', 'inf_other_RetypePassword'
+                    ];
+                    
+                    fields.forEach(function(fieldId) {
+                      const field = document.getElementById(fieldId);
                       if (field) {
                         field.addEventListener('input', function() {
-                          clearError(this);
+                          const container = this.closest('.infusion-field');
+                          if (container) {
+                            this.classList.remove('error');
+                            const errorDiv = container.querySelector('.field-error');
+                            if (errorDiv) errorDiv.remove();
+                          }
                         });
                       }
                     });
                   }
                   
-                  // Initialize when DOM is ready
+                  // Initialize
                   if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', initFormValidation);
+                    document.addEventListener('DOMContentLoaded', attachValidation);
                   } else {
-                    initFormValidation();
+                    attachValidation();
                   }
                 })();
               `}
