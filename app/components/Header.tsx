@@ -18,15 +18,6 @@ export default function Header() {
             />
           </div>
         </Link>
-        
-        <nav className={styles.nav} aria-label="Main navigation">
-          <Link href="/" className={styles.navLink}>
-            Home
-          </Link>
-          <Link href="/replay" className={styles.navLink}>
-            Replays
-          </Link>
-        </nav>
       </div>
     </header>
   );

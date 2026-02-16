@@ -46,27 +46,45 @@ const videoData = [
 export default function ReplayPage() {
   const [selectedDay, setSelectedDay] = useState(1);
   const currentVideo = videoData.find(video => video.day === selectedDay) || videoData[0];
+  
+  // DAY 4 COACHING CTA TOGGLE
+  // Controlled by environment variable: NEXT_PUBLIC_SHOW_CALL_CTA
+  // Set to 'true' in Vercel environment variables to reveal the CTA
+  // Alternative date-based approach (commented):
+  // const showCallCTA = new Date() >= new Date('2026-03-20'); // Replace with actual Day 4 date
+  const showCallCTA = process.env.NEXT_PUBLIC_SHOW_CALL_CTA === 'true';
 
   return (
     <div className={styles.page}>
       {/* 
-        INTEGRATION POINT: Authentication/Gating
+        SECURITY NOTE: This page is at an unguessable URL (/replay/efc-vip-7a9f3k)
+        - Not linked in any public navigation
+        - noindex/nofollow metadata set in layout.tsx
+        - Disallowed in robots.txt
         
-        In the future, this page should check for:
-        - Valid registration token
-        - Active session
-        - Payment status (if required)
-        
-        If not authenticated, redirect to registration page.
-        Consider using URL parameters or cookies for token-based access.
+        FUTURE: Add authentication/token validation here before showing content
       */}
       
       <div className={styles.header}>
         <div className="container">
           <h1>Challenge Replays</h1>
           <p className={styles.headerSubtitle}>
-            Watch or rewatch any session from the 5-day challenge
+            Access your session recordings
           </p>
+        </div>
+      </div>
+
+      {/* Orientation Block */}
+      <div className={styles.orientationSection}>
+        <div className="container container-md">
+          <div className={styles.orientationCard}>
+            <h2 className={styles.orientationTitle}>Welcome to Your Replays</h2>
+            <p className={styles.orientationText}>
+              Each session builds on the previous one, creating a foundation for lasting transformation. 
+              We recommend watching the sessions in order (Day 1 through Day 5) for the best experience. 
+              Take your time with each session and revisit them as needed—the insights deepen with each viewing.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -119,39 +137,35 @@ export default function ReplayPage() {
         </div>
       </div>
 
-      <section className={styles.resourcesSection}>
-        <div className="container container-md">
-          <h2 className="text-center">Additional Resources</h2>
-          <div className={styles.resources}>
-            <div className={styles.resource}>
-              <h3>Workbook</h3>
-              <p>Download the companion workbook with exercises for each session.</p>
-              <button className="button button-secondary">Download PDF</button>
-            </div>
-            
-            <div className={styles.resource}>
-              <h3>Discussion Group</h3>
-              <p>Join the conversation and share insights with other participants.</p>
-              <a 
-                href="https://facebook.com/groups/placeholder" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="button button-secondary"
-              >
-                Join Group
-              </a>
-            </div>
-            
-            <div className={styles.resource}>
-              <h3>VIP Upgrade</h3>
-              <p>Get exclusive Q&A access and bonus content with VIP membership.</p>
-              <a href="/vip" className="button button-accent">
-                Learn More
-              </a>
+      {/* Day 4 Coaching CTA - Only visible when environment variable is set */}
+      {showCallCTA && (
+        <section className={styles.coachingSection}>
+          <div className="container container-sm">
+            <div className={styles.coachingCard}>
+              <h2>Ready to Go Deeper?</h2>
+              <p className={styles.coachingText}>
+                Now that you've experienced the core teachings, you might benefit from personalized guidance. 
+                Schedule a one-on-one coaching call with Dr. Paul Jenkins to address your specific situation 
+                and accelerate your transformation.
+              </p>
+              <div className={styles.coachingCTA}>
+                {/* INTEGRATION POINT: Replace with actual scheduling link (Calendly, etc.) */}
+                <a 
+                  href="https://calendly.com/placeholder" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="button button-primary button-lg"
+                >
+                  Schedule a Call
+                </a>
+              </div>
+              <p className={styles.coachingNote}>
+                Limited availability—book your session while spots are open.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </div>
   );
 }

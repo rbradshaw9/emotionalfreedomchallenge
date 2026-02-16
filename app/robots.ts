@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: [],
+      disallow: ['/replay/', '/replay/*'],
     },
     sitemap: 'https://challenge.drpauljenkins.com/sitemap.xml',
   };

@@ -106,6 +106,65 @@ export default function VIPPage() {
         </div>
       </section>
 
+      <section className={styles.howItWorksSection}>
+        <div className="container container-md">
+          <h2 className="text-center">How It Works</h2>
+          
+          <div className={styles.steps}>
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>1</div>
+              <h3>Upgrade Now</h3>
+              <p>Click the upgrade button and complete your secure payment to unlock VIP access immediately.</p>
+            </div>
+
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>2</div>
+              <h3>Get Your Welcome Email</h3>
+              <p>You'll receive instant access details including your private community link and VIP resources.</p>
+            </div>
+
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>3</div>
+              <h3>Join & Engage</h3>
+              <p>Dive into the exclusive content, mark your calendar for live Q&A sessions, and connect with your VIP cohort.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.faqSection}>
+        <div className="container container-md">
+          <h2 className="text-center">Frequently Asked Questions</h2>
+          
+          <div className={styles.faqs}>
+            <div className={styles.faq}>
+              <h3>When do the VIP Q&A sessions take place?</h3>
+              <p>Live Q&A sessions are scheduled throughout the challenge. Exact dates and times will be shared in your VIP welcome email and the private community.</p>
+            </div>
+
+            <div className={styles.faq}>
+              <h3>What if I can't attend the live sessions?</h3>
+              <p>All live sessions are recorded and available to VIP members. You can watch replays at your convenience and submit questions in advance.</p>
+            </div>
+
+            <div className={styles.faq}>
+              <h3>How long do I have access to the VIP materials?</h3>
+              <p>Your VIP access includes lifetime access to all recordings, resources, and bonus materials. The private community remains active as long as the program runs.</p>
+            </div>
+
+            <div className={styles.faq}>
+              <h3>Is the 30-day guarantee really no questions asked?</h3>
+              <p>Absolutely. If you're not satisfied with your VIP experience for any reason within 30 days, simply contact our support team for a full refund.</p>
+            </div>
+
+            <div className={styles.faq}>
+              <h3>Can I upgrade to VIP after the challenge starts?</h3>
+              <p>VIP access is limited and may close once capacity is reached. We recommend upgrading now to secure your spot and ensure you don't miss any exclusive content.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className={styles.testimonialSection}>
         <div className="container container-md">
           <h2 className="text-center">What VIP Members Are Saying</h2>

@@ -107,11 +107,34 @@ export default function RegistrationPage() {
             </div>
 
             <div className={styles.benefit}>
-              <h3>Lifetime Access</h3>
+              <h3>Session Recordings</h3>
               <p>
-                All sessions are recorded so you can revisit the teachings and 
-                continue your growth at your own pace.
+                Can't attend live? All sessions are recorded and available to 
+                review during the challenge period.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.nextStepsSection}>
+        <div className="container container-md">
+          <h2 className="text-center">What Happens Next</h2>
+          <div className={styles.nextSteps}>
+            <div className={styles.nextStep}>
+              <div className={styles.stepNumber}>1</div>
+              <h3>Join the Community</h3>
+              <p>Connect with fellow participants in our private Facebook group.</p>
+            </div>
+            <div className={styles.nextStep}>
+              <div className={styles.stepNumber}>2</div>
+              <h3>Mark Your Calendar</h3>
+              <p>Add the live sessions to your calendar so you don't miss a moment.</p>
+            </div>
+            <div className={styles.nextStep}>
+              <div className={styles.stepNumber}>3</div>
+              <h3>Show Up Live</h3>
+              <p>Join us each day for the live experience and real-time breakthroughs.</p>
             </div>
           </div>
         </div>
