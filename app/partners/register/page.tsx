@@ -14,12 +14,49 @@ export default function PartnerRegister() {
         <div className={styles.hero}>
           <h1>Partner Registration</h1>
           <p className={styles.subtitle}>
-            Complete the form below to finalize your partner account. We'll review your submission and reach out within 1-2 business days.
+            Thanks for taking the next step. This page is for invited partners to complete registration for the Emotional Freedom Challenge.
           </p>
         </div>
 
+        <section className={styles.infoSection}>
+          <div className={styles.infoWrapper}>
+            <h2>What This Registration Includes</h2>
+            <p>
+              To properly track referrals and issue commission payments, we need to collect some standard partner information.
+            </p>
+            <p>
+              This includes contact details, payment information, and basic account credentials used by our referral system.
+            </p>
+            <p>
+              We understand this is more detailed than a typical sign-up. This information is required for accurate tracking and compliance, and is handled securely.
+            </p>
+            <p className={styles.reassurance}>
+              Non-U.S. partners may leave the SSN/TIN field blank.
+            </p>
+          </div>
+        </section>
+
+        <section className={styles.nextStepsSection}>
+          <div className={styles.nextStepsWrapper}>
+            <h2>What Happens Next</h2>
+            <p>
+              Once you complete this registration:
+            </p>
+            <ul>
+              <li>You'll be officially registered as a referral partner</li>
+              <li>We'll follow up with your unique referral link</li>
+              <li>You'll receive ready-to-use email and social copy</li>
+              <li>There is no obligation to promote</li>
+            </ul>
+            <p>
+              If you have any questions, our team will be happy to help.
+            </p>
+          </div>
+        </section>
+
         <section className={styles.formSection}>
           <div className={styles.formWrapper}>
+            {/* Keap Referral Partner Form Embed Goes Here */}
             <form accept-charset="UTF-8" action="https://bl843.infusionsoft.com/app/form/process/4c9b8b75fc0b1e19505d18dac0e1a6ab" className="infusion-form" id="inf_form_4c9b8b75fc0b1e19505d18dac0e1a6ab" method="POST">
               <input name="inf_form_xid" type="hidden" value="4c9b8b75fc0b1e19505d18dac0e1a6ab" />
               <input name="inf_form_name" type="hidden" value="Emotional Freedom Challenge&#xa;Referral Sign-up submitted" />
@@ -181,7 +218,7 @@ export default function PartnerRegister() {
               </div>
               
               <div className="infusion-submit">
-                <button className="infusion-recaptcha" id="recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab" type="submit">Sign Me Up!</button>
+                <button className="infusion-recaptcha" id="recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab" type="submit">Complete Partner Registration</button>
               </div>
               
               <input type="text" name="inf-sbt" style={{ display: 'none' }} />
@@ -215,7 +252,7 @@ export default function PartnerRegister() {
 
           <div className={styles.privacy}>
             <p>
-              Your information is secure and will only be used to evaluate and manage your partner account. We respect your privacy and never share your details with third parties.
+              We respect your privacy. Partner information is used only for referral tracking, commission payouts, and challenge-related communication.
             </p>
           </div>
         </section>
