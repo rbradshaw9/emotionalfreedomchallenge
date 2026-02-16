@@ -214,6 +214,32 @@
   box-shadow: 0 0 0 3px rgba(157, 139, 127, 0.1);
 }
 
+/* Error state for validation */
+.formWrapper :global(.infusion-field input.error),
+.formWrapper :global(.infusion-field textarea.error),
+.formWrapper :global(.infusion-field select.error) {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.formWrapper :global(.infusion-field input.error:focus),
+.formWrapper :global(.infusion-field textarea.error:focus),
+.formWrapper :global(.infusion-field select.error:focus) {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+  outline: none;
+}
+
+/* Error message styling */
+.formWrapper :global(.field-error) {
+  color: #dc2626;
+  font-size: var(--text-sm);
+  margin-top: var(--space-2);
+  display: block;
+  line-height: 1.4;
+  font-weight: var(--font-medium);
+}
+
 .formWrapper :global(.infusion-field textarea) {
   min-height: 120px;
   resize: vertical;

@@ -197,6 +197,154 @@ export default function PartnerRegister() {
               src="https://bl843.infusionsoft.app/app/webform/overwriteRefererJs" 
               strategy="afterInteractive"
             />
+            
+            {/* Client-side validation script */}
+            <Script id="partner-form-validation" strategy="afterInteractive">
+              {`
+                (function() {
+                  function initFormValidation() {
+                    const form = document.getElementById('inf_form_4c9b8b75fc0b1e19505d18dac0e1a6ab');
+                    if (!form) {
+                      // Form not found, retry after a short delay
+                      setTimeout(initFormValidation, 100);
+                      return;
+                    }
+                    
+                    // Track if validation is already attached
+                    if (form.dataset.validationAttached) return;
+                    form.dataset.validationAttached = 'true';
+                    
+                    // Field configurations
+                    const fields = [
+                      { id: 'inf_field_FirstName', name: 'First Name', type: 'text' },
+                      { id: 'inf_field_LastName', name: 'Last Name', type: 'text' },
+                      { id: 'inf_field_Email', name: 'Email', type: 'email' },
+                      { id: 'inf_custom_PayPalEmail', name: 'PayPal Email', type: 'email' },
+                      { id: 'inf_other_Username', name: 'Username', type: 'text' },
+                      { id: 'inf_other_Password', name: 'Password', type: 'password' },
+                      { id: 'inf_other_RetypePassword', name: 'Confirm Password', type: 'password' }
+                    ];
+                    
+                    function validateEmail(email) {
+                      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                      return re.test(String(email).toLowerCase());
+                    }
+                    
+                    function showError(field, message) {
+                      const container = field.closest('.infusion-field');
+                      if (!container) return;
+                      
+                      // Remove existing error
+                      const existingError = container.querySelector('.field-error');
+                      if (existingError) existingError.remove();
+                      
+                      // Add error class to field
+                      field.classList.add('error');
+                      
+                      // Create error message
+                      const errorDiv = document.createElement('div');
+                      errorDiv.className = 'field-error';
+                      errorDiv.textContent = message;
+                      container.appendChild(errorDiv);
+                    }
+                    
+                    function clearError(field) {
+                      const container = field.closest('.infusion-field');
+                      if (!container) return;
+                      
+                      field.classList.remove('error');
+                      const errorDiv = container.querySelector('.field-error');
+                      if (errorDiv) errorDiv.remove();
+                    }
+                    
+                    function validateForm(e) {
+                      let isValid = true;
+                      let firstInvalidField = null;
+                      
+                      // Clear all existing errors
+                      fields.forEach(fieldConfig => {
+                        const field = document.getElementById(fieldConfig.id);
+                        if (field) clearError(field);
+                      });
+                      
+                      // Validate each field
+                      fields.forEach(fieldConfig => {
+                        const field = document.getElementById(fieldConfig.id);
+                        if (!field) return;
+                        
+                        const value = field.value.trim();
+                        
+                        // Check if empty
+                        if (!value) {
+                          showError(field, \`Please enter your \${fieldConfig.name.toLowerCase()}.\`);
+                          isValid = false;
+                          if (!firstInvalidField) firstInvalidField = field;
+                        }
+                        // Validate email format
+                        else if (fieldConfig.type === 'email' && !validateEmail(value)) {
+                          showError(field, 'Please enter a valid email address.');
+                          isValid = false;
+                          if (!firstInvalidField) firstInvalidField = field;
+                        }
+                      });
+                      
+                      // Check password match
+                      const password = document.getElementById('inf_other_Password');
+                      const confirmPassword = document.getElementById('inf_other_RetypePassword');
+                      
+                      if (password && confirmPassword && password.value && confirmPassword.value) {
+                        if (password.value !== confirmPassword.value) {
+                          showError(confirmPassword, 'Passwords do not match.');
+                          isValid = false;
+                          if (!firstInvalidField) firstInvalidField = confirmPassword;
+                        }
+                      }
+                      
+                      // If validation failed, prevent submission and scroll to first error
+                      if (!isValid) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        if (firstInvalidField) {
+                          firstInvalidField.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center' 
+                          });
+                          
+                          // Focus the field after scroll
+                          setTimeout(() => firstInvalidField.focus(), 300);
+                        }
+                        
+                        return false;
+                      }
+                      
+                      // Validation passed - allow form submission
+                      return true;
+                    }
+                    
+                    // Attach validation to form submit
+                    form.addEventListener('submit', validateForm, true);
+                    
+                    // Clear errors on input
+                    fields.forEach(fieldConfig => {
+                      const field = document.getElementById(fieldConfig.id);
+                      if (field) {
+                        field.addEventListener('input', function() {
+                          clearError(this);
+                        });
+                      }
+                    });
+                  }
+                  
+                  // Initialize when DOM is ready
+                  if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', initFormValidation);
+                  } else {
+                    initFormValidation();
+                  }
+                })();
+              `}
+            </Script>
           </div>
 
           <div className={styles.privacy}>
