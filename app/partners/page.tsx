@@ -17,14 +17,11 @@ export default function PartnersPage() {
       <section className={styles.framingSection}>
         <div className="container container-sm">
           <div className={styles.framingCard}>
-            <h2>Why We Need This Information</h2>
+            <h2>Partner Registration Details</h2>
             <p>
-              To properly set up your partner account, we collect contact details, payment information, 
-              and referral tracking preferences. This ensures accurate commission payments and compliance 
-              with financial regulations.
-            </p>
-            <p>
-              All information is securely stored and used solely for partner program administration.
+              Please complete the form below to set up your referral partner account. 
+              We collect contact details, payment information, and account preferences to ensure 
+              accurate commission tracking and compliance.
             </p>
           </div>
         </div>
@@ -33,23 +30,16 @@ export default function PartnersPage() {
       <section className={styles.formSection}>
         <div className="container container-sm">
           <div className={styles.formWrapper}>
-
             {/* 
-              KEAP REFERRAL PARTNER FORM INTEGRATION POINT
+              KEAP REFERRAL PARTNER FORM EMBED POINT
               
-              Paste the full Keap form HTML here.
-              Do NOT modify form action, field names, IDs, or scripts.
-              The surrounding styles will handle layout and visual polish.
+              Paste the complete Keap form HTML below this comment.
+              Do NOT modify: form action, field names, IDs, hidden inputs, or scripts.
+              The CSS will automatically style the form elements.
             */}
             
-            <div className={styles.formPlaceholder}>
-              <p className={styles.placeholderText}>
-                [Keap Referral Partner Form Will Be Embedded Here]
-              </p>
-              <p className={styles.placeholderNote}>
-                Form includes: Contact Information, Commission Payment Details, Account Setup
-              </p>
-            </div>
+            {/* Form embed goes here */}
+            
           </div>
         </div>
       </section>
@@ -58,9 +48,8 @@ export default function PartnersPage() {
         <div className="container container-sm">
           <div className={styles.privacyNote}>
             <p>
-              <strong>Your privacy matters.</strong> We protect your personal and financial information 
-              with industry-standard security. Your data is never shared with third parties and is used 
-              exclusively for partner program administration.
+              <strong>Your information is secure.</strong> All personal and payment details are 
+              protected and used solely for partner program administration.
             </p>
           </div>
         </div>

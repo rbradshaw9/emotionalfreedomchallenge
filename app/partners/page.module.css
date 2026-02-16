@@ -59,7 +59,7 @@
 }
 
 .formWrapper {
-  max-width: 720px;
+  max-width: 680px;
   margin: 0 auto;
   background-color: var(--color-white);
   border: 1px solid var(--color-gray-200);
@@ -68,31 +68,34 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* Floating Label Styles for Keap Forms */
-.formWrapper :global(.infusion-field-container) {
+/* Keap Form Base Styles */
+.formWrapper :global(.infusion-form) {
+  width: 100%;
+}
+
+/* Field Container with Floating Labels */
+.formWrapper :global(.infusion-field) {
   position: relative;
   margin-bottom: var(--space-8);
 }
 
-.formWrapper :global(.infusion-field-label) {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Floating Label Implementation */
+.formWrapper :global(.infusion-field label) {
+  display: block;
   font-size: var(--text-sm);
-  color: var(--color-primary);
   font-weight: var(--font-medium);
-  transform: translateY(-100%);
-  padding-bottom: var(--space-2);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
   transition: all 0.2s ease;
-  pointer-events: none;
 }
 
-.formWrapper :global(.infusion-field-input),
-.formWrapper :global(input[type="text"]),
-.formWrapper :global(input[type="email"]),
-.formWrapper :global(input[type="tel"]),
-.formWrapper :global(select),
-.formWrapper :global(textarea) {
+/* Input Styling */
+.formWrapper :global(.infusion-field input[type="text"]),
+.formWrapper :global(.infusion-field input[type="email"]),
+.formWrapper :global(.infusion-field input[type="tel"]),
+.formWrapper :global(.infusion-field input[type="password"]),
+.formWrapper :global(.infusion-field select),
+.formWrapper :global(.infusion-field textarea) {
   width: 100%;
   padding: var(--space-4) var(--space-5);
   font-size: var(--text-base);
@@ -101,48 +104,101 @@
   background-color: var(--color-white);
   transition: all 0.3s ease;
   outline: none;
+  font-family: inherit;
 }
 
-.formWrapper :global(.infusion-field-input:focus),
-.formWrapper :global(input:focus),
-.formWrapper :global(select:focus),
-.formWrapper :global(textarea:focus) {
+/* Focus States */
+.formWrapper :global(.infusion-field input:focus),
+.formWrapper :global(.infusion-field select:focus),
+.formWrapper :global(.infusion-field textarea:focus) {
   border-color: var(--color-accent);
   background-color: var(--color-gray-50);
-  box-shadow: 0 0 0 3px rgba(228, 181, 165, 0.1);
+  box-shadow: 0 0 0 4px rgba(228, 181, 165, 0.12);
 }
 
-.formWrapper :global(textarea) {
-  min-height: 120px;
-  resize: vertical;
+/* Hide placeholders on focus for cleaner look */
+.formWrapper :global(.infusion-field input:focus::placeholder),
+.formWrapper :global(.infusion-field textarea:focus::placeholder) {
+  opacity: 0.4;
 }
 
-/* Section Grouping */
-.formWrapper :global(.infusion-section) {
-  background-color: var(--color-gray-50);
-  border: 1px solid var(--color-gray-200);
-  border-radius: var(--radius-lg);
-  padding: var(--space-8);
-  margin-bottom: var(--space-10);
+/* Section Title Styling (Part 1, Part 2, Part 3) */
+.formWrapper :global(.title) {
+  background: var(--gradient-soft);
+  border-left: 4px solid var(--color-primary);
+  padding: var(--space-6) var(--space-8);
+  margin: var(--space-10) 0 var(--space-8);
+  border-radius: var(--radius-md);
 }
 
-.formWrapper :global(.infusion-section:last-of-type) {
-  margin-bottom: var(--space-8);
+.formWrapper :global(.title:first-child) {
+  margin-top: 0;
 }
 
-.formWrapper :global(.infusion-section-title) {
+.formWrapper :global(.title span) {
   font-size: var(--text-lg);
   font-weight: var(--font-medium);
   color: var(--color-gray-800);
-  margin-bottom: var(--space-6);
-  padding-bottom: var(--space-3);
-  border-bottom: 1px solid var(--color-gray-200);
+  letter-spacing: -0.01em;
 }
 
-/* Submit Button Styling */
-.formWrapper :global(.infusion-submit),
-.formWrapper :global(input[type="submit"]),
-.formWrapper :global(button[type="submit"]) {
+/* Text/Paragraph Sections (like PayPal note) */
+.formWrapper :global(.text) {
+  background-color: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  margin: var(--space-6) 0;
+}
+
+.formWrapper :global(.text div) {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+  line-height: var(--leading-relaxed);
+}
+
+.formWrapper :global(.text i) {
+  font-style: italic;
+  color: var(--color-gray-500);
+}
+
+/* Radio Button Groups */
+.formWrapper :global(.infusion-radio) {
+  margin-top: var(--space-3);
+}
+
+.formWrapper :global(.options-container) {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.formWrapper :global(.infusion-option) {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.formWrapper :global(.infusion-option input[type="radio"]) {
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+}
+
+.formWrapper :global(.infusion-option label) {
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  color: var(--color-gray-700);
+  cursor: pointer;
+}
+
+/* Submit Button */
+.formWrapper :global(.infusion-submit) {
+  margin-top: var(--space-10);
+}
+
+.formWrapper :global(.infusion-submit button),
+.formWrapper :global(button.infusion-recaptcha) {
   width: 100%;
   padding: var(--space-5) var(--space-10);
   font-size: var(--text-lg);
@@ -157,67 +213,36 @@
   letter-spacing: 0.02em;
 }
 
-.formWrapper :global(.infusion-submit:hover),
-.formWrapper :global(input[type="submit"]:hover),
-.formWrapper :global(button[type="submit"]:hover) {
+.formWrapper :global(.infusion-submit button:hover),
+.formWrapper :global(button.infusion-recaptcha:hover) {
   background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
   box-shadow: var(--shadow-lg);
   transform: translateY(-2px) scale(1.02);
 }
 
-.formWrapper :global(.infusion-submit:active),
-.formWrapper :global(input[type="submit"]:active),
-.formWrapper :global(button[type="submit"]:active) {
+.formWrapper :global(.infusion-submit button:active),
+.formWrapper :global(button.infusion-recaptcha:active) {
   transform: translateY(0) scale(1);
   box-shadow: var(--shadow-sm);
 }
 
-/* Required Field Indicator */
-.formWrapper :global(.infusion-required) {
-  color: var(--color-accent);
-  margin-left: 2px;
-}
-
 /* Error States */
-.formWrapper :global(.infusion-field-error),
-.formWrapper :global(.infusion-error) {
-  border-color: #d97757 !important;
-  background-color: #fff5f0 !important;
+.formWrapper :global(.infusion-field.error input),
+.formWrapper :global(input.error) {
+  border-color: #d97757;
+  background-color: #fff5f0;
 }
 
-.formWrapper :global(.infusion-error-message) {
+.formWrapper :global(.error-message) {
   color: #d97757;
   font-size: var(--text-sm);
   margin-top: var(--space-2);
+  display: block;
 }
 
-/* Placeholder Styles (for development) */
-.formPlaceholder {
-  min-height: 400px;
-  background-color: var(--color-gray-50);
-  border: 2px dashed var(--color-gray-300);
-  border-radius: var(--radius-lg);
-  padding: var(--space-10);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.placeholderText {
-  font-size: var(--text-xl);
-  font-weight: var(--font-medium);
-  color: var(--color-gray-500);
-  margin-bottom: var(--space-4);
-}
-
-.placeholderNote {
-  font-size: var(--text-base);
-  color: var(--color-gray-400);
-  max-width: 500px;
-  line-height: var(--leading-relaxed);
-  margin-bottom: 0;
+/* Hide honeypot field */
+.formWrapper :global(input[name="inf-sbt"]) {
+  display: none !important;
 }
 
 /* Privacy Section */
