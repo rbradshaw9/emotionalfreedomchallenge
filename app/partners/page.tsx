@@ -7,131 +7,140 @@ export default function PartnersPage() {
       <section className={styles.hero}>
         <div className="container container-md">
           <h1 className="text-center text-balance">
-            Share Something That Changes Lives
+            An Invitation to Share the Emotional Freedom Challenge
           </h1>
           <p className={styles.subtitle}>
-            You've been invited to partner with us in spreading The Emotional Freedom Challenge—a 
-            transformative journey that's helping thousands discover lasting peace and emotional wellness.
+            A free, live 5-day experience designed to help people develop emotional ownership — and respond to life with clarity instead of reactivity.
           </p>
         </div>
       </section>
 
-      <section className={styles.contentSection}>
+      <section className={styles.section}>
         <div className="container container-md">
-          <div className={styles.infoCard}>
-            <h2>What Is The Emotional Freedom Challenge?</h2>
-            <p>
-              A gentle, 5-day guided experience with Dr. Paul Jenkins designed to help people 
-              release emotional patterns that no longer serve them. Through daily live gatherings, 
-              heartfelt teachings, and supportive community, participants discover practical tools 
-              for lasting emotional freedom.
-            </p>
-          </div>
+          <h2>Why This Challenge Exists</h2>
+          <p>
+            Over the years, Dr. Paul Jenkins has seen the same pattern repeat itself in people from every background.
+          </p>
+          <p>
+            They're capable. They're thoughtful. They're trying.
+          </p>
+          <p>
+            And yet, emotionally, they keep getting pulled into reactions they don't choose — frustration, defensiveness, shutdown, overwhelm.
+          </p>
+          <p>
+            This challenge exists to give people a clear, grounded framework for emotional ownership: learning how to notice emotional reactions, slow them down, and respond intentionally instead of automatically.
+          </p>
+          <p>
+            This is not therapy, motivation, or surface-level positivity.<br />
+            It's practical work centered on responsibility, choice, and agency.
+          </p>
         </div>
       </section>
 
-      <section className={styles.invitationSection}>
+      <section className={styles.section}>
         <div className="container container-md">
-          <h2 className="text-center">Why We're Inviting You</h2>
-          
-          <div className={styles.reasonsGrid}>
-            <div className={styles.reasonCard}>
-              <h3>Your Voice Matters</h3>
-              <p>
-                Your audience trusts you. When you share work that genuinely transforms lives, 
-                your recommendation carries weight and creates real impact.
-              </p>
-            </div>
-
-            <div className={styles.reasonCard}>
-              <h3>Values Alignment</h3>
-              <p>
-                You understand the importance of emotional wellness and authentic transformation—not 
-                quick fixes or empty promises.
-              </p>
-            </div>
-
-            <div className={styles.reasonCard}>
-              <h3>Mutual Benefit</h3>
-              <p>
-                Your audience receives genuine value and healing. You receive fair compensation 
-                for meaningful introductions. Everyone wins.
-              </p>
-            </div>
-          </div>
+          <h2>Why We're Inviting Partners</h2>
+          <p>
+            We're inviting a small group of trusted peers to share this experience with their audience — only if it feels aligned.
+          </p>
+          <p>
+            Many people are emotionally stuck but don't have language for what's happening, or a framework that doesn't involve blame, shame, or avoidance.
+          </p>
+          <p>
+            This challenge gives people a way to understand themselves more clearly — and take responsibility without self-judgment.
+          </p>
+          <p>
+            If that resonates with the people you serve, we'd be grateful to have you share it.
+          </p>
         </div>
       </section>
 
-      <section className={styles.fitSection}>
-        <div className="container container-sm">
-          <div className={styles.fitCard}>
-            <h2>Is This A Fit For Your Audience?</h2>
-            <p>
-              This challenge serves people seeking emotional peace, healing from past patterns, 
-              personal growth, and deeper self-understanding. It's particularly valuable for therapists, 
-              coaches, and wellness professionals looking for effective tools to support their clients.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.howItWorksSection}>
+      <section className={styles.section}>
         <div className="container container-md">
-          <h2 className="text-center">How Partner Sharing Works</h2>
-          
-          <div className={styles.stepsGrid}>
-            <div className={styles.stepCard}>
-              <div className={styles.stepNumber}>1</div>
-              <h3>Receive Your Unique Link</h3>
-              <p>
-                After registration, you'll receive a personalized referral link that tracks 
-                everyone who joins through your recommendation.
-              </p>
-            </div>
-
-            <div className={styles.stepCard}>
-              <div className={styles.stepNumber}>2</div>
-              <h3>Share With Your Audience</h3>
-              <p>
-                Share your link with your community—through email, social media, your website, 
-                or anywhere your audience gathers.
-              </p>
-            </div>
-
-            <div className={styles.stepCard}>
-              <div className={styles.stepNumber}>3</div>
-              <h3>Track & Receive Compensation</h3>
-              <p>
-                Monitor referrals through your partner portal and receive transparent, timely 
-                commission payments via PayPal.
-              </p>
-            </div>
-          </div>
+          <h2>This Challenge Is a Strong Fit for People Who:</h2>
+          <ul>
+            <li>Feel emotionally reactive or stuck in familiar patterns</li>
+            <li>Want to take responsibility for their emotional responses without shame</li>
+            <li>Are open to reflection, growth, and intentional change</li>
+            <li>Value clarity, agency, and personal accountability</li>
+          </ul>
+          <p>
+            It's especially relevant for audiences interested in leadership, relationships, parenting, personal development, and values-driven living.
+          </p>
         </div>
       </section>
 
-      <section className={styles.compensationSection}>
-        <div className="container container-sm">
-          <div className={styles.compensationCard}>
-            <h2 className="text-center">Partner Compensation</h2>
-            <p>
-              We honor partners who help spread this work. You'll receive fair, transparent compensation 
-              for each person who joins through your unique referral link.
-            </p>
-            <p>
-              Specific commission rates and payout details are provided during the registration process. 
-              Everything is handled professionally with no hidden terms.
-            </p>
-          </div>
+      <section className={styles.section}>
+        <div className="container container-md">
+          <h2>What Participants Will Experience</h2>
+          <p>
+            Over five live sessions, participants will:
+          </p>
+          <ul>
+            <li>Learn the difference between emotions, thoughts, and choice</li>
+            <li>Identify emotional triggers and habitual reactions</li>
+            <li>Practice creating space between stimulus and response</li>
+            <li>Understand why insight alone rarely leads to lasting change</li>
+            <li>See what emotional ownership looks like in real life</li>
+          </ul>
+          <p>
+            The purpose of this challenge is clarity and ownership — not quick fixes.
+          </p>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className="container container-md">
+          <h2>How Sharing Works</h2>
+          <p>
+            Sharing the challenge is simple and entirely optional.
+          </p>
+          <p>
+            If you choose to participate:
+          </p>
+          <ul>
+            <li>We'll provide ready-to-use email and social copy</li>
+            <li>You're free to customize or share in your own voice</li>
+            <li>There's no requirement to promote or sell</li>
+            <li>No live appearances or time commitments are needed</li>
+          </ul>
+          <p>
+            Our goal is to make this easy and respectful of your relationship with your audience.
+          </p>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className="container container-md">
+          <h2>Partner Compensation (Optional)</h2>
+          <p>
+            Our priority with this challenge is impact and service.
+          </p>
+          <p>
+            That said, we also believe in compensating partners who help extend the reach of this work.
+          </p>
+          <p>
+            Partners who choose to participate with referral tracking receive:
+          </p>
+          <ul>
+            <li>$1,000 for each coaching client enrolled</li>
+            <li>50% commission on all VIP upgrades</li>
+          </ul>
+          <p>
+            There are no quotas, requirements, or pressure.<br />
+            Compensation is simply our way of saying thank you.
+          </p>
         </div>
       </section>
 
       <section className={styles.ctaSection}>
         <div className="container container-sm text-center">
-          <h2>Ready to Partner With Us?</h2>
+          <h2>Ready to Continue?</h2>
           <p className={styles.ctaText}>
-            Complete your partner registration to receive your unique referral link 
-            and start sharing this transformative work with your audience.
+            The next step is a brief partner registration page where we'll collect the information needed for referral tracking and commission payouts.
+          </p>
+          <p className={styles.ctaText}>
+            This page is intended for invited partners only.
           </p>
           <Link 
             href="/partners/register"
@@ -144,3 +153,4 @@ export default function PartnersPage() {
     </div>
   );
 }
+

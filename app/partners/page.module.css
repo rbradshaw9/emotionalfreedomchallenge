@@ -23,194 +23,48 @@
   margin: 0 auto;
 }
 
-/* Content Section */
-.contentSection {
+/* Main Content Sections */
+.section {
   padding: var(--space-20) 0;
   background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-100);
 }
 
-.infoCard {
-  max-width: 750px;
-  margin: 0 auto;
+.section:last-of-type {
+  border-bottom: none;
 }
 
-.infoCard h2 {
+.section h2 {
   font-size: var(--text-3xl);
   color: var(--color-primary);
-  margin-bottom: var(--space-6);
-  text-align: center;
+  margin-bottom: var(--space-8);
+  font-weight: var(--font-semibold);
 }
 
-.infoCard p {
+.section p {
   font-size: var(--text-lg);
   line-height: var(--leading-relaxed);
-  margin-bottom: 0;
+  margin-bottom: var(--space-6);
   color: var(--color-gray-600);
-  text-align: center;
 }
 
-/* Invitation Section */
-.invitationSection {
-  padding: var(--space-20) 0;
-  background: var(--gradient-cool);
-  border-top: 1px solid var(--color-gray-200);
-  border-bottom: 1px solid var(--color-gray-200);
+.section p:last-child {
+  margin-bottom: 0;
 }
 
-.invitationSection h2 {
-  margin-bottom: var(--space-12);
-  color: var(--color-gray-800);
+.section ul {
+  margin: var(--space-6) 0;
+  padding-left: var(--space-8);
 }
 
-.reasonsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--space-8);
-}
-
-.reasonCard {
-  background-color: var(--color-white);
-  border: 1.5px solid var(--color-gray-200);
-  border-radius: var(--radius-xl);
-  padding: var(--space-8);
-  box-shadow: var(--shadow-sm);
-  transition: all 0.3s ease;
-}
-
-.reasonCard:hover {
-  border-color: var(--color-primary-light);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-
-.reasonCard h3 {
-  font-size: var(--text-xl);
-  color: var(--color-primary);
+.section li {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
   margin-bottom: var(--space-4);
-}
-
-.reasonCard p {
-  margin-bottom: 0;
   color: var(--color-gray-600);
-  line-height: var(--leading-relaxed);
 }
 
-/* Fit Section */
-.fitSection {
-  padding: var(--space-20) 0;
-  background-color: var(--color-white);
-}
-
-.fitCard {
-  max-width: 640px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.fitCard h2 {
-  font-size: var(--text-2xl);
-  color: var(--color-gray-800);
-  margin-bottom: var(--space-6);
-}
-
-.fitCard p {
-  font-size: var(--text-lg);
-  line-height: var(--leading-relaxed);
-  color: var(--color-gray-600);
-  margin-bottom: 0;
-}
-
-/* How It Works Section */
-.howItWorksSection {
-  padding: var(--space-20) 0;
-  background: var(--gradient-soft);
-  border-top: 1px solid var(--color-gray-200);
-}
-
-.howItWorksSection h2 {
-  margin-bottom: var(--space-12);
-  color: var(--color-gray-800);
-}
-
-.stepsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--space-8);
-}
-
-.stepCard {
-  background-color: var(--color-white);
-  border: 1.5px solid var(--color-gray-200);
-  border-radius: var(--radius-xl);
-  padding: var(--space-8);
-  text-align: center;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.3s ease;
-}
-
-.stepCard:hover {
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-
-.stepNumber {
-  width: 48px;
-  height: 48px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-  color: var(--color-white);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--text-2xl);
-  font-weight: var(--font-bold);
-  margin: 0 auto var(--space-4);
-  box-shadow: var(--shadow-sm);
-}
-
-.stepCard h3 {
-  font-size: var(--text-xl);
-  color: var(--color-primary);
-  margin-bottom: var(--space-3);
-}
-
-.stepCard p {
-  margin-bottom: 0;
-  color: var(--color-gray-600);
-  line-height: var(--leading-relaxed);
-}
-
-/* Compensation Section */
-.compensationSection {
-  padding: var(--space-20) 0;
-  background-color: var(--color-white);
-  border-top: 1px solid var(--color-gray-200);
-}
-
-.compensationCard {
-  background-color: var(--color-gray-50);
-  border: 1.5px solid var(--color-primary-light);
-  border-radius: var(--radius-xl);
-  padding: var(--space-10);
-  box-shadow: var(--shadow-md);
-}
-
-.compensationCard h2 {
-  color: var(--color-gray-800);
-  margin-bottom: var(--space-6);
-}
-
-.compensationCard p {
-  font-size: var(--text-lg);
-  line-height: var(--leading-relaxed);
-  color: var(--color-gray-600);
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto var(--space-5);
-}
-
-.compensationCard p:last-child {
+.section li:last-child {
   margin-bottom: 0;
 }
 
@@ -222,16 +76,14 @@
 }
 
 .ctaSection h2 {
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-6);
   color: var(--color-gray-800);
+  font-size: var(--text-3xl);
 }
 
 .ctaText {
   font-size: var(--text-lg);
   margin-bottom: var(--space-8);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
   color: var(--color-gray-600);
   line-height: var(--leading-relaxed);
 }
@@ -250,9 +102,21 @@
     font-size: var(--text-lg);
   }
 
-  .reasonsGrid,
-  .stepsGrid {
-    grid-template-columns: 1fr;
+  .section {
+    padding: var(--space-16) 0;
+  }
+
+  .section h2 {
+    font-size: var(--text-2xl);
+  }
+
+  .section p,
+  .section li {
+    font-size: var(--text-base);
+  }
+
+  .ctaSection {
+    padding: var(--space-16) 0;
   }
 }
 
