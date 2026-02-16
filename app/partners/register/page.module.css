@@ -149,33 +149,17 @@
   margin-bottom: var(--space-10);
 }
 
-/* Floating Label System */
+/* Labels - visually hidden but accessible to screen readers */
 .formWrapper :global(.infusion-field label) {
   position: absolute;
-  left: var(--space-4);
-  top: var(--space-4);
-  color: var(--color-gray-500);
-  font-size: var(--text-base);
-  font-weight: var(--font-normal);
-  pointer-events: none;
-  transition: all 0.2s ease;
-  background-color: transparent;
-  padding: 0 var(--space-1);
-  z-index: 3;
-}
-
-/* Float label on focus or when input has value */
-.formWrapper :global(.infusion-field input:focus ~ label),
-.formWrapper :global(.infusion-field input:not(:placeholder-shown) ~ label),
-.formWrapper :global(.infusion-field textarea:focus ~ label),
-.formWrapper :global(.infusion-field textarea:not(:placeholder-shown) ~ label),
-.formWrapper :global(.infusion-field select:focus ~ label),
-.formWrapper :global(.infusion-field select:valid ~ label) {
-  top: calc(var(--space-4) * -0.5);
-  font-size: var(--text-sm);
-  color: var(--color-primary);
-  background-color: var(--color-white);
-  font-weight: var(--font-medium);
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .formWrapper :global(.infusion-field input),
@@ -191,19 +175,14 @@
   transition: all 0.2s ease;
   font-family: inherit;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
-/* Hide placeholder initially so it doesn't clash with label */
+/* Placeholder styling - visible by default */
 .formWrapper :global(.infusion-field input::placeholder),
 .formWrapper :global(.infusion-field textarea::placeholder) {
-  color: transparent;
-}
-
-/* Show placeholder only on focus when label is floated */
-.formWrapper :global(.infusion-field input:focus::placeholder),
-.formWrapper :global(.infusion-field textarea:focus::placeholder) {
-  color: var(--color-gray-400);
+  color: var(--color-gray-500);
+  opacity: 1;
 }
 
 .formWrapper :global(.infusion-field input:focus),
