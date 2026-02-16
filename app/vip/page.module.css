@@ -303,26 +303,84 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: var(--space-12) 0 var(--space-8);
+    padding: var(--space-16) 0 var(--space-10);
+  }
+  
+  .hero h1 {
+    font-size: var(--text-3xl);
+    line-height: 1.2;
   }
   
   .subtitle {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
+    margin-bottom: var(--space-6);
+  }
+  
+  .offerSection {
+    padding: var(--space-16) 0;
   }
   
   .offerCard {
-    padding: var(--space-8) var(--space-6);
+    padding: var(--space-8) var(--space-5);
   }
   
   .priceAmount {
     font-size: var(--text-4xl);
   }
   
+  .feature {
+    padding: var(--space-5);
+  }
+  
+  .featureContent h4 {
+    font-size: var(--text-lg);
+  }
+  
   .testimonials {
     grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  .testimonialCard {
+    padding: var(--space-6) var(--space-5);
   }
   
   .steps {
     grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  
+  .step {
+    padding: var(--space-6) var(--space-5);
+  }
+  
+  .ctaSection {
+    padding: var(--space-16) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: var(--space-12) 0 var(--space-8);
+  }
+  
+  .hero h1 {
+    font-size: var(--text-2xl);
+  }
+  
+  .subtitle {
+    font-size: var(--text-sm);
+  }
+  
+  .offerSection {
+    padding: var(--space-12) 0;
+  }
+  
+  .offerCard {
+    padding: var(--space-6) var(--space-4);
+  }
+  
+  .ctaSection {
+    padding: var(--space-12) 0;
   }
 }

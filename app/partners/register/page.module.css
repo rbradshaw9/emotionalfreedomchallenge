@@ -313,19 +313,24 @@
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
-    padding: var(--space-20) 0;
+    padding: var(--space-16) 0;
   }
 
   .hero h1 {
     font-size: var(--text-3xl);
+    line-height: 1.2;
   }
 
   .subtitle {
     font-size: var(--text-base);
+    margin-bottom: var(--space-6);
   }
 
   .infoSection,
-  .nextStepsSection,
+  .nextStepsSection {
+    padding: var(--space-16) 0;
+  }
+  
   .formSection {
     padding: var(--space-20) 0;
   }
@@ -333,6 +338,72 @@
   .infoSection h2,
   .nextStepsSection h2 {
     font-size: var(--text-2xl);
+    margin-bottom: var(--space-6);
+  }
+  
+  /* Improved form field tap targets on mobile */
+  .formWrapper :global(.infusion-field) {
     margin-bottom: var(--space-8);
+  }
+  
+  .formWrapper :global(.infusion-field input),
+  .formWrapper :global(.infusion-field textarea),
+  .formWrapper :global(.infusion-field select) {
+    padding: var(--space-5);
+    font-size: var(--text-base);
+    min-height: 48px;
+  }
+  
+  .formWrapper :global(.infusion-field label) {
+    font-size: var(--text-base);
+  }
+  
+  /* Radio buttons with larger tap targets */
+  .formWrapper :global(.infusion-radio input[type="radio"]) {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+  }
+  
+  .formWrapper :global(.infusion-option) {
+    padding: var(--space-3);
+    min-height: 44px;
+  }
+  
+  /* Submit button full-width on mobile */
+  .formWrapper :global(.infusion-submit button),
+  .formWrapper :global(.infusion-submit input[type="submit"]) {
+    width: 100%;
+    padding: var(--space-5) var(--space-6);
+    font-size: var(--text-lg);
+    min-height: 56px;
+  }
+  
+  .privacy {
+    margin-top: var(--space-10);
+    font-size: var(--text-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: var(--space-12) 0;
+  }
+  
+  .infoSection,
+  .nextStepsSection {
+    padding: var(--space-12) 0;
+  }
+  
+  .formSection {
+    padding: var(--space-16) 0;
+  }
+  
+  .hero h1 {
+    font-size: var(--text-2xl);
+  }
+  
+  .subtitle {
+    font-size: var(--text-sm);
   }
 }

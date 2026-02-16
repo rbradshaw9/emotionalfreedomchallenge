@@ -90,37 +90,67 @@
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
-    padding: var(--space-20) 0;
+    padding: var(--space-16) 0;
   }
 
   .hero h1 {
-    font-size: var(--text-4xl);
+    font-size: var(--text-3xl);
+    line-height: 1.2;
   }
 
   .subtitle {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
+    margin-bottom: var(--space-6);
   }
 
   .section {
-    padding: var(--space-20) 0;
+    padding: var(--space-16) 0;
   }
 
   .section h2 {
     font-size: var(--text-2xl);
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-6);
   }
 
   .section p,
   .section li {
     font-size: var(--text-base);
+    line-height: 1.7;
+  }
+  
+  .section ul {
+    padding-left: var(--space-5);
   }
 
   .ctaSection {
-    padding: var(--space-24) 0;
+    padding: var(--space-20) 0;
   }
 
   .ctaSection h2 {
     font-size: var(--text-2xl);
+    margin-bottom: var(--space-6);
+  }
+  
+  .ctaText {
+    font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: var(--space-12) 0;
+  }
+  
+  .hero h1 {
+    font-size: var(--text-2xl);
+  }
+  
+  .section {
+    padding: var(--space-12) 0;
+  }
+  
+  .ctaSection {
+    padding: var(--space-16) 0;
   }
 }
 

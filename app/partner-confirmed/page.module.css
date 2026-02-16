@@ -139,15 +139,16 @@
   }
 
   .confirmationCard {
-    padding: var(--space-8);
+    padding: var(--space-8) var(--space-5);
   }
 
   .confirmationCard h1 {
     font-size: var(--text-3xl);
+    line-height: 1.2;
   }
 
   .confirmationText {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
   }
 
   .successIcon {
@@ -155,8 +156,47 @@
     height: 64px;
     font-size: var(--text-3xl);
   }
+  
+  .nextStepsCard {
+    padding: var(--space-8) var(--space-5);
+  }
+  
+  .nextStepsCard h2 {
+    font-size: var(--text-2xl);
+  }
 
   .timelineItem {
     gap: var(--space-4);
+    padding: var(--space-5) 0;
+  }
+  
+  .timelineContent h3 {
+    font-size: var(--text-lg);
+  }
+  
+  .reassuranceBox {
+    padding: var(--space-5);
+  }
+}
+
+@media (max-width: 480px) {
+  .confirmationSection {
+    padding: var(--space-12) 0;
+  }
+  
+  .confirmationCard {
+    padding: var(--space-6) var(--space-4);
+  }
+  
+  .confirmationCard h1 {
+    font-size: var(--text-2xl);
+  }
+  
+  .confirmationText {
+    font-size: var(--text-sm);
+  }
+  
+  .nextStepsCard {
+    padding: var(--space-6) var(--space-4);
   }
 }

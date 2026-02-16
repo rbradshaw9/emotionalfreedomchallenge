@@ -175,20 +175,59 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: var(--space-12) 0 var(--space-8);
+    padding: var(--space-16) 0 var(--space-10);
+  }
+  
+  .hero h1 {
+    font-size: var(--text-3xl);
+    line-height: 1.2;
   }
   
   .subtitle {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
+    margin-bottom: var(--space-6);
+  }
+  
+  .formSection {
+    padding: var(--space-16) 0;
   }
   
   .formCard {
-    padding: var(--space-8) var(--space-6);
+    padding: var(--space-8) var(--space-5);
+  }
+  
+  .formTitle {
+    font-size: var(--text-2xl);
+  }
+  
+  .formDescription {
+    font-size: var(--text-base);
+  }
+  
+  /* Improved form field tap targets */
+  .formGroup {
+    margin-bottom: var(--space-6);
+  }
+  
+  .formGroup input {
+    padding: var(--space-5);
+    font-size: var(--text-base);
+    min-height: 48px;
+  }
+  
+  .form button[type="submit"] {
+    padding: var(--space-5) var(--space-6);
+    font-size: var(--text-lg);
+    min-height: 56px;
   }
   
   .benefits {
     grid-template-columns: 1fr;
     gap: var(--space-6);
+  }
+  
+  .benefit {
+    padding: var(--space-6) var(--space-5);
   }
   
   .benefitsSection {
@@ -197,5 +236,28 @@
   
   .ctaSection {
     padding: var(--space-16) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: var(--space-12) 0 var(--space-8);
+  }
+  
+  .hero h1 {
+    font-size: var(--text-2xl);
+  }
+  
+  .subtitle {
+    font-size: var(--text-sm);
+  }
+  
+  .formCard {
+    padding: var(--space-6) var(--space-4);
+  }
+  
+  .benefitsSection,
+  .ctaSection {
+    padding: var(--space-12) 0;
   }
 }
