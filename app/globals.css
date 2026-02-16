@@ -383,33 +383,6 @@ section + section {
   border-top: 1px solid rgba(157, 139, 127, 0.08);
 }
 
-/* Organic wave divider for visual rhythm */
-.wave-divider {
-  width: 100%;
-  height: 48px;
-  position: relative;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.wave-divider svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* Subtle geometric accent line */
-.accent-line {
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(157, 139, 127, 0.15) 50%, 
-    transparent 100%);
-  margin: var(--space-16) auto;
-  border-radius: var(--radius-full);
-}
-
 /* Enhanced spacing for major sections */
 section.hero + section,
 section[class*="Section"] + section[class*="Section"] {
@@ -453,16 +426,6 @@ section[class*="Section"]:not(:first-of-type) {
   
   p {
     margin-bottom: var(--space-5);
-  }
-  
-  /* Reduce wave divider height on mobile */
-  .wave-divider {
-    height: 32px;
-  }
-  
-  /* Improved accent line on mobile */
-  .accent-line {
-    margin: var(--space-12) auto;
   }
 }
 

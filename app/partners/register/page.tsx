@@ -55,13 +55,6 @@ export default function PartnerRegister() {
         </div>
       </section>
 
-      {/* Subtle visual separator */}
-      <div className="wave-divider">
-        <svg viewBox="0 0 1200 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M0 24C300 8 600 40 900 24C1050 14 1125 32 1200 24V48H0V24Z" fill="currentColor" fillOpacity="0.08" style={{color: 'var(--color-gray-400)'}} />
-        </svg>
-      </div>
-
       <section className={styles.formSection}>
         <div className="container container-content">
           <div className={styles.formWrapper}>
@@ -71,16 +64,8 @@ export default function PartnerRegister() {
               <input name="inf_form_name" type="hidden" value="Emotional Freedom Challenge&#xa;Referral Sign-up submitted" />
               <input name="infusionsoft_version" type="hidden" value="1.70.0.902929" />
               
-              <div>
-                <div>
-                  <div className="title">
-                    <div className="title">
-                      <div>
-                        <span>Part 1 - Contact Information</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="section-title">
+                <span>Part 1 - Contact Information</span>
               </div>
               
               <div className="infusion-field">
@@ -103,35 +88,12 @@ export default function PartnerRegister() {
                 <input id="inf_field_Phone1" name="inf_field_Phone1" placeholder="Phone" type="text" />
               </div>
               
-              <div>
-                <div>
-                  <div> </div>
-                  <div> </div>
-                </div>
+              <div className="section-title">
+                <span>Part 2 - Where To Send Commissions</span>
               </div>
               
-              <div>
-                <div>
-                  <div className="title">
-                    <div className="title">
-                      <div>
-                        <span>Part 2 - Where To Send Commissions</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div>
-                <div className="text">
-                  <div className="text">
-                    <div>*We make commission payments via PayPal. If you do not have a PayPal account, please visit https://paypal.com and create an account.</div>
-                  </div>
-                </div>
-              </div>
-              
-              <div>
-                <div>&nbsp;</div>
+              <div className="info-note">
+                <div>*We make commission payments via PayPal. If you do not have a PayPal account, please visit https://paypal.com and create an account.</div>
               </div>
               
               <div className="infusion-field">
@@ -139,23 +101,8 @@ export default function PartnerRegister() {
                 <input id="inf_custom_PayPalEmail" name="inf_custom_PayPalEmail" placeholder="PayPal Email *" type="text" />
               </div>
               
-              <div>
-                <div>
-                  <div> </div>
-                  <div> </div>
-                </div>
-              </div>
-              
-              <div>
-                <div>
-                  <div className="title">
-                    <div className="title">
-                      <div>
-                        <span>Part 3 - Referral Partner Registration</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="section-title">
+                <span>Part 3 - Referral Partner Registration</span>
               </div>
               
               <div className="infusion-field">
@@ -163,15 +110,11 @@ export default function PartnerRegister() {
                 <input id="inf_field_SSN" name="inf_field_SSN" placeholder="SSN/TIN" type="text" />
               </div>
               
-              <div>
-                <div className="text">
-                  <div className="text">
-                    <div>
-                      <i>
-                        <span>We required your SSN/TIN for proper tax documentation. If you live outside the US, you can leave this blank.</span>
-                      </i>
-                    </div>
-                  </div>
+              <div className="info-note">
+                <div>
+                  <i>
+                    <span>We required your SSN/TIN for proper tax documentation. If you live outside the US, you can leave this blank.</span>
+                  </i>
                 </div>
               </div>
               
@@ -190,7 +133,8 @@ export default function PartnerRegister() {
                 <input id="inf_other_RetypePassword" name="inf_other_RetypePassword" placeholder="Confirm Password *" type="password" />
               </div>
               
-              <div className="infusion-field">
+              {/* Hidden fields - not displayed to users */}
+              <div className="infusion-field" style={{ display: 'none' }}>
                 <label htmlFor="inf_other_NotifyOnLead">Notify on Lead</label>
                 <div className="infusion-radio">
                   <div className="options-container">
@@ -206,7 +150,7 @@ export default function PartnerRegister() {
                 </div>
               </div>
               
-              <div className="infusion-field">
+              <div className="infusion-field" style={{ display: 'none' }}>
                 <label htmlFor="inf_other_NotifyOnSale">Notify on Sale</label>
                 <div className="infusion-radio">
                   <div className="options-container">
@@ -220,10 +164,6 @@ export default function PartnerRegister() {
                     </span>
                   </div>
                 </div>
-              </div>
-              
-              <div>
-                <div>&nbsp;</div>
               </div>
               
               <div className="infusion-submit">

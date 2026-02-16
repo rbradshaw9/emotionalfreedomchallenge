@@ -106,6 +106,44 @@
   z-index: 1;
 }
 
+/* Section Titles - Clean visual separation */
+.formWrapper :global(.section-title) {
+  margin: var(--space-12) 0 var(--space-8);
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid var(--color-gray-200);
+}
+
+.formWrapper :global(.section-title:first-child) {
+  margin-top: 0;
+}
+
+.formWrapper :global(.section-title span) {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-800);
+  letter-spacing: -0.01em;
+}
+
+/* Info Notes - Subtle background style */
+.formWrapper :global(.info-note) {
+  background-color: var(--color-gray-50);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-8);
+}
+
+.formWrapper :global(.info-note div) {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+  line-height: var(--leading-relaxed);
+}
+
+.formWrapper :global(.info-note i) {
+  font-style: italic;
+  color: var(--color-gray-500);
+}
+
 .formWrapper :global(.infusion-field) {
   position: relative;
   margin-bottom: var(--space-10);
