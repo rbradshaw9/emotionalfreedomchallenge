@@ -3,8 +3,8 @@
 }
 
 .hero {
-  padding: var(--space-24) 0;
-  background: var(--gradient-warm);
+  padding: var(--space-28) 0;
+  background: linear-gradient(135deg, #faf9f7 0%, #fff5f0 50%, #ffffff 100%);
 }
 
 .hero h1 {
@@ -18,13 +18,11 @@
   color: var(--color-gray-600);
   line-height: 1.7;
   text-align: center;
-  max-width: 720px;
-  margin: 0 auto;
 }
 
 /* Main Content Sections */
 .section {
-  padding: var(--space-24) 0;
+  padding: var(--space-28) 0;
   background-color: var(--color-white);
 }
 
@@ -44,7 +42,6 @@
   line-height: 1.75;
   margin-bottom: var(--space-6);
   color: var(--color-gray-600);
-  max-width: 720px;
 }
 
 .section p:last-child {
@@ -54,7 +51,6 @@
 .section ul {
   margin: var(--space-6) 0;
   padding-left: var(--space-8);
-  max-width: 720px;
 }
 
 .section li {
@@ -70,8 +66,8 @@
 
 /* CTA Section */
 .ctaSection {
-  padding: var(--space-28) 0;
-  background: var(--gradient-cool);
+  padding: var(--space-32) 0;
+  background: linear-gradient(180deg, #faf9f7 0%, #ffffff 60%);
 }
 
 .ctaSection h2 {
@@ -85,9 +81,6 @@
   margin-bottom: var(--space-6);
   color: var(--color-gray-600);
   line-height: 1.7;
-  max-width: 620px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .ctaText:last-of-type {
@@ -123,7 +116,7 @@
   }
 
   .ctaSection {
-    padding: var(--space-20) 0;
+    padding: var(--space-24) 0;
   }
 
   .ctaSection h2 {

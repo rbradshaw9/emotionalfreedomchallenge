@@ -5,7 +5,7 @@ export default function PartnersPage() {
   return (
     <div className={styles.page}>
       <section className={styles.hero}>
-        <div className="container container-md">
+        <div className="container container-content">
           <h1 className="text-center text-balance">
             An Invitation to Share the Emotional Freedom Challenge
           </h1>
@@ -16,7 +16,7 @@ export default function PartnersPage() {
       </section>
 
       <section className={styles.section}>
-        <div className="container container-md">
+        <div className="container container-content">
           <h2>Why This Challenge Exists</h2>
           <p>
             Over the years, Dr. Paul Jenkins has seen the same pattern repeat itself in people from every background.
@@ -38,7 +38,7 @@ export default function PartnersPage() {
       </section>
 
       <section className={styles.section}>
-        <div className="container container-md">
+        <div className="container container-content">
           <h2>Why We're Inviting Partners</h2>
           <p>
             We're inviting a small group of trusted peers to share this experience with their audience — only if it feels aligned.
@@ -56,7 +56,7 @@ export default function PartnersPage() {
       </section>
 
       <section className={styles.section}>
-        <div className="container container-md">
+        <div className="container container-content">
           <h2>This Challenge Is a Strong Fit for People Who:</h2>
           <ul>
             <li>Feel emotionally reactive or stuck in familiar patterns</li>
@@ -71,7 +71,7 @@ export default function PartnersPage() {
       </section>
 
       <section className={styles.section}>
-        <div className="container container-md">
+        <div className="container container-content">
           <h2>What Participants Will Experience</h2>
           <p>
             Over five live sessions, participants will:
@@ -90,7 +90,7 @@ export default function PartnersPage() {
       </section>
 
       <section className={styles.section}>
-        <div className="container container-md">
+        <div className="container container-content">
           <h2>How Sharing Works</h2>
           <p>
             Sharing the challenge is simple and entirely optional.
@@ -111,7 +111,7 @@ export default function PartnersPage() {
       </section>
 
       <section className={styles.section}>
-        <div className="container container-md">
+        <div className="container container-content">
           <h2>Partner Compensation (Optional)</h2>
           <p>
             Our priority with this challenge is impact and service.
@@ -134,7 +134,7 @@ export default function PartnersPage() {
       </section>
 
       <section className={styles.ctaSection}>
-        <div className="container container-sm text-center">
+        <div className="container container-content text-center">
           <h2>Ready to Continue?</h2>
           <p className={styles.ctaText}>
             The next step is a brief partner registration page where we'll collect the information needed for referral tracking and commission payouts.
