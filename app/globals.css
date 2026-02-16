@@ -1,28 +1,28 @@
 /* Design System Variables */
 :root {
-  /* Color Palette - Calm, neutral tones */
-  --color-primary: #2c5f6f;       /* Deep teal - grounded, professional */
-  --color-primary-light: #3d7788;
-  --color-primary-dark: #1d4451;
+  /* Color Palette - Soft, warm, and nurturing */
+  --color-primary: #9d8b7f;       /* Warm taupe - grounding, gentle */
+  --color-primary-light: #b5a499;
+  --color-primary-dark: #7d6d64;
   
-  --color-accent: #e8a87c;        /* Warm terracotta - subtle, inviting */
-  --color-accent-light: #f0b88f;
-  --color-accent-dark: #d89865;
+  --color-accent: #e4b5a5;        /* Soft rose - warm, inviting, compassionate */
+  --color-accent-light: #f0cfc3;
+  --color-accent-dark: #d39b88;
   
-  /* Neutrals */
-  --color-gray-50: #fafafa;
-  --color-gray-100: #f4f4f5;
-  --color-gray-200: #e4e4e7;
-  --color-gray-300: #d4d4d8;
-  --color-gray-400: #a1a1aa;
-  --color-gray-500: #71717a;
-  --color-gray-600: #52525b;
-  --color-gray-700: #3f3f46;
-  --color-gray-800: #27272a;
-  --color-gray-900: #18181b;
+  /* Warm Neutrals */
+  --color-gray-50: #faf9f7;
+  --color-gray-100: #f5f3f0;
+  --color-gray-200: #ebe7e2;
+  --color-gray-300: #ddd7d0;
+  --color-gray-400: #b5aca3;
+  --color-gray-500: #8a8078;
+  --color-gray-600: #6b635c;
+  --color-gray-700: #554e48;
+  --color-gray-800: #3d3833;
+  --color-gray-900: #2a2521;
   
   --color-white: #ffffff;
-  --color-black: #0a0a0a;
+  --color-black: #1a1613;
   
   /* Semantic colors */
   --color-background: var(--color-white);
@@ -71,24 +71,26 @@
   --space-20: 5rem;     /* 80px */
   --space-24: 6rem;     /* 96px */
   
-  /* Border Radius */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
+  /* Border Radius - More organic, softer */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
   
-  /* Shadows - Enhanced for premium feel */
-  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.04);
-  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px 0 rgb(0 0 0 / 0.04);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
-  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.15);
+  /* Shadows - Soft, diffused, gentle */
+  --shadow-xs: 0 2px 4px 0 rgb(157 139 127 / 0.03);
+  --shadow-sm: 0 2px 8px 0 rgb(157 139 127 / 0.06), 0 1px 3px 0 rgb(157 139 127 / 0.04);
+  --shadow-md: 0 4px 12px -2px rgb(157 139 127 / 0.08), 0 2px 6px -1px rgb(157 139 127 / 0.05);
+  --shadow-lg: 0 8px 20px -4px rgb(157 139 127 / 0.12), 0 4px 8px -2px rgb(157 139 127 / 0.06);
+  --shadow-xl: 0 16px 32px -8px rgb(157 139 127 / 0.14), 0 8px 12px -4px rgb(157 139 127 / 0.08);
+  --shadow-2xl: 0 24px 48px -12px rgb(157 139 127 / 0.18);
   
-  /* Subtle gradients for backgrounds */
-  --gradient-warm: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
-  --gradient-cool: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 50%);
+  /* Warm, nurturing gradients for backgrounds */
+  --gradient-warm: linear-gradient(135deg, #faf9f7 0%, #fff5f0 50%, #ffffff 100%);
+  --gradient-cool: linear-gradient(180deg, #faf9f7 0%, #ffffff 60%);
+  --gradient-soft: linear-gradient(to bottom right, #faf9f7, #f5f3f0);
   
   /* Container widths */
   --container-sm: 640px;
@@ -118,26 +120,29 @@ body {
   background-color: var(--color-background);
 }
 
-/* Typography */
+/* Typography - Elegant and gentle */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: var(--font-semibold);
-  line-height: var(--leading-tight);
-  color: var(--color-gray-900);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-snug);
+  color: var(--color-gray-800);
+  letter-spacing: -0.01em;
 }
 
 h1 {
   font-size: var(--text-5xl);
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-8);
+  font-weight: var(--font-normal);
+  letter-spacing: -0.02em;
 }
 
 h2 {
   font-size: var(--text-4xl);
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-6);
 }
 
 h3 {
   font-size: var(--text-3xl);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-5);
 }
 
 h4 {
@@ -156,9 +161,10 @@ h6 {
 }
 
 p {
-  margin-bottom: var(--space-4);
-  color: var(--color-gray-700);
+  margin-bottom: var(--space-5);
+  color: var(--color-gray-600);
   line-height: var(--leading-relaxed);
+  letter-spacing: 0.01em;
 }
 
 a {
@@ -198,20 +204,21 @@ input[type="text"],
 input[type="email"],
 textarea {
   width: 100%;
-  padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
   background-color: var(--color-white);
   color: var(--color-foreground);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
   outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(44, 95, 111, 0.1);
+  border-color: var(--color-accent);
+  background-color: var(--color-gray-50);
+  box-shadow: 0 0 0 4px rgba(228, 181, 165, 0.12);
 }
 
 textarea {
@@ -238,32 +245,33 @@ button {
 
 .button {
   display: inline-block;
-  padding: var(--space-3) var(--space-6);
-  font-weight: var(--font-semibold);
+  padding: var(--space-4) var(--space-8);
+  font-weight: var(--font-medium);
   text-align: center;
-  border-radius: var(--radius-lg);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--radius-full);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   border: none;
   text-decoration: none;
+  letter-spacing: 0.02em;
 }
 
 .button-primary {
-  background-color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   color: var(--color-white);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 
 .button-primary:hover {
-  background-color: var(--color-primary-light);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .button-primary:active {
-  background-color: var(--color-primary-dark);
+  background: var(--color-primary-dark);
   box-shadow: var(--shadow-sm);
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .button-secondary {
@@ -281,27 +289,27 @@ button {
 }
 
 .button-accent {
-  background-color: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
   color: var(--color-white);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 
 .button-accent:hover {
-  background-color: var(--color-accent-light);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-accent) 100%);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .button-accent:active {
-  background-color: var(--color-accent-dark);
+  background: var(--color-accent-dark);
   box-shadow: var(--shadow-sm);
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .button-lg {
-  padding: var(--space-4) var(--space-8);
+  padding: var(--space-5) var(--space-10);
   font-size: var(--text-lg);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-full);
 }
 
 .button:focus-visible {

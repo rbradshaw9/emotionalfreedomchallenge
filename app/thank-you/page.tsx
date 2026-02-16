@@ -11,17 +11,17 @@ export default function ThankYouPage() {
               <div className={styles.successIcon}>✓</div>
             </div>
             
-            <h1 className="text-center">You're All Set!</h1>
+            <h1 className="text-center">Welcome, Beautiful Soul!</h1>
             
             <p className={styles.confirmationText}>
-              Welcome to The Emotional Freedom Challenge. We're thrilled to have you 
-              join us on this transformative journey.
+              Your heart led you here, and we're honored to walk alongside you 
+              on this sacred journey to emotional freedom.
             </p>
 
             <div className={styles.emailNotice}>
               <p>
-                <strong>Check your email</strong> — We've sent you a confirmation with 
-                everything you need to get started, including your access links and schedule.
+                <strong>Look for our warm welcome</strong> — We've sent you a loving message with 
+                everything you need to feel prepared and supported, including your access details and our gathering times.
               </p>
             </div>
           </div>
@@ -30,16 +30,16 @@ export default function ThankYouPage() {
 
       <section className={styles.nextStepsSection}>
         <div className="container container-md">
-          <h2 className="text-center">Your Next Steps</h2>
+          <h2 className="text-center">Your Path Forward</h2>
           
           <div className={styles.steps}>
             <div className={styles.step}>
               <div className={styles.stepNumber}>1</div>
               <div className={styles.stepContent}>
-                <h3>Join Our Private Community</h3>
+                <h3>Find Your Sacred Circle</h3>
                 <p>
-                  Connect with fellow participants, share your journey, and get support 
-                  in our exclusive Facebook group.
+                  Join fellow travelers in our warm, private community space where you can 
+                  share your heart, receive support, and witness beautiful transformation.
                 </p>
                 {/* 
                   INTEGRATION POINT: Facebook Group Link
@@ -53,7 +53,7 @@ export default function ThankYouPage() {
                   rel="noopener noreferrer"
                   className="button button-primary"
                 >
-                  Join the Facebook Group
+                  Join Our Circle
                 </a>
               </div>
             </div>
@@ -61,10 +61,10 @@ export default function ThankYouPage() {
             <div className={styles.step}>
               <div className={styles.stepNumber}>2</div>
               <div className={styles.stepContent}>
-                <h3>Add to Your Calendar</h3>
+                <h3>Honor This Time for Yourself</h3>
                 <p>
-                  Sessions begin <strong>Monday at 12:00 PM EST</strong> and run daily 
-                  for 5 days. Don't miss out — add the sessions to your calendar now.
+                  Our gatherings begin <strong>Monday at 12:00 PM EST</strong> and continue daily 
+                  for 5 precious days. Carve out this sacred time—you deserve it.
                 </p>
                 {/* 
                   INTEGRATION POINT: Calendar Integration
@@ -77,7 +77,7 @@ export default function ThankYouPage() {
                   You can use a service like AddEvent.com or create .ics files
                 */}
                 <button className="button button-secondary">
-                  Add to Calendar
+                  Save My Time
                 </button>
               </div>
             </div>
@@ -85,13 +85,13 @@ export default function ThankYouPage() {
             <div className={styles.step}>
               <div className={styles.stepNumber}>3</div>
               <div className={styles.stepContent}>
-                <h3>Access the Replay Hub</h3>
+                <h3>Your Replay Sanctuary</h3>
                 <p>
-                  Can't make it live? No problem. All sessions are recorded and 
-                  available immediately after they air.
+                  Life happens, we understand. Every gathering is lovingly recorded 
+                  so you can return whenever your soul needs the wisdom.
                 </p>
                 <Link href="/replay" className="button button-secondary">
-                  Go to Replay Hub
+                  Visit Replay Space
                 </Link>
               </div>
             </div>
@@ -101,25 +101,25 @@ export default function ThankYouPage() {
 
       <section className={styles.preparationSection}>
         <div className="container container-sm">
-          <h2 className="text-center">How to Prepare</h2>
+          <h2 className="text-center">Gently Preparing Your Heart</h2>
           
           <div className={styles.preparationCard}>
             <ul className={styles.preparationList}>
               <li>
-                <strong>Set aside time:</strong> Each session is approximately 60 minutes. 
-                Find a quiet space where you can focus without interruptions.
+                <strong>Create sacred space:</strong> Each gathering lasts about 60 minutes. 
+                Find a cozy, quiet sanctuary where you can be fully present with yourself.
               </li>
               <li>
-                <strong>Bring an open mind:</strong> Be ready to explore new perspectives 
-                and challenge old patterns of thinking.
+                <strong>Come with an open heart:</strong> Be gentle with yourself as you explore 
+                new perspectives and lovingly release patterns that no longer serve you.
               </li>
               <li>
-                <strong>Have a journal ready:</strong> You'll want to capture insights, 
-                ah-ha moments, and reflections throughout the challenge.
+                <strong>Keep a journal nearby:</strong> You'll want to capture the insights, 
+                tender realizations, and beautiful reflections that arise within you.
               </li>
               <li>
-                <strong>Stay committed:</strong> Transformation happens through consistent 
-                engagement. Show up each day ready to do the inner work.
+                <strong>Honor your commitment:</strong> True transformation unfolds through gentle, 
+                consistent presence. Show up each day as you are, ready to embrace your healing.
               </li>
             </ul>
           </div>
@@ -128,10 +128,10 @@ export default function ThankYouPage() {
 
       <section className={styles.supportSection}>
         <div className="container container-sm text-center">
-          <h2>Questions?</h2>
+          <h2>We're Here for You</h2>
           <p className={styles.supportText}>
-            If you have any questions or need assistance, don't hesitate to reach out. 
-            We're here to support you every step of the way.
+            Have a question or need gentle support? Please don't hesitate to reach out. 
+            We're honored to walk beside you every step of this journey.
           </p>
           {/* 
             INTEGRATION POINT: Support Contact

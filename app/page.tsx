@@ -7,11 +7,11 @@ export default function RegistrationPage() {
       <section className={styles.hero}>
         <div className="container container-md">
           <h1 className="text-center text-balance">
-            Discover Your Path to Emotional Freedom
+            Let's Discover Your Path to Emotional Freedom Together
           </h1>
           <p className={styles.subtitle}>
-            Join Dr. Paul Jenkins for a transformative 5-day experience that will help you 
-            break free from emotional patterns that hold you back and discover lasting peace.
+            Join Dr. Paul Jenkins for a gentle, transformative 5-day journey where you'll 
+            release emotional patterns that no longer serve you and find the lasting peace you deserve.
           </p>
         </div>
       </section>
@@ -19,10 +19,10 @@ export default function RegistrationPage() {
       <section className={styles.formSection}>
         <div className="container container-sm">
           <div className={styles.formCard}>
-            <h2 className={styles.formTitle}>Reserve Your Spot</h2>
+            <h2 className={styles.formTitle}>Save Your Space</h2>
             <p className={styles.formDescription}>
-              Enter your information below to join the challenge. You'll receive immediate 
-              access to the daily sessions and exclusive resources.
+              Share your information below to begin your journey. We'll send you everything 
+              you need to feel supported and prepared.
             </p>
 
             {/* 
@@ -65,12 +65,12 @@ export default function RegistrationPage() {
               </div>
 
               <button type="submit" className="button button-primary button-lg">
-                Join the Challenge
+                Yes, I'm Ready to Begin
               </button>
 
               <p className={styles.disclaimer}>
-                By registering, you agree to our <Link href="/privacy">Privacy Policy</Link> and <Link href="/terms">Terms of Use</Link>. 
-                We respect your privacy and will never share your information.
+                By joining, you agree to our <Link href="/privacy">Privacy Policy</Link> and <Link href="/terms">Terms of Use</Link>. 
+                Your privacy and trust are sacred to us—we'll never share your information.
               </p>
             </form>
           </div>
@@ -79,38 +79,38 @@ export default function RegistrationPage() {
 
       <section className={styles.benefitsSection}>
         <div className="container container-md">
-          <h2 className="text-center">What You'll Experience</h2>
+          <h2 className="text-center">What Awaits You</h2>
           
           <div className={styles.benefits}>
             <div className={styles.benefit}>
-              <h3>Daily Live Sessions</h3>
+              <h3>Daily Live Gatherings</h3>
               <p>
-                Join Dr. Paul Jenkins each day for powerful teachings and practical 
-                exercises designed to create lasting change.
+                Spend time with Dr. Paul Jenkins each day for heartfelt teachings and 
+                gentle exercises that create space for real transformation.
               </p>
             </div>
 
             <div className={styles.benefit}>
-              <h3>Proven Techniques</h3>
+              <h3>Time-Tested Wisdom</h3>
               <p>
-                Learn evidence-based methods that have helped thousands achieve 
-                emotional freedom and inner peace.
+                Discover compassionate methods that have guided thousands toward 
+                emotional freedom and the peace they've been seeking.
               </p>
             </div>
 
             <div className={styles.benefit}>
-              <h3>Supportive Community</h3>
+              <h3>A Circle of Support</h3>
               <p>
-                Connect with others on the same journey in our private Facebook group 
-                and share your breakthroughs.
+                Find connection with kindred spirits walking this same path, sharing 
+                their hearts and breakthroughs in a safe, nurturing space.
               </p>
             </div>
 
             <div className={styles.benefit}>
               <h3>Session Recordings</h3>
               <p>
-                Can't attend live? All sessions are recorded and available to 
-                review during the challenge period.
+                Life happens. Every session is lovingly recorded so you can revisit 
+                the wisdom whenever your heart needs it.
               </p>
             </div>
           </div>
@@ -119,22 +119,22 @@ export default function RegistrationPage() {
 
       <section className={styles.nextStepsSection}>
         <div className="container container-md">
-          <h2 className="text-center">What Happens Next</h2>
+          <h2 className="text-center">Your Journey Begins Here</h2>
           <div className={styles.nextSteps}>
             <div className={styles.nextStep}>
               <div className={styles.stepNumber}>1</div>
-              <h3>Join the Community</h3>
-              <p>Connect with fellow participants in our private Facebook group.</p>
+              <h3>Find Your Circle</h3>
+              <p>Connect with fellow souls in our warm, private community space.</p>
             </div>
             <div className={styles.nextStep}>
               <div className={styles.stepNumber}>2</div>
-              <h3>Mark Your Calendar</h3>
-              <p>Add the live sessions to your calendar so you don't miss a moment.</p>
+              <h3>Make Space & Time</h3>
+              <p>Carve out this sacred time for yourself—you deserve this journey.</p>
             </div>
             <div className={styles.nextStep}>
               <div className={styles.stepNumber}>3</div>
-              <h3>Show Up Live</h3>
-              <p>Join us each day for the live experience and real-time breakthroughs.</p>
+              <h3>Show Up As You Are</h3>
+              <p>Join us each day, exactly as you are, ready to embrace transformation.</p>
             </div>
           </div>
         </div>
@@ -142,13 +142,13 @@ export default function RegistrationPage() {
 
       <section className={styles.ctaSection}>
         <div className="container container-sm text-center">
-          <h2>Ready to Begin?</h2>
+          <h2>Your Heart Knows You're Ready</h2>
           <p className={styles.ctaText}>
-            Take the first step toward emotional freedom today. Join thousands who have 
-            transformed their lives through this powerful challenge.
+            Take this loving step toward the emotional freedom you deserve. Join thousands 
+            of beautiful souls who have transformed their lives through this healing journey.
           </p>
           <a href="#" className="button button-primary button-lg">
-            Register Now
+            Begin My Journey
           </a>
         </div>
       </section>

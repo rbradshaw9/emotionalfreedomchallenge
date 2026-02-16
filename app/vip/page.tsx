@@ -7,11 +7,11 @@ export default function VIPPage() {
       <section className={styles.hero}>
         <div className="container container-md">
           <h1 className="text-center text-balance">
-            Deepen Your Experience with VIP Access
+            Go Deeper with Extra Love & Support
           </h1>
           <p className={styles.subtitle}>
-            Get personalized support and exclusive resources to maximize your 
-            transformation during the challenge.
+            Wrap yourself in personalized care and gentle guidance to nurture 
+            a more profound transformation during this sacred journey.
           </p>
         </div>
       </section>
@@ -19,62 +19,62 @@ export default function VIPPage() {
       <section className={styles.offerSection}>
         <div className="container container-sm">
           <div className={styles.offerCard}>
-            <div className={styles.badge}>Limited Availability</div>
+            <div className={styles.badge}>Sacred Space Reserved</div>
             
-            <h2>VIP Challenge Experience</h2>
+            <h2>A More Intimate Journey</h2>
             <p className={styles.offerDescription}>
-              While the core challenge provides tremendous value, our VIP experience 
-              offers additional support and resources to help you go deeper and get 
-              personalized guidance from Dr. Paul Jenkins.
+              While the core experience offers beautiful transformation, this intimate VIP 
+              circle provides deeper connection, personalized guidance, and the gentle support 
+              to help you truly flourish under Dr. Paul Jenkins' caring attention.
             </p>
 
             <div className={styles.priceSection}>
               <div className={styles.price}>
                 <span className={styles.priceAmount}>$497</span>
-                <span className={styles.priceLabel}>One-time investment</span>
+                <span className={styles.priceLabel}>A heartfelt investment in you</span>
               </div>
             </div>
 
             <div className={styles.features}>
-              <h3>What's Included:</h3>
+              <h3>With Loving Care, You'll Receive:</h3>
               
               <div className={styles.feature}>
                 <div className={styles.featureIcon}>✓</div>
                 <div className={styles.featureContent}>
-                  <h4>Live Q&A Sessions</h4>
-                  <p>Join exclusive live sessions with Dr. Jenkins to get your specific questions answered in real-time.</p>
+                  <h4>Intimate Q&A Circles</h4>
+                  <p>Join gentle, intimate gatherings with Dr. Jenkins where your unique questions and needs are heard and honored in real-time.</p>
                 </div>
               </div>
 
               <div className={styles.feature}>
                 <div className={styles.featureIcon}>✓</div>
                 <div className={styles.featureContent}>
-                  <h4>VIP-Only Recordings</h4>
-                  <p>Access extended teachings and bonus content not available to standard participants.</p>
+                  <h4>Extended Wisdom Teachings</h4>
+                  <p>Receive deeper teachings and heartfelt bonus content created especially for your transformative journey.</p>
                 </div>
               </div>
 
               <div className={styles.feature}>
                 <div className={styles.featureIcon}>✓</div>
                 <div className={styles.featureContent}>
-                  <h4>Private Community</h4>
-                  <p>Connect with a smaller, more intimate group of committed participants focused on deep transformation.</p>
+                  <h4>Your Sacred Circle</h4>
+                  <p>Find deep connection in a smaller, more intimate space with kindred souls committed to profound healing.</p>
                 </div>
               </div>
 
               <div className={styles.feature}>
                 <div className={styles.featureIcon}>✓</div>
                 <div className={styles.featureContent}>
-                  <h4>Personalized Resources</h4>
-                  <p>Receive worksheets, exercises, and tools tailored to accelerate your emotional freedom journey.</p>
+                  <h4>Personalized Tools & Care</h4>
+                  <p>Receive gentle worksheets, nurturing exercises, and loving tools created to support your unique path to freedom.</p>
                 </div>
               </div>
 
               <div className={styles.feature}>
                 <div className={styles.featureIcon}>✓</div>
                 <div className={styles.featureContent}>
-                  <h4>Priority Support</h4>
-                  <p>Get faster responses to your questions and direct access to Dr. Jenkins' team.</p>
+                  <h4>Personal Attention</h4>
+                  <p>Feel supported with caring responses to your questions and direct access to Dr. Jenkins' compassionate team.</p>
                 </div>
               </div>
             </div>
@@ -88,19 +88,19 @@ export default function VIPPage() {
               After successful payment, redirect to /thank-you?vip=true
             */}
             <button className="button button-accent button-lg" style={{ width: '100%', marginBottom: 'var(--space-4)' }}>
-              Upgrade to VIP Access
+              Yes, I Want This Deeper Support
             </button>
 
             <p className={styles.guarantee}>
-              30-Day Money-Back Guarantee — If you're not completely satisfied, 
-              we'll refund your investment, no questions asked.
+              30-Day Peace of Mind Promise — If this doesn't feel right for your heart, 
+              we'll lovingly refund your investment, no questions asked.
             </p>
           </div>
 
           <div className={styles.secondaryPath}>
-            <p>Not ready to upgrade?</p>
+            <p>Taking your time? That's perfectly okay.</p>
             <Link href="/thank-you" className={styles.noThanksLink}>
-              Continue with standard access
+              Continue with the foundational experience
             </Link>
           </div>
         </div>
@@ -108,25 +108,25 @@ export default function VIPPage() {
 
       <section className={styles.howItWorksSection}>
         <div className="container container-md">
-          <h2 className="text-center">How It Works</h2>
+          <h2 className="text-center">How This Unfolds</h2>
           
           <div className={styles.steps}>
             <div className={styles.step}>
               <div className={styles.stepNumber}>1</div>
-              <h3>Upgrade Now</h3>
-              <p>Click the upgrade button and complete your secure payment to unlock VIP access immediately.</p>
+              <h3>Say Yes to Yourself</h3>
+              <p>When you're ready, simply click above—your sacred VIP space will be waiting for you immediately.</p>
             </div>
 
             <div className={styles.step}>
               <div className={styles.stepNumber}>2</div>
-              <h3>Get Your Welcome Email</h3>
-              <p>You'll receive instant access details including your private community link and VIP resources.</p>
+              <h3>Feel Welcomed</h3>
+              <p>You'll receive a warm welcome with everything you need, including your private circle invitation and loving resources.</p>
             </div>
 
             <div className={styles.step}>
               <div className={styles.stepNumber}>3</div>
-              <h3>Join & Engage</h3>
-              <p>Dive into the exclusive content, mark your calendar for live Q&A sessions, and connect with your VIP cohort.</p>
+              <h3>Settle In & Connect</h3>
+              <p>Make yourself at home in the exclusive space, save the intimate gathering times, and meet your fellow travelers.</p>
             </div>
           </div>
         </div>
@@ -134,32 +134,32 @@ export default function VIPPage() {
 
       <section className={styles.faqSection}>
         <div className="container container-md">
-          <h2 className="text-center">Frequently Asked Questions</h2>
+          <h2 className="text-center">Questions? We're Here for You</h2>
           
           <div className={styles.faqs}>
             <div className={styles.faq}>
-              <h3>When do the VIP Q&A sessions take place?</h3>
-              <p>Live Q&A sessions are scheduled throughout the challenge. Exact dates and times will be shared in your VIP welcome email and the private community.</p>
+              <h3>When do the intimate Q&A circles happen?</h3>
+              <p>Our live gatherings are woven throughout the journey. You'll receive the sacred dates and times in your welcome message and within your private circle.</p>
             </div>
 
             <div className={styles.faq}>
-              <h3>What if I can't attend the live sessions?</h3>
-              <p>All live sessions are recorded and available to VIP members. You can watch replays at your convenience and submit questions in advance.</p>
+              <h3>What if life gets in the way of attending live?</h3>
+              <p>We understand—life happens. Every gathering is lovingly recorded for you to revisit whenever your heart needs it. You can also share questions beforehand.</p>
             </div>
 
             <div className={styles.faq}>
-              <h3>How long do I have access to the VIP materials?</h3>
-              <p>Your VIP access includes lifetime access to all recordings, resources, and bonus materials. The private community remains active as long as the program runs.</p>
+              <h3>How long can I hold onto these treasures?</h3>
+              <p>Forever. You'll have lifetime access to all recordings, resources, and materials. Your private circle remains a safe haven throughout the program.</p>
             </div>
 
             <div className={styles.faq}>
-              <h3>Is the 30-day guarantee really no questions asked?</h3>
-              <p>Absolutely. If you're not satisfied with your VIP experience for any reason within 30 days, simply contact our support team for a full refund.</p>
+              <h3>Is your promise truly without conditions?</h3>
+              <p>Yes, from the heart. If this doesn't feel right for you within 30 days, simply reach out and we'll honor a full refund—no explanation needed.</p>
             </div>
 
             <div className={styles.faq}>
-              <h3>Can I upgrade to VIP after the challenge starts?</h3>
-              <p>VIP access is limited and may close once capacity is reached. We recommend upgrading now to secure your spot and ensure you don't miss any exclusive content.</p>
+              <h3>Can I join this intimate circle after we begin?</h3>
+              <p>Our VIP circle is intentionally small and intimate. We gently encourage joining now to secure your space and receive all the exclusive gifts from day one.</p>
             </div>
           </div>
         </div>
@@ -167,29 +167,29 @@ export default function VIPPage() {
 
       <section className={styles.testimonialSection}>
         <div className="container container-md">
-          <h2 className="text-center">What VIP Members Are Saying</h2>
+          <h2 className="text-center">Hearts Transformed</h2>
           
           <div className={styles.testimonials}>
             <div className={styles.testimonial}>
               <p className={styles.testimonialQuote}>
-                "The VIP Q&A sessions were invaluable. Being able to ask Dr. Jenkins 
-                about my specific situation made all the difference in my breakthrough."
+                "The intimate Q&A circles were such a gift. Having Dr. Jenkins understand 
+                my unique journey and offer personal guidance—that's when everything shifted for me."
               </p>
               <p className={styles.testimonialAuthor}>— Sarah M.</p>
             </div>
 
             <div className={styles.testimonial}>
               <p className={styles.testimonialQuote}>
-                "The intimate VIP community provided the support I needed. Connecting 
-                with others on a deeper level accelerated my transformation."
+                "Finding my sacred circle of kindred souls was everything. The deeper connections 
+                and authentic vulnerability we shared—it accelerated my healing in ways I never imagined."
               </p>
               <p className={styles.testimonialAuthor}>— Michael R.</p>
             </div>
 
             <div className={styles.testimonial}>
               <p className={styles.testimonialQuote}>
-                "Worth every penny. The bonus content and personalized resources gave 
-                me tools I still use daily, months after the challenge ended."
+                "A beautiful investment in myself. The loving resources and personalized tools 
+                continue to support me daily, months later—they've become part of my soul care practice."
               </p>
               <p className={styles.testimonialAuthor}>— Jennifer L.</p>
             </div>
