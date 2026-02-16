@@ -19,37 +19,241 @@
   color: var(--color-gray-600);
   line-height: var(--leading-relaxed);
   text-align: center;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
-/* Framing Section */
-.framingSection {
-  padding: var(--space-16) 0;
+/* Content Section */
+.contentSection {
+  padding: var(--space-20) 0;
   background-color: var(--color-white);
 }
 
-.framingCard {
+.infoCard {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.infoCard h2 {
+  font-size: var(--text-3xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-6);
+  text-align: center;
+}
+
+.infoCard p {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  margin-bottom: 0;
+  color: var(--color-gray-600);
+  text-align: center;
+}
+
+/* Invitation Section */
+.invitationSection {
+  padding: var(--space-20) 0;
+  background: var(--gradient-cool);
+  border-top: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.invitationSection h2 {
+  margin-bottom: var(--space-12);
+  color: var(--color-gray-800);
+}
+
+.reasonsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-8);
+}
+
+.reasonCard {
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.reasonCard:hover {
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.reasonCard h3 {
+  font-size: var(--text-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.reasonCard p {
+  margin-bottom: 0;
+  color: var(--color-gray-600);
+  line-height: var(--leading-relaxed);
+}
+
+/* Fit Section */
+.fitSection {
+  padding: var(--space-20) 0;
+  background-color: var(--color-white);
+}
+
+.fitCard {
   max-width: 640px;
   margin: 0 auto;
   text-align: center;
 }
 
-.framingCard h2 {
+.fitCard h2 {
   font-size: var(--text-2xl);
   color: var(--color-gray-800);
   margin-bottom: var(--space-6);
 }
 
-.framingCard p {
-  font-size: var(--text-base);
+.fitCard p {
+  font-size: var(--text-lg);
   line-height: var(--leading-relaxed);
   color: var(--color-gray-600);
-  margin-bottom: var(--space-4);
+  margin-bottom: 0;
 }
 
-.framingCard p:last-child {
+/* How It Works Section */
+.howItWorksSection {
+  padding: var(--space-20) 0;
+  background: var(--gradient-soft);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.howItWorksSection h2 {
+  margin-bottom: var(--space-12);
+  color: var(--color-gray-800);
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-8);
+}
+
+.stepCard {
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.stepCard:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.stepNumber {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  margin: 0 auto var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.stepCard h3 {
+  font-size: var(--text-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.stepCard p {
   margin-bottom: 0;
+  color: var(--color-gray-600);
+  line-height: var(--leading-relaxed);
+}
+
+/* Compensation Section */
+.compensationSection {
+  padding: var(--space-20) 0;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.compensationCard {
+  background-color: var(--color-gray-50);
+  border: 1.5px solid var(--color-primary-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+  box-shadow: var(--shadow-md);
+}
+
+.compensationCard h2 {
+  color: var(--color-gray-800);
+  margin-bottom: var(--space-6);
+}
+
+.compensationCard p {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-gray-600);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--space-5);
+}
+
+.compensationCard p:last-child {
+  margin-bottom: 0;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: var(--space-20) 0;
+  background: var(--gradient-cool);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.ctaSection h2 {
+  margin-bottom: var(--space-5);
+  color: var(--color-gray-800);
+}
+
+.ctaText {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-8);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--color-gray-600);
+  line-height: var(--leading-relaxed);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-16) 0 var(--space-12);
+  }
+
+  .hero h1 {
+    font-size: var(--text-4xl);
+  }
+
+  .subtitle {
+    font-size: var(--text-lg);
+  }
+
+  .reasonsGrid,
+  .stepsGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Form Section */
