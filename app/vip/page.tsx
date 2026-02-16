@@ -16,6 +16,13 @@ export default function VIPPage() {
         </div>
       </section>
 
+      {/* Subtle visual separator */}
+      <div className="wave-divider">
+        <svg viewBox="0 0 1200 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 24C300 8 600 40 900 24C1050 14 1125 32 1200 24V48H0V24Z" fill="currentColor" fillOpacity="0.08" style={{color: 'var(--color-gray-400)'}} />
+        </svg>
+      </div>
+
       <section className={styles.offerSection}>
         <div className="container container-sm">
           <div className={styles.offerCard}>
