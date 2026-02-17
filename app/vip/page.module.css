@@ -91,6 +91,17 @@
   color: var(--color-gray-600);
 }
 
+.valueLine {
+  font-size: var(--text-lg);
+  color: var(--color-gray-700);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+.valueLine strong {
+  color: var(--color-primary);
+}
+
 .features {
   margin-bottom: var(--space-6);
 }
