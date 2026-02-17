@@ -84,7 +84,7 @@ export default function RegistrationPage() {
         </div>
       </section>
 
-      <section className={styles.contentSection}>
+      <section className={`${styles.contentSection} ${styles.clarificationSection}`}>
         <div className="container container-content">
           <h2>A Simple Clarification</h2>
           <p>This is a free educational experience.</p>
@@ -144,7 +144,7 @@ export default function RegistrationPage() {
         </div>
       </section>
 
-      <section className={styles.contentSection}>
+      <section className={`${styles.contentSection} ${styles.optionalAccessSection}`}>
         <div className="container container-content">
           <h2>Optional Additional Access</h2>
           <p>
