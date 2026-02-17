@@ -7,7 +7,7 @@ export default function RegistrationPage() {
       <section className={styles.hero}>
         <div className="container container-md">
           <h1 className="text-center text-balance">
-            5 Days to Emotional Ownership
+            The Emotional Freedom Challenge
           </h1>
           <p className={styles.subtitle}>
             A free, live 5-day experience with Dr. Paul Jenkins
