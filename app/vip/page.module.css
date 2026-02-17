@@ -62,6 +62,90 @@
   margin-bottom: 0;
 }
 
+/* Quick Value Section - Early CTA */
+.quickValueSection {
+  padding: var(--space-16) 0;
+  background-color: var(--color-gray-50);
+}
+
+.quickValueCard {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-10);
+  box-shadow: 0 10px 40px -10px rgba(29, 120, 116, 0.15);
+  position: relative;
+  text-align: center;
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  padding: var(--space-2) var(--space-6);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.quickValueCard h2 {
+  font-size: var(--text-3xl);
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-6);
+  margin-top: var(--space-2);
+}
+
+.quickPrice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.strikethrough {
+  font-size: var(--text-lg);
+  color: var(--color-gray-500);
+  text-decoration: line-through;
+}
+
+.mainPrice {
+  font-size: var(--text-6xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.priceLabel {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+}
+
+.quickBenefits {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  text-align: left;
+  max-width: 400px;
+  margin: 0 auto var(--space-4);
+}
+
+.quickBenefit {
+  font-size: var(--text-base);
+  color: var(--color-gray-700);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
 .patternSection {
   padding: var(--space-20) 0;
   background: linear-gradient(135deg, #F9FAFB 0%, #F3F6F9 100%);
@@ -150,12 +234,19 @@
   padding: var(--space-8);
   box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.08);
   transition: all 0.2s ease;
+  text-align: center;
 }
 
 .featureCard:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 30px -6px rgba(29, 120, 116, 0.15);
   border-color: var(--color-primary);
+}
+
+.featureIcon {
+  font-size: var(--text-5xl);
+  margin-bottom: var(--space-4);
+  display: block;
 }
 
 .featureCard h3 {
@@ -170,6 +261,7 @@
   color: var(--color-gray-700);
   line-height: 1.7;
   margin-bottom: var(--space-4);
+  text-align: left;
 }
 
 .featureCard p:last-child {
@@ -209,70 +301,181 @@
 
 .decisionSection {
   padding: var(--space-20) 0;
-  background: linear-gradient(135deg, #F9FAFB 0%, #F3F6F9 100%);
+  background-color: var(--color-white);
 }
 
 .decisionSection h2 {
   margin-bottom: var(--space-8);
+  text-align: center;
 }
 
-.decisionSection p {
-  font-size: var(--text-lg);
-  color: var(--color-gray-700);
-  line-height: 1.8;
-  margin-bottom: var(--space-8);
-  max-width: 680px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.decisionSection p:last-child {
-  margin-bottom: 0;
-}
-
-.decisionSection ul {
+.decisionList {
   margin: var(--space-8) 0;
-  padding-left: var(--space-8);
-  max-width: 680px;
+  padding-left: 0;
+  max-width: 640px;
   margin-left: auto;
   margin-right: auto;
+  list-style: none;
 }
 
-.decisionSection li {
+.decisionList li {
   font-size: var(--text-lg);
   color: var(--color-gray-700);
   line-height: 1.8;
   margin-bottom: var(--space-5);
+  padding-left: var(--space-8);
+  position: relative;
 }
 
-.decisionSection li:last-child {
+.decisionList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: var(--text-xl);
+}
+
+.decisionList li:last-child {
   margin-bottom: 0;
 }
 
-.ctaSection {
+.decisionNote {
+  font-size: var(--text-base);
+  color: var(--color-gray-600);
+  line-height: 1.7;
+  margin-top: var(--space-8);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Risk Reversal / FAQ Section */
+.riskReversalSection {
+  padding: var(--space-20) 0;
+  background: linear-gradient(135deg, #F9FAFB 0%, #F3F6F9 100%);
+}
+
+.riskCard {
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.08);
+}
+
+.riskCard h2 {
+  font-size: var(--text-2xl);
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.detailItem {
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.detailItem:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.detailItem strong {
+  display: block;
+  font-size: var(--text-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+  font-weight: 600;
+}
+
+.detailItem p {
+  font-size: var(--text-base);
+  color: var(--color-gray-700);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Final CTA Section */
+.finalCtaSection {
   padding: var(--space-20) 0;
   background-color: var(--color-white);
 }
 
-.ctaLabel {
-  text-align: center;
-  font-size: var(--text-2xl);
-  font-weight: 600;
-  color: var(--color-gray-900);
-  margin-bottom: var(--space-2);
+.finalCtaCard {
+  background: linear-gradient(135deg, #fafbfc 0%, #f3f6f9 100%);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-10);
+  box-shadow: 0 10px 40px -10px rgba(29, 120, 116, 0.15);
 }
 
-.ctaSubtext {
-  text-align: center;
-  font-size: var(--text-base);
-  color: var(--color-gray-600);
+.finalCtaCard h2 {
+  font-size: var(--text-3xl);
+  color: var(--color-gray-900);
   margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.finalPricing {
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.pricingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) 0;
+  font-size: var(--text-lg);
+  color: var(--color-gray-700);
+}
+
+.free {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.vipPrice {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: var(--text-xl);
+}
+
+.pricingSeparator {
+  height: 1px;
+  background-color: var(--color-gray-300);
+  margin: var(--space-4) 0;
+}
+
+.pricingTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-4);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-gray-900);
+}
+
+.totalAmount {
+  color: var(--color-primary);
+  font-size: var(--text-3xl);
+  font-weight: 700;
 }
 
 .secondaryPath {
   text-align: center;
   padding-top: var(--space-6);
   border-top: 1px solid var(--color-gray-200);
+  margin-top: var(--space-4);
 }
 
 .orText {
@@ -285,7 +488,7 @@
   display: inline-block;
   color: var(--color-gray-600);
   text-decoration: none;
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   transition: color 0.2s ease;
   padding: var(--space-3) var(--space-6);
   border: 1.5px solid var(--color-gray-300);
@@ -341,19 +544,35 @@
   .confirmationSection p,
   .patternSection p,
   .valueSection p,
-  .decisionSection p,
+  .decisionNote,
   .closingSection p {
     font-size: var(--text-base);
     line-height: 1.75;
   }
 
+  .quickValueSection,
   .patternSection,
   .valueSection,
   .featuresSection,
-  .pricingSection,
   .decisionSection,
+  .riskReversalSection,
+  .finalCtaSection,
   .ctaSection {
     padding: var(--space-16) 0;
+  }
+
+  .quickValueCard,
+  .finalCtaCard {
+    padding: var(--space-8);
+  }
+
+  .quickValueCard h2,
+  .finalCtaCard h2 {
+    font-size: var(--text-2xl);
+  }
+
+  .mainPrice {
+    font-size: var(--text-5xl);
   }
 
   .featureCards {
@@ -365,11 +584,23 @@
     padding: var(--space-6);
   }
 
+  .featureIcon {
+    font-size: var(--text-4xl);
+  }
+
   .ctaLabel {
     font-size: var(--text-xl);
   }
 
   .noThanksLink {
+    font-size: var(--text-base);
+  }
+
+  .decisionList li {
+    font-size: var(--text-base);
+  }
+
+  .detailItem strong {
     font-size: var(--text-base);
   }
 
@@ -392,11 +623,13 @@
   }
 
   .confirmationSection,
+  .quickValueSection,
   .patternSection,
   .valueSection,
   .featuresSection,
-  .pricingSection,
   .decisionSection,
+  .riskReversalSection,
+  .finalCtaSection,
   .ctaSection {
     padding: var(--space-12) 0;
   }
@@ -404,8 +637,20 @@
   .confirmationSection p,
   .patternSection p,
   .valueSection p,
-  .decisionSection p,
+  .decisionNote,
   .closingSection p {
+    font-size: var(--text-sm);
+  }
+
+  .quickValueCard h2 {
+    font-size: var(--text-xl);
+  }
+
+  .mainPrice {
+    font-size: var(--text-4xl);
+  }
+
+  .quickBenefit {
     font-size: var(--text-sm);
   }
 
@@ -413,8 +658,32 @@
     font-size: var(--text-lg);
   }
 
-  .pricingSection p {
+  .featureIcon {
+    font-size: var(--text-3xl);
+  }
+
+  .decisionList li {
+    font-size: var(--text-sm);
+  }
+
+  .detailItem strong {
     font-size: var(--text-base);
+  }
+
+  .detailItem p {
+    font-size: var(--text-sm);
+  }
+
+  .finalCtaCard h2 {
+    font-size: var(--text-xl);
+  }
+
+  .pricingRow {
+    font-size: var(--text-base);
+  }
+
+  .totalAmount {
+    font-size: var(--text-2xl);
   }
 
   .ctaLabel {
