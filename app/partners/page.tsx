@@ -138,7 +138,7 @@ export default function PartnersPage() {
 
       <section className={styles.section}>
         <div className="container container-content">
-          <h2>Partner Compensation (Optional)</h2>
+          <h2>Partner Compensation</h2>
           <p>
             Our priority with this challenge is impact and service.
           </p>
