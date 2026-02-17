@@ -30,7 +30,7 @@
   background-color: var(--color-white);
   border: 2px solid var(--color-accent);
   border-radius: var(--radius-xl);
-  padding: var(--space-10);
+  padding: var(--space-8);
   box-shadow: var(--shadow-lg);
   position: relative;
 }
@@ -64,8 +64,8 @@
 
 .priceSection {
   text-align: center;
-  margin-bottom: var(--space-10);
-  padding: var(--space-6) 0;
+  margin-bottom: var(--space-8);
+  padding: var(--space-5) 0;
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
@@ -89,7 +89,7 @@
 }
 
 .features {
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 
 .features h3 {
@@ -100,7 +100,7 @@
 .feature {
   display: flex;
   gap: var(--space-4);
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-5);
   align-items: flex-start;
 }
 
@@ -164,12 +164,12 @@
 }
 
 .testimonialSection {
-  padding: var(--space-20) 0;
+  padding: var(--space-16) 0;
   background-color: var(--color-gray-50);
 }
 
 .testimonialSection h2 {
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-10);
 }
 
 .testimonials {
@@ -201,12 +201,12 @@
 }
 
 .howItWorksSection {
-  padding: var(--space-20) 0;
+  padding: var(--space-16) 0;
   background: var(--gradient-cool);
 }
 
 .howItWorksSection h2 {
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-10);
 }
 
 .steps {
@@ -258,12 +258,12 @@
 }
 
 .faqSection {
-  padding: var(--space-20) 0;
+  padding: var(--space-16) 0;
   background-color: var(--color-white);
 }
 
 .faqSection h2 {
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-10);
 }
 
 .faqs {
@@ -336,6 +336,10 @@
     font-size: var(--text-lg);
   }
   
+  .testimonialSection {
+    padding: var(--space-12) 0;
+  }
+
   .testimonials {
     grid-template-columns: 1fr;
     gap: var(--space-6);
@@ -345,6 +349,10 @@
     padding: var(--space-6) var(--space-5);
   }
   
+  .howItWorksSection {
+    padding: var(--space-12) 0;
+  }
+
   .steps {
     grid-template-columns: 1fr;
     gap: var(--space-8);
@@ -354,8 +362,12 @@
     padding: var(--space-6) var(--space-5);
   }
   
+  .faqSection {
+    padding: var(--space-12) 0;
+  }
+
   .ctaSection {
-    padding: var(--space-16) 0;
+    padding: var(--space-12) 0;
   }
 }
 

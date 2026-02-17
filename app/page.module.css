@@ -28,14 +28,14 @@
 }
 
 .formSection {
-  padding: var(--space-16) 0;
+  padding: var(--space-12) 0;
 }
 
 .formCard {
   background-color: var(--color-white);
   border: 1px solid var(--color-gray-200);
   border-radius: var(--radius-xl);
-  padding: var(--space-10);
+  padding: var(--space-8);
   box-shadow: var(--shadow-lg);
   position: relative;
 }
@@ -93,7 +93,7 @@
 }
 
 .benefitsSection h2 {
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-10);
 }
 
 .benefits {
@@ -122,7 +122,7 @@
 }
 
 .nextStepsSection h2 {
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-10);
 }
 
 .nextSteps {
@@ -181,7 +181,7 @@
 }
 
 .ctaSection {
-  padding: var(--space-20) 0;
+  padding: var(--space-16) 0;
 }
 
 .ctaSection h2 {
@@ -190,7 +190,7 @@
 
 .ctaText {
   font-size: var(--text-lg);
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -212,11 +212,11 @@
   }
   
   .formSection {
-    padding: var(--space-16) 0;
+    padding: var(--space-12) 0;
   }
   
   .formCard {
-    padding: var(--space-8) var(--space-5);
+    padding: var(--space-6) var(--space-5);
   }
   
   .formTitle {
@@ -254,11 +254,11 @@
   }
   
   .benefitsSection {
-    padding: var(--space-16) 0;
+    padding: var(--space-12) 0;
   }
   
   .ctaSection {
-    padding: var(--space-16) 0;
+    padding: var(--space-12) 0;
   }
 }
 
