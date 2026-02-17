@@ -23,16 +23,16 @@ export default function PartnerRegister() {
         <div className="container container-content">
           <h2>What This Registration Includes</h2>
           <p>
-            To properly track referrals and issue commission payments, we need to collect some standard partner information.
+            To ensure accurate referral tracking and timely commission payments, we ask for detailed partner information. This is standard for any professional referral program.
           </p>
           <p>
-            This includes contact details, payment information, and basic account credentials used by our referral system.
+            You'll provide contact details, PayPal payment information, and account credentials for secure access to your partner dashboard.
           </p>
           <p>
-            We understand this is more detailed than a typical sign-up. This information is required for accurate tracking and compliance, and is handled securely.
+            We know this requires more detail than a typical signup. All information is encrypted, stored securely, and used solely for partnership administration and tax compliance.
           </p>
           <p className={styles.reassurance}>
-            Non-U.S. partners may leave the SSN/TIN field blank.
+            Your privacy matters to us. We never share partner information with third parties.
           </p>
         </div>
       </section>
@@ -44,13 +44,13 @@ export default function PartnerRegister() {
             Once you complete this registration:
           </p>
           <ul>
-            <li>You'll be officially registered as a referral partner</li>
-            <li>We'll follow up with your unique referral link</li>
-            <li>You'll receive ready-to-use email and social copy</li>
-            <li>There is no obligation to promote</li>
+            <li><strong>Immediate confirmation</strong> — You'll be registered as an official referral partner</li>
+            <li><strong>Within 1 business day</strong> — We'll send your unique referral link</li>
+            <li><strong>Partner resources</strong> — You'll receive ready-to-share email and social copy</li>
+            <li><strong>No pressure</strong> — Share when and how it feels right for your audience</li>
           </ul>
           <p>
-            If you have any questions, our team will be happy to help.
+            Questions? Our team is here to support you every step of the way.
           </p>
         </div>
       </section>
@@ -105,6 +105,7 @@ export default function PartnerRegister() {
               <div className="infusion-field">
                 <label htmlFor="inf_custom_PayPalEmail">PayPal Email *</label>
                 <input id="inf_custom_PayPalEmail" name="inf_custom_PayPalEmail" placeholder="PayPal Email *" type="text" />
+                <div className="field-helper">This is where we'll send your commission payments.</div>
               </div>
               
               <div className="section-title">
@@ -114,19 +115,13 @@ export default function PartnerRegister() {
               <div className="infusion-field">
                 <label htmlFor="inf_field_SSN">SSN/TIN</label>
                 <input id="inf_field_SSN" name="inf_field_SSN" placeholder="SSN/TIN" type="text" />
-              </div>
-              
-              <div className="info-note">
-                <div>
-                  <i>
-                    <span>We required your SSN/TIN for proper tax documentation. If you live outside the US, you can leave this blank.</span>
-                  </i>
-                </div>
+                <div className="field-helper">Required for U.S. tax compliance. Leave blank if you're outside the U.S.</div>
               </div>
               
               <div className="infusion-field">
                 <label htmlFor="inf_other_Username">Username *</label>
                 <input id="inf_other_Username" name="inf_other_Username" placeholder="Username *" type="text" />
+                <div className="field-helper">Choose a username you'll remember for your partner dashboard.</div>
               </div>
               
               <div className="infusion-field">
@@ -173,7 +168,7 @@ export default function PartnerRegister() {
               </div>
               
               <div className="infusion-submit">
-                <button className="infusion-recaptcha" id="recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab" type="submit">Complete Partner Registration</button>
+                <button className="infusion-recaptcha" id="recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab" type="submit">Finish Registration & Get Referral Link</button>
               </div>
               
               <input type="text" name="inf-sbt" style={{ display: 'none' }} />

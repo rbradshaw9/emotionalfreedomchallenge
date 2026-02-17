@@ -80,8 +80,13 @@
 .nextStepsSection li {
   font-size: var(--text-base);
   line-height: 1.75;
-  margin-bottom: var(--space-4);
-  color: var(--color-gray-600);
+  margin-bottom: var(--space-5);
+  color: var(--color-gray-700);
+}
+
+.nextStepsSection li strong {
+  color: var(--color-primary);
+  font-weight: var(--font-semibold);
 }
 
 .nextStepsSection li:last-child {
@@ -217,6 +222,16 @@
   display: block;
   line-height: 1.4;
   font-weight: var(--font-medium);
+}
+
+/* Helper text styling */
+.formWrapper :global(.field-helper) {
+  color: var(--color-gray-500);
+  font-size: var(--text-sm);
+  margin-top: var(--space-2);
+  display: block;
+  line-height: 1.5;
+  font-style: italic;
 }
 
 .formWrapper :global(.infusion-field textarea) {
