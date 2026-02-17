@@ -46,10 +46,12 @@ export default function PartnerKitPage() {
     }
   };
 
-  // Promotion content with referral links
-  const getEmailOption1 = () => `Subject: A free resource I think you'll appreciate
-
-I wanted to share a free resource that I genuinely believe will be helpful for many of you.
+  // Email Option 1 - Separated Components
+  const getEmailOption1Subject = () => `A free resource I think you'll appreciate`;
+  
+  const getEmailOption1Preview = () => `A calm, practical 5-day experience focused on emotional ownership and intentional response.`;
+  
+  const getEmailOption1Body = () => `I wanted to share a free resource that I genuinely believe will be helpful for many of you.
 
 Dr. Paul Jenkins is hosting a short, free 5-day experience called The Emotional Freedom Challenge.
 
@@ -65,9 +67,12 @@ I thought it was worth sharing as a resource.
 
 — [Your Name]`;
 
-  const getEmailOption2 = () => `Subject: Free 5-day experience on emotional ownership
-
-I want to invite you to a free 5-day experience led by Dr. Paul Jenkins called The Emotional Freedom Challenge.
+  // Email Option 2 - Separated Components
+  const getEmailOption2Subject = () => `Free 5-day experience on emotional ownership`;
+  
+  const getEmailOption2Preview = () => `A free 5-day experience with Dr. Paul Jenkins on emotional ownership and choice.`;
+  
+  const getEmailOption2Body = () => `I want to invite you to a free 5-day experience led by Dr. Paul Jenkins called The Emotional Freedom Challenge.
 
 This challenge is about learning how to stop being run by emotional reactions and start responding more intentionally — especially in moments that matter most.
 
@@ -153,28 +158,88 @@ Learn how to stop reacting emotionally and start choosing intentionally.
 
               <div className={styles.promoBlock}>
                 <h3>Email Option 1 — Soft, Value-First (Recommended)</h3>
-                <div className={styles.promoContent}>
-                  <pre>{getEmailOption1()}</pre>
+                
+                <div className={styles.emailComponent}>
+                  <h4 className={styles.componentLabel}>Subject Line</h4>
+                  <div className={styles.subjectContent}>
+                    <pre>{getEmailOption1Subject()}</pre>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(getEmailOption1Subject(), 1)}
+                    className={styles.copyButton}
+                  >
+                    {copiedIndex === 1 ? '✓ Copied!' : 'Copy Subject'}
+                  </button>
                 </div>
-                <button
-                  onClick={() => copyToClipboard(getEmailOption1(), 1)}
-                  className={styles.copyButton}
-                >
-                  {copiedIndex === 1 ? '✓ Copied!' : 'Copy'}
-                </button>
+
+                <div className={styles.emailComponent}>
+                  <h4 className={styles.componentLabel}>Preview Text <span className={styles.optionalLabel}>(optional – appears after the subject line in most inboxes)</span></h4>
+                  <div className={styles.previewContent}>
+                    <pre>{getEmailOption1Preview()}</pre>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(getEmailOption1Preview(), 2)}
+                    className={styles.copyButton}
+                  >
+                    {copiedIndex === 2 ? '✓ Copied!' : 'Copy Preview'}
+                  </button>
+                </div>
+
+                <div className={styles.emailComponent}>
+                  <h4 className={styles.componentLabel}>Email Body</h4>
+                  <div className={styles.promoContent}>
+                    <pre>{getEmailOption1Body()}</pre>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(getEmailOption1Body(), 3)}
+                    className={styles.copyButton}
+                  >
+                    {copiedIndex === 3 ? '✓ Copied!' : 'Copy Email Body'}
+                  </button>
+                </div>
               </div>
 
               <div className={styles.promoBlock}>
                 <h3>Email Option 2 — Slightly More Direct</h3>
-                <div className={styles.promoContent}>
-                  <pre>{getEmailOption2()}</pre>
+                
+                <div className={styles.emailComponent}>
+                  <h4 className={styles.componentLabel}>Subject Line</h4>
+                  <div className={styles.subjectContent}>
+                    <pre>{getEmailOption2Subject()}</pre>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(getEmailOption2Subject(), 4)}
+                    className={styles.copyButton}
+                  >
+                    {copiedIndex === 4 ? '✓ Copied!' : 'Copy Subject'}
+                  </button>
                 </div>
-                <button
-                  onClick={() => copyToClipboard(getEmailOption2(), 2)}
-                  className={styles.copyButton}
-                >
-                  {copiedIndex === 2 ? '✓ Copied!' : 'Copy'}
-                </button>
+
+                <div className={styles.emailComponent}>
+                  <h4 className={styles.componentLabel}>Preview Text <span className={styles.optionalLabel}>(optional – appears after the subject line in most inboxes)</span></h4>
+                  <div className={styles.previewContent}>
+                    <pre>{getEmailOption2Preview()}</pre>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(getEmailOption2Preview(), 5)}
+                    className={styles.copyButton}
+                  >
+                    {copiedIndex === 5 ? '✓ Copied!' : 'Copy Preview'}
+                  </button>
+                </div>
+
+                <div className={styles.emailComponent}>
+                  <h4 className={styles.componentLabel}>Email Body</h4>
+                  <div className={styles.promoContent}>
+                    <pre>{getEmailOption2Body()}</pre>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(getEmailOption2Body(), 6)}
+                    className={styles.copyButton}
+                  >
+                    {copiedIndex === 6 ? '✓ Copied!' : 'Copy Email Body'}
+                  </button>
+                </div>
               </div>
             </div>
           </section>
@@ -190,10 +255,10 @@ Learn how to stop reacting emotionally and start choosing intentionally.
                   <pre>{getSocialOption1()}</pre>
                 </div>
                 <button
-                  onClick={() => copyToClipboard(getSocialOption1(), 3)}
+                  onClick={() => copyToClipboard(getSocialOption1(), 7)}
                   className={styles.copyButton}
                 >
-                  {copiedIndex === 3 ? '✓ Copied!' : 'Copy'}
+                  {copiedIndex === 7 ? '✓ Copied!' : 'Copy'}
                 </button>
               </div>
 
@@ -203,10 +268,10 @@ Learn how to stop reacting emotionally and start choosing intentionally.
                   <pre>{getSocialOption2()}</pre>
                 </div>
                 <button
-                  onClick={() => copyToClipboard(getSocialOption2(), 4)}
+                  onClick={() => copyToClipboard(getSocialOption2(), 8)}
                   className={styles.copyButton}
                 >
-                  {copiedIndex === 4 ? '✓ Copied!' : 'Copy'}
+                  {copiedIndex === 8 ? '✓ Copied!' : 'Copy'}
                 </button>
               </div>
 
@@ -216,10 +281,10 @@ Learn how to stop reacting emotionally and start choosing intentionally.
                   <pre>{getSocialOption3()}</pre>
                 </div>
                 <button
-                  onClick={() => copyToClipboard(getSocialOption3(), 5)}
+                  onClick={() => copyToClipboard(getSocialOption3(), 9)}
                   className={styles.copyButton}
                 >
-                  {copiedIndex === 5 ? '✓ Copied!' : 'Copy'}
+                  {copiedIndex === 9 ? '✓ Copied!' : 'Copy'}
                 </button>
               </div>
             </div>
@@ -235,10 +300,10 @@ Learn how to stop reacting emotionally and start choosing intentionally.
                   <pre>{getPersonalBlurb()}</pre>
                 </div>
                 <button
-                  onClick={() => copyToClipboard(getPersonalBlurb(), 6)}
+                  onClick={() => copyToClipboard(getPersonalBlurb(), 10)}
                   className={styles.copyButton}
                 >
-                  {copiedIndex === 6 ? '✓ Copied!' : 'Copy'}
+                  {copiedIndex === 10 ? '✓ Copied!' : 'Copy'}
                 </button>
               </div>
             </div>

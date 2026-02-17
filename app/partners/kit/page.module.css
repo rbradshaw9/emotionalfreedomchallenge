@@ -133,6 +133,72 @@
   color: var(--color-gray-800);
 }
 
+/* Email Component Sections */
+.emailComponent {
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.emailComponent:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.componentLabel {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-gray-700);
+  margin-bottom: var(--space-4);
+  font-family: var(--font-sans);
+}
+
+.optionalLabel {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-gray-500);
+  font-style: italic;
+}
+
+.subjectContent {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.subjectContent pre {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-gray-800);
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-weight: 500;
+}
+
+.previewContent {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.previewContent pre {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-gray-600);
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-style: italic;
+}
+
 .promoContent {
   background-color: var(--color-gray-50);
   border: 1px solid var(--color-gray-200);
@@ -301,6 +367,26 @@
     font-size: var(--text-lg);
   }
 
+  .emailComponent {
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-6);
+  }
+
+  .componentLabel {
+    font-size: var(--text-sm);
+  }
+
+  .optionalLabel {
+    font-size: var(--text-xs);
+    display: block;
+    margin-top: var(--space-2);
+  }
+
+  .subjectContent,
+  .previewContent {
+    padding: var(--space-3) var(--space-4);
+  }
+
   .promoContent {
     padding: var(--space-5);
   }
@@ -349,6 +435,8 @@
 
   .headerSection p,
   .promoContent pre,
+  .subjectContent pre,
+  .previewContent pre,
   .notesSection > div > ul > li,
   .thankYouSection p {
     font-size: var(--text-sm);
@@ -366,6 +454,26 @@
 
   .promoBlock {
     padding: var(--space-5);
+  }
+
+  .emailComponent {
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-5);
+  }
+
+  .componentLabel {
+    font-size: var(--text-xs);
+    margin-bottom: var(--space-3);
+  }
+
+  .optionalLabel {
+    display: block;
+    margin-top: var(--space-1);
+  }
+
+  .subjectContent,
+  .previewContent {
+    padding: var(--space-3);
   }
 
   .promoContent {
