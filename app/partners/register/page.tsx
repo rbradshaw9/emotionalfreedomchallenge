@@ -105,37 +105,24 @@ export default function PartnerRegister() {
               <div className="infusion-field">
                 <label htmlFor="inf_custom_PayPalEmail">PayPal Email *</label>
                 <input id="inf_custom_PayPalEmail" name="inf_custom_PayPalEmail" placeholder="PayPal Email *" type="email" required />
-                <div className="field-helper">This is where we'll send your commission payments.</div>
-              </div>
-              
-              <div className="section-title">
-                <span>Part 3 - Referral Partner Registration</span>
-              </div>
-              
-              <div className="infusion-field">
-                <label htmlFor="inf_field_SSN">SSN/TIN</label>
-                <input id="inf_field_SSN" name="inf_field_SSN" placeholder="SSN/TIN" type="text" />
-                <div className="field-helper">Required for U.S. tax compliance. Leave blank if you're outside the U.S.</div>
               </div>
               
               <div className="infusion-field">
                 <label htmlFor="inf_other_Username">Username *</label>
-                <input id="inf_other_Username" name="inf_other_Username" placeholder="Username *" type="text" />
-                <div className="field-helper">Choose a username you'll remember for your partner dashboard.</div>
+                <input id="inf_other_Username" name="inf_other_Username" placeholder="Username *" type="text" required />
               </div>
               
               <div className="infusion-field">
                 <label htmlFor="inf_other_Password">Password *</label>
-                <input id="inf_other_Password" name="inf_other_Password" placeholder="Password *" type="password" />
+                <input id="inf_other_Password" name="inf_other_Password" placeholder="Password *" type="password" required />
               </div>
               
               <div className="infusion-field">
                 <label htmlFor="inf_other_RetypePassword">Confirm Password *</label>
-                <input id="inf_other_RetypePassword" name="inf_other_RetypePassword" placeholder="Confirm Password *" type="password" />
+                <input id="inf_other_RetypePassword" name="inf_other_RetypePassword" placeholder="Confirm Password *" type="password" required />
               </div>
               
-              {/* Hidden fields - not displayed to users */}
-              <div className="infusion-field" style={{ display: 'none' }}>
+              <div className="infusion-field">
                 <label htmlFor="inf_other_NotifyOnLead">Notify on Lead</label>
                 <div className="infusion-radio">
                   <div className="options-container">
@@ -151,7 +138,7 @@ export default function PartnerRegister() {
                 </div>
               </div>
               
-              <div className="infusion-field" style={{ display: 'none' }}>
+              <div className="infusion-field">
                 <label htmlFor="inf_other_NotifyOnSale">Notify on Sale</label>
                 <div className="infusion-radio">
                   <div className="options-container">
@@ -168,7 +155,7 @@ export default function PartnerRegister() {
               </div>
               
               <div className="infusion-submit">
-                <button className="infusion-recaptcha" id="recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab" type="submit">Finish Registration & Get Referral Link</button>
+                <button className="infusion-recaptcha" id="recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab" type="submit">Sign Me Up!</button>
               </div>
               
               <input type="text" name="inf-sbt" style={{ display: 'none' }} />
