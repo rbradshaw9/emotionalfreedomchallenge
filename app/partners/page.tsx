@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './page.module.css';
+import FAQAccordion from './components/FAQAccordion';
 
 export default function PartnersPage() {
   return (
@@ -32,23 +33,77 @@ export default function PartnersPage() {
       <section className={styles.section}>
         <div className="container container-content">
           <h2>How Partnership Works</h2>
-          <ol className={styles.partnershipSteps}>
-            <li>Apply to become a partner.</li>
-            <li>Once approved, you'll receive your unique referral link.</li>
-            <li>Share the Emotional Freedom Challenge with your audience.</li>
-            <li>Earn commissions on qualified referrals and VIP upgrades.</li>
-          </ol>
+          <div className={styles.partnershipSteps}>
+            <div className={styles.partnershipStep}>
+              <div className={styles.stepIcon}>📝</div>
+              <h3>Apply to Become a Partner</h3>
+              <p>Complete our simple application to share your background and audience.</p>
+            </div>
+            <div className={styles.partnershipStep}>
+              <div className={styles.stepIcon}>🔗</div>
+              <h3>Receive Your Referral Link</h3>
+              <p>Once approved, you'll get your unique tracking link and partner resources.</p>
+            </div>
+            <div className={styles.partnershipStep}>
+              <div className={styles.stepIcon}>📢</div>
+              <h3>Share with Your Audience</h3>
+              <p>Use our ready-made materials or create your own content to share the challenge.</p>
+            </div>
+            <div className={styles.partnershipStep}>
+              <div className={styles.stepIcon}>💰</div>
+              <h3>Earn Commissions</h3>
+              <p>Receive payment for qualified referrals and VIP upgrades automatically.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${styles.section} ${styles.compensationSection}`}>
+        <div className="container container-content">
+          <h2 className="text-center">Partner Compensation</h2>
+          <p className={styles.compensationIntro}>
+            Our priority with this challenge is impact and service. That said, we also believe in compensating partners who help extend the reach of this work.
+          </p>
+          
+          <div className={styles.compensationCards}>
+            <div className={styles.compensationCard}>
+              <div className={styles.compensationIcon}>🎯</div>
+              <div className={styles.compensationAmount}>$1,000</div>
+              <h3>Per Coaching Client</h3>
+              <p>Earn $1,000 for each coaching client who enrolls through your referral link.</p>
+            </div>
+            <div className={styles.compensationCard}>
+              <div className={styles.compensationIcon}>⭐</div>
+              <div className={styles.compensationAmount}>50%</div>
+              <h3>VIP Upgrade Commission</h3>
+              <p>Receive 50% commission on all VIP upgrades from your referrals.</p>
+            </div>
+          </div>
+
+          <p className={styles.compensationNote}>
+            There are no quotas, requirements, or pressure. Compensation is simply our way of saying thank you.
+          </p>
+        </div>
+      </section>
+
+      <section className={styles.midPageCta}>
+        <div className="container container-content text-center">
+          <h2>Ready to Join?</h2>
+          <p className={styles.ctaSubtext}>Apply now to become a trusted partner and start earning.</p>
+          <Link 
+            href="/partners/register"
+            className="button button-accent button-lg"
+          >
+            Apply to Become a Partner
+          </Link>
         </div>
       </section>
 
       <section className={styles.section}>
         <div className="container container-content">
-          <h2>Why This Challenge Exists</h2>
+          <h2>Why This Partnership Exists</h2>
           <p>
-            Over the years, Dr. Paul Jenkins has seen the same pattern repeat itself in people from every background.
-          </p>
-          <p>
-            They're capable. They're thoughtful. They're trying.
+            Over the years, Dr. Paul Jenkins has seen the same pattern repeat itself in people from every background. They're capable. They're thoughtful. They're trying.
           </p>
           <p>
             And yet, emotionally, they keep getting pulled into reactions they don't choose — frustration, defensiveness, shutdown, overwhelm.
@@ -57,33 +112,19 @@ export default function PartnersPage() {
             This challenge exists to give people a clear, grounded framework for emotional ownership: learning how to notice emotional reactions, slow them down, and respond intentionally instead of automatically.
           </p>
           <p>
-            This is not therapy, motivation, or surface-level positivity.<br />
-            It's practical work centered on responsibility, choice, and agency.
+            We're inviting a small group of trusted peers to share this experience with their audience — only if it feels aligned. Many people are emotionally stuck but don't have language for what's happening, or a framework that doesn't involve blame, shame, or avoidance.
+          </p>
+          <p>
+            This challenge gives people a way to understand themselves more clearly — and take responsibility without self-judgment. If that resonates with the people you serve, we'd be grateful to have you share it.
           </p>
         </div>
       </section>
 
       <section className={styles.section}>
         <div className="container container-content">
-          <h2>Why We're Inviting Partners</h2>
-          <p>
-            We're inviting a small group of trusted peers to share this experience with their audience — only if it feels aligned.
-          </p>
-          <p>
-            Many people are emotionally stuck but don't have language for what's happening, or a framework that doesn't involve blame, shame, or avoidance.
-          </p>
-          <p>
-            This challenge gives people a way to understand themselves more clearly — and take responsibility without self-judgment.
-          </p>
-          <p>
-            If that resonates with the people you serve, we'd be grateful to have you share it.
-          </p>
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <div className="container container-content">
-          <h2>This Challenge Is a Strong Fit for People Who:</h2>
+          <h2>Who This Challenge Serves & What They'll Experience</h2>
+          
+          <h3 className={styles.sectionSubheading}>This challenge is a strong fit for people who:</h3>
           <ul>
             <li>Feel emotionally reactive or stuck in familiar patterns</li>
             <li>Want to take responsibility for their emotional responses without shame</li>
@@ -93,15 +134,9 @@ export default function PartnersPage() {
           <p>
             It's especially relevant for audiences interested in leadership, relationships, parenting, personal development, and values-driven living.
           </p>
-        </div>
-      </section>
 
-      <section className={styles.section}>
-        <div className="container container-content">
-          <h2>What Participants Will Experience</h2>
-          <p>
-            Over five live sessions, participants will:
-          </p>
+          <h3 className={styles.sectionSubheading}>What participants will experience:</h3>
+          <p>Over five live sessions, participants will:</p>
           <ul>
             <li>Learn the difference between emotions, thoughts, and choice</li>
             <li>Identify emotional triggers and habitual reactions</li>
@@ -138,58 +173,8 @@ export default function PartnersPage() {
 
       <section className={styles.section}>
         <div className="container container-content">
-          <h2>Partner Compensation</h2>
-          <p>
-            Our priority with this challenge is impact and service.
-          </p>
-          <p>
-            That said, we also believe in compensating partners who help extend the reach of this work.
-          </p>
-          <p>
-            Partners who choose to participate with referral tracking receive:
-          </p>
-          <ul>
-            <li>$1,000 for each coaching client enrolled</li>
-            <li>50% commission on all VIP upgrades</li>
-          </ul>
-          <p>
-            There are no quotas, requirements, or pressure.<br />
-            Compensation is simply our way of saying thank you.
-          </p>
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <div className="container container-content">
           <h2>Frequently Asked Questions</h2>
-          
-          <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>Who is this partnership best suited for?</h3>
-            <p className={styles.faqAnswer}>
-              This partnership is ideal for individuals and organizations who serve audiences interested in personal growth, emotional wellness, and self-leadership.
-            </p>
-          </div>
-
-          <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>How are referrals tracked?</h3>
-            <p className={styles.faqAnswer}>
-              Each approved partner receives a unique referral link used to track registrations and purchases.
-            </p>
-          </div>
-
-          <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>Do I need to purchase the challenge to promote it?</h3>
-            <p className={styles.faqAnswer}>
-              No. Partners are not required to purchase the challenge in order to share it.
-            </p>
-          </div>
-
-          <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>What happens after I apply?</h3>
-            <p className={styles.faqAnswer}>
-              You'll receive an email with next steps once your application is reviewed.
-            </p>
-          </div>
+          <FAQAccordion />
         </div>
       </section>
 
