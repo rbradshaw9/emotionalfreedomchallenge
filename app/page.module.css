@@ -27,8 +27,28 @@
   letter-spacing: -0.01em;
 }
 
+.introSection {
+  padding: var(--space-12) 0 var(--space-8);
+  background-color: var(--color-white);
+}
+
+.introSection p {
+  font-size: var(--text-lg);
+  color: var(--color-gray-700);
+  line-height: 1.8;
+  margin-bottom: var(--space-6);
+  max-width: 740px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.introSection p:last-child {
+  margin-bottom: 0;
+}
+
 .formSection {
   padding: var(--space-12) 0;
+  background-color: var(--color-gray-50);
 }
 
 .formCard {
@@ -81,6 +101,76 @@
   color: var(--color-gray-500);
   text-align: center;
   line-height: var(--leading-relaxed);
+}
+
+.contentSection {
+  padding: var(--space-16) 0;
+  background-color: var(--color-white);
+}
+
+.contentSection:nth-of-type(even) {
+  background-color: var(--color-gray-50);
+}
+
+.contentSection h2 {
+  margin-bottom: var(--space-8);
+}
+
+.contentSection p {
+  font-size: var(--text-lg);
+  color: var(--color-gray-700);
+  line-height: 1.75;
+  margin-bottom: var(--space-6);
+}
+
+.contentSection p:last-child {
+  margin-bottom: 0;
+}
+
+.contentSection ul {
+  margin: var(--space-6) 0;
+  padding-left: var(--space-8);
+}
+
+.contentSection li {
+  font-size: var(--text-lg);
+  color: var(--color-gray-700);
+  line-height: 1.75;
+  margin-bottom: var(--space-4);
+}
+
+.contentSection li:last-child {
+  margin-bottom: 0;
+}
+
+.quote {
+  font-size: var(--text-lg);
+  color: var(--color-gray-600);
+  font-style: italic;
+  padding-left: var(--space-6);
+  border-left: 3px solid var(--color-primary);
+  margin-bottom: var(--space-5);
+}
+
+.invitationSection {
+  padding: var(--space-16) 0;
+  background-color: var(--color-gray-50);
+}
+
+.invitationSection h2 {
+  margin-bottom: var(--space-6);
+}
+
+.invitationSection p {
+  font-size: var(--text-lg);
+  color: var(--color-gray-700);
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+.ctaSection {
+  padding: var(--space-12) 0;
+  background-color: var(--color-white);
 }
 
 .benefitsSection {
@@ -176,22 +266,6 @@
   color: var(--color-gray-600);
 }
 
-.ctaSection {
-  padding: var(--space-16) 0;
-}
-
-.ctaSection h2 {
-  margin-bottom: var(--space-4);
-}
-
-.ctaText {
-  font-size: var(--text-lg);
-  margin-bottom: var(--space-6);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 @media (max-width: 768px) {
   .hero {
     padding: var(--space-16) 0 var(--space-10);
@@ -205,6 +279,14 @@
   .subtitle {
     font-size: var(--text-base);
     margin-bottom: var(--space-6);
+  }
+
+  .introSection {
+    padding: var(--space-10) 0 var(--space-8);
+  }
+
+  .introSection p {
+    font-size: var(--text-base);
   }
   
   .formSection {
@@ -239,6 +321,28 @@
     font-size: var(--text-lg);
     min-height: 56px;
   }
+
+  .contentSection {
+    padding: var(--space-12) 0;
+  }
+
+  .contentSection p,
+  .contentSection li {
+    font-size: var(--text-base);
+  }
+
+  .quote {
+    font-size: var(--text-base);
+    padding-left: var(--space-4);
+  }
+
+  .invitationSection {
+    padding: var(--space-12) 0;
+  }
+
+  .invitationSection p {
+    font-size: var(--text-base);
+  }
   
   .benefits {
     grid-template-columns: 1fr;
@@ -254,7 +358,7 @@
   }
   
   .ctaSection {
-    padding: var(--space-12) 0;
+    padding: var(--space-10) 0;
   }
 }
 
@@ -270,13 +374,37 @@
   .subtitle {
     font-size: var(--text-sm);
   }
+
+  .introSection {
+    padding: var(--space-8) 0 var(--space-6);
+  }
+
+  .introSection p {
+    font-size: var(--text-sm);
+  }
   
   .formCard {
     padding: var(--space-6) var(--space-4);
   }
+
+  .contentSection,
+  .invitationSection {
+    padding: var(--space-10) 0;
+  }
+
+  .contentSection p,
+  .contentSection li,
+  .invitationSection p {
+    font-size: var(--text-sm);
+  }
+
+  .quote {
+    font-size: var(--text-sm);
+    padding-left: var(--space-3);
+  }
   
   .benefitsSection,
   .ctaSection {
-    padding: var(--space-12) 0;
+    padding: var(--space-10) 0;
   }
 }
