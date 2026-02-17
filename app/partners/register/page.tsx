@@ -4,7 +4,7 @@ import styles from './page.module.css'
 
 export const metadata: Metadata = {
   title: 'Partner Registration - The Emotional Freedom Challenge',
-  description: 'Complete your partner registration and start sharing transformation.',
+  description: 'Complete your partner registration for The Emotional Freedom Challenge. Secure partner dashboard access with referral tracking and commission management.',
 }
 
 export default function PartnerRegister() {

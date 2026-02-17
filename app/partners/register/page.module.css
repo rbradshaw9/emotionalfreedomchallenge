@@ -248,6 +248,19 @@
   margin-top: var(--space-2);
   display: block;
   line-height: 1.5;
+}
+
+/* Field help text styling (for password requirements, etc) */
+.formWrapper :global(.field-help) {
+  color: var(--color-gray-600);
+  font-size: var(--text-sm);
+  margin-top: var(--space-2);
+  display: block;
+  line-height: 1.5;
+  background-color: var(--color-gray-50);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border-left: 2px solid var(--color-primary);
   font-style: italic;
 }
 

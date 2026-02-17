@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import styles from './page.module.css';
 import FAQAccordion from './components/FAQAccordion';
+
+export const metadata: Metadata = {
+  title: 'Partner Program - The Emotional Freedom Challenge',
+  description: 'Join our partner program and share The Emotional Freedom Challenge with your audience. Relationship-based partnership built on trust, integrity, and mutual fit.',
+};
 
 export default function PartnersPage() {
   return (

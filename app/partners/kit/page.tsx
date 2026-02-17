@@ -8,6 +8,7 @@ export default function PartnerKitPage() {
   const [manualCode, setManualCode] = useState<string>('');
   const [showManualInput, setShowManualInput] = useState(false);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Read affiliate code from URL on mount
   useEffect(() => {
@@ -35,14 +36,19 @@ export default function PartnerKitPage() {
     return `https://bl843.isrefer.com/go/efc/${affiliateCode}`;
   };
 
-  // Copy to clipboard function
+  // Copy to clipboard function with loading state
   const copyToClipboard = async (text: string, index: number) => {
     try {
+      setIsLoading(true);
       await navigator.clipboard.writeText(text);
       setCopiedIndex(index);
-      setTimeout(() => setCopiedIndex(null), 2000);
-    } catch (err) {
-      console.error('Failed to copy:', err);
+      setTimeout(() => {
+        setCopiedIndex(null);
+        setIsLoading(false);
+      }, 2000);
+    } catch {
+      setIsLoading(false);
+      // Silently fail - clipboard API may not be available in all contexts
     }
   };
 
@@ -216,8 +222,9 @@ Learn how to stop reacting emotionally and start choosing intentionally.
                   <button
                     onClick={() => copyToClipboard(getEmailOption1Subject(), 1)}
                     className={styles.copyButton}
+                    disabled={isLoading}
                   >
-                    {copiedIndex === 1 ? '✓ Copied!' : 'Copy Subject'}
+                    {copiedIndex === 1 ? '✓ Copied!' : isLoading ? 'Copying...' : 'Copy Subject'}
                   </button>
                 </div>
 
