@@ -12,14 +12,18 @@ export default function ThankYouPage() {
 
   return (
     <div className={styles.page}>
-      <section className={styles.confirmationSection}>
+      <section className={styles.hero}>
         <div className="container container-sm">
           <h1>You're In</h1>
           
-          <p className={styles.leadText}>
+          <p className={styles.subtitle}>
             Your spot in The Emotional Freedom Challenge is confirmed.
           </p>
+        </div>
+      </section>
 
+      <section className={styles.confirmationSection}>
+        <div className="container container-sm">
           <p>
             You're officially registered for 5 Days to Emotional Ownership, and we've sent you an email with everything you need to participate.
           </p>

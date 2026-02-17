@@ -2,37 +2,45 @@
   min-height: calc(100vh - 200px);
 }
 
-/* Header Section */
-.headerSection {
-  padding: var(--space-24) 0 var(--space-16);
-  background-color: var(--color-white);
+/* Hero Section */
+.hero {
+  padding: var(--space-22) 0;
+  background-image: url('/images/background1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
   text-align: center;
 }
 
-.headerSection h1 {
-  font-size: var(--text-4xl);
-  margin-bottom: var(--space-6);
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(249, 250, 251, 0.05) 100%);
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-size: var(--text-5xl);
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-8);
   font-weight: 600;
   letter-spacing: -0.03em;
   font-family: var(--font-display);
-  color: var(--color-gray-900);
+  position: relative;
 }
 
 .subtitle {
   font-size: var(--text-xl);
   color: var(--color-gray-700);
-  margin-bottom: var(--space-8);
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  position: relative;
   font-weight: 500;
-  line-height: var(--leading-snug);
-}
-
-.headerSection p {
-  font-size: var(--text-lg);
-  color: var(--color-gray-600);
-  line-height: var(--leading-relaxed);
-  max-width: 680px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* Manual Code Input Section */

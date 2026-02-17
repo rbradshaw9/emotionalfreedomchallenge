@@ -10,6 +10,17 @@ export default function PartnerKitPage() {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const heroContent = (
+    <section className={styles.hero}>
+      <div className="container container-content">
+        <h1>Partner Marketing Kit</h1>
+        <p className={styles.subtitle}>
+          Everything you need to share The Emotional Freedom Challenge with your audience.
+        </p>
+      </div>
+    </section>
+  );
+
   // Read affiliate code from URL on mount
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -162,19 +173,7 @@ Learn how to stop reacting emotionally and start choosing intentionally.
 
   return (
     <div className={styles.page}>
-      {/* Header Section */}
-      <section className={styles.headerSection}>
-        <div className="container container-md">
-          <h1>Partner Promotion Kit</h1>
-          <p className={styles.subtitle}>
-            The Emotional Freedom Challenge<br />
-            5 Days to Emotional Ownership
-          </p>
-          <p>
-            Thank you for being willing to share this experience with your audience. Below are ready-to-use options you can copy, paste, or customize in your own voice.
-          </p>
-        </div>
-      </section>
+      {heroContent}
 
       {/* Manual Code Input (if needed) */}
       {showManualInput && (
