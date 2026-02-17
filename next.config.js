@@ -5,7 +5,7 @@ const nextConfig = {
     return [
       {
         source: '/getvip',
-        destination: 'https://bl843.infusionsoft.com/app/orderForms/cdb82d2b-34ac-443e-aba9-2c63993be424',
+        destination: 'https://bl843.infusionsoft.app/app/orderForms/cdb82d2b-34ac-443e-aba9-2c63993be424',
         permanent: false,
       },
     ]
