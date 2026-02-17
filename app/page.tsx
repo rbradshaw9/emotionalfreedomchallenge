@@ -1,5 +1,6 @@
 import styles from './page.module.css';
 import RegistrationForm from './components/RegistrationForm';
+import Image from 'next/image';
 
 export default function RegistrationPage() {
   return (
@@ -101,17 +102,30 @@ export default function RegistrationPage() {
 
       <section className={styles.contentSection}>
         <div className="container container-content">
-          <h2>About Dr. Paul Jenkins</h2>
-          <p>
-            Dr. Paul Jenkins has spent decades working with individuals, couples, families, and leaders around emotional responsibility and personal agency.
-          </p>
-          <p>
-            His work is based on a simple observation:<br />
-            when people understand their emotional responses clearly, they regain the ability to choose how they act — even under stress.
-          </p>
-          <p>
-            This challenge is a practical introduction to that work.
-          </p>
+          <div className={styles.aboutDrPaul}>
+            <div className={styles.drPaulImage}>
+              <Image 
+                src="/images/drpaul.png" 
+                alt="Dr. Paul Jenkins" 
+                width={280}
+                height={280}
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </div>
+            <div className={styles.drPaulContent}>
+              <h2>About Dr. Paul Jenkins</h2>
+              <p>
+                Dr. Paul Jenkins has spent decades working with individuals, couples, families, and leaders around emotional responsibility and personal agency.
+              </p>
+              <p>
+                His work is based on a simple observation:<br />
+                when people understand their emotional responses clearly, they regain the ability to choose how they act — even under stress.
+              </p>
+              <p>
+                This challenge is a practical introduction to that work.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -119,8 +133,8 @@ export default function RegistrationPage() {
         <div className="container container-content">
           <h2>How It Works</h2>
           <p>
-            <strong>Dates:</strong> [Insert Dates]<br />
-            <strong>Sessions:</strong> Live each day<br />
+            <strong>Dates:</strong> March 16–20<br />
+            <strong>Sessions:</strong> Live each day at 12:00 PM Eastern (1 hour)<br />
             <strong>Where:</strong> Private Facebook group<br />
             <strong>Cost:</strong> Free
           </p>

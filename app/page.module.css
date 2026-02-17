@@ -185,6 +185,28 @@
   margin-bottom: 0;
 }
 
+.aboutDrPaul {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+.drPaulImage {
+  width: 100%;
+}
+
+.drPaulImage img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.drPaulContent h2 {
+  margin-top: 0;
+}
+
 .ctaSection {
   padding: var(--space-12) 0;
   background-color: var(--color-white);
@@ -360,6 +382,16 @@
   .invitationSection p {
     font-size: var(--text-base);
   }
+
+  .aboutDrPaul {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .drPaulImage {
+    max-width: 240px;
+    margin: 0 auto;
+  }
   
   .benefits {
     grid-template-columns: 1fr;
@@ -418,6 +450,10 @@
   .quote {
     font-size: var(--text-sm);
     padding-left: var(--space-3);
+  }
+
+  .drPaulImage {
+    max-width: 200px;
   }
   
   .benefitsSection,
