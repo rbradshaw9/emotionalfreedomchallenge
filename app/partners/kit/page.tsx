@@ -120,6 +120,8 @@ I wanted to pass this along as a resource.
 
 Dr. Paul Jenkins is leading a free 5-day experience called The Emotional Freedom Challenge. His work focuses less on managing emotions and more on understanding them — and choosing how to respond rather than reacting automatically.
 
+The challenge runs March 16–20, with live sessions each day at 12:00 PM Eastern. Each session is about 60 minutes.
+
 This challenge is designed for people who:
 - Want to break repeating emotional patterns
 - Feel reactive or overwhelmed at times
@@ -151,8 +153,6 @@ If that resonates, you can register here:
 Learn how to stop reacting emotionally and start choosing intentionally.
 
 👉 ${getReferralLink()}`;
-
-  const getPersonalBlurb = () => `I'm sharing this because emotional ownership is foundational, and this experience offers a clear, respectful way to explore it.`;
 
   return (
     <div className={styles.page}>
@@ -420,25 +420,6 @@ Learn how to stop reacting emotionally and start choosing intentionally.
                   className={styles.copyButton}
                 >
                   {copiedIndex === 9 ? '✓ Copied!' : 'Copy'}
-                </button>
-              </div>
-            </div>
-          </section>
-
-          {/* Optional Personal Blurb */}
-          <section className={styles.contentSection}>
-            <div className="container container-md">
-              <h2>Optional Personal Blurb</h2>
-
-              <div className={styles.promoBlock}>
-                <div className={styles.promoContent}>
-                  <pre>{getPersonalBlurb()}</pre>
-                </div>
-                <button
-                  onClick={() => copyToClipboard(getPersonalBlurb(), 10)}
-                  className={styles.copyButton}
-                >
-                  {copiedIndex === 10 ? '✓ Copied!' : 'Copy'}
                 </button>
               </div>
             </div>
