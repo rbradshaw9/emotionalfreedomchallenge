@@ -87,38 +87,47 @@ export default function VIPPage() {
       </section>
 
       <section className={styles.featuresSection}>
-        <div className="container container-md">
+        <div className="container container-content">
           <h2 className="text-center">What's Included with VIP Access</h2>
+          <p className={styles.featuresIntro}>
+            VIP access provides three key benefits that help you get the most from this experience:
+          </p>
           
-          <div className={styles.featureCards}>
-            <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>💬</div>
-              <h3>Private Live Q&A After Each Session</h3>
-              <p>
-                After each daily session, Dr. Paul stays on for a smaller Q&A.
-              </p>
-              <p>
-                This is where people tend to ask about real conversations, real relationships, and real situations — not theory.
-              </p>
+          <div className={styles.featuresList}>
+            <div className={styles.featureItem}>
+              <div className={styles.featureIconWrapper}>
+                <div className={styles.featureIcon}>💬</div>
+              </div>
+              <div className={styles.featureContent}>
+                <h3>Private Live Q&A After Each Session</h3>
+                <p>
+                  After each daily session, Dr. Paul stays on for a smaller Q&A. This is where people tend to ask about real conversations, real relationships, and real situations — not theory.
+                </p>
+              </div>
             </div>
 
-            <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>📹</div>
-              <h3>Full Session Recordings</h3>
-              <p>
-                You'll have access to the recordings for each session, so you can return to what stood out or catch anything you missed.
-              </p>
+            <div className={styles.featureItem}>
+              <div className={styles.featureIconWrapper}>
+                <div className={styles.featureIcon}>📹</div>
+              </div>
+              <div className={styles.featureContent}>
+                <h3>Full Session Recordings</h3>
+                <p>
+                  You'll have access to the recordings for each session, so you can return to what stood out or catch anything you missed. Many participants revisit key moments multiple times.
+                </p>
+              </div>
             </div>
 
-            <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>🔑</div>
-              <h3>VIP Q&A Recordings</h3>
-              <p>
-                All Q&A sessions are recorded and available to you.
-              </p>
-              <p>
-                Many participants say these recordings are where things quietly click.
-              </p>
+            <div className={styles.featureItem}>
+              <div className={styles.featureIconWrapper}>
+                <div className={styles.featureIcon}>🔑</div>
+              </div>
+              <div className={styles.featureContent}>
+                <h3>VIP Q&A Recordings</h3>
+                <p>
+                  All Q&A sessions are recorded and available to you. Many participants say these recordings are where things quietly click — hearing others work through similar situations often makes concepts land more clearly.
+                </p>
+              </div>
             </div>
           </div>
         </div>
