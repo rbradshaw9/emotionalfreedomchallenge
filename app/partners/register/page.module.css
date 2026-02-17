@@ -3,8 +3,23 @@
 }
 
 .hero {
-  padding: var(--space-24) 0;
-  background: linear-gradient(135deg, #faf9f7 0%, #fff5f0 50%, #ffffff 100%);
+  padding: var(--space-26) 0;
+  background-image: url('/images/background1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(249, 250, 251, 0.05) 100%);
+  pointer-events: none;
 }
 
 .hero h1 {
@@ -12,6 +27,7 @@
   color: var(--color-gray-800);
   margin-bottom: var(--space-8);
   text-align: center;
+  position: relative;
 }
 
 .subtitle {
@@ -19,6 +35,7 @@
   color: var(--color-gray-600);
   line-height: 1.7;
   text-align: center;
+  position: relative;
 }
 
 /* Info Section */
@@ -371,7 +388,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
-    padding: var(--space-16) 0;
+    padding: var(--space-20) 0;
   }
 
   .hero h1 {
@@ -445,7 +462,7 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: var(--space-12) 0;
+    padding: var(--space-16) 0;
   }
   
   .infoSection,
