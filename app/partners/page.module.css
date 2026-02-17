@@ -3,7 +3,7 @@
 }
 
 .hero {
-  padding: var(--space-28) 0;
+  padding: var(--space-20) 0;
   background: var(--color-gray-50);
   position: relative;
 }
@@ -27,7 +27,7 @@
 
 /* Main Content Sections */
 .section {
-  padding: var(--space-28) 0;
+  padding: var(--space-20) 0;
   background-color: var(--color-white);
   position: relative;
 }
@@ -75,7 +75,7 @@
 
 /* Primary CTA Section */
 .primaryCta {
-  padding: var(--space-12) 0;
+  padding: var(--space-6) 0;
   background-color: var(--color-white);
   text-align: center;
 }
@@ -90,7 +90,7 @@
 
 .partnershipStep {
   text-align: center;
-  padding: var(--space-8);
+  padding: var(--space-6);
   background-color: var(--color-white);
   border: 1.5px solid var(--color-gray-200);
   border-radius: var(--radius-xl);
@@ -137,9 +137,9 @@
 .compensationIntro {
   text-align: center;
   max-width: 640px;
-  margin: 0 auto var(--space-12);
+  margin: 0 auto var(--space-10);
   font-size: var(--text-lg);
-  color: rgba(255, 255, 255, 0.95);
+  color: #FFFFFF;
 }
 
 .compensationCards {
@@ -151,7 +151,7 @@
 
 .compensationCard {
   background-color: var(--color-white);
-  padding: var(--space-10);
+  padding: var(--space-8);
   border-radius: var(--radius-xl);
   text-align: center;
   box-shadow: var(--shadow-xl);
@@ -191,7 +191,7 @@
 .compensationNote {
   text-align: center;
   font-size: var(--text-base);
-  color: rgba(255, 255, 255, 0.9);
+  color: #FFFFFF;
   max-width: 560px;
   margin: 0 auto;
   font-style: italic;
@@ -199,7 +199,7 @@
 
 /* Mid-Page CTA */
 .midPageCta {
-  padding: var(--space-20) 0;
+  padding: var(--space-12) 0;
   background-color: var(--color-gray-50);
   text-align: center;
 }
@@ -212,7 +212,7 @@
 .ctaSubtext {
   font-size: var(--text-lg);
   color: var(--color-gray-600);
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
   max-width: 480px;
   margin-left: auto;
   margin-right: auto;
@@ -234,7 +234,7 @@
 
 /* CTA Section */
 .ctaSection {
-  padding: var(--space-10) 0 var(--space-24);
+  padding: var(--space-6) 0 var(--space-16);
   background: var(--color-gray-50);
   position: relative;
 }
@@ -292,7 +292,7 @@
   }
 
   .primaryCta {
-    padding: var(--space-10) 0;
+    padding: var(--space-5) 0;
   }
 
   .partnershipSteps {
@@ -301,7 +301,7 @@
   }
 
   .partnershipStep {
-    padding: var(--space-6);
+    padding: var(--space-5);
   }
 
   .stepIcon {
@@ -326,11 +326,11 @@
   }
 
   .compensationCard {
-    padding: var(--space-8);
+    padding: var(--space-6);
   }
 
   .midPageCta {
-    padding: var(--space-16) 0;
+    padding: var(--space-10) 0;
   }
 
   .midPageCta h2 {
@@ -342,7 +342,7 @@
   }
 
   .ctaSection {
-    padding: var(--space-16) 0;
+    padding: var(--space-5) 0 var(--space-12);
   }
 
   .ctaSection h2 {

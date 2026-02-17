@@ -92,7 +92,7 @@ export default function PartnersPage() {
           <p className={styles.ctaSubtext}>Apply now to become a trusted partner and start earning.</p>
           <Link 
             href="/partners/register"
-            className="button button-accent button-lg"
+            className="button button-primary button-lg"
           >
             Apply to Become a Partner
           </Link>
