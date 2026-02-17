@@ -173,6 +173,44 @@ export default function PartnersPage() {
 
       <section className={styles.section}>
         <div className="container container-content">
+          <h2>Preview What You'll Be Promoting</h2>
+          <p>
+            Before applying, we encourage you to review the pages your audience will see. 
+            This helps you determine if the messaging and experience aligns with your values 
+            and the people you serve.
+          </p>
+          
+          <div className={styles.previewLinks}>
+            <div className={styles.previewCard}>
+              <div className={styles.previewIcon}>🏠</div>
+              <h3>Main Landing Page</h3>
+              <p>The primary page where participants learn about and register for the Emotional Freedom Challenge.</p>
+              <Link 
+                href="/"
+                target="_blank"
+                className="button button-secondary"
+              >
+                View Landing Page
+              </Link>
+            </div>
+            <div className={styles.previewCard}>
+              <div className={styles.previewIcon}>⭐</div>
+              <h3>VIP Upgrade Page</h3>
+              <p>The premium upgrade offer participants see after registering for the free challenge.</p>
+              <Link 
+                href="/vip"
+                target="_blank"
+                className="button button-secondary"
+              >
+                View VIP Page
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className="container container-content">
           <h2>Frequently Asked Questions</h2>
           <FAQAccordion />
         </div>
