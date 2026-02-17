@@ -1,4 +1,5 @@
 import styles from './page.module.css';
+import RegistrationForm from './components/RegistrationForm';
 
 export default function RegistrationPage() {
   return (
@@ -35,53 +36,7 @@ export default function RegistrationPage() {
       <section className={styles.formSection}>
         <div className="container container-sm">
           <div className={styles.formCard}>
-            {/* 
-              INTEGRATION POINT: Infusionsoft Form
-              
-              This placeholder form will be replaced with an Infusionsoft embedded form.
-              The form should collect:
-              - First Name
-              - Email Address
-              
-              After submission, redirect to /thank-you page.
-              
-              Infusionsoft form code should be inserted here, replacing this entire form element.
-            */}
-            <form className={styles.form}>
-              <div className={styles.formGroup}>
-                <label htmlFor="firstName">
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  placeholder="Enter your first name"
-                  required
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="email">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="your@email.com"
-                  required
-                />
-              </div>
-
-              <button type="submit" className="button button-primary button-lg">
-                Reserve Your Free Spot
-              </button>
-
-              <p className={styles.disclaimer}>
-                Your privacy is respected. Your information will never be shared.
-              </p>
-            </form>
+            <RegistrationForm />
           </div>
         </div>
       </section>

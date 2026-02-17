@@ -89,6 +89,23 @@
   margin-bottom: var(--space-6);
 }
 
+.formGroup input[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+.formGroup input[aria-invalid="true"]:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.errorMessage {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: #dc2626;
+  font-weight: var(--font-medium);
+}
+
 .form button[type="submit"] {
   width: 100%;
   margin-top: var(--space-4);
