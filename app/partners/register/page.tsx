@@ -114,12 +114,28 @@ export default function PartnerRegister() {
               
               <div className="infusion-field">
                 <label htmlFor="inf_other_Password">Password *</label>
-                <input id="inf_other_Password" name="inf_other_Password" placeholder="Password *" type="password" required />
+                <input 
+                  id="inf_other_Password" 
+                  name="inf_other_Password" 
+                  placeholder="Password *" 
+                  type="password" 
+                  required 
+                  minLength={8}
+                  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}"
+                  title="Password must be at least 8 characters and include uppercase, lowercase, and a number"
+                />
+                <div className="field-help">Password must be at least 8 characters and include uppercase, lowercase, and a number</div>
               </div>
               
               <div className="infusion-field">
                 <label htmlFor="inf_other_RetypePassword">Confirm Password *</label>
-                <input id="inf_other_RetypePassword" name="inf_other_RetypePassword" placeholder="Confirm Password *" type="password" required />
+                <input 
+                  id="inf_other_RetypePassword" 
+                  name="inf_other_RetypePassword" 
+                  placeholder="Confirm Password *" 
+                  type="password" 
+                  required 
+                />
               </div>
               
               <div className="infusion-field" style={{ display: 'none' }}>
@@ -193,6 +209,18 @@ export default function PartnerRegister() {
                   function validateForm(e) {
                     var form = document.getElementById('inf_form_4c9b8b75fc0b1e19505d18dac0e1a6ab');
                     if (!form) return true;
+                    
+                    // Check password match
+                    var password = document.getElementById('inf_other_Password');
+                    var confirmPassword = document.getElementById('inf_other_RetypePassword');
+                    
+                    if (password && confirmPassword) {
+                      if (password.value !== confirmPassword.value) {
+                        confirmPassword.setCustomValidity('Passwords do not match');
+                      } else {
+                        confirmPassword.setCustomValidity('');
+                      }
+                    }
                     
                     // Check if form is valid
                     if (!form.checkValidity()) {

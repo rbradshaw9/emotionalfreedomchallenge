@@ -51,7 +51,7 @@ export default function PartnerKitPage() {
   
   const getEmailOption1Preview = () => `A calm, practical 5-day experience focused on emotional ownership and intentional response.`;
   
-  const getEmailOption1Body = () => `I wanted to share a free resource that I genuinely believe will be helpful for many of you.
+  const getEmailOption1Body = () => `I wanted to share a free experience that I genuinely believe will be helpful for many of you.
 
 Dr. Paul Jenkins is hosting a short, free 5-day experience called The Emotional Freedom Challenge.
 
@@ -63,7 +63,7 @@ The challenge is completely free and runs for five days.
 
 👉 ${getReferralLink()}
 
-I thought it was worth sharing as a resource.
+I thought it was worth sharing.
 
 — [Your Name]`;
 
@@ -79,6 +79,55 @@ This challenge is about learning how to stop being run by emotional reactions an
 Each day includes a live session with practical insight and reflection. There's no cost to attend.
 
 If this sounds like something you'd benefit from, you can learn more and register here:
+
+👉 ${getReferralLink()}
+
+— [Your Name]`;
+
+  // Email Option 3 - Separated Components
+  const getEmailOption3Subject = () => `A free 5-day experience led by Dr. Paul Jenkins`;
+  
+  const getEmailOption3Preview = () => `A practical, grounded approach to emotional ownership from a long-time educator and coach.`;
+  
+  const getEmailOption3Body = () => `I want to share a free experience being led by someone I respect deeply.
+
+Dr. Paul Jenkins has spent decades teaching and coaching around emotional responsibility, choice, and personal agency. His work aligns closely with how I think about responsibility, choice, and emotional ownership.
+
+He's hosting a free 5-day experience called The Emotional Freedom Challenge.
+
+Each day includes a live session designed to help people:
+- Notice emotional patterns
+- Understand where reactions come from
+- Practice choosing responses more deliberately
+
+It's not therapy, and it's not hype.
+It's thoughtful, structured work around emotional ownership.
+
+The experience is completely free.
+
+👉 ${getReferralLink()}
+
+I wanted to pass this along as a resource.
+
+— [Your Name]`;
+
+  // Email Option 4 - Separated Components
+  const getEmailOption4Subject = () => `A different approach to emotional growth (free)`;
+  
+  const getEmailOption4Preview = () => `A short, practical experience on emotional responsibility and intentional choice.`;
+  
+  const getEmailOption4Body = () => `I wanted to share a free experience that approaches emotional growth in a way I don't see very often.
+
+Dr. Paul Jenkins is leading a free 5-day experience called The Emotional Freedom Challenge. His work focuses less on managing emotions and more on understanding them — and choosing how to respond rather than reacting automatically.
+
+This challenge is designed for people who:
+- Want to break repeating emotional patterns
+- Feel reactive or overwhelmed at times
+- Are interested in personal responsibility and intentional living
+
+Each day includes a live session, and the entire experience is free.
+
+If this sounds like something you'd find valuable, you can learn more here:
 
 👉 ${getReferralLink()}
 
@@ -238,6 +287,92 @@ Learn how to stop reacting emotionally and start choosing intentionally.
                     className={styles.copyButton}
                   >
                     {copiedIndex === 6 ? '✓ Copied!' : 'Copy Email Body'}
+                  </button>
+                </div>
+              </div>
+
+              <div className={styles.promoBlock}>
+                <h3>Email Option 3 — About Dr. Paul (Credibility-Focused)</h3>
+                
+                <div className={styles.emailComponent}>
+                  <h4 className={styles.componentLabel}>Subject Line</h4>
+                  <div className={styles.subjectContent}>
+                    <pre>{getEmailOption3Subject()}</pre>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(getEmailOption3Subject(), 11)}
+                    className={styles.copyButton}
+                  >
+                    {copiedIndex === 11 ? '✓ Copied!' : 'Copy Subject'}
+                  </button>
+                </div>
+
+                <div className={styles.emailComponent}>
+                  <h4 className={styles.componentLabel}>Preview Text <span className={styles.optionalLabel}>(optional – appears after the subject line in most inboxes)</span></h4>
+                  <div className={styles.previewContent}>
+                    <pre>{getEmailOption3Preview()}</pre>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(getEmailOption3Preview(), 12)}
+                    className={styles.copyButton}
+                  >
+                    {copiedIndex === 12 ? '✓ Copied!' : 'Copy Preview'}
+                  </button>
+                </div>
+
+                <div className={styles.emailComponent}>
+                  <h4 className={styles.componentLabel}>Email Body</h4>
+                  <div className={styles.promoContent}>
+                    <pre>{getEmailOption3Body()}</pre>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(getEmailOption3Body(), 13)}
+                    className={styles.copyButton}
+                  >
+                    {copiedIndex === 13 ? '✓ Copied!' : 'Copy Email Body'}
+                  </button>
+                </div>
+              </div>
+
+              <div className={styles.promoBlock}>
+                <h3>Email Option 4 — Meaning & Relevance</h3>
+                
+                <div className={styles.emailComponent}>
+                  <h4 className={styles.componentLabel}>Subject Line</h4>
+                  <div className={styles.subjectContent}>
+                    <pre>{getEmailOption4Subject()}</pre>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(getEmailOption4Subject(), 14)}
+                    className={styles.copyButton}
+                  >
+                    {copiedIndex === 14 ? '✓ Copied!' : 'Copy Subject'}
+                  </button>
+                </div>
+
+                <div className={styles.emailComponent}>
+                  <h4 className={styles.componentLabel}>Preview Text <span className={styles.optionalLabel}>(optional – appears after the subject line in most inboxes)</span></h4>
+                  <div className={styles.previewContent}>
+                    <pre>{getEmailOption4Preview()}</pre>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(getEmailOption4Preview(), 15)}
+                    className={styles.copyButton}
+                  >
+                    {copiedIndex === 15 ? '✓ Copied!' : 'Copy Preview'}
+                  </button>
+                </div>
+
+                <div className={styles.emailComponent}>
+                  <h4 className={styles.componentLabel}>Email Body</h4>
+                  <div className={styles.promoContent}>
+                    <pre>{getEmailOption4Body()}</pre>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(getEmailOption4Body(), 16)}
+                    className={styles.copyButton}
+                  >
+                    {copiedIndex === 16 ? '✓ Copied!' : 'Copy Email Body'}
                   </button>
                 </div>
               </div>
