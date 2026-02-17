@@ -76,17 +76,17 @@ export default function PartnerRegister() {
               
               <div className="infusion-field">
                 <label htmlFor="inf_field_FirstName">First Name *</label>
-                <input id="inf_field_FirstName" name="inf_field_FirstName" placeholder="First Name *" type="text" />
+                <input id="inf_field_FirstName" name="inf_field_FirstName" placeholder="First Name *" type="text" required />
               </div>
               
               <div className="infusion-field">
                 <label htmlFor="inf_field_LastName">Last Name *</label>
-                <input id="inf_field_LastName" name="inf_field_LastName" placeholder="Last Name *" type="text" />
+                <input id="inf_field_LastName" name="inf_field_LastName" placeholder="Last Name *" type="text" required />
               </div>
               
               <div className="infusion-field">
                 <label htmlFor="inf_field_Email">Email *</label>
-                <input id="inf_field_Email" name="inf_field_Email" placeholder="Email *" type="text" />
+                <input id="inf_field_Email" name="inf_field_Email" placeholder="Email *" type="email" required />
               </div>
               
               <div className="infusion-field">
@@ -104,7 +104,7 @@ export default function PartnerRegister() {
               
               <div className="infusion-field">
                 <label htmlFor="inf_custom_PayPalEmail">PayPal Email *</label>
-                <input id="inf_custom_PayPalEmail" name="inf_custom_PayPalEmail" placeholder="PayPal Email *" type="text" />
+                <input id="inf_custom_PayPalEmail" name="inf_custom_PayPalEmail" placeholder="PayPal Email *" type="email" required />
                 <div className="field-helper">This is where we'll send your commission payments.</div>
               </div>
               
@@ -199,154 +199,28 @@ export default function PartnerRegister() {
               strategy="afterInteractive"
             />
             
-            {/* Client-side validation script - must run immediately before form submission */}
-            <Script id="partner-form-validation" strategy="beforeInteractive">
+            {/* Client-side validation script using HTML5 validation */}
+            <Script id="partner-form-validation" strategy="afterInteractive">
               {`
                 (function() {
-                  function validatePartnerForm(e) {
-                    const fields = [
-                      { id: 'inf_field_FirstName', name: 'First Name', type: 'text' },
-                      { id: 'inf_field_LastName', name: 'Last Name', type: 'text' },
-                      { id: 'inf_field_Email', name: 'Email', type: 'email' },
-                      { id: 'inf_custom_PayPalEmail', name: 'PayPal Email', type: 'email' },
-                      { id: 'inf_other_Username', name: 'Username', type: 'text' },
-                      { id: 'inf_other_Password', name: 'Password', type: 'password' },
-                      { id: 'inf_other_RetypePassword', name: 'Confirm Password', type: 'password' }
-                    ];
-                    
-                    function validateEmail(email) {
-                      var re = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-                      return re.test(String(email).toLowerCase());
-                    }
-                    
-                    function showError(field, message) {
-                      var container = field.closest('.infusion-field');
-                      if (!container) return;
-                      
-                      var existingError = container.querySelector('.field-error');
-                      if (existingError) existingError.remove();
-                      
-                      field.classList.add('error');
-                      
-                      var errorDiv = document.createElement('div');
-                      errorDiv.className = 'field-error';
-                      errorDiv.textContent = message;
-                      container.appendChild(errorDiv);
-                    }
-                    
-                    function clearError(field) {
-                      var container = field.closest('.infusion-field');
-                      if (!container) return;
-                      
-                      field.classList.remove('error');
-                      var errorDiv = container.querySelector('.field-error');
-                      if (errorDiv) errorDiv.remove();
-                    }
-                    
-                    var isValid = true;
-                    var firstInvalidField = null;
-                    
-                    for (var i = 0; i < fields.length; i++) {
-                      var fieldConfig = fields[i];
-                      var field = document.getElementById(fieldConfig.id);
-                      if (field) clearError(field);
-                    }
-                    
-                    for (var i = 0; i < fields.length; i++) {
-                      var fieldConfig = fields[i];
-                      var field = document.getElementById(fieldConfig.id);
-                      if (!field) continue;
-                      
-                      var value = field.value.trim();
-                      
-                      if (!value) {
-                        showError(field, 'Please enter your ' + fieldConfig.name.toLowerCase() + '.');
-                        isValid = false;
-                        if (!firstInvalidField) firstInvalidField = field;
-                      } else if (fieldConfig.type === 'email' && !validateEmail(value)) {
-                        showError(field, 'Please enter a valid email address.');
-                        isValid = false;
-                        if (!firstInvalidField) firstInvalidField = field;
-                      }
-                    }
-                    
-                    var password = document.getElementById('inf_other_Password');
-                    var confirmPassword = document.getElementById('inf_other_RetypePassword');
-                    
-                    if (password && confirmPassword && password.value && confirmPassword.value) {
-                      if (password.value !== confirmPassword.value) {
-                        showError(confirmPassword, 'Passwords do not match.');
-                        isValid = false;
-                        if (!firstInvalidField) firstInvalidField = confirmPassword;
-                      }
-                    }
-                    
-                    if (!isValid) {
-                      if (e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        e.stopImmediatePropagation();
-                      }
-                      
-                      if (firstInvalidField) {
-                        firstInvalidField.scrollIntoView({ 
-                          behavior: 'smooth', 
-                          block: 'center' 
-                        });
-                        
-                        setTimeout(function() { firstInvalidField.focus(); }, 300);
-                      }
-                      
-                      return false;
-                    }
-                    
-                    return true;
-                  }
-                  
                   function attachValidation() {
                     var form = document.getElementById('inf_form_4c9b8b75fc0b1e19505d18dac0e1a6ab');
                     if (!form) {
-                      setTimeout(attachValidation, 50);
+                      setTimeout(attachValidation, 100);
                       return;
                     }
                     
                     if (form.dataset.validationAttached) return;
                     form.dataset.validationAttached = 'true';
                     
-                    // Override form's submit method to intercept programmatic submissions
-                    var originalSubmit = form.submit.bind(form);
-                    form.submit = function() {
-                      if (validatePartnerForm(null)) {
-                        originalSubmit();
+                    form.addEventListener('submit', function(e) {
+                      if (!form.checkValidity()) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        form.reportValidity();
+                        return false;
                       }
-                    };
-                    
-                    // Attach event listener with highest priority (capture phase)
-                    form.addEventListener('submit', validatePartnerForm, true);
-                    
-                    // Also attach in bubble phase as backup
-                    form.addEventListener('submit', validatePartnerForm, false);
-                    
-                    // Attach to clear errors on input
-                    var fieldIds = [
-                      'inf_field_FirstName', 'inf_field_LastName', 'inf_field_Email',
-                      'inf_custom_PayPalEmail', 'inf_other_Username', 
-                      'inf_other_Password', 'inf_other_RetypePassword'
-                    ];
-                    
-                    for (var i = 0; i < fieldIds.length; i++) {
-                      var field = document.getElementById(fieldIds[i]);
-                      if (field) {
-                        field.addEventListener('input', function() {
-                          var container = this.closest('.infusion-field');
-                          if (container) {
-                            this.classList.remove('error');
-                            var errorDiv = container.querySelector('.field-error');
-                            if (errorDiv) errorDiv.remove();
-                          }
-                        });
-                      }
-                    }
+                    }, true);
                   }
                   
                   if (document.readyState === 'loading') {
