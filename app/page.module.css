@@ -4,19 +4,7 @@
 
 .hero {
   padding: var(--space-20) 0 var(--space-12);
-  background: linear-gradient(to bottom, #faf9f7 0%, #ffffff 100%);
-  position: relative;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(228, 181, 165, 0.08), transparent 70%);
-  pointer-events: none;
-}
-
-.hero > * {
+  background: var(--color-gray-50);
   position: relative;
 }
 
@@ -26,6 +14,7 @@
   margin-bottom: var(--space-6);
   font-weight: 600;
   letter-spacing: -0.03em;
+  font-family: var(--font-display);
 }
 
 .subtitle {
@@ -47,9 +36,8 @@
   border: 1px solid var(--color-gray-200);
   border-radius: var(--radius-xl);
   padding: var(--space-10);
-  box-shadow: var(--shadow-xl), 0 0 0 1px rgba(157, 139, 127, 0.05) inset;
+  box-shadow: var(--shadow-lg);
   position: relative;
-  overflow: hidden;
 }
 
 .formCard::before {
@@ -59,8 +47,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
-  opacity: 0.8;
+  background: var(--color-primary);
 }
 
 .formTitle {
@@ -153,26 +140,12 @@
   box-shadow: var(--shadow-sm);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
-}
-
-.nextStep::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--color-accent-light) 0%, transparent 50%);
-  opacity: 0;
-  transition: opacity 0.2s;
 }
 
 .nextStep:hover {
   border-color: var(--color-primary);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
   transform: translateY(-4px);
-}
-
-.nextStep:hover::before {
-  opacity: 0.05;
 }
 
 .nextStep > * {
@@ -182,7 +155,7 @@
 .stepNumber {
   width: 52px;
   height: 52px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  background: var(--color-primary);
   color: var(--color-white);
   border-radius: 50%;
   display: flex;
@@ -191,8 +164,9 @@
   font-size: var(--text-2xl);
   font-weight: 600;
   margin: 0 auto var(--space-4);
-  box-shadow: var(--shadow-md), 0 0 0 4px rgba(157, 139, 127, 0.1);
+  box-shadow: var(--shadow-md);
   position: relative;
+  font-family: var(--font-display);
 }
 
 .nextStep h3 {
