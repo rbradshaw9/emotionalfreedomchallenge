@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './page.module.css';
 
 export default function PartnerConfirmedPage() {
@@ -10,64 +11,41 @@ export default function PartnerConfirmedPage() {
               <div className={styles.successIcon}>✓</div>
             </div>
             
-            <h1 className="text-center">Thank You for Your Interest</h1>
+            <h1 className="text-center">Application Received — Thank You</h1>
             
             <p className={styles.confirmationText}>
-              We've received your partner application and truly appreciate you taking 
-              the time to share about yourself and your interest in spreading this work.
+              Your partner application for the Emotional Freedom Challenge has been successfully submitted.
+            </p>
+
+            <p className={styles.confirmationText}>
+              We appreciate your interest in partnering with us and taking the time to apply. Our team reviews each application carefully to ensure alignment and the best possible experience for everyone involved.
             </p>
 
             <div className={styles.nextStepsCard}>
               <h2>What Happens Next</h2>
               
-              <div className={styles.timelineItem}>
-                <div className={styles.timelineDot}></div>
-                <div className={styles.timelineContent}>
-                  <h3>We Review Your Application</h3>
-                  <p>
-                    Our team will carefully review your information to ensure we're a good 
-                    mutual fit and that we can support you effectively as a partner.
-                  </p>
-                </div>
-              </div>
-
-              <div className={styles.timelineItem}>
-                <div className={styles.timelineDot}></div>
-                <div className={styles.timelineContent}>
-                  <h3>You'll Hear From Us Soon</h3>
-                  <p>
-                    Expect a personal response within 1–2 business days. We'll either 
-                    approve your partnership and provide next steps, or we'll reach out 
-                    if we need any additional information.
-                  </p>
-                </div>
-              </div>
-
-              <div className={styles.timelineItem}>
-                <div className={styles.timelineDot}></div>
-                <div className={styles.timelineContent}>
-                  <h3>Partnership Details Shared</h3>
-                  <p>
-                    Once approved, you'll receive your unique partner link, compensation 
-                    details, and any resources you need to share The Emotional Freedom 
-                    Challenge with confidence.
-                  </p>
-                </div>
-              </div>
+              <ol className={styles.numberedList}>
+                <li>Our team will review your application.</li>
+                <li>If approved, you'll receive an email with next steps and your unique referral link.</li>
+                <li>You'll also receive details about available resources, timelines, and expectations.</li>
+              </ol>
             </div>
 
             <div className={styles.reassuranceBox}>
               <p>
-                <strong>Please check your email</strong> (including spam/promotions folders) 
-                over the next couple of days. We'll be in touch soon.
+                <strong>Please Note:</strong> Application reviews typically take a short amount of time. Be sure to check your inbox — and your spam or promotions folder — for updates from us.
               </p>
             </div>
 
             <p className={styles.closingText}>
-              We're grateful you want to help us bring emotional freedom to more people. 
-              This work is about genuine transformation, and we're honored to potentially 
-              partner with someone who shares that vision.
+              We're grateful for your interest in supporting emotional growth and personal development through the Emotional Freedom Challenge. We'll be in touch soon.
             </p>
+
+            <div className={styles.returnLink}>
+              <Link href="/" className="button button-secondary">
+                Return to the Emotional Freedom Challenge
+              </Link>
+            </div>
           </div>
         </div>
       </section>
