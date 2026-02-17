@@ -122,7 +122,7 @@ export default function PartnerRegister() {
                 <input id="inf_other_RetypePassword" name="inf_other_RetypePassword" placeholder="Confirm Password *" type="password" required />
               </div>
               
-              <div className="infusion-field">
+              <div className="infusion-field" style={{ display: 'none' }}>
                 <label htmlFor="inf_other_NotifyOnLead">Notify on Lead</label>
                 <div className="infusion-radio">
                   <div className="options-container">
@@ -131,14 +131,14 @@ export default function PartnerRegister() {
                       <label htmlFor="inf_other_NotifyOnLead_1">Yes</label>
                     </span>
                     <span className="infusion-option">
-                      <input id="inf_other_NotifyOnLead_0" name="inf_other_NotifyOnLead" type="radio" value="0" />
+                      <input id="inf_other_NotifyOnLead_0" name="inf_other_NotifyOnLead" type="radio" value="0" defaultChecked />
                       <label htmlFor="inf_other_NotifyOnLead_0">No</label>
                     </span>
                   </div>
                 </div>
               </div>
               
-              <div className="infusion-field">
+              <div className="infusion-field" style={{ display: 'none' }}>
                 <label htmlFor="inf_other_NotifyOnSale">Notify on Sale</label>
                 <div className="infusion-radio">
                   <div className="options-container">
@@ -147,7 +147,7 @@ export default function PartnerRegister() {
                       <label htmlFor="inf_other_NotifyOnSale_1">Yes</label>
                     </span>
                     <span className="infusion-option">
-                      <input id="inf_other_NotifyOnSale_0" name="inf_other_NotifyOnSale" type="radio" value="0" />
+                      <input id="inf_other_NotifyOnSale_0" name="inf_other_NotifyOnSale" type="radio" value="0" defaultChecked />
                       <label htmlFor="inf_other_NotifyOnSale_0">No</label>
                     </span>
                   </div>
