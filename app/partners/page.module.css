@@ -92,6 +92,81 @@
   margin-bottom: 0;
 }
 
+/* Primary CTA Section */
+.primaryCta {
+  padding: var(--space-12) 0;
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+/* Partnership Steps (Numbered List) */
+.partnershipSteps {
+  list-style: none;
+  counter-reset: partnership-counter;
+  padding-left: 0;
+  margin: var(--space-8) 0 0;
+}
+
+.partnershipSteps li {
+  counter-increment: partnership-counter;
+  position: relative;
+  padding-left: var(--space-12);
+  font-size: var(--text-lg);
+  line-height: 1.75;
+  margin-bottom: var(--space-6);
+  color: var(--color-gray-700);
+}
+
+.partnershipSteps li::before {
+  content: counter(partnership-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: var(--text-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.partnershipSteps li:last-child {
+  margin-bottom: 0;
+}
+
+/* FAQ Section */
+.faqItem {
+  margin-bottom: var(--space-10);
+  padding-bottom: var(--space-10);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.faqItem:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.faqQuestion {
+  font-size: var(--text-xl);
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-4);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.faqAnswer {
+  font-size: var(--text-lg);
+  line-height: 1.75;
+  color: var(--color-gray-600);
+  margin-bottom: 0;
+}
+
 /* CTA Section */
 .ctaSection {
   padding: var(--space-24) 0;
@@ -162,6 +237,29 @@
   
   .section ul {
     padding-left: var(--space-5);
+  }
+
+  .primaryCta {
+    padding: var(--space-10) 0;
+  }
+
+  .partnershipSteps li {
+    font-size: var(--text-base);
+    padding-left: var(--space-10);
+  }
+
+  .partnershipSteps li::before {
+    width: 32px;
+    height: 32px;
+    font-size: var(--text-sm);
+  }
+
+  .faqQuestion {
+    font-size: var(--text-lg);
+  }
+
+  .faqAnswer {
+    font-size: var(--text-base);
   }
 
   .ctaSection {

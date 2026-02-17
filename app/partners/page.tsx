@@ -7,11 +7,37 @@ export default function PartnersPage() {
       <section className={styles.hero}>
         <div className="container container-content">
           <h1 className="text-center text-balance">
-            An Invitation to Share the Emotional Freedom Challenge
+            Partner with the Emotional Freedom Challenge
           </h1>
           <p className={styles.subtitle}>
-            A free, live 5-day experience designed to help people develop emotional ownership — and respond to life with clarity instead of reactivity.
+            We're inviting a small group of aligned partners to help share the Emotional Freedom Challenge with audiences who care about personal growth, emotional awareness, and lasting change.
           </p>
+          <p className={styles.subtitle}>
+            This is not a mass affiliate program. It's a relationship-based partnership built on trust, integrity, and real impact.
+          </p>
+        </div>
+      </section>
+
+      <section className={styles.primaryCta}>
+        <div className="container container-content text-center">
+          <Link 
+            href="/partners/register"
+            className="button button-primary button-lg"
+          >
+            Apply to Become a Partner
+          </Link>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className="container container-content">
+          <h2>How Partnership Works</h2>
+          <ol className={styles.partnershipSteps}>
+            <li>Apply to become a partner.</li>
+            <li>Once approved, you'll receive your unique referral link.</li>
+            <li>Share the Emotional Freedom Challenge with your audience.</li>
+            <li>Earn commissions on qualified referrals and VIP upgrades.</li>
+          </ol>
         </div>
       </section>
 
@@ -133,20 +159,47 @@ export default function PartnersPage() {
         </div>
       </section>
 
+      <section className={styles.section}>
+        <div className="container container-content">
+          <h2>Frequently Asked Questions</h2>
+          
+          <div className={styles.faqItem}>
+            <h3 className={styles.faqQuestion}>Who is this partnership best suited for?</h3>
+            <p className={styles.faqAnswer}>
+              This partnership is ideal for individuals and organizations who serve audiences interested in personal growth, emotional wellness, and self-leadership.
+            </p>
+          </div>
+
+          <div className={styles.faqItem}>
+            <h3 className={styles.faqQuestion}>How are referrals tracked?</h3>
+            <p className={styles.faqAnswer}>
+              Each approved partner receives a unique referral link used to track registrations and purchases.
+            </p>
+          </div>
+
+          <div className={styles.faqItem}>
+            <h3 className={styles.faqQuestion}>Do I need to purchase the challenge to promote it?</h3>
+            <p className={styles.faqAnswer}>
+              No. Partners are not required to purchase the challenge in order to share it.
+            </p>
+          </div>
+
+          <div className={styles.faqItem}>
+            <h3 className={styles.faqQuestion}>What happens after I apply?</h3>
+            <p className={styles.faqAnswer}>
+              You'll receive an email with next steps once your application is reviewed.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className={styles.ctaSection}>
         <div className="container container-content text-center">
-          <h2>Ready to Continue?</h2>
-          <p className={styles.ctaText}>
-            The next step is a brief partner registration page where we'll collect the information needed for referral tracking and commission payouts.
-          </p>
-          <p className={styles.ctaText}>
-            This page is intended for invited partners only.
-          </p>
           <Link 
             href="/partners/register"
             className="button button-primary button-lg"
           >
-            Continue to Partner Registration
+            Apply to Become a Partner
           </Link>
         </div>
       </section>
