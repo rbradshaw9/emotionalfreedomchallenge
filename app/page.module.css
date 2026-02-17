@@ -83,10 +83,6 @@
   line-height: var(--leading-relaxed);
 }
 
-.disclaimer a {
-  text-decoration: underline;
-}
-
 .benefitsSection {
   padding: var(--space-20) 0;
   background-color: var(--color-gray-50);
