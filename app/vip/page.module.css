@@ -4,7 +4,12 @@
 
 .hero {
   padding: var(--space-24) 0 var(--space-16);
-  background: linear-gradient(180deg, #F3F6F9 0%, #FAFBFC 100%);
+  background: 
+    linear-gradient(180deg, rgba(243, 246, 249, 0.95) 0%, rgba(250, 251, 252, 0.95) 100%),
+    url('/images/backgrounddp.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
 }
 
