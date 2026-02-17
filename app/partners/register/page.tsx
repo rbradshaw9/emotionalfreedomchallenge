@@ -190,6 +190,23 @@ export default function PartnerRegister() {
             <Script id="partner-form-validation" strategy="afterInteractive">
               {`
                 (function() {
+                  function validateForm(e) {
+                    var form = document.getElementById('inf_form_4c9b8b75fc0b1e19505d18dac0e1a6ab');
+                    if (!form) return true;
+                    
+                    // Check if form is valid
+                    if (!form.checkValidity()) {
+                      if (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        e.stopImmediatePropagation();
+                      }
+                      form.reportValidity();
+                      return false;
+                    }
+                    return true;
+                  }
+                  
                   function attachValidation() {
                     var form = document.getElementById('inf_form_4c9b8b75fc0b1e19505d18dac0e1a6ab');
                     if (!form) {
@@ -200,14 +217,31 @@ export default function PartnerRegister() {
                     if (form.dataset.validationAttached) return;
                     form.dataset.validationAttached = 'true';
                     
-                    form.addEventListener('submit', function(e) {
-                      if (!form.checkValidity()) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        form.reportValidity();
-                        return false;
+                    // Override the form's submit method
+                    var originalSubmit = HTMLFormElement.prototype.submit;
+                    form.submit = function() {
+                      if (validateForm(null)) {
+                        originalSubmit.call(this);
                       }
-                    }, true);
+                    };
+                    
+                    // Attach multiple event listeners to catch all submission attempts
+                    form.addEventListener('submit', validateForm, true); // Capture phase
+                    form.addEventListener('submit', validateForm, false); // Bubble phase
+                    
+                    // Additional click handler on submit button
+                    var submitBtn = document.getElementById('recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab');
+                    if (submitBtn) {
+                      submitBtn.addEventListener('click', function(e) {
+                        if (!form.checkValidity()) {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          e.stopImmediatePropagation();
+                          form.reportValidity();
+                          return false;
+                        }
+                      }, true);
+                    }
                   }
                   
                   if (document.readyState === 'loading') {
@@ -215,6 +249,9 @@ export default function PartnerRegister() {
                   } else {
                     attachValidation();
                   }
+                  
+                  // Also try to attach after a delay to ensure it runs after Infusionsoft scripts
+                  setTimeout(attachValidation, 1000);
                 })();
               `}
             </Script>
