@@ -49,6 +49,7 @@
 .formSection {
   padding: var(--space-12) 0;
   background-color: var(--color-gray-50);
+  scroll-margin-top: var(--space-16);
 }
 
 .formCard {

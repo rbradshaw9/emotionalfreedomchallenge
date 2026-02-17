@@ -34,7 +34,7 @@ export default function RegistrationPage() {
         </div>
       </section>
 
-      <section className={styles.formSection}>
+      <section id="register" className={styles.formSection}>
         <div className="container container-sm">
           <div className={styles.formCard}>
             <RegistrationForm />
@@ -174,7 +174,7 @@ export default function RegistrationPage() {
 
       <section className={styles.ctaSection}>
         <div className="container container-sm text-center">
-          <a href="#" className="button button-primary button-lg">
+          <a href="#register" className="button button-primary button-lg">
             Reserve Your Free Spot
           </a>
         </div>
