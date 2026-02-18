@@ -13,7 +13,7 @@ export default function ThankYouPage() {
   return (
     <div className={styles.page}>
       <section className={styles.hero}>
-        <div className="container container-sm">
+        <div className="container container-content">
           <h1>You're In</h1>
           
           <p className={styles.subtitle}>
@@ -23,7 +23,7 @@ export default function ThankYouPage() {
       </section>
 
       <section className={styles.confirmationSection}>
-        <div className="container container-sm">
+        <div className="container container-content">
           <p>
             You're officially registered for 5 Days to Emotional Ownership, and we've sent you an email with everything you need to participate.
           </p>
@@ -35,7 +35,7 @@ export default function ThankYouPage() {
       </section>
 
       <section className={styles.stepsSection}>
-        <div className="container container-md">
+        <div className="container container-content">
           <div className={styles.step}>
             <h2>Step 1: Join the Private Facebook Group</h2>
             <p>
@@ -110,7 +110,7 @@ export default function ThankYouPage() {
       </section>
 
       <section className={styles.finalSection}>
-        <div className="container container-sm">
+        <div className="container container-content">
           <h2>A Final Note</h2>
           <p>
             Change rarely happens because someone learns a single new idea.

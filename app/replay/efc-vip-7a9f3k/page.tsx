@@ -76,7 +76,7 @@ export default function ReplayPage() {
 
       {/* Orientation Block */}
       <div className={styles.orientationSection}>
-        <div className="container container-md">
+        <div className="container container-content">
           <div className={styles.orientationCard}>
             <h2 className={styles.orientationTitle}>Welcome to Your Replays</h2>
             <p className={styles.orientationText}>

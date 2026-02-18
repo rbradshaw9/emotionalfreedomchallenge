@@ -5,7 +5,7 @@ export default function VIPPage() {
   return (
     <div className={styles.page}>
       <section className={styles.hero}>
-        <div className="container container-md">
+        <div className="container container-content">
           <h1 className="text-center text-balance">
             You're Registered — One More Thing Before You Go
           </h1>

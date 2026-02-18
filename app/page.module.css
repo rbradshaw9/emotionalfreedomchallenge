@@ -155,7 +155,6 @@
   color: var(--color-gray-700);
   line-height: 1.8;
   margin-bottom: var(--space-8);
-  max-width: 680px;
 }
 
 .contentSection p:last-child {
@@ -193,19 +192,11 @@
   padding: var(--space-20) 0 !important;
 }
 
-.clarificationSection .container {
-  max-width: 640px;
-}
-
 .optionalAccessSection {
   background-color: #FAFBFC !important;
   padding: var(--space-20) 0 !important;
   border-top: 1px solid var(--color-gray-200);
   border-bottom: 1px solid var(--color-gray-200);
-}
-
-.optionalAccessSection .container {
-  max-width: 640px;
 }
 
 .optionalAccessSection h2 {

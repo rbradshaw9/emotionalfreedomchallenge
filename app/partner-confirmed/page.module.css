@@ -52,7 +52,6 @@
   color: var(--color-gray-600);
   text-align: center;
   line-height: var(--leading-relaxed);
-  max-width: 600px;
   margin: 0 auto var(--space-8);
 }
 
@@ -114,7 +113,6 @@
   color: var(--color-gray-600);
   font-size: var(--text-lg);
   line-height: var(--leading-relaxed);
-  max-width: 600px;
   margin: 0 auto var(--space-8);
   font-style: italic;
 }
