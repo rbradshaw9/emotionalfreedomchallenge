@@ -43,7 +43,7 @@ export default function ThankYouPage() {
             </p>
             <p className={styles.callout}>
               👉 <a 
-                href="https://facebook.com/groups/emotionalfreedomchallenge" 
+                href="https://www.facebook.com/groups/emotionalfreedomchallengemarch2026" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.groupLink}
