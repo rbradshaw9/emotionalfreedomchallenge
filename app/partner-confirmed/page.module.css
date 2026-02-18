@@ -2,7 +2,6 @@
   min-height: calc(100vh - 200px);
   display: flex;
   align-items: center;
-  background: var(--gradient-cool);
 }
 
 .confirmationSection {
@@ -40,10 +39,10 @@
 
 .confirmationCard h1 {
   font-size: var(--text-5xl);
-  color: var(--color-gray-800);
+  color: var(--color-gray-900);
   margin-bottom: var(--space-6);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-weight: 800;
+  letter-spacing: -0.04em;
   font-family: var(--font-display);
 }
 
@@ -56,16 +55,20 @@
 }
 
 .nextStepsCard {
-  background: var(--gradient-soft);
+  background: var(--color-white);
   border: 1px solid var(--color-gray-200);
+  border-left: 4px solid var(--color-primary);
   border-radius: var(--radius-xl);
   padding: var(--space-8);
   margin-bottom: var(--space-8);
+  box-shadow: var(--shadow-sm);
 }
 
 .nextStepsCard h2 {
   font-size: var(--text-2xl);
-  color: var(--color-primary);
+  color: var(--color-gray-900);
+  font-weight: 700;
+  letter-spacing: -0.02em;
   text-align: center;
   margin-bottom: var(--space-6);
 }

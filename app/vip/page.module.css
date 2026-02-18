@@ -25,27 +25,27 @@
 .hero h1 {
   font-size: var(--text-5xl);
   color: var(--color-gray-900);
-  margin-bottom: var(--space-6);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  margin-bottom: var(--space-5);
+  font-weight: 800;
+  letter-spacing: -0.04em;
   font-family: var(--font-display);
   position: relative;
 }
 
 .subtitle {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   color: var(--color-gray-600);
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
   letter-spacing: -0.01em;
+  font-weight: 500;
   position: relative;
 }
 
 .confirmationSection {
   padding: var(--space-16) 0;
-  background-color: var(--color-white);
 }
 
 .confirmationSection p {
@@ -171,7 +171,6 @@
 
 .valueSection {
   padding: var(--space-20) 0;
-  background-color: var(--color-white);
 }
 
 .valueSection h2 {
@@ -214,7 +213,6 @@
 /* Features Section - Clean single-column list design */
 .featuresSection {
   padding: var(--space-24) 0;
-  background: linear-gradient(to bottom, var(--color-white) 0%, var(--color-gray-50) 100%);
 }
 
 .featuresSection h2 {
@@ -239,13 +237,13 @@
 .featureItem {
   display: flex;
   gap: var(--space-6);
-  margin-bottom: var(--space-12);
-  padding: var(--space-8);
+  margin-bottom: var(--space-6);
+  padding: var(--space-6) var(--space-8);
   background-color: var(--color-white);
-  border: 1.5px solid var(--color-gray-200);
+  border: 1px solid var(--color-gray-200);
   border-radius: var(--radius-xl);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .featureItem:hover {
@@ -329,7 +327,6 @@
 /* Decision Section - Enhanced readability */
 .decisionSection {
   padding: var(--space-24) 0;
-  background-color: var(--color-white);
 }
 
 .decisionSection h2 {
@@ -440,28 +437,29 @@
 
 /* Final CTA Section */
 .finalCtaSection {
-  padding: var(--space-20) 0;
-  background-color: var(--color-white);
+  padding: var(--space-12) 0 var(--space-20);
 }
 
 .finalCtaCard {
-  background: linear-gradient(135deg, #fafbfc 0%, #f3f6f9 100%);
-  border: 2px solid var(--color-primary);
+  background: var(--color-primary);
+  border: none;
   border-radius: var(--radius-2xl);
-  padding: var(--space-10);
-  box-shadow: 0 10px 40px -10px rgba(29, 120, 116, 0.15);
+  padding: var(--space-12) var(--space-10);
+  box-shadow: 0 20px 40px -10px rgba(29, 120, 116, 0.35);
+  text-align: center;
 }
 
 .finalCtaCard h2 {
   font-size: var(--text-3xl);
-  color: var(--color-gray-900);
-  margin-bottom: var(--space-8);
+  color: var(--color-white);
+  margin-bottom: var(--space-6);
   text-align: center;
+  font-weight: 700;
 }
 
 .finalPricing {
-  background-color: var(--color-white);
-  border: 1.5px solid var(--color-gray-200);
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   margin-bottom: var(--space-8);
@@ -472,24 +470,24 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--space-4) 0;
-  font-size: var(--text-lg);
-  color: var(--color-gray-700);
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .free {
-  color: var(--color-primary);
-  font-weight: 600;
+  color: var(--color-white);
+  font-weight: 700;
 }
 
 .vipPrice {
-  color: var(--color-primary);
-  font-weight: 600;
+  color: var(--color-white);
+  font-weight: 700;
   font-size: var(--text-xl);
 }
 
 .pricingSeparator {
   height: 1px;
-  background-color: var(--color-gray-300);
+  background-color: rgba(255, 255, 255, 0.25);
   margin: var(--space-4) 0;
 }
 
@@ -498,44 +496,44 @@
   justify-content: space-between;
   align-items: center;
   padding-top: var(--space-4);
-  font-size: var(--text-xl);
-  font-weight: 600;
-  color: var(--color-gray-900);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-white);
 }
 
 .totalAmount {
-  color: var(--color-primary);
+  color: var(--color-white);
   font-size: var(--text-3xl);
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .secondaryPath {
   text-align: center;
   padding-top: var(--space-6);
-  border-top: 1px solid var(--color-gray-200);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
   margin-top: var(--space-4);
 }
 
 .orText {
-  font-size: var(--text-base);
-  color: var(--color-gray-600);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: var(--space-4);
 }
 
 .noThanksLink {
   display: inline-block;
-  color: var(--color-gray-600);
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   transition: color 0.2s ease;
   padding: var(--space-3) var(--space-6);
-  border: 1.5px solid var(--color-gray-300);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: var(--radius-lg);
 }
 
 .noThanksLink:hover {
-  color: var(--color-gray-900);
-  border-color: var(--color-gray-400);
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
 .closingSection {

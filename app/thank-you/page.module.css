@@ -26,18 +26,18 @@
 
 .hero h1 {
   font-size: var(--text-5xl);
-  margin-bottom: var(--space-8);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  margin-bottom: var(--space-5);
+  font-weight: 800;
+  letter-spacing: -0.04em;
   font-family: var(--font-display);
   color: var(--color-gray-900);
   position: relative;
 }
 
 .subtitle {
-  font-size: var(--text-2xl);
-  color: var(--color-gray-700);
-  line-height: var(--leading-snug);
+  font-size: var(--text-lg);
+  color: var(--color-gray-600);
+  line-height: var(--leading-relaxed);
   font-weight: 500;
   position: relative;
 }
@@ -45,7 +45,6 @@
 /* Confirmation Section - Clean and Simple */
 .confirmationSection {
   padding: var(--space-16) 0 var(--space-20);
-  background-color: var(--color-white);
   text-align: center;
 }
 
@@ -66,7 +65,6 @@
 /* Steps Section - Clean Separation */
 .stepsSection {
   padding: var(--space-20) 0;
-  background-color: var(--color-gray-50);
 }
 
 .step {

@@ -25,27 +25,27 @@
 .hero h1 {
   font-size: var(--text-5xl);
   color: var(--color-gray-900);
-  margin-bottom: var(--space-6);
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  margin-bottom: var(--space-5);
+  font-weight: 800;
+  letter-spacing: -0.04em;
   font-family: var(--font-display);
   position: relative;
 }
 
 .subtitle {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   color: var(--color-gray-600);
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
   letter-spacing: -0.01em;
+  font-weight: 500;
   position: relative;
 }
 
 .introSection {
   padding: var(--space-16) 0;
-  background-color: var(--color-white);
 }
 
 .introSection p {
@@ -139,15 +139,13 @@
 
 .contentSection {
   padding: var(--space-20) 0;
-  background-color: var(--color-white);
-}
-
-.contentSection:nth-of-type(even) {
-  background-color: transparent;
 }
 
 .contentSection h2 {
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-8);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
 .contentSection p {
@@ -188,15 +186,27 @@
 }
 
 .clarificationSection {
-  background: linear-gradient(135deg, #F9FAFB 0%, #F3F6F9 100%) !important;
-  padding: var(--space-20) 0 !important;
+  padding: var(--space-20) 0;
+}
+
+.clarificationSection > div {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+  box-shadow: var(--shadow-sm);
 }
 
 .optionalAccessSection {
-  background-color: #FAFBFC !important;
-  padding: var(--space-20) 0 !important;
-  border-top: 1px solid var(--color-gray-200);
-  border-bottom: 1px solid var(--color-gray-200);
+  padding: var(--space-20) 0;
+}
+
+.optionalAccessSection > div {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+  box-shadow: var(--shadow-sm);
 }
 
 .optionalAccessSection h2 {
@@ -205,7 +215,6 @@
 
 .invitationSection {
   padding: var(--space-20) 0;
-  background-color: var(--color-white);
 }
 
 .invitationSection h2 {

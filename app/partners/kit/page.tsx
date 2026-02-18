@@ -204,11 +204,41 @@ Learn how to stop reacting emotionally and start choosing intentionally.
 
       {/* Content Sections (only show when code is available) */}
       {affiliateCode && (
-        <>
+        <div className={styles.kitLayout}>
+          {/* Sticky Sidebar */}
+          <aside className={styles.sidebar}>
+            <div className={styles.sidebarInner}>
+              <p className={styles.sidebarLabel}>On this page</p>
+              <a href="#email-swipes" className={styles.sidebarLink}>
+                <span className={styles.sidebarLinkIcon}>&#9993;</span>
+                Email Swipes
+              </a>
+              <a href="#social-posts" className={styles.sidebarLink}>
+                <span className={styles.sidebarLinkIcon}>&#128241;</span>
+                Social Media Copy
+              </a>
+              <a href="#tracking-notes" className={styles.sidebarLink}>
+                <span className={styles.sidebarLinkIcon}>&#128202;</span>
+                Tracking &amp; Notes
+              </a>
+              <div className={styles.sidebarHelp}>
+                <p className={styles.sidebarHelpTitle}>Need help?</p>
+                <p className={styles.sidebarHelpText}>Our partner support team is available to assist with your campaigns.</p>
+                <a href="mailto:info@drpauljenkins.com" className={styles.sidebarHelpLink}>Contact Support</a>
+              </div>
+            </div>
+          </aside>
+
+          {/* Main Content */}
+          <div className={styles.kitContent}>
+
           {/* Email Promotion Options */}
-          <section className={styles.contentSection}>
-            <div className="container container-md">
-              <h2>Email Promotion Options</h2>
+          <section id="email-swipes" className={styles.contentSection}>
+            <div className={styles.sectionHeaderBar}>
+              <div className={styles.sectionIconCircle}>&#9993;</div>
+              <h2>1. Email Swipes</h2>
+            </div>
+            <div className={styles.sectionBody}>
 
               <div className={styles.promoBlock}>
                 <h3>Email Option 1 — Soft, Value-First (Recommended)</h3>
@@ -382,16 +412,19 @@ Learn how to stop reacting emotionally and start choosing intentionally.
                   </button>
                 </div>
               </div>
-            </div>
+            </div>{/* end sectionBody */}
           </section>
 
           {/* Social Post Options */}
-          <section className={styles.contentSection}>
-            <div className="container container-md">
-              <h2>Social Post Options</h2>
+          <section id="social-posts" className={styles.contentSection}>
+            <div className={styles.sectionHeaderBar}>
+              <div className={styles.sectionIconCircle}>&#128241;</div>
+              <h2>2. Social Media Copy</h2>
+            </div>
+            <div className={styles.sectionBody}>
 
               <div className={styles.promoBlock}>
-                <h3>Social Post Option 1 — Neutral & Professional</h3>
+                <h3>Social Post Option 1 — Neutral &amp; Professional</h3>
                 <div className={styles.promoContent}>
                   <pre>{getSocialOption1()}</pre>
                 </div>
@@ -428,14 +461,17 @@ Learn how to stop reacting emotionally and start choosing intentionally.
                   {copiedIndex === 9 ? '✓ Copied!' : 'Copy'}
                 </button>
               </div>
-            </div>
+            </div>{/* end sectionBody */}
           </section>
 
           {/* Tracking & Partner Notes */}
-          <section className={styles.notesSection}>
-            <div className="container container-md">
-              <h2>Tracking & Partner Notes</h2>
-              <ul>
+          <section id="tracking-notes" className={styles.contentSection}>
+            <div className={styles.sectionHeaderBar}>
+              <div className={styles.sectionIconCircle}>&#128202;</div>
+              <h2>3. Tracking &amp; Notes</h2>
+            </div>
+            <div className={styles.sectionBody}>
+              <ul className={styles.notesList}>
                 <li>Each partner receives a unique referral tracking link</li>
                 <li>Tracking applies to:
                   <ul>
@@ -450,16 +486,16 @@ Learn how to stop reacting emotionally and start choosing intentionally.
             </div>
           </section>
 
-          {/* Thank You */}
+          {/* Thank You CTA */}
           <section className={styles.thankYouSection}>
-            <div className="container container-sm">
-              <h2>Thank You</h2>
-              <p>
-                We truly appreciate your willingness to share this experience. Emotional ownership work changes lives, and your support helps the right people find it.
-              </p>
-            </div>
+            <h2>Thank You</h2>
+            <p>
+              We truly appreciate your willingness to share this experience. Emotional ownership work changes lives, and your support helps the right people find it.
+            </p>
           </section>
-        </>
+
+          </div>{/* end kitContent */}
+        </div>
       )}
     </div>
   );
