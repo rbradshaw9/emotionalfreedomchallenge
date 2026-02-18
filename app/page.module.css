@@ -139,6 +139,69 @@
   line-height: var(--leading-relaxed);
 }
 
+/* Keap Infusion form styles inside form card */
+.formCard :global(.infusion-field) {
+  margin-bottom: var(--space-6);
+}
+
+.formCard :global(.infusion-field label) {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-gray-700);
+  margin-bottom: var(--space-2);
+}
+
+.formCard :global(.infusion-field input) {
+  width: 100%;
+  padding: var(--space-4);
+  border: 1.5px solid var(--color-gray-300);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-base);
+  color: var(--color-gray-800);
+  background-color: var(--color-white);
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.formCard :global(.infusion-field input::placeholder) {
+  color: var(--color-gray-400);
+  opacity: 1;
+}
+
+.formCard :global(.infusion-field input:focus) {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(29, 120, 116, 0.1);
+}
+
+/* Keap validation error states */
+.formCard :global(.infusion-field input.infusion-field-required) {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.formCard :global(.infusion-field input.infusion-field-required:focus) {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.formCard :global(.infusion-field-required-errorMessage) {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: #dc2626;
+  font-weight: var(--font-medium);
+}
+
+.formCard :global(.infusion-submit) {
+  margin-top: var(--space-4);
+}
+
+.formCard :global(.infusion-submit button) {
+  width: 100%;
+}
+
 .contentSection {
   padding: var(--space-20) 0;
   border-top: 1px solid var(--color-gray-200);
