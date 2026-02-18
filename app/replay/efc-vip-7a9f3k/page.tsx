@@ -58,7 +58,6 @@ function ReplayPageInner() {
   // Positioned as exclusive early-access for VIP members before calendar opens to the public
   // INTEGRATION POINT: Replace the placeholder Calendly link before the challenge starts
   const showCallCTA = true;
-  const isCtaPreview = false;
 
   return (
     <div className={styles.page}>
