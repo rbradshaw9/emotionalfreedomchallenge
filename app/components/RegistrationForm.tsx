@@ -1,19 +1,52 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Script from 'next/script';
 import styles from '../page.module.css';
 
 export default function RegistrationForm() {
   const [errors, setErrors] = useState({ firstName: '', email: '' });
   const [touched, setTouched] = useState({ firstName: false, email: false });
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const validateEmail = (email: string): boolean => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
-  const validateFields = (form: HTMLFormElement): { firstName: string; email: string } => {
+  // Use a native capture-phase listener so our handler fires BEFORE Keap's
+  // bubble-phase listener that is attached directly to the button element.
+  useEffect(() => {
+    const button = buttonRef.current;
+    if (!button) return;
+
+    const handleClick = (e: MouseEvent) => {
+      const form = button.closest('form') as HTMLFormElement;
+      const firstName = (form.elements.namedItem('inf_field_FirstName') as HTMLInputElement).value.trim();
+      const email = (form.elements.namedItem('inf_field_Email') as HTMLInputElement).value.trim();
+      const newErrors = { firstName: '', email: '' };
+      if (!firstName) newErrors.firstName = 'First name is required';
+      if (!email) {
+        newErrors.email = 'Email is required';
+      } else if (!validateEmail(email)) {
+        newErrors.email = 'Please enter a valid email address';
+      }
+      if (newErrors.firstName || newErrors.email) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        setErrors(newErrors);
+        setTouched({ firstName: true, email: true });
+      }
+    };
+
+    // capture: true fires during the capture phase, before any bubble-phase
+    // listeners (including the one Keap's script adds directly to the button)
+    button.addEventListener('click', handleClick, { capture: true });
+    return () => button.removeEventListener('click', handleClick, { capture: true });
+  }, []);
+
+  // Secondary fallback for programmatic form.requestSubmit() calls
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const form = e.currentTarget;
     const firstName = (form.elements.namedItem('inf_field_FirstName') as HTMLInputElement).value.trim();
     const email = (form.elements.namedItem('inf_field_Email') as HTMLInputElement).value.trim();
     const newErrors = { firstName: '', email: '' };
@@ -23,27 +56,9 @@ export default function RegistrationForm() {
     } else if (!validateEmail(email)) {
       newErrors.email = 'Please enter a valid email address';
     }
-    return newErrors;
-  };
-
-  // Intercept the button click BEFORE the Keap reCAPTCHA script's listener fires.
-  // stopImmediatePropagation prevents other handlers on the same element from running.
-  const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const form = e.currentTarget.closest('form') as HTMLFormElement;
-    const newErrors = validateFields(form);
     if (newErrors.firstName || newErrors.email) {
       e.preventDefault();
-      e.nativeEvent.stopImmediatePropagation();
-      setErrors(newErrors);
-      setTouched({ firstName: true, email: true });
-    }
-  };
-
-  // Fallback: also block the submit event in case the form is submitted another way.
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    const newErrors = validateFields(e.currentTarget);
-    if (newErrors.firstName || newErrors.email) {
-      e.preventDefault();
+      e.stopPropagation();
       setErrors(newErrors);
       setTouched({ firstName: true, email: true });
     }
@@ -139,10 +154,10 @@ export default function RegistrationForm() {
         </div>
 
         <button 
+          ref={buttonRef}
           type="submit" 
           className="button button-primary button-lg infusion-recaptcha" 
           id="recaptcha_9f8fabd0cb80c3d4232d104b7905ff0f"
-          onClick={handleButtonClick}
         >
           Reserve Your Free Spot
         </button>
