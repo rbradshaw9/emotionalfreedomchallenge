@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
 import styles from './page.module.css';
 
 // Video data structure
@@ -55,12 +54,11 @@ function ReplayPageInner() {
   const [selectedDay, setSelectedDay] = useState(firstActiveDay);
   const currentVideo = videoData.find(video => video.day === selectedDay) || videoData[0];
   
-  // COACHING CTA — auto-reveals on March 19, 2026 (after Day 4 session)
-  // Preview before that date by visiting the page with ?preview=cta in the URL
-  const searchParams = useSearchParams();
-  const CTA_REVEAL_DATE = new Date('2026-03-19T00:00:00');
-  const showCallCTA = new Date() >= CTA_REVEAL_DATE || searchParams.get('preview') === 'cta';
-  const isCtaPreview = searchParams.get('preview') === 'cta' && new Date() < CTA_REVEAL_DATE;
+  // COACHING CTA — always visible on the VIP replay page
+  // Positioned as exclusive early-access for VIP members before calendar opens to the public
+  // INTEGRATION POINT: Replace the placeholder Calendly link before the challenge starts
+  const showCallCTA = true;
+  const isCtaPreview = false;
 
   return (
     <div className={styles.page}>
@@ -173,21 +171,17 @@ function ReplayPageInner() {
         </div>
       </div>
 
-      {/* Coaching CTA — auto-reveals March 19, 2026 | preview via ?preview=cta */}
+      {/* Coaching CTA — always visible, positioned as VIP early-access */}
       {showCallCTA && (
         <section className={styles.coachingSection}>
           <div className="container container-sm">
-            {isCtaPreview && (
-              <div className={styles.previewBanner}>
-                &#128065; Preview mode — this section is hidden until March 19, 2026
-              </div>
-            )}
             <div className={styles.coachingCard}>
-              <h2>Take Your Transformation Further</h2>
+              <div className={styles.coachingBadge}>VIP Early Access</div>
+              <h2>Work Directly with Dr. Paul</h2>
               <p className={styles.coachingText}>
-                You&rsquo;ve done the work. Now let&rsquo;s make it stick. Schedule a one-on-one coaching call 
-                with Dr. Paul Jenkins to get personalized guidance, work through your specific challenges, 
-                and build a clear path forward.
+                As a VIP member, you&rsquo;re getting first access to Dr. Paul&rsquo;s coaching calendar
+                before it opens to the public. A limited number of one-on-one sessions are
+                available &mdash; claim yours now while spots remain.
               </p>
               <div className={styles.coachingCTA}>
                 {/* INTEGRATION POINT: Replace href with actual scheduling link */}
@@ -197,11 +191,11 @@ function ReplayPageInner() {
                   rel="noopener noreferrer"
                   className="button button-lg"
                 >
-                  Schedule Your Coaching Call
+                  Claim Your Spot
                 </a>
               </div>
               <p className={styles.coachingNote}>
-                Limited spots available — book yours before they fill up.
+                This calendar link is exclusive to VIP members &mdash; not shared publicly.
               </p>
             </div>
           </div>
