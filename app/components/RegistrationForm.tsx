@@ -22,6 +22,7 @@ export default function RegistrationForm() {
             name="inf_field_FirstName"
             placeholder="First Name *"
             type="text"
+            required
           />
         </div>
 
@@ -31,7 +32,8 @@ export default function RegistrationForm() {
             id="inf_field_Email"
             name="inf_field_Email"
             placeholder="Email *"
-            type="text"
+            type="email"
+            required
           />
         </div>
 
