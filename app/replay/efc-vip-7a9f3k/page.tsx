@@ -3,57 +3,123 @@
 import { useState, Suspense } from 'react';
 import styles from './page.module.css';
 
-// Video data structure
-// INTEGRATION POINT: Set active: true and provide videoUrl when each session is ready
+// ─── Video Data ────────────────────────────────────────────────────────────────
+// Each day has two recordings: the main training (shared with all attendees) and
+// the VIP-only session.
+//
+// TO ACTIVATE A DAY:
+//   1. Set active: true
+//   2. Add the Vimeo embed URL to mainSession.videoUrl and/or vipSession.videoUrl
+//      Format: 'https://player.vimeo.com/video/XXXXXXX'
+// ──────────────────────────────────────────────────────────────────────────────
 const videoData = [
   {
     day: 1,
-    title: 'Day 1: Understanding Emotional Freedom',
-    description: 'Discover the foundations of emotional freedom and learn why old patterns keep repeating.',
-    videoUrl: '', // INTEGRATION POINT: Replace with Vimeo URL when available
-    duration: '~60 min',
-    active: false, // Set to true and add videoUrl when session is complete
+    active: false,
+    mainSession: {
+      label: 'Main Training',
+      title: 'Understanding Emotional Freedom',
+      description: 'Discover the foundations of emotional freedom and learn why old patterns keep repeating.',
+      videoUrl: '', // INTEGRATION POINT: Add Vimeo URL
+      duration: '~60 min',
+    },
+    vipSession: {
+      label: 'VIP Session',
+      title: 'Day 1 VIP — Deep Dive & Q&A',
+      description: 'Extended coaching, personalized Q&A, and deeper application of today\'s core concepts.',
+      videoUrl: '', // INTEGRATION POINT: Add Vimeo URL
+      duration: '~30 min',
+    },
   },
   {
     day: 2,
-    title: 'Day 2: Breaking Free from Limiting Beliefs',
-    description: 'Identify and transform the beliefs that have been holding you back from true freedom.',
-    videoUrl: '',
-    duration: '~60 min',
     active: false,
+    mainSession: {
+      label: 'Main Training',
+      title: 'Breaking Free from Limiting Beliefs',
+      description: 'Identify and transform the beliefs that have been holding you back from true freedom.',
+      videoUrl: '',
+      duration: '~60 min',
+    },
+    vipSession: {
+      label: 'VIP Session',
+      title: 'Day 2 VIP — Deep Dive & Q&A',
+      description: 'Extended coaching, personalized Q&A, and deeper application of today\'s core concepts.',
+      videoUrl: '',
+      duration: '~30 min',
+    },
   },
   {
     day: 3,
-    title: 'Day 3: The Power of Emotional Awareness',
-    description: 'Learn to recognize and work with your emotions rather than being controlled by them.',
-    videoUrl: '',
-    duration: '~60 min',
     active: false,
+    mainSession: {
+      label: 'Main Training',
+      title: 'The Power of Emotional Awareness',
+      description: 'Learn to recognize and work with your emotions rather than being controlled by them.',
+      videoUrl: '',
+      duration: '~60 min',
+    },
+    vipSession: {
+      label: 'VIP Session',
+      title: 'Day 3 VIP — Deep Dive & Q&A',
+      description: 'Extended coaching, personalized Q&A, and deeper application of today\'s core concepts.',
+      videoUrl: '',
+      duration: '~30 min',
+    },
   },
   {
     day: 4,
-    title: 'Day 4: Creating New Patterns',
-    description: 'Practical techniques for establishing new, healthier emotional patterns that last.',
-    videoUrl: '',
-    duration: '~60 min',
     active: false,
+    mainSession: {
+      label: 'Main Training',
+      title: 'Creating New Patterns',
+      description: 'Practical techniques for establishing new, healthier emotional patterns that last.',
+      videoUrl: '',
+      duration: '~60 min',
+    },
+    vipSession: {
+      label: 'VIP Session',
+      title: 'Day 4 VIP — Deep Dive & Q&A',
+      description: 'Extended coaching, personalized Q&A, and deeper application of today\'s core concepts.',
+      videoUrl: '',
+      duration: '~30 min',
+    },
   },
   {
     day: 5,
-    title: 'Day 5: Living in Emotional Freedom',
-    description: 'Integrate everything you\'ve learned and create your personal plan for sustained freedom.',
-    videoUrl: '',
-    duration: '~60 min',
     active: false,
+    mainSession: {
+      label: 'Main Training',
+      title: 'Living in Emotional Freedom',
+      description: 'Integrate everything you\'ve learned and create your personal plan for sustained freedom.',
+      videoUrl: '',
+      duration: '~60 min',
+    },
+    vipSession: {
+      label: 'VIP Session',
+      title: 'Day 5 VIP — Deep Dive & Q&A',
+      description: 'Extended coaching, personalized Q&A, and deeper application of today\'s core concepts.',
+      videoUrl: '',
+      duration: '~30 min',
+    },
   },
 ];
 
+type VideoTab = 'main' | 'vip';
+
 function ReplayPageInner() {
-  // Default to the first active day, or day 1 if none are active yet
   const firstActiveDay = videoData.find(v => v.active)?.day ?? 1;
   const [selectedDay, setSelectedDay] = useState(firstActiveDay);
-  const currentVideo = videoData.find(video => video.day === selectedDay) || videoData[0];
-  
+  const [activeTab, setActiveTab] = useState<VideoTab>('main');
+
+  const currentDay = videoData.find(v => v.day === selectedDay) || videoData[0];
+  const currentSession = activeTab === 'main' ? currentDay.mainSession : currentDay.vipSession;
+
+  function handleDaySelect(day: number) {
+    setSelectedDay(day);
+    setActiveTab('main'); // always reset to main training when switching days
+  }
+
   // COACHING CTA — always visible on the VIP replay page
   // Positioned as exclusive early-access for VIP members before calendar opens to the public
   // INTEGRATION POINT: Replace the placeholder Calendly link before the challenge starts
@@ -61,15 +127,13 @@ function ReplayPageInner() {
 
   return (
     <div className={styles.page}>
-      {/* 
+      {/*
         SECURITY NOTE: This page is at an unguessable URL (/replay/efc-vip-7a9f3k)
         - Not linked in any public navigation
         - noindex/nofollow metadata set in layout.tsx
         - Disallowed in robots.txt
-        
-        FUTURE: Add authentication/token validation here before showing content
       */}
-      
+
       <div className={styles.header}>
         <div className="container">
           <h1>Challenge Replays</h1>
@@ -83,11 +147,11 @@ function ReplayPageInner() {
       <div className={styles.orientationSection}>
         <div className="container container-content">
           <div className={styles.orientationCard}>
-            <h2 className={styles.orientationTitle}>Welcome to Your Replays</h2>
+            <h2 className={styles.orientationTitle}>Welcome to Your VIP Replays</h2>
             <p className={styles.orientationText}>
-              Each session builds on the previous one, creating a foundation for lasting transformation. 
-              We recommend watching the sessions in order (Day 1 through Day 5) for the best experience. 
-              Take your time with each session and revisit them as needed—the insights deepen with each viewing.
+              Each day includes two recordings: the <strong>Main Training</strong> session and your
+              exclusive <strong>VIP Session</strong> with extended coaching and live Q&amp;A.
+              Watch in order for the best experience, and revisit any session as often as you like.
             </p>
           </div>
         </div>
@@ -96,24 +160,59 @@ function ReplayPageInner() {
       <div className={styles.replayContainer}>
         <div className="container">
           <div className={styles.layout}>
-            {/* Main video player */}
+
+            {/* ── Main content area ── */}
             <div className={styles.videoSection}>
-              {currentVideo.active && currentVideo.videoUrl ? (
+              {currentDay.active ? (
                 <>
-                  <div className={styles.videoWrapper}>
-                    <iframe
-                      src={currentVideo.videoUrl}
-                      title={currentVideo.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className={styles.videoPlayer}
-                    />
+                  {/* Tab switcher */}
+                  <div className={styles.tabBar}>
+                    <button
+                      className={`${styles.tabButton} ${activeTab === 'main' ? styles.tabButtonActive : ''}`}
+                      onClick={() => setActiveTab('main')}
+                    >
+                      {currentDay.mainSession.label}
+                      <span className={styles.tabDuration}>{currentDay.mainSession.duration}</span>
+                    </button>
+                    <button
+                      className={`${styles.tabButton} ${activeTab === 'vip' ? styles.tabButtonActive : ''} ${styles.tabButtonVip}`}
+                      onClick={() => setActiveTab('vip')}
+                    >
+                      {currentDay.vipSession.label}
+                      <span className={styles.tabDuration}>{currentDay.vipSession.duration}</span>
+                    </button>
                   </div>
+
+                  {/* Player */}
+                  {currentSession.videoUrl ? (
+                    <div className={styles.videoWrapper}>
+                      <iframe
+                        key={`${selectedDay}-${activeTab}`}
+                        src={currentSession.videoUrl}
+                        title={currentSession.title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className={styles.videoPlayer}
+                      />
+                    </div>
+                  ) : (
+                    <div className={styles.comingSoonWrapper}>
+                      <div className={styles.comingSoonInner}>
+                        <div className={styles.lockIcon}>&#128247;</div>
+                        <h2 className={styles.comingSoonTitle}>Recording processing&hellip;</h2>
+                        <p className={styles.comingSoonText}>
+                          This recording will be posted shortly after the session ends.
+                        </p>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Info below player */}
                   <div className={styles.videoInfo}>
-                    <h2>{currentVideo.title}</h2>
-                    <p className={styles.videoDescription}>{currentVideo.description}</p>
+                    <h2>{currentSession.title}</h2>
+                    <p className={styles.videoDescription}>{currentSession.description}</p>
                     <div className={styles.videoMeta}>
-                      <span className={styles.duration}>Duration: {currentVideo.duration}</span>
+                      <span className={styles.duration}>Duration: {currentSession.duration}</span>
                     </div>
                   </div>
                 </>
@@ -122,10 +221,10 @@ function ReplayPageInner() {
                   <div className={styles.comingSoonWrapper}>
                     <div className={styles.comingSoonInner}>
                       <div className={styles.lockIcon}>&#128274;</div>
-                      <h2 className={styles.comingSoonTitle}>Day {currentVideo.day} — Coming Soon</h2>
+                      <h2 className={styles.comingSoonTitle}>Day {currentDay.day} — Coming Soon</h2>
                       <p className={styles.comingSoonText}>
-                        This session recording will be available after the live session on{' '}
-                        <strong>March {15 + currentVideo.day}, 2026</strong>.
+                        Both recordings will be available after the live session on{' '}
+                        <strong>March {15 + currentDay.day}, 2026</strong>.
                       </p>
                       <p className={styles.comingSoonSubtext}>
                         Check back after 12:00 PM Eastern on that day.
@@ -133,22 +232,22 @@ function ReplayPageInner() {
                     </div>
                   </div>
                   <div className={styles.videoInfo}>
-                    <h2>{currentVideo.title}</h2>
-                    <p className={styles.videoDescription}>{currentVideo.description}</p>
+                    <h2>Day {currentDay.day}: {currentDay.mainSession.title}</h2>
+                    <p className={styles.videoDescription}>{currentDay.mainSession.description}</p>
                   </div>
                 </>
               )}
             </div>
 
-            {/* Sidebar with day selections */}
+            {/* ── Sidebar ── */}
             <aside className={styles.sidebar}>
               <h3 className={styles.sidebarTitle}>Sessions</h3>
-              
+
               <nav className={styles.dayList} aria-label="Session selection">
                 {videoData.map((video) => (
                   <button
                     key={video.day}
-                    onClick={() => setSelectedDay(video.day)}
+                    onClick={() => handleDaySelect(video.day)}
                     className={`${styles.dayButton} ${
                       selectedDay === video.day ? styles.dayButtonActive : ''
                     } ${
@@ -160,8 +259,15 @@ function ReplayPageInner() {
                       <div className={styles.dayNumber}>Day {video.day}</div>
                       {!video.active && <span className={styles.lockBadge}>&#128274;</span>}
                     </div>
-                    <div className={styles.dayTitle}>{video.title.split(': ')[1]}</div>
-                    <div className={styles.dayDuration}>{video.active ? video.duration : 'Available Mar ' + (15 + video.day)}</div>
+                    <div className={styles.dayTitle}>{video.mainSession.title}</div>
+                    {video.active ? (
+                      <div className={styles.daySessionPills}>
+                        <span className={styles.pillMain}>Main</span>
+                        <span className={styles.pillVip}>VIP</span>
+                      </div>
+                    ) : (
+                      <div className={styles.dayDuration}>Available Mar {15 + video.day}</div>
+                    )}
                   </button>
                 ))}
               </nav>
