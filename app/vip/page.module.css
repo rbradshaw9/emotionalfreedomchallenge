@@ -148,7 +148,6 @@
 
 .patternSection {
   padding: var(--space-20) 0;
-  background: linear-gradient(135deg, #F9FAFB 0%, #F3F6F9 100%);
 }
 
 .patternSection h2 {
@@ -217,7 +216,7 @@
 
 .featuresSection h2 {
   margin-bottom: var(--space-6);
-  font-size: var(--text-4xl);
+  font-size: var(--text-3xl);
 }
 
 .featuresIntro {
@@ -390,7 +389,6 @@
 /* Risk Reversal / FAQ Section */
 .riskReversalSection {
   padding: var(--space-20) 0;
-  background: linear-gradient(135deg, #F9FAFB 0%, #F3F6F9 100%);
 }
 
 .riskCard {
@@ -433,6 +431,34 @@
   color: var(--color-gray-700);
   line-height: 1.7;
   margin: 0;
+}
+
+/* Mid-page CTA Section */
+.ctaSection {
+  padding: var(--space-16) 0;
+}
+
+.ctaBox {
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-10);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.ctaLabel {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-3);
+}
+
+.ctaSubtext {
+  font-size: var(--text-base);
+  color: var(--color-gray-500);
+  margin-bottom: var(--space-8);
 }
 
 /* Final CTA Section */

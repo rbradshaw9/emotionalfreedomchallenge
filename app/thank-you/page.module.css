@@ -81,8 +81,8 @@
 .step h2 {
   font-size: var(--text-3xl);
   margin-bottom: var(--space-6);
-  font-weight: 600;
-  letter-spacing: -0.025em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   font-family: var(--font-display);
   color: var(--color-gray-900);
 }
@@ -100,7 +100,7 @@
 
 /* Callout - Facebook Group Link */
 .callout {
-  background-color: var(--color-white);
+  background-color: rgba(29, 120, 116, 0.04);
   padding: var(--space-6);
   border-radius: var(--radius-lg);
   margin: var(--space-6) 0;
@@ -162,15 +162,14 @@
 /* Final Section - Closing Note */
 .finalSection {
   padding: var(--space-20) 0;
-  background-color: var(--color-white);
   text-align: center;
 }
 
 .finalSection h2 {
   font-size: var(--text-3xl);
   margin-bottom: var(--space-8);
-  font-weight: 600;
-  letter-spacing: -0.025em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   font-family: var(--font-display);
   color: var(--color-gray-900);
 }

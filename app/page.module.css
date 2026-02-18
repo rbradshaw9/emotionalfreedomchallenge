@@ -64,7 +64,6 @@
 
 .formSection {
   padding: var(--space-20) 0;
-  background-color: var(--color-gray-50);
   scroll-margin-top: var(--space-16);
 }
 
@@ -255,12 +254,10 @@
 
 .ctaSection {
   padding: var(--space-16) 0;
-  background-color: var(--color-gray-50);
 }
 
 .benefitsSection {
   padding: var(--space-20) 0;
-  background-color: var(--color-gray-50);
 }
 
 .benefitsSection h2 {
@@ -289,7 +286,6 @@
 
 .nextStepsSection {
   padding: var(--space-20) 0;
-  background: var(--gradient-cool);
 }
 
 .nextStepsSection h2 {

@@ -471,11 +471,10 @@ section[class*="Section"]:not(:first-of-type) {
     padding-right: var(--space-6);
   }
   
-  /* Full-width buttons on mobile for better UX */
+  /* Larger tap targets on mobile */
   .button-primary,
   .button-secondary {
-    width: 100%;
-    padding: var(--space-5) var(--space-6);
+    padding: var(--space-4) var(--space-6);
   }
   
   /* Improved vertical rhythm */
