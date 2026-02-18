@@ -212,7 +212,7 @@ export default function VIPPage() {
             
             <a 
               href="https://bl843.infusionsoft.app/app/orderForms/cdb82d2b-34ac-443e-aba9-2c63993be424" 
-              className="button button-primary button-lg"
+              className="button button-white button-lg"
               style={{ width: '100%', marginBottom: 'var(--space-6)' }}
             >
               Yes — Add VIP Access for $27

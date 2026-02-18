@@ -341,6 +341,23 @@ button {
   transform: translateY(0);
 }
 
+.button-white {
+  background: var(--color-white);
+  color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button-white:hover {
+  background: var(--color-gray-50);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.button-white:active {
+  background: var(--color-gray-100);
+  transform: translateY(0);
+}
+
 .button-lg {
   padding: 0.875rem 2rem;
   font-size: var(--text-lg);
