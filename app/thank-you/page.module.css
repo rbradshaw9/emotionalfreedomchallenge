@@ -44,8 +44,10 @@
 
 /* Confirmation Section - Clean and Simple */
 .confirmationSection {
-  padding: var(--space-16) 0 var(--space-20);
+  padding: var(--space-12) 0 var(--space-16);
   text-align: center;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-200);
 }
 
 .confirmationSection p {
@@ -65,6 +67,7 @@
 /* Steps Section - Clean Separation */
 .stepsSection {
   padding: var(--space-20) 0;
+  background-color: var(--color-gray-50);
 }
 
 .step {
@@ -72,6 +75,11 @@
   max-width: var(--container-md);
   margin-left: auto;
   margin-right: auto;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8) var(--space-10);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .step:last-child {
@@ -120,7 +128,8 @@
 
 /* Challenge Details - Emphasized */
 .challengeDetails {
-  background-color: var(--color-white);
+  background-color: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
   padding: var(--space-6);
   border-radius: var(--radius-lg);
   margin: var(--space-5) 0;
@@ -137,8 +146,9 @@
 .calendarLinks {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
   margin: var(--space-6) 0;
+  align-items: stretch;
 }
 
 .calendarLinks .button {
@@ -163,6 +173,8 @@
 .finalSection {
   padding: var(--space-20) 0;
   text-align: center;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-gray-200);
 }
 
 .finalSection h2 {
@@ -226,7 +238,8 @@
   }
   
   .step {
-    margin-bottom: var(--space-12);
+    margin-bottom: var(--space-8);
+    padding: var(--space-6) var(--space-6);
   }
   
   .step h2 {
