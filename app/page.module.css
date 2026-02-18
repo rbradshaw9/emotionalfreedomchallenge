@@ -46,6 +46,8 @@
 
 .introSection {
   padding: var(--space-16) 0;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-200);
 }
 
 .introSection p {
@@ -65,6 +67,7 @@
 .formSection {
   padding: var(--space-20) 0;
   scroll-margin-top: var(--space-16);
+  background-color: var(--color-gray-50);
 }
 
 .formCard {
@@ -138,6 +141,7 @@
 
 .contentSection {
   padding: var(--space-20) 0;
+  border-top: 1px solid var(--color-gray-200);
 }
 
 .contentSection h2 {
@@ -186,6 +190,7 @@
 
 .clarificationSection {
   padding: var(--space-20) 0;
+  background-color: var(--color-gray-50);
 }
 
 .clarificationSection > div {
@@ -198,6 +203,7 @@
 
 .optionalAccessSection {
   padding: var(--space-20) 0;
+  background-color: var(--color-gray-50);
 }
 
 .optionalAccessSection > div {
@@ -214,6 +220,9 @@
 
 .invitationSection {
   padding: var(--space-20) 0;
+  background-color: var(--color-gray-50);
+  border-top: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-gray-200);
 }
 
 .invitationSection h2 {
@@ -254,6 +263,8 @@
 
 .ctaSection {
   padding: var(--space-16) 0;
+  background-color: var(--color-gray-50);
+  border-top: 1px solid var(--color-gray-200);
 }
 
 .benefitsSection {

@@ -46,6 +46,7 @@
 .section {
   padding: var(--space-20) 0;
   position: relative;
+  border-top: 1px solid var(--color-gray-200);
 }
 
 .section h2 {
@@ -139,6 +140,7 @@
 .compensationSection {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   color: var(--color-white);
+  border-top: none;
 }
 
 .compensationSection h2 {

@@ -46,6 +46,8 @@
 
 .confirmationSection {
   padding: var(--space-16) 0;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-200);
 }
 
 .confirmationSection p {
@@ -148,6 +150,9 @@
 
 .patternSection {
   padding: var(--space-20) 0;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-gray-200);
 }
 
 .patternSection h2 {
@@ -170,6 +175,9 @@
 
 .valueSection {
   padding: var(--space-20) 0;
+  background-color: var(--color-gray-50);
+  border-top: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-gray-200);
 }
 
 .valueSection h2 {
@@ -212,6 +220,9 @@
 /* Features Section - Clean single-column list design */
 .featuresSection {
   padding: var(--space-24) 0;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-gray-200);
 }
 
 .featuresSection h2 {
@@ -295,6 +306,7 @@
 .pricingSection {
   padding: var(--space-20) 0;
   background-color: var(--color-white);
+  border-top: 1px solid var(--color-gray-200);
 }
 
 .pricingSection h2 {
@@ -326,6 +338,9 @@
 /* Decision Section - Enhanced readability */
 .decisionSection {
   padding: var(--space-24) 0;
+  background-color: var(--color-gray-50);
+  border-top: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-gray-200);
 }
 
 .decisionSection h2 {
@@ -389,6 +404,8 @@
 /* Risk Reversal / FAQ Section */
 .riskReversalSection {
   padding: var(--space-20) 0;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-gray-200);
 }
 
 .riskCard {
@@ -436,6 +453,9 @@
 /* Mid-page CTA Section */
 .ctaSection {
   padding: var(--space-16) 0;
+  background-color: var(--color-gray-50);
+  border-top: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-gray-200);
 }
 
 .ctaBox {
@@ -464,6 +484,8 @@
 /* Final CTA Section */
 .finalCtaSection {
   padding: var(--space-12) 0 var(--space-20);
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-gray-200);
 }
 
 .finalCtaCard {
