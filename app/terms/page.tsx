@@ -143,7 +143,10 @@ export default function TermsPage() {
             If you have questions about these Terms of Use, please contact us at:
           </p>
           <p>
-            <strong>Email:</strong> <a href="mailto:support@drpauljenkins.com">support@drpauljenkins.com</a>
+            <strong>Email:</strong> <a href="mailto:info@drpauljenkins.com">info@drpauljenkins.com</a>
+          </p>
+          <p>
+            <strong>Phone:</strong> <a href="tel:+18013807981">+1 801-380-7981</a>
           </p>
         </section>
       </div>

@@ -123,7 +123,7 @@ export default function ThankYouPage() {
           </p>
           <p>
             If you have any questions, you can reach us at:<br />
-            <a href="mailto:support@drpauljenkins.com">support@drpauljenkins.com</a> or <a href="tel:+1-855-227-2400">855-227-2400</a>
+            <a href="mailto:info@drpauljenkins.com">info@drpauljenkins.com</a> or <a href="tel:+18013807981">+1 801-380-7981</a>
           </p>
           <p className={styles.signoff}>
             We're genuinely glad you're here.
