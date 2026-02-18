@@ -248,13 +248,19 @@
   margin-bottom: var(--space-6);
 }
 
-.coachingCTA .button {
+.coachingButton {
+  display: inline-block;
   background-color: var(--color-white);
   color: var(--color-primary);
   font-weight: var(--font-semibold);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
-.coachingCTA .button:hover {
+.coachingButton:hover {
   background-color: var(--color-gray-100);
   transform: translateY(-2px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);

@@ -188,7 +188,7 @@ function ReplayPageInner() {
                   href="https://calendly.com/placeholder"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="button button-lg"
+                  className={styles.coachingButton}
                 >
                   Claim Your Spot
                 </a>
