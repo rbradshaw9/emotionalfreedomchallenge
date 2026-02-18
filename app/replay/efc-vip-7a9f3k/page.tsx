@@ -195,7 +195,7 @@ function ReplayPageInner() {
                   href="https://calendly.com/placeholder"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="button button-primary button-lg"
+                  className="button button-lg"
                 >
                   Schedule Your Coaching Call
                 </a>
