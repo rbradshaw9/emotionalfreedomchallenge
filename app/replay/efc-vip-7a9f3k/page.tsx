@@ -15,19 +15,19 @@ import styles from './page.module.css';
 const videoData = [
   {
     day: 1,
-    active: false,
+    active: true,
     mainSession: {
       label: 'Main Training',
       title: 'Understanding Emotional Freedom',
       description: 'Discover the foundations of emotional freedom and learn why old patterns keep repeating.',
-      videoUrl: '', // INTEGRATION POINT: Add Vimeo URL
+      videoUrl: 'https://player.vimeo.com/video/000000001', // REPLACE with actual Vimeo URL
       duration: '~60 min',
     },
     vipSession: {
       label: 'VIP Session',
       title: 'Day 1 VIP — Deep Dive & Q&A',
       description: 'Extended coaching, personalized Q&A, and deeper application of today\'s core concepts.',
-      videoUrl: '', // INTEGRATION POINT: Add Vimeo URL
+      videoUrl: 'https://player.vimeo.com/video/000000002', // REPLACE with actual Vimeo URL
       duration: '~30 min',
     },
   },
