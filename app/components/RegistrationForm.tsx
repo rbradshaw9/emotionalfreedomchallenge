@@ -31,10 +31,17 @@ export default function RegistrationForm() {
         newErrors.email = 'Please enter a valid email address';
       }
       if (newErrors.firstName || newErrors.email) {
+        // Invalid: block the browser submission AND stop Keap's listener
         e.preventDefault();
         e.stopImmediatePropagation();
         setErrors(newErrors);
         setTouched({ firstName: true, email: true });
+      } else {
+        // Valid: block the BROWSER's default submit so only Keap's reCAPTCHA
+        // flow submits the form (with the required token). Without this, the
+        // browser submits directly before reCAPTCHA completes, causing the
+        // "There was an error" page on Keap's end.
+        e.preventDefault();
       }
     };
 
