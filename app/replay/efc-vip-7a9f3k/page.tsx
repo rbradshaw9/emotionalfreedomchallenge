@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import styles from './page.module.css';
 
 // Video data structure
@@ -48,18 +49,18 @@ const videoData = [
   },
 ];
 
-export default function ReplayPage() {
+function ReplayPageInner() {
   // Default to the first active day, or day 1 if none are active yet
   const firstActiveDay = videoData.find(v => v.active)?.day ?? 1;
   const [selectedDay, setSelectedDay] = useState(firstActiveDay);
   const currentVideo = videoData.find(video => video.day === selectedDay) || videoData[0];
   
-  // DAY 4 COACHING CTA TOGGLE
-  // Controlled by environment variable: NEXT_PUBLIC_SHOW_CALL_CTA
-  // Set to 'true' in Vercel environment variables to reveal the CTA
-  // Alternative date-based approach (commented):
-  // const showCallCTA = new Date() >= new Date('2026-03-20'); // Replace with actual Day 4 date
-  const showCallCTA = process.env.NEXT_PUBLIC_SHOW_CALL_CTA === 'true';
+  // COACHING CTA — auto-reveals on March 19, 2026 (after Day 4 session)
+  // Preview before that date by visiting the page with ?preview=cta in the URL
+  const searchParams = useSearchParams();
+  const CTA_REVEAL_DATE = new Date('2026-03-19T00:00:00');
+  const showCallCTA = new Date() >= CTA_REVEAL_DATE || searchParams.get('preview') === 'cta';
+  const isCtaPreview = searchParams.get('preview') === 'cta' && new Date() < CTA_REVEAL_DATE;
 
   return (
     <div className={styles.page}>
@@ -172,35 +173,48 @@ export default function ReplayPage() {
         </div>
       </div>
 
-      {/* Day 4 Coaching CTA - Only visible when environment variable is set */}
+      {/* Coaching CTA — auto-reveals March 19, 2026 | preview via ?preview=cta */}
       {showCallCTA && (
         <section className={styles.coachingSection}>
           <div className="container container-sm">
+            {isCtaPreview && (
+              <div className={styles.previewBanner}>
+                &#128065; Preview mode — this section is hidden until March 19, 2026
+              </div>
+            )}
             <div className={styles.coachingCard}>
-              <h2>Ready to Go Deeper?</h2>
+              <h2>Take Your Transformation Further</h2>
               <p className={styles.coachingText}>
-                Now that you've experienced the core teachings, you might benefit from personalized guidance. 
-                Schedule a one-on-one coaching call with Dr. Paul Jenkins to address your specific situation 
-                and accelerate your transformation.
+                You&rsquo;ve done the work. Now let&rsquo;s make it stick. Schedule a one-on-one coaching call 
+                with Dr. Paul Jenkins to get personalized guidance, work through your specific challenges, 
+                and build a clear path forward.
               </p>
               <div className={styles.coachingCTA}>
-                {/* INTEGRATION POINT: Replace with actual scheduling link (Calendly, etc.) */}
-                <a 
-                  href="https://calendly.com/placeholder" 
-                  target="_blank" 
+                {/* INTEGRATION POINT: Replace href with actual scheduling link */}
+                <a
+                  href="https://calendly.com/placeholder"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="button button-primary button-lg"
                 >
-                  Schedule a Call
+                  Schedule Your Coaching Call
                 </a>
               </div>
               <p className={styles.coachingNote}>
-                Limited availability—book your session while spots are open.
+                Limited spots available — book yours before they fill up.
               </p>
             </div>
           </div>
         </section>
       )}
     </div>
+  );
+}
+
+export default function ReplayPage() {
+  return (
+    <Suspense fallback={null}>
+      <ReplayPageInner />
+    </Suspense>
   );
 }

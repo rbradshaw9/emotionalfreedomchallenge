@@ -185,6 +185,19 @@
   color: var(--color-gray-500);
 }
 
+/* Preview-mode banner (only visible with ?preview=cta before the reveal date) */
+.previewBanner {
+  background-color: #fef3c7;
+  border: 1px solid #f59e0b;
+  color: #92400e;
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
 .coachingSection {
   padding: var(--space-20) 0;
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
