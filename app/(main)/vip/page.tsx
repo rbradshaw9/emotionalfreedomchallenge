@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
-export default function V2VIPPage() {
+export const metadata: Metadata = {
+  title: 'VIP Upgrade - The Emotional Freedom Challenge',
+  description: 'Upgrade to VIP access for live Q&A sessions, full recordings, and deeper engagement with Dr. Paul Jenkins during the Emotional Freedom Challenge.',
+};
+
+export default function VIPPage() {
   return (
     <>
       {/* Hero */}
@@ -159,7 +165,7 @@ export default function V2VIPPage() {
               Yes — Add VIP Access
             </a>
             <div className="v2-secondary-path" style={{ marginTop: '16px' }}>
-              <Link href="/v2/thank-you" className="v2-no-thanks">
+              <Link href="/thank-you" className="v2-no-thanks">
                 No thanks — Continue without VIP
               </Link>
             </div>
@@ -231,7 +237,7 @@ export default function V2VIPPage() {
             </a>
             <div className="v2-secondary-path" style={{ marginTop: '16px' }}>
               <p className="v2-muted-text" style={{ fontSize: '14px', marginBottom: '8px' }}>Or continue without VIP</p>
-              <Link href="/v2/thank-you" className="v2-no-thanks">
+              <Link href="/thank-you" className="v2-no-thanks">
                 No — I&apos;ll attend the live sessions only
               </Link>
             </div>

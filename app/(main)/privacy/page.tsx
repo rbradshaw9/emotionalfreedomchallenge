@@ -1,4 +1,11 @@
-export default function V2PrivacyPage() {
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy - The Emotional Freedom Challenge',
+  description: 'Privacy policy for The Emotional Freedom Challenge by Dr. Paul Jenkins.',
+};
+
+export default function PrivacyPage() {
   return (
     <>
       <div className="v2-prose">

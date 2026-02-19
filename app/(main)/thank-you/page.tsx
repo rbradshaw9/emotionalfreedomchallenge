@@ -1,4 +1,11 @@
-export default function V2ThankYouPage() {
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'You\'re Registered - The Emotional Freedom Challenge',
+  description: 'Your spot in The Emotional Freedom Challenge is confirmed. Here are your next steps to prepare for the 5-day experience.',
+};
+
+export default function ThankYouPage() {
   const googleCalendarUrl =
     'https://calendar.google.com/calendar/render?action=TEMPLATE' +
     '&text=The+Emotional+Freedom+Challenge+%E2%80%94+Live+Session' +

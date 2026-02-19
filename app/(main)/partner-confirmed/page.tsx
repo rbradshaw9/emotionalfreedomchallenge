@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
-export default function V2PartnerConfirmedPage() {
+export const metadata: Metadata = {
+  title: 'Application Received - Partner Program',
+  description: 'Your partner application for The Emotional Freedom Challenge has been submitted. Our team will review and contact you shortly.',
+};
+
+export default function PartnerConfirmedPage() {
   return (
     <>
       <section className="v2-section v2-section-muted" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
@@ -39,7 +45,7 @@ export default function V2PartnerConfirmedPage() {
             </p>
 
             <div style={{ textAlign: 'center' }}>
-              <Link href="/v2" className="v2-btn v2-btn-outline">
+              <Link href="/" className="v2-btn v2-btn-outline">
                 Return to the Emotional Freedom Challenge
               </Link>
             </div>

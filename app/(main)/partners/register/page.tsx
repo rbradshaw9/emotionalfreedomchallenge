@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Complete your partner registration for The Emotional Freedom Challenge. Secure partner dashboard access with referral tracking and commission management.',
 };
 
-export default function V2PartnerRegister() {
+export default function PartnerRegister() {
   return (
     <>
       <section className="v2-section" style={{ paddingTop: '80px', paddingBottom: '40px', textAlign: 'center' }}>

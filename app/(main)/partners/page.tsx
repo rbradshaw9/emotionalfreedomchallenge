@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Join our partner program and share The Emotional Freedom Challenge with your audience. Relationship-based partnership built on trust, integrity, and mutual fit.',
 };
 
-export default function V2PartnersPage() {
+export default function PartnersPage() {
   return (
     <>
       <section className="v2-section" style={{ paddingTop: '80px', paddingBottom: '64px', textAlign: 'center' }}>
@@ -117,7 +117,7 @@ export default function V2PartnersPage() {
           <p className="v2-body" style={{ color: 'rgba(255,255,255,0.85)', marginBottom: '32px' }}>
             If this resonates with your audience and values, we&apos;d be honored to partner with you.
           </p>
-          <Link href="/v2/partners/register" className="v2-btn" style={{ backgroundColor: '#fff', color: 'var(--v2-primary)' }}>
+          <Link href="/partners/register" className="v2-btn" style={{ backgroundColor: '#fff', color: 'var(--v2-primary)' }}>
             Apply to Become a Partner
           </Link>
         </div>
@@ -171,7 +171,7 @@ export default function V2PartnersPage() {
               <div className="v2-preview-icon">🏠</div>
               <h3 className="v2-h4">Main Landing Page</h3>
               <p className="v2-body">Where participants learn about and register for the Emotional Freedom Challenge.</p>
-              <Link href="/v2" target="_blank" className="v2-btn v2-btn-outline">
+              <Link href="/" target="_blank" className="v2-btn v2-btn-outline">
                 View Landing Page
               </Link>
             </div>
@@ -179,7 +179,7 @@ export default function V2PartnersPage() {
               <div className="v2-preview-icon">⭐</div>
               <h3 className="v2-h4">VIP Upgrade Page</h3>
               <p className="v2-body">The premium upgrade offer shown after participants register for the free challenge.</p>
-              <Link href="/v2/vip" target="_blank" className="v2-btn v2-btn-outline">
+              <Link href="/vip" target="_blank" className="v2-btn v2-btn-outline">
                 View VIP Page
               </Link>
             </div>
@@ -196,7 +196,7 @@ export default function V2PartnersPage() {
 
       <section className="v2-section" style={{ textAlign: 'center', padding: '64px 24px' }}>
         <div className="v2-container--sm">
-          <Link href="/v2/partners/register" className="v2-btn v2-btn-primary v2-btn-lg">
+          <Link href="/partners/register" className="v2-btn v2-btn-primary v2-btn-lg">
             Apply to Become a Partner
           </Link>
         </div>

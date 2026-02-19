@@ -1,4 +1,11 @@
-export default function V2TermsPage() {
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Terms of Use - The Emotional Freedom Challenge',
+  description: 'Terms of use for The Emotional Freedom Challenge by Dr. Paul Jenkins.',
+};
+
+export default function TermsPage() {
   return (
     <>
       <div className="v2-prose">

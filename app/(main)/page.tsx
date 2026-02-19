@@ -1,7 +1,13 @@
+import type { Metadata } from 'next';
 import RegistrationForm from '@/app/(main)/components/RegistrationForm';
 import Image from 'next/image';
 
-export default function V2RegistrationPage() {
+export const metadata: Metadata = {
+  title: 'The Emotional Freedom Challenge | Free 5-Day Experience with Dr. Paul Jenkins',
+  description: 'Join Dr. Paul Jenkins for a free, live 5-day experience exploring emotional ownership, self-awareness, and lasting personal change. March 16–20, 2026.',
+};
+
+export default function RegistrationPage() {
   return (
     <>
       {/* Hero */}

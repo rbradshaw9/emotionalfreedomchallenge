@@ -1,4 +1,11 @@
-export default function V2VipConfirmedPage() {
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'VIP Access Confirmed - The Emotional Freedom Challenge',
+  description: 'Your VIP upgrade is confirmed. Access recordings, live Q&A, and companion materials during the Emotional Freedom Challenge.',
+};
+
+export default function VipConfirmedPage() {
   const googleCalendarUrl =
     'https://calendar.google.com/calendar/render?action=TEMPLATE' +
     '&text=The+Emotional+Freedom+Challenge+%E2%80%94+Live+Session' +
