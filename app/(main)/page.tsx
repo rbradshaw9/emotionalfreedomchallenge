@@ -64,7 +64,7 @@ export default function RegistrationPage() {
       {/* Registration Form */}
       <section id="register" className="v2-section v2-section-muted">
         <div className="v2-container--sm">
-          <div className="v2-text-center v2-spacer--sm">
+          <div className="v2-text-center" style={{ marginBottom: '32px' }}>
             <span className="v2-kicker">Register Now</span>
             <h2 className="v2-h2">Reserve Your Free Spot</h2>
             <p className="v2-body v2-muted-text">Sessions are live March 16–20 at 12:00 PM Eastern. Free to attend.</p>
