@@ -14,38 +14,39 @@ export default function RegistrationForm() {
         <input name="inf_form_name" type="hidden" value="Registered for EFC" />
         <input name="infusionsoft_version" type="hidden" value="1.70.0.902929" />
 
-        <div className="infusion-field">
-          <label htmlFor="inf_field_FirstName_v2">First Name *</label>
+        <div className="v2-form-group">
           <input
             id="inf_field_FirstName_v2"
             name="inf_field_FirstName"
-            placeholder="First Name *"
+            placeholder=" "
             type="text"
             required
+            autoComplete="given-name"
           />
+          <label htmlFor="inf_field_FirstName_v2">First Name *</label>
         </div>
 
-        <div className="infusion-field">
-          <label htmlFor="inf_field_Email_v2">Email *</label>
+        <div className="v2-form-group">
           <input
             id="inf_field_Email_v2"
             name="inf_field_Email"
-            placeholder="Email *"
+            placeholder=" "
             type="email"
             required
+            autoComplete="email"
           />
+          <label htmlFor="inf_field_Email_v2">Email Address *</label>
         </div>
-
-        <div><div>&nbsp;</div></div>
 
         <div className="infusion-submit">
           <button type="submit">
-            Reserve Your Free Spot
+            Join the Challenge — It&apos;s Free
           </button>
         </div>
 
         <p className="v2-disclaimer">
-          Your privacy is respected. Your information will never be shared.
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '4px' }}><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          No credit card. No spam. Unsubscribe anytime.
         </p>
 
         <input type="text" name="inf-sbt" style={{ display: 'none' }} />

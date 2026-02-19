@@ -69,68 +69,70 @@ export default function V2PartnerRegister() {
                 <span>Part 1 - Contact Information</span>
               </div>
 
-              <div className="infusion-field">
+              <div className="v2-form-group">
+                <input id="inf_field_FirstName_pr" name="inf_field_FirstName" placeholder=" " type="text" required autoComplete="given-name" />
                 <label htmlFor="inf_field_FirstName_pr">First Name *</label>
-                <input id="inf_field_FirstName_pr" name="inf_field_FirstName" placeholder="First Name *" type="text" required />
               </div>
 
-              <div className="infusion-field">
+              <div className="v2-form-group">
+                <input id="inf_field_LastName_pr" name="inf_field_LastName" placeholder=" " type="text" required autoComplete="family-name" />
                 <label htmlFor="inf_field_LastName_pr">Last Name *</label>
-                <input id="inf_field_LastName_pr" name="inf_field_LastName" placeholder="Last Name *" type="text" required />
               </div>
 
-              <div className="infusion-field">
-                <label htmlFor="inf_field_Email_pr">Email *</label>
-                <input id="inf_field_Email_pr" name="inf_field_Email" placeholder="Email *" type="email" required />
+              <div className="v2-form-group">
+                <input id="inf_field_Email_pr" name="inf_field_Email" placeholder=" " type="email" required autoComplete="email" />
+                <label htmlFor="inf_field_Email_pr">Email Address *</label>
               </div>
 
-              <div className="infusion-field">
+              <div className="v2-form-group">
+                <input id="inf_field_Phone1_pr" name="inf_field_Phone1" placeholder=" " type="tel" autoComplete="tel" />
                 <label htmlFor="inf_field_Phone1_pr">Phone</label>
-                <input id="inf_field_Phone1_pr" name="inf_field_Phone1" placeholder="Phone" type="text" />
               </div>
 
               <div className="section-title">
                 <span>Part 2 - Where To Send Commissions</span>
               </div>
 
-              <div className="infusion-field">
+              <div className="v2-form-group">
+                <input id="inf_custom_PayPalEmail_pr" name="inf_custom_PayPalEmail" placeholder=" " type="email" required autoComplete="email" />
                 <label htmlFor="inf_custom_PayPalEmail_pr">PayPal Email *</label>
-                <p style={{ fontSize: '13px', color: 'var(--v2-muted)', marginBottom: '8px' }}>
-                  We make commission payments via PayPal. If you do not have a PayPal account, please visit{' '}
-                  <a href="https://paypal.com" target="_blank" rel="noopener noreferrer">paypal.com</a> and create an account.
-                </p>
-                <input id="inf_custom_PayPalEmail_pr" name="inf_custom_PayPalEmail" placeholder="PayPal Email *" type="email" required />
               </div>
+              <p className="v2-field-hint" style={{ marginTop: '-12px', marginBottom: '20px' }}>
+                We pay commissions via PayPal. No account?{' '}
+                <a href="https://paypal.com" target="_blank" rel="noopener noreferrer">Create one at paypal.com</a>.
+              </p>
 
-              <div className="infusion-field">
+              <div className="v2-form-group">
+                <input id="inf_other_Username_pr" name="inf_other_Username" placeholder=" " type="text" required autoComplete="username" />
                 <label htmlFor="inf_other_Username_pr">Username *</label>
-                <input id="inf_other_Username_pr" name="inf_other_Username" placeholder="Username *" type="text" required />
               </div>
 
-              <div className="infusion-field">
-                <label htmlFor="inf_other_Password_pr">Password *</label>
+              <div className="v2-form-group">
                 <input
                   id="inf_other_Password_pr"
                   name="inf_other_Password"
-                  placeholder="Password *"
+                  placeholder=" "
                   type="password"
                   required
                   minLength={8}
+                  autoComplete="new-password"
                 />
-                <p style={{ fontSize: '12px', color: 'var(--v2-muted)', marginTop: '6px' }}>
-                  At least 8 characters, including uppercase, lowercase, and a number
-                </p>
+                <label htmlFor="inf_other_Password_pr">Password *</label>
               </div>
+              <p className="v2-field-hint" style={{ marginTop: '-12px', marginBottom: '20px' }}>
+                At least 8 characters — include uppercase, lowercase, and a number.
+              </p>
 
-              <div className="infusion-field">
-                <label htmlFor="inf_other_RetypePassword_pr">Confirm Password *</label>
+              <div className="v2-form-group">
                 <input
                   id="inf_other_RetypePassword_pr"
                   name="inf_other_RetypePassword"
-                  placeholder="Confirm Password *"
+                  placeholder=" "
                   type="password"
                   required
+                  autoComplete="new-password"
                 />
+                <label htmlFor="inf_other_RetypePassword_pr">Confirm Password *</label>
               </div>
 
               <div className="infusion-field" style={{ display: 'none' }}>
