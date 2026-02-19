@@ -1,5 +1,5 @@
 import styles from './page.module.css';
-import RegistrationForm from './components/RegistrationForm';
+import RegistrationForm from '@/app/v1/components/RegistrationForm';
 import Image from 'next/image';
 
 export default function RegistrationPage() {

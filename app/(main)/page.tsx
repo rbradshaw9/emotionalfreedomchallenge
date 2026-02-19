@@ -1,4 +1,4 @@
-import RegistrationForm from '@/app/v2/components/RegistrationForm';
+import RegistrationForm from '@/app/(main)/components/RegistrationForm';
 import Image from 'next/image';
 
 export default function V2RegistrationPage() {

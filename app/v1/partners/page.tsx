@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import styles from './page.module.css';
-import FAQAccordion from './components/FAQAccordion';
+import FAQAccordion from '@/app/v1/partners/components/FAQAccordion';
 
 export const metadata: Metadata = {
   title: 'Partner Program - The Emotional Freedom Challenge',
