@@ -462,6 +462,11 @@
   font-family: var(--v2-font);
   background: transparent;
   line-height: 1;
+  margin: 0;
+  padding: 0;
+  display: block;
+  letter-spacing: normal;
+  text-transform: none;
 }
 .efc-v2 .v2-form-group input[type="text"],
 .efc-v2 .v2-form-group input[type="email"],
@@ -524,7 +529,7 @@
 .efc-v2 .infusion-form .infusion-field {
   margin-bottom: 20px;
 }
-.efc-v2 .infusion-form label {
+.efc-v2 .infusion-form .infusion-field label {
   display: block;
   font-size: 14px;
   font-weight: 600;
@@ -532,12 +537,12 @@
   margin-bottom: 6px;
   font-family: var(--v2-font);
 }
-.efc-v2 .infusion-form input[type="text"],
-.efc-v2 .infusion-form input[type="email"],
-.efc-v2 .infusion-form input[type="password"],
-.efc-v2 .infusion-form input[type="tel"],
-.efc-v2 .infusion-form textarea,
-.efc-v2 .infusion-form select {
+.efc-v2 .infusion-form .infusion-field input[type="text"],
+.efc-v2 .infusion-form .infusion-field input[type="email"],
+.efc-v2 .infusion-form .infusion-field input[type="password"],
+.efc-v2 .infusion-form .infusion-field input[type="tel"],
+.efc-v2 .infusion-form .infusion-field textarea,
+.efc-v2 .infusion-form .infusion-field select {
   width: 100%;
   padding: 13px 16px;
   border: 1.5px solid var(--v2-border);
@@ -549,22 +554,22 @@
   transition: border-color 0.2s, box-shadow 0.2s;
   -webkit-appearance: none;
 }
-.efc-v2 .infusion-form input[type="text"]:focus,
-.efc-v2 .infusion-form input[type="email"]:focus,
-.efc-v2 .infusion-form input[type="password"]:focus,
-.efc-v2 .infusion-form input[type="tel"]:focus,
-.efc-v2 .infusion-form textarea:focus,
-.efc-v2 .infusion-form select:focus {
+.efc-v2 .infusion-form .infusion-field input[type="text"]:focus,
+.efc-v2 .infusion-form .infusion-field input[type="email"]:focus,
+.efc-v2 .infusion-form .infusion-field input[type="password"]:focus,
+.efc-v2 .infusion-form .infusion-field input[type="tel"]:focus,
+.efc-v2 .infusion-form .infusion-field textarea:focus,
+.efc-v2 .infusion-form .infusion-field select:focus {
   outline: none;
   border-color: var(--v2-primary);
   box-shadow: var(--v2-ring);
 }
 /* Valid state */
-.efc-v2 .infusion-form input:valid:not(:placeholder-shown):not(:focus) {
+.efc-v2 .infusion-form .infusion-field input:valid:not(:placeholder-shown):not(:focus) {
   border-color: #34c759;
 }
 /* Invalid (touched) state */
-.efc-v2 .infusion-form input:invalid:not(:placeholder-shown):not(:focus) {
+.efc-v2 .infusion-form .infusion-field input:invalid:not(:placeholder-shown):not(:focus) {
   border-color: #ff3b30;
   background: rgba(255,59,48,0.02);
 }

@@ -234,6 +234,7 @@ ${getReferralLink()}`;
               <div className="v2-manual-input-group">
                 <input
                   type="text"
+                  className="v2-manual-input"
                   value={manualCode}
                   onChange={(e) => setManualCode(e.target.value)}
                   placeholder="Enter your referral code"
