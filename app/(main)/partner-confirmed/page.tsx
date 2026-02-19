@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function PartnerConfirmedPage() {
   return (
     <>
-      <section className="v2-section v2-section-muted" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
+      <section className="v2-hero">
         <div className="v2-container--sm">
           <div className="v2-confirmation-card">
             <div className="v2-success-icon">✓</div>

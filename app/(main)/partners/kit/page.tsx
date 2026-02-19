@@ -214,7 +214,7 @@ ${getReferralLink()}`;
 
   return (
     <>
-      <section className="v2-section" style={{ paddingTop: '80px', paddingBottom: '48px', textAlign: 'center' }}>
+      <section className="v2-hero">
         <div className="v2-container--md">
           <p className="v2-kicker">Partner Resources</p>
           <h1 className="v2-h1">Partner Marketing Kit</h1>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function PartnersPage() {
   return (
     <>
-      <section className="v2-section" style={{ paddingTop: '80px', paddingBottom: '64px', textAlign: 'center' }}>
+      <section className="v2-hero">
         <div className="v2-container--md">
           <p className="v2-kicker">Partner Program</p>
           <h1 className="v2-h1">
