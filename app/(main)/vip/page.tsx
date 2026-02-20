@@ -10,26 +10,26 @@ export default function VIPPage() {
   return (
     <>
       {/* Hero */}
-      <section className="v2-hero">
+      <section className="v2-hero" style={{ padding: '60px 0 72px' }}>
         <div className="v2-container">
-          <div className="v2-badge v2-badge--success" style={{ marginBottom: '20px' }}>
+          <div className="v2-badge v2-badge--success" style={{ marginBottom: '16px' }}>
             ✓ &nbsp;You&apos;re Registered
           </div>
-          <h1 className="v2-headline">
+          <h1 className="v2-h1">
             You&apos;re Registered — One More Thing Before You Go
           </h1>
-          <p className="v2-subhead">
+          <p className="v2-subhead" style={{ marginBottom: '16px' }}>
             Your seat for The Emotional Freedom Challenge is confirmed.
           </p>
-          <p className="v2-body v2-text-center v2-muted-text" style={{ maxWidth: '600px', margin: '0 auto 24px' }}>
+          <p className="v2-body v2-text-center v2-muted-text" style={{ maxWidth: '740px', margin: '0 auto 16px' }}>
             Check your inbox for an email shortly with instructions for joining the private Facebook group and attending the live sessions.
           </p>
-          <p className="v2-body v2-text-center" style={{ maxWidth: '600px', margin: '0 auto 28px', fontWeight: 500.  }}>
+          <p className="v2-body v2-text-center" style={{ maxWidth: '740px', margin: '0 auto 24px', fontWeight: 500 }}>
             Before you move on, there&apos;s one decision worth making now — while this is still fresh.
           </p>
 
           {/* Above-the-fold CTA */}
-          <div className="v2-upgrade-card" style={{ maxWidth: '480px', margin: '0 auto' }}>
+          <div className="v2-upgrade-card" style={{ maxWidth: '540px', margin: '0 auto' }}>
             <div className="v2-badge v2-badge--accent" style={{ marginBottom: '16px' }}>
               Limited Spots Available
             </div>

@@ -31,10 +31,10 @@ export default function ThankYouPage() {
       <section className="v2-section">
         <div className="v2-container v2-max-w-narrow">
           <p className="v2-body">
-            You&apos;re officially registered for 5 Days to Emotional Ownership, and we&apos;ve sent you an email with everything you need to participate.
+            We&apos;ve sent you an email with everything you need to participate.
           </p>
-          <p className="v2-body">
-            Take a breath — you don&apos;t need to do anything perfectly to get value from this week. Just showing up is enough.
+          <p className="v2-body" style={{ fontWeight: 500 }}>
+            What you do next will determine how much you actually get from the week.
           </p>
         </div>
       </section>
@@ -50,7 +50,7 @@ export default function ThankYouPage() {
             <div className="v2-step">
               <h2>Step 1: Join the Private Facebook Group</h2>
               <p className="v2-body">
-                All live sessions, reminders, and updates take place inside our private Facebook group.
+                All sessions, reminders, and updates happen inside the private Facebook group.
               </p>
               <p className="v2-callout">
                 👉{' '}
@@ -60,12 +60,11 @@ export default function ThankYouPage() {
                   rel="noopener noreferrer"
                   className="v2-group-link"
                 >
-                  Join the Private Emotional Freedom Challenge Facebook Group
+                  Join the Private &ldquo;The Emotional Freedom Challenge&rdquo; Facebook Group
                 </a>
               </p>
               <p className="v2-body" style={{ marginBottom: 0 }}>
-                That&apos;s where the experience happens.<br />
-                If you&apos;re not in the group, you won&apos;t see the live sessions or announcements.
+                If you&apos;re not in the group, you&apos;ll miss the experience.
               </p>
             </div>
 
@@ -73,12 +72,12 @@ export default function ThankYouPage() {
               <h2>Step 2: Put the Sessions on Your Calendar</h2>
               <p className="v2-body">The challenge runs:</p>
               <div className="v2-challenge-details">
-                <strong>March 16–20</strong><br />
-                Live each day at <strong>12:00 Noon Eastern</strong><br />
-                Sessions last about 60 minutes
+                <strong>Monday, March 16 – Friday, March 20</strong><br />
+                Live each day at <strong>12:00 Noon Eastern Time</strong><br />
+                Sessions run about an hour each day.
               </div>
               <p className="v2-body">
-                To make this easy, we&apos;ve created a single calendar link that adds all five sessions at once.
+                Add them to your calendar now, while it&apos;s still top of mind:
               </p>
               <div className="v2-calendar-links">
                 <a
@@ -87,7 +86,7 @@ export default function ThankYouPage() {
                   rel="noopener noreferrer"
                   className="v2-btn v2-btn-primary"
                 >
-                  👉 Add All Sessions to Google Calendar
+                  👉 Add to Google Calendar
                 </a>
                 <a
                   href="/calendar/emotional-freedom-challenge.ics"
@@ -97,25 +96,32 @@ export default function ThankYouPage() {
                   👉 Add to Outlook / Apple / Other Calendars
                 </a>
               </div>
+              <p className="v2-body" style={{ fontWeight: 500 }}>
+                Your commitment determines your results.
+              </p>
+              <p className="v2-body">
+                I know when someone is truly committed by two documents — their calendar and their bank statement.
+              </p>
               <p className="v2-body" style={{ marginBottom: 0 }}>
-                Once it&apos;s on your calendar, you won&apos;t need to think about it again — just show up when it starts.
+                Show your calendar that you are committed now.<br />
+                If you want to show commitment in your bank statement, grab the VIP option.
               </p>
             </div>
 
             <div className="v2-step">
               <h2>Step 3: Introduce Yourself in the Group</h2>
               <p className="v2-body">
-                Once you join the Facebook group, take a moment to introduce yourself.
+                When you join the group, take a moment to introduce yourself.
               </p>
               <p className="v2-body">
                 You don&apos;t need to be polished or personal.<br />
-                Just answer one simple question:
+                Just answer one simple question in your post:
               </p>
               <p className="v2-quote" style={{ fontStyle: 'italic' }}>
                 What made you decide to sign up for this challenge?
               </p>
               <p className="v2-body" style={{ marginBottom: 0 }}>
-                That one sentence often brings more clarity than people expect.
+                That one sentence often clarifies more than people expect.
               </p>
             </div>
           </div>
@@ -127,13 +133,13 @@ export default function ThankYouPage() {
         <div className="v2-container v2-max-w-narrow">
           <h2 className="v2-h2">A Final Note</h2>
           <p className="v2-body">
-            Change rarely happens because someone learns a single new idea.
+            Change doesn&apos;t usually happen because someone learns one new idea.
           </p>
           <p className="v2-body">
-            It happens when people give themselves a short window to slow down, notice what&apos;s happening internally, and engage a little differently than usual.
+            It happens when people give themselves a committed window to slow down, pay attention, and engage differently than usual.
           </p>
           <p className="v2-body">
-            That&apos;s what this week is designed to support.
+            That&apos;s what this week is.
           </p>
           <p className="v2-body">
             If you have any questions, you can reach us at:<br />
@@ -141,7 +147,7 @@ export default function ThankYouPage() {
             <a href="tel:+18013807981">+1 801-380-7981</a>
           </p>
           <p className="v2-body v2-muted-text" style={{ marginTop: '24px', fontStyle: 'italic' }}>
-            We&apos;re genuinely glad you&apos;re here.
+            We&apos;re glad you&apos;re here.
           </p>
           <p className="v2-body" style={{ fontWeight: 700 }}>
             — Dr. Paul Jenkins &amp; Team
