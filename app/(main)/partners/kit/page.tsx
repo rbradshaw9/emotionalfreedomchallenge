@@ -218,7 +218,7 @@ ${getReferralLink()}`;
         <div className="v2-container--md">
           <p className="v2-kicker">Partner Resources</p>
           <h1 className="v2-h1">Partner Marketing Kit</h1>
-          <p className="v2-subhead" style={{ maxWidth: '580px', margin: '0 auto' }}>
+          <p className="v2-subhead">
             Everything you need to share The Emotional Freedom Challenge with your audience.
           </p>
         </div>

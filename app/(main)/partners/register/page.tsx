@@ -13,7 +13,7 @@ export default function PartnerRegister() {
         <div className="v2-container--md">
           <p className="v2-kicker">Partner Program</p>
           <h1 className="v2-h1">Partner Registration</h1>
-          <p className="v2-subhead" style={{ maxWidth: '600px', margin: '0 auto' }}>
+          <p className="v2-subhead">
             Thanks for taking the next step. This page is for invited partners to complete registration for the Emotional Freedom Challenge.
           </p>
         </div>

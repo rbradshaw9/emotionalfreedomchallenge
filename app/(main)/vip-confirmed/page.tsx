@@ -26,10 +26,10 @@ export default function VipConfirmedPage() {
           <p className="v2-subhead" style={{ marginBottom: '16px' }}>
             Your VIP upgrade for The Emotional Freedom Challenge is confirmed.
           </p>
-          <p className="v2-body v2-text-center v2-muted-text" style={{ maxWidth: '600px', margin: '0 auto 8px' }}>
+          <p className="v2-body v2-text-center v2-muted-text" style={{ maxWidth: '740px', margin: '0 auto 8px' }}>
             You now have full VIP access — recordings, extended Q&amp;A after each session, and everything else included in the upgrade.
           </p>
-          <p className="v2-body v2-text-center v2-muted-text" style={{ maxWidth: '600px', margin: '0 auto' }}>
+          <p className="v2-body v2-text-center v2-muted-text" style={{ maxWidth: '740px', margin: '0 auto' }}>
             Check your inbox for a confirmation email with all the details.
           </p>
         </div>

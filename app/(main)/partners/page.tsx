@@ -16,10 +16,10 @@ export default function PartnersPage() {
           <h1 className="v2-h1">
             Partner with the Emotional Freedom Challenge
           </h1>
-          <p className="v2-subhead" style={{ maxWidth: '680px', margin: '0 auto 16px' }}>
+          <p className="v2-subhead">
             We&apos;re inviting a small group of aligned partners to share the Emotional Freedom Challenge with audiences who value personal growth, emotional awareness, and lasting change.
           </p>
-          <p className="v2-body" style={{ maxWidth: '640px', margin: '0 auto 0' }}>
+          <p className="v2-body v2-text-center v2-muted-text" style={{ maxWidth: '740px', margin: '0 auto 0' }}>
             This is a relationship-based partnership built on trust, integrity, and mutual fit — not a mass affiliate program.
           </p>
         </div>
