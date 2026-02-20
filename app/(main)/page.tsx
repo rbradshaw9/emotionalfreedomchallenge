@@ -45,19 +45,27 @@ export default function RegistrationPage() {
       {/* Intro */}
       <section className="v2-section">
         <div className="v2-container v2-max-w-narrow">
+          <p className="v2-body" style={{ fontSize: '19px', fontWeight: 500, color: 'var(--v2-text)' }}>
+            Are you ready to stop being emotionally hijacked by circumstances, other people, or your own thought patterns — and start living with greater peace, clarity, and confidence?
+          </p>
           <p className="v2-body">
             Most people don&apos;t think of themselves as emotionally reactive.<br />
-            They think of themselves as reasonable people who sometimes get frustrated…<br />
+            They are generally reasonable, stable people who sometimes get frustrated…<br />
             or overwhelmed…<br />
             or say things they wish they had handled differently.
           </p>
           <p className="v2-body">
-            And most of the time, that explanation feels fair.<br />
-            Until the same moments keep showing up again.
+            And usually, that description is completely fair.<br />
+            Until the same moments keep showing up again, and again, and… Aaargh!
           </p>
           <p className="v2-body">
-            If you&apos;ve noticed that pattern — this 5-day experience was created for you.
+            If you&apos;ve noticed that pattern — this 5-day experience will change the game for you.
           </p>
+          <div style={{ textAlign: 'center', marginTop: '8px' }}>
+            <a href="#register" className="v2-btn v2-btn-primary">
+              👉 Reserve Your Free Spot
+            </a>
+          </div>
         </div>
       </section>
 
@@ -84,15 +92,25 @@ export default function RegistrationPage() {
           <div className="v2-grid v2-grid-2 v2-grid--lg">
             <div className="v2-quote">&ldquo;I know better, but in the moment it still happens.&rdquo;</div>
             <div className="v2-quote">&ldquo;I replay conversations afterward and think, why did I respond that way?&rdquo;</div>
-            <div className="v2-quote">&ldquo;I try to stay calm, but certain situations just push my buttons.&rdquo;</div>
+            <div className="v2-quote">&ldquo;I try to stay calm, but certain situations (or people) just push my buttons.&rdquo;</div>
             <div className="v2-quote">&ldquo;I&apos;m working on myself — reading, learning, reflecting — and yet some reactions don&apos;t seem to change.&rdquo;</div>
           </div>
           <div className="v2-spacer--sm"></div>
           <div className="v2-max-w-narrow" style={{ margin: '0 auto' }}>
             <p className="v2-body">
-              If any of that sounds familiar, you&apos;re not alone.<br />
-              Most people never stop to look closely at why those reactions feel so automatic — or what&apos;s happening just before them.<br />
-              That&apos;s what this challenge focuses on.
+              If any of this sounds familiar, you&apos;re not alone.
+            </p>
+            <p className="v2-body">
+              Most people never stop to think about their own thinking. Psychologists call this &ldquo;metacognition&rdquo;. Awareness precedes choice — and metacognition gives us that awareness.
+            </p>
+            <p className="v2-body">
+              Claiming our emotional freedom is kind of like being inside of a box, and the instructions for getting out of our box are printed on the outside of the box!
+            </p>
+            <p className="v2-body">
+              The Emotional Freedom Challenge will read the instructions to you.
+            </p>
+            <p className="v2-body" style={{ marginBottom: 0 }}>
+              This challenge is not to tell you how to think. It illuminates <em>how</em> you think, so you can get back in charge of it. Either we drive our thoughts, or our thoughts drive us. That&apos;s what this challenge focuses on.
             </p>
           </div>
         </div>
@@ -118,6 +136,12 @@ export default function RegistrationPage() {
               <li>Why insight alone doesn&apos;t always lead to different behavior</li>
               <li>What emotional ownership looks like in real life, not in theory</li>
             </ul>
+            <p className="v2-body" style={{ marginTop: '24px' }}>
+              Each day, you&apos;ll learn powerful, practical principles from positive psychology and apply them immediately through simple but transformative challenge tasks. This isn&apos;t about suppressing emotions or pretending everything is fine. It&apos;s about understanding how your emotional system actually works — and reclaiming your ability to respond intentionally instead of react automatically.
+            </p>
+            <p className="v2-body" style={{ marginBottom: 0 }}>
+              If you&apos;re ready to experience more hope, stability, and personal power — regardless of what&apos;s happening around you — this challenge will show you how.
+            </p>
           </div>
         </div>
       </section>
@@ -125,12 +149,22 @@ export default function RegistrationPage() {
       {/* A Simple Clarification */}
       <section className="v2-section">
         <div className="v2-container v2-max-w-narrow">
-          <h2 className="v2-h2">A Simple Clarification</h2>
-          <p className="v2-body">This is a free educational experience.</p>
+          <h2 className="v2-h2">A Simple Clarification and Disclaimer</h2>
           <div className="v2-card" style={{ marginBottom: '20px' }}>
-            <p className="v2-body" style={{ marginBottom: '8px' }}>It isn&apos;t therapy. It isn&apos;t group coaching. It isn&apos;t designed to pressure you into buying anything.</p>
-            <p className="v2-body" style={{ margin: 0 }}>
-              At the end of the five days, there will be an optional opportunity to learn more about ongoing coaching for those who want structured support. The challenge itself is complete and valuable on its own.
+            <p className="v2-body" style={{ fontWeight: 600, marginBottom: '16px' }}>
+              ✅ This is a FREE EDUCATIONAL EXPERIENCE based on principles of positive psychology.
+            </p>
+            <p className="v2-body" style={{ marginBottom: '12px' }}>
+              ❌ This is <strong>NOT</strong> therapy or mental health treatment — although many participants experience improvements in their subjective mental health.
+            </p>
+            <p className="v2-body" style={{ marginBottom: '12px' }}>
+              ❌ This is <strong>NOT</strong> personal or group coaching — although the principles and models you learn are exactly the ones we teach and use in our coaching programs.
+            </p>
+            <p className="v2-body" style={{ marginBottom: '12px' }}>
+              ❌ This is <strong>NOT</strong> a sales pitch and we would never pressure you into buying anything — although we will let you know toward the end of the week what other resources are available to you for ongoing coaching and structured support.
+            </p>
+            <p className="v2-body" style={{ marginBottom: 0 }}>
+              The challenge itself is complete and valuable on its own. This is a service to create more emotional freedom in our lives, families, and communities. Please remember to thank the person who invited you!
             </p>
           </div>
         </div>
@@ -153,14 +187,14 @@ export default function RegistrationPage() {
               <span className="v2-kicker">About the Host</span>
               <h2 className="v2-h2">About Dr. Paul Jenkins</h2>
               <p className="v2-body">
-                Dr. Paul Jenkins has spent decades working with individuals, couples, families, and leaders around emotional responsibility and personal agency.
+                Dr. Paul Jenkins is a seasoned professional psychologist who has spent decades working with individuals, couples, families, and leaders around emotional responsibility and personal agency.
               </p>
               <p className="v2-body">
                 His work is based on a simple observation:<br />
-                when people understand their emotional responses clearly, they regain the ability to choose how they act — even under stress.
+                When people understand how to operate the equipment of their own mind, they regain the ability to choose how they act — even under stress.
               </p>
               <p className="v2-body" style={{ marginBottom: 0 }}>
-                This challenge is a practical introduction to that work.
+                The Emotional Freedom Challenge is a practical introduction to that work.
               </p>
             </div>
           </div>
@@ -173,28 +207,18 @@ export default function RegistrationPage() {
           <span className="v2-kicker v2-text-center" style={{ display: 'block' }}>Logistics</span>
           <h2 className="v2-h2 v2-text-center">How It Works</h2>
           <div className="v2-spacer--sm"></div>
-          <div className="v2-grid v2-grid-3">
-            <div className="v2-step-card">
-              <div className="v2-step-number">1</div>
-              <h3 className="v2-h4">Register Free</h3>
-              <p className="v2-body" style={{ margin: 0, fontSize: '15px', color: 'var(--v2-muted)' }}>Complete the form above. No credit card required.</p>
-            </div>
-            <div className="v2-step-card">
-              <div className="v2-step-number">2</div>
-              <h3 className="v2-h4">Join the Group</h3>
-              <p className="v2-body" style={{ margin: 0, fontSize: '15px', color: 'var(--v2-muted)' }}>Join our private Facebook group where all live sessions take place.</p>
-            </div>
-            <div className="v2-step-card">
-              <div className="v2-step-number">3</div>
-              <h3 className="v2-h4">Show Up Live</h3>
-              <p className="v2-body" style={{ margin: 0, fontSize: '15px', color: 'var(--v2-muted)' }}>March 16–20, live daily at 12:00 PM Eastern. Sessions last about 1 hour.</p>
-            </div>
+          <div className="v2-card v2-max-w-narrow" style={{ background: 'var(--v2-bg-muted)', margin: '0 auto' }}>
+            <ul className="v2-list" style={{ margin: 0 }}>
+              <li style={{ marginBottom: '10px' }}><strong>Dates:</strong> [Insert Dates]</li>
+              <li style={{ marginBottom: '10px' }}><strong>Sessions:</strong> Live each day</li>
+              <li style={{ marginBottom: '10px' }}><strong>Where:</strong> Private Facebook group</li>
+              <li style={{ marginBottom: 0 }}><strong>Cost:</strong> Free</li>
+            </ul>
           </div>
-
-          <div className="v2-spacer"></div>
-          <div className="v2-card v2-max-w-narrow" style={{ background: 'var(--v2-bg-muted)' }}>
-            <p className="v2-body" style={{ marginBottom: 0 }}>
-              <strong>Dates:</strong> March 16–20 &nbsp;·&nbsp; <strong>Time:</strong> 12:00 PM Eastern (daily) &nbsp;·&nbsp; <strong>Where:</strong> Private Facebook group &nbsp;·&nbsp; <strong>Cost:</strong> Free
+          <div className="v2-spacer--sm"></div>
+          <div className="v2-max-w-narrow" style={{ margin: '0 auto', textAlign: 'center' }}>
+            <p className="v2-body v2-muted-text" style={{ marginBottom: 0 }}>
+              Once you register, you&apos;ll receive instructions on how to join the group and attend the sessions.
             </p>
           </div>
         </div>
@@ -203,19 +227,20 @@ export default function RegistrationPage() {
       {/* Optional VIP */}
       <section className="v2-section v2-section-muted">
         <div className="v2-container v2-max-w-narrow">
-          <h2 className="v2-h2">Optional Additional Access</h2>
+          <h2 className="v2-h2">Optional VIP Access</h2>
           <p className="v2-body">
-            Some participants prefer the ability to ask questions and revisit the material.
+            Some participants are ready to lean in and they prefer the ability to ask questions and revisit the material.
           </p>
           <p className="v2-body">
-            For those individuals, an optional VIP access option will be available, which includes:
+            If you&apos;re one of those people, we&apos;ve got you! An optional VIP access option will be available, which includes:
           </p>
           <ul className="v2-list v2-checklist">
             <li>Live Q&amp;A sessions after each daily session</li>
-            <li>Access to session recordings</li>
+            <li>Special Surprise Guests</li>
+            <li>Access to all of the recordings</li>
           </ul>
           <p className="v2-body">
-            Details will be shared after registration. Participation is optional.
+            After you register we will share how you can grab this if you want it. Participation is optional.
           </p>
         </div>
       </section>
@@ -227,6 +252,11 @@ export default function RegistrationPage() {
           <p className="v2-body">
             If you&apos;ve been noticing emotional responses that don&apos;t reflect who you want to be — or moments you wish you had handled differently — this is a simple place to start looking more closely.
           </p>
+          <div style={{ textAlign: 'center', marginTop: '8px' }}>
+            <a href="#register" className="v2-btn v2-btn-primary">
+              👉 Reserve Your Free Spot
+            </a>
+          </div>
         </div>
       </section>
 
@@ -240,6 +270,9 @@ export default function RegistrationPage() {
             <p className="v2-secure-note">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
               Free to attend. No credit card required.
+            </p>
+            <p className="v2-body v2-muted-text" style={{ fontSize: '13px', marginTop: '16px', marginBottom: 0 }}>
+              Your privacy is respected. Your information will never be shared.
             </p>
           </div>
         </div>
