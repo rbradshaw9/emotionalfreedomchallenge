@@ -175,7 +175,9 @@ function ReplayPageInner() {
                   <div style={{ padding: '24px 0' }}>
                     <h2 className="v2-h3" style={{ marginBottom: '8px' }}>Day {currentDay.day}: {currentDay.mainSession.title}</h2>
                     <p className="v2-body" style={{ color: 'var(--v2-muted)', marginBottom: '8px' }}>{currentDay.mainSession.description}</p>
-                    <p className="v2-body" style={{ color: 'var(--v2-muted)', marginBottom: '8px' }}>{currentDay.vipSession.description}</p>
+                    <p className="v2-body" style={{ color: 'var(--v2-muted)', marginBottom: '8px' }}>
+                      <strong>Challenge Task:</strong>{currentDay.vipSession.description.replace('Challenge Task:', '')}
+                    </p>
                   </div>
                 </>
               ) : (
