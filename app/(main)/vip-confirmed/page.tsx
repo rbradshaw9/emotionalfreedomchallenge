@@ -49,24 +49,24 @@ export default function VipConfirmedPage() {
           <div className="v2-spacer--sm"></div>
           <div className="v2-benefits-list v2-max-w-narrow" style={{ margin: '0 auto' }}>
             <div className="v2-benefit-item">
-              <span className="v2-benefit-icon">🎥</span>
+              <span className="v2-benefit-icon">💬</span>
               <div>
-                <strong>Session Recordings</strong>
-                <p>Every daily session recorded and available to revisit after the challenge ends.</p>
+                <strong>Private Live Q&amp;A After Each Session</strong>
+                <p>After each daily session, Dr. Paul stays on for a smaller Q&amp;A. You get to ask — and hear others ask — about real conversations, real relationships, and real situations.</p>
               </div>
             </div>
             <div className="v2-benefit-item">
-              <span className="v2-benefit-icon">🙋</span>
+              <span className="v2-benefit-icon">🌟</span>
               <div>
-                <strong>Live Q&amp;A After Each Session</strong>
-                <p>Extended time with Dr. Paul Jenkins after each live session — exclusive to VIP participants.</p>
+                <strong>Special Surprise Guests</strong>
+                <p>Dr. Paul invites authors, speakers, thought leaders, and coaches to share their insights in the live Q&amp;A after the main session.</p>
               </div>
             </div>
             <div className="v2-benefit-item">
-              <span className="v2-benefit-icon">📓</span>
+              <span className="v2-benefit-icon">📹</span>
               <div>
-                <strong>Session Notes &amp; Resources</strong>
-                <p>Companion materials for each day to help you apply what you&apos;re learning.</p>
+                <strong>Full Session Recordings — Including the Q&amp;A</strong>
+                <p>Access all recordings for each session, so you can return to what stood out or catch anything you missed.</p>
               </div>
             </div>
           </div>
@@ -153,8 +153,9 @@ export default function VipConfirmedPage() {
             Show up. Ask the questions that come up for you. Revisit the moments that land. Let it work.
           </p>
           <p className="v2-body">
-            If you have any questions about your access, reach us at:{' '}
-            <a href="mailto:info@drpauljenkins.com">info@drpauljenkins.com</a>
+            If you have any questions about your access, reach us at:<br />
+            <a href="mailto:info@drpauljenkins.com">info@drpauljenkins.com</a> or{' '}
+            <a href="tel:+18013807981">+1 801-380-7981</a>
           </p>
           <p className="v2-body v2-muted-text" style={{ marginTop: '24px', fontStyle: 'italic' }}>
             We&apos;re looking forward to seeing you on March 16.

@@ -73,7 +73,7 @@ export default function ThankYouPage() {
               <p className="v2-body">The challenge runs:</p>
               <div className="v2-challenge-details">
                 <strong>Monday, March 16 – Friday, March 20</strong><br />
-                Live each day at <strong>12:00 Noon Eastern Time</strong><br />
+                Live each day at <strong>12:00 Noon Eastern</strong><br />
                 Sessions run about an hour each day.
               </div>
               <p className="v2-body">
@@ -124,6 +124,25 @@ export default function ThankYouPage() {
                 That one sentence often clarifies more than people expect.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VIP Upsell */}
+      <section className="v2-section">
+        <div className="v2-container--sm">
+          <div className="v2-upgrade-card" style={{ maxWidth: '540px', margin: '0 auto' }}>
+            <span className="v2-kicker v2-text-center" style={{ display: 'block', marginBottom: '8px' }}>Still Thinking About VIP?</span>
+            <h2 className="v2-h3 v2-text-center" style={{ marginBottom: '12px' }}>Get More from This Week</h2>
+            <p className="v2-body v2-text-center" style={{ marginBottom: '20px' }}>
+              VIP members get private Q&amp;A after each session, special surprise guests, and full recordings to revisit anytime — all for a one-time payment of <strong>$27</strong>.
+            </p>
+            <a
+              href="https://bl843.infusionsoft.app/app/orderForms/cdb82d2b-34ac-443e-aba9-2c63993be424"
+              className="v2-btn v2-btn-primary v2-btn-lg v2-btn-block"
+            >
+              Add VIP Access for $27
+            </a>
           </div>
         </div>
       </section>

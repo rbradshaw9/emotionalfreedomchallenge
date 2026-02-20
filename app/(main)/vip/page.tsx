@@ -92,7 +92,7 @@ export default function VIPPage() {
           <p className="v2-body">
             Are you ready to lean in and maximize this challenge for five days in March?
           </p>
-          <p className="v2-body" style={{ fontWeight: 500.  }}>
+          <p className="v2-body" style={{ fontWeight: 500 }}>
             How could you turn this challenge into a personal development victory?
           </p>
         </div>
@@ -108,7 +108,7 @@ export default function VIPPage() {
             <p className="v2-body">
               VIP access changes how you engage with the content and the experience as a whole.
             </p>
-            <p className="v2-body">For people who choose VIP, the experience usually feels different in three ways:</p>
+            <p className="v2-body">For people who choose VIP, the experience usually feels different in four ways:</p>
             <ul className="v2-list v2-checklist">
               <li>They ask their questions immediately, and get feedback now</li>
               <li>They hear how others are working through similar situations</li>

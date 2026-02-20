@@ -5,7 +5,7 @@ import { useState, Suspense } from 'react';
 const videoData = [
   {
     day: 1,
-    active: true,
+    active: false,
     mainSession: {
       label: 'Main Training',
       title: 'The Positivity Model: Reclaim Emotional Ownership',
