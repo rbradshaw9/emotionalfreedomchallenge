@@ -235,30 +235,26 @@ function ReplayPageInner() {
         </div>
       </div>
 
-      <section className="v2-section v2-section-muted" style={{ marginTop: '40px' }}>
-        <div className="v2-container--sm">
-          <div className="v2-coaching-card">
-            <div className="v2-badge" style={{ marginBottom: '16px' }}>VIP Early Access</div>
-            <h2 className="v2-h2" style={{ marginBottom: '12px' }}>Work Directly with Dr. Paul</h2>
-            <p className="v2-body" style={{ marginBottom: '24px' }}>
-              As a VIP member, you&rsquo;re getting first access to Dr. Paul&rsquo;s coaching calendar
-              before it opens to the public. A limited number of one-on-one sessions are
-              available &mdash; claim yours now while spots remain.
-            </p>
-            <div style={{ textAlign: 'center' }}>
-              <a
-                href="https://calendly.com/placeholder"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="v2-btn v2-btn-primary v2-btn-lg"
-              >
-                Claim Your Spot
-              </a>
-            </div>
-            <p className="v2-body v2-text-center" style={{ marginTop: '16px', fontSize: '13px', color: 'var(--v2-muted)' }}>
-              This calendar link is exclusive to VIP members — not shared publicly.
-            </p>
-          </div>
+      <section className="v2-section v2-section-dark" style={{ marginTop: '40px' }}>
+        <div className="v2-container--sm" style={{ textAlign: 'center' }}>
+          <div className="v2-badge" style={{ marginBottom: '16px' }}>VIP Exclusive</div>
+          <h2 className="v2-h2" style={{ marginBottom: '12px' }}>Schedule a Breakthrough Call</h2>
+          <p className="v2-body" style={{ marginBottom: '24px' }}>
+            As a VIP member, you have access to schedule a one-on-one Breakthrough Call
+            with one of our Certified Positivity Practitioners. This is your opportunity
+            to get personalized guidance and take your experience to the next level.
+          </p>
+          <a
+            href="https://calendly.com/placeholder"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="v2-btn v2-btn-primary v2-btn-lg"
+          >
+            Schedule Your Breakthrough Call
+          </a>
+          <p className="v2-body v2-text-center" style={{ marginTop: '16px', fontSize: '13px', opacity: 0.7 }}>
+            This scheduling link is exclusive to VIP members.
+          </p>
         </div>
       </section>
     </>
