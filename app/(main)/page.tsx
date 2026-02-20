@@ -252,11 +252,6 @@ export default function RegistrationPage() {
           <p className="v2-body">
             If you&apos;ve been noticing emotional responses that don&apos;t reflect who you want to be — or moments you wish you had handled differently — this is a simple place to start looking more closely.
           </p>
-          <div style={{ textAlign: 'center', marginTop: '8px' }}>
-            <a href="#register" className="v2-btn v2-btn-primary">
-              👉 Reserve Your Free Spot
-            </a>
-          </div>
         </div>
       </section>
 
