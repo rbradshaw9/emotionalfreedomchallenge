@@ -19,31 +19,20 @@ export default function VIPPage() {
             You&apos;re Registered — One More Thing Before You Go
           </h1>
           <p className="v2-subhead">
-            Your spot for 5 Days to Emotional Ownership is being held.
+            Your seat for The Emotional Freedom Challenge is confirmed.
           </p>
-        </div>
-      </section>
-
-      {/* Transition */}
-      <section className="v2-section">
-        <div className="v2-container v2-max-w-narrow">
-          <p className="v2-body">
-            You&apos;ll receive an email shortly with instructions for joining the private Facebook group and attending the live sessions.
+          <p className="v2-body v2-text-center v2-muted-text" style={{ maxWidth: '600px', margin: '0 auto 24px' }}>
+            Check your inbox for an email shortly with instructions for joining the private Facebook group and attending the live sessions.
           </p>
-          <p className="v2-body">
+          <p className="v2-body v2-text-center" style={{ maxWidth: '600px', margin: '0 auto 28px', fontWeight: 500.  }}>
             Before you move on, there&apos;s one decision worth making now — while this is still fresh.
           </p>
-        </div>
-      </section>
 
-      {/* Quick VIP Card */}
-      <section className="v2-section v2-section-muted">
-        <div className="v2-container--sm">
-          <div className="v2-upgrade-card">
+          {/* Above-the-fold CTA */}
+          <div className="v2-upgrade-card" style={{ maxWidth: '480px', margin: '0 auto' }}>
             <div className="v2-badge v2-badge--accent" style={{ marginBottom: '16px' }}>
               Limited Spots Available
             </div>
-            <h2 className="v2-h2">Upgrade to VIP Access</h2>
             <div className="v2-price-row">
               <span className="v2-price-strike">$297 value</span>
               <span className="v2-price-main">$27</span>
@@ -56,11 +45,11 @@ export default function VIPPage() {
               </div>
               <div className="v2-quick-benefit">
                 <span className="v2-quick-benefit-check">✓</span>
-                All session recordings
+                Special Surprise Guests
               </div>
               <div className="v2-quick-benefit">
                 <span className="v2-quick-benefit-check">✓</span>
-                Q&amp;A recordings
+                All session &amp; Q&amp;A recordings
               </div>
             </div>
             <a
@@ -68,8 +57,13 @@ export default function VIPPage() {
               className="v2-btn v2-btn-primary v2-btn-lg v2-btn-block"
               style={{ marginTop: '20px' }}
             >
-              Yes — Upgrade to VIP for $27
+              Yes — Add VIP Access for $27
             </a>
+            <div className="v2-secondary-path" style={{ marginTop: '12px' }}>
+              <Link href="/thank-you" className="v2-no-thanks">
+                No thanks — Continue without VIP
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -78,17 +72,29 @@ export default function VIPPage() {
       <section className="v2-section">
         <div className="v2-container v2-max-w-narrow">
           <h2 className="v2-h2">A Pattern Most People Recognize</h2>
-          <p className="v2-body">Most people don&apos;t intend to change their emotional patterns <em>later</em>.</p>
+          <p className="v2-body">Most people don&apos;t intend to put off or procrastinate their emotional freedom for later.</p>
           <p className="v2-body">
-            They plan to &ldquo;think about it,&rdquo; or &ldquo;see how the week goes,&rdquo; or &ldquo;come back to this when things slow down.&rdquo;
+            They simply need to &ldquo;think about it,&rdquo;<br />
+            or &ldquo;see how the week goes,&rdquo;<br />
+            or &ldquo;figure some things out first,&rdquo;<br />
+            or &ldquo;come back to this when things slow down.&rdquo;
           </p>
           <p className="v2-body">
-            And then the challenge ends. Life picks back up. And the same reactions tend to show up again.
+            And then the challenge ends.<br />
+            Life happens.<br />
+            The same patterns show up again.
           </p>
           <p className="v2-body">
-            Not because people don&apos;t care — but because reflection is easiest when there&apos;s space to slow down and look honestly.
+            We keep doing what we have been doing — habit.<br />
+            <strong>Default is down!</strong><br />
+            Elevation requires effort.
           </p>
-          <p className="v2-body">That&apos;s what the next five days are for.</p>
+          <p className="v2-body">
+            Are you ready to lean in and maximize this challenge for five days in March?
+          </p>
+          <p className="v2-body" style={{ fontWeight: 500.  }}>
+            How could you turn this challenge into a personal development victory?
+          </p>
         </div>
       </section>
 
@@ -100,14 +106,14 @@ export default function VIPPage() {
           <div className="v2-spacer--sm"></div>
           <div className="v2-max-w-narrow" style={{ margin: '0 auto' }}>
             <p className="v2-body">
-              VIP access doesn&apos;t add more information.<br />
-              It changes how you engage with what comes up.
+              VIP access changes how you engage with the content and the experience as a whole.
             </p>
             <p className="v2-body">For people who choose VIP, the experience usually feels different in three ways:</p>
             <ul className="v2-list v2-checklist">
-              <li>They don&apos;t have to hold their questions until later</li>
-              <li>They can hear how others are working through similar situations</li>
-              <li>They can revisit moments that landed, instead of relying on memory</li>
+              <li>They ask their questions immediately, and get feedback now</li>
+              <li>They hear how others are working through similar situations</li>
+              <li>Even at a ridiculously reduced cost, they have skin in the game and this switches something in the brain</li>
+              <li>They can revisit moments that landed, instead of relying on memory or notes</li>
             </ul>
             <p className="v2-body">That additional layer is often what turns awareness into something that sticks.</p>
           </div>
@@ -118,122 +124,81 @@ export default function VIPPage() {
       <section className="v2-section">
         <div className="v2-container">
           <h2 className="v2-h2 v2-text-center">What&apos;s Included with VIP Access</h2>
-          <p className="v2-body v2-text-center v2-muted-text">
-            VIP access provides three key benefits that help you get the most from this experience:
-          </p>
           <div className="v2-spacer--sm"></div>
           <div className="v2-features-list v2-max-w-narrow" style={{ margin: '0 auto' }}>
             <div className="v2-feature-item">
               <div className="v2-feature-icon-wrap">💬</div>
               <div className="v2-feature-content">
                 <h3>Private Live Q&amp;A After Each Session</h3>
-                <p>After each daily session, Dr. Paul stays on for a smaller Q&amp;A. This is where people tend to ask about real conversations, real relationships, and real situations — not theory.</p>
+                <p>After each daily session, Dr. Paul stays on for a smaller Q&amp;A. You get to ask — and hear others ask — about real conversations, real relationships, and real situations. Specific application of what was just discussed in the main session.</p>
+              </div>
+            </div>
+            <div className="v2-feature-item">
+              <div className="v2-feature-icon-wrap">🌟</div>
+              <div className="v2-feature-content">
+                <h3>Special Surprise Guests</h3>
+                <p>Dr. Paul has a lot of cool friends, and loves to invite them to share their insights in the live Q&amp;A after the main session. These guests include authors, speakers, thought leaders, and coaches who understand the principles well and generously contribute to the conversation.</p>
               </div>
             </div>
             <div className="v2-feature-item">
               <div className="v2-feature-icon-wrap">📹</div>
               <div className="v2-feature-content">
-                <h3>Full Session Recordings</h3>
-                <p>You&apos;ll have access to the recordings for each session, so you can return to what stood out or catch anything you missed. Many participants revisit key moments multiple times.</p>
-              </div>
-            </div>
-            <div className="v2-feature-item">
-              <div className="v2-feature-icon-wrap">🔑</div>
-              <div className="v2-feature-content">
-                <h3>VIP Q&amp;A Recordings</h3>
-                <p>All Q&amp;A sessions are recorded and available to you. Many participants say these recordings are where things quietly click — hearing others work through similar situations often makes concepts land more clearly.</p>
+                <h3>Full Session Recordings — Including the Q&amp;A</h3>
+                <p>You&apos;ll have access to all the recordings for each session, so you can return to what stood out or catch anything you missed. Every time you return to the content, you do so with different ears because it will build on what you noticed the first time.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* About the Cost */}
       <section className="v2-section v2-section-muted">
         <div className="v2-container--sm">
-          <div className="v2-upgrade-card">
-            <p style={{ fontSize: '16px', fontWeight: 700, color: 'var(--v2-text)', marginBottom: '4px' }}>
-              Add VIP Access — $27
+          <div className="v2-card" style={{ textAlign: 'center', padding: '40px 36px' }}>
+            <h2 className="v2-h2" style={{ marginBottom: '16px' }}>About the Cost</h2>
+            <p className="v2-body">VIP access is valued at $297.</p>
+            <p className="v2-body">
+              Because you&apos;re joining the challenge now, you can add VIP access for a one-time payment of <strong>$27</strong>.
             </p>
-            <p className="v2-muted-text" style={{ fontSize: '14px', marginBottom: '20px' }}>
-              Limited spots to keep Q&amp;A sessions personal
+            <p className="v2-body" style={{ marginBottom: 0 }}>
+              VIP spots are limited so the Q&amp;A sessions stay useful and personal.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* A Simple Way to Decide */}
+      <section className="v2-section">
+        <div className="v2-container v2-max-w-narrow">
+          <h2 className="v2-h2">A Simple Way to Decide</h2>
+          <p className="v2-body">If you&apos;re the type of person who:</p>
+          <ul className="v2-decision-list">
+            <li>tends to have questions after sessions</li>
+            <li>wants to slow things down and reflect</li>
+            <li>knows that momentum matters</li>
+          </ul>
+          <p className="v2-body">VIP usually ends up being worth it.</p>
+          <p className="v2-body">
+            If you&apos;re comfortable just attending live and seeing what you notice, that&apos;s fine too.
+          </p>
+          <p className="v2-body" style={{ fontWeight: 500 }}>
+            But this is the moment when most people either lean in —<br />
+            or default back to how things usually go.
+          </p>
+        </div>
+      </section>
+
+      {/* Final CTA box */}
+      <section className="v2-section v2-section-muted">
+        <div className="v2-container--sm">
+          <div className="v2-cta-box">
+            <h2 className="v2-h2">👉 Add VIP Access for $27</h2>
+            <p className="v2-muted-text" style={{ marginBottom: '24px' }}>(one-time payment)</p>
             <a
               href="https://bl843.infusionsoft.app/app/orderForms/cdb82d2b-34ac-443e-aba9-2c63993be424"
               className="v2-btn v2-btn-primary v2-btn-lg v2-btn-block"
             >
               Yes — Add VIP Access
-            </a>
-            <div className="v2-secondary-path" style={{ marginTop: '16px' }}>
-              <Link href="/thank-you" className="v2-no-thanks">
-                No thanks — Continue without VIP
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* VIP Is Right For You */}
-      <section className="v2-section">
-        <div className="v2-container v2-max-w-narrow">
-          <h2 className="v2-h2">VIP Access Is Right For You If...</h2>
-          <ul className="v2-decision-list">
-            <li>You tend to have questions after learning something new</li>
-            <li>You want the ability to revisit key moments instead of relying on memory</li>
-            <li>You know that momentum matters and want to stay engaged</li>
-          </ul>
-          <p className="v2-decision-note">
-            If you&apos;re comfortable just attending live, that&apos;s fine too. But this is the moment when most people either lean in — or default back to how things usually go.
-          </p>
-        </div>
-      </section>
-
-      {/* Details */}
-      <section className="v2-section v2-section-muted">
-        <div className="v2-container--sm">
-          <div className="v2-risk-card">
-            <h2 className="v2-h2" style={{ marginBottom: '24px' }}>Important Details</h2>
-            <div className="v2-detail-item">
-              <strong>Why only $27?</strong>
-              <p>VIP access is valued at $297. We&apos;re offering it at $27 during registration to make it accessible while you&apos;re motivated.</p>
-            </div>
-            <div className="v2-detail-item">
-              <strong>Why limited spots?</strong>
-              <p>We keep VIP groups intentionally small so Q&amp;A sessions remain personal and valuable. Once spots fill, this option closes.</p>
-            </div>
-            <div className="v2-detail-item">
-              <strong>When does access start?</strong>
-              <p>Immediately. You&apos;ll receive VIP instructions in your confirmation email along with the standard challenge details.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA box */}
-      <section className="v2-section">
-        <div className="v2-container--sm">
-          <div className="v2-cta-box">
-            <h2 className="v2-h2">Ready to Upgrade?</h2>
-            <div className="v2-pricing-box" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', marginBottom: '24px', marginTop: '20px' }}>
-              <div className="v2-pricing-row" style={{ color: '#c7c7cc' }}>
-                <span>5-Day Challenge Access</span>
-                <span style={{ color: 'var(--v2-success)', fontWeight: 700 }}>FREE</span>
-              </div>
-              <div className="v2-pricing-row" style={{ color: '#c7c7cc' }}>
-                <span>VIP Upgrade</span>
-                <span style={{ color: '#6eb3f7', fontWeight: 700 }}>+$27</span>
-              </div>
-              <div className="v2-pricing-separator"></div>
-              <div className="v2-pricing-total" style={{ color: '#ffffff', paddingTop: '12px' }}>
-                <span>Total Today</span>
-                <span style={{ fontSize: '28px', fontWeight: 700, color: '#ffffff' }}>$27</span>
-              </div>
-            </div>
-            <a
-              href="https://bl843.infusionsoft.app/app/orderForms/cdb82d2b-34ac-443e-aba9-2c63993be424"
-              className="v2-btn v2-btn-primary v2-btn-lg v2-btn-block"
-            >
-              Yes — Add VIP Access for $27
             </a>
             <div className="v2-secondary-path" style={{ marginTop: '16px' }}>
               <p className="v2-muted-text" style={{ fontSize: '14px', marginBottom: '8px' }}>Or continue without VIP</p>
@@ -247,12 +212,9 @@ export default function VIPPage() {
 
       {/* Either Way */}
       <section className="v2-section">
-        <div className="v2-container v2-max-w-narrow">
+        <div className="v2-container v2-max-w-narrow v2-text-center">
           <h2 className="v2-h2">Either Way</h2>
-          <p className="v2-body">You&apos;re welcome in the challenge.</p>
-          <p className="v2-body">
-            Just know that how you engage tends to shape what you take away.
-          </p>
+          <p className="v2-body">Welcome to The Emotional Freedom Challenge!</p>
         </div>
       </section>
     </>
