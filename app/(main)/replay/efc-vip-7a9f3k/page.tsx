@@ -196,7 +196,7 @@ function ReplayPageInner() {
                         <strong>March {15 + currentDay.day}, 2026</strong>.
                       </p>
                       <p style={{ fontSize: '14px', color: 'var(--v2-muted)' }}>
-                        Check back after 12:00 PM Eastern on that day.
+                        Check back after 12:00 Noon Eastern on that day.
                       </p>
                     </div>
                   </div>

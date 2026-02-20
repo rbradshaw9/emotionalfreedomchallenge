@@ -75,7 +75,7 @@ export default function RegistrationPage() {
           <div className="v2-text-center" style={{ marginBottom: '32px' }}>
             <span className="v2-kicker">Register Now</span>
             <h2 className="v2-h2">Reserve Your Free Spot</h2>
-            <p className="v2-body v2-muted-text">Sessions are live March 16–20 at 12:00 PM Eastern. Free to attend.</p>
+            <p className="v2-body v2-muted-text">Sessions are live March 16–20 at 12:00 Noon Eastern. Free to attend.</p>
           </div>
           <div className="v2-form-card">
             <RegistrationForm />
@@ -210,7 +210,7 @@ export default function RegistrationPage() {
           <div className="v2-card v2-max-w-narrow" style={{ background: 'var(--v2-bg-muted)', margin: '0 auto' }}>
             <ul className="v2-list" style={{ margin: 0 }}>
               <li style={{ marginBottom: '10px' }}><strong>Dates:</strong> March 16–20, 2026</li>
-              <li style={{ marginBottom: '10px' }}><strong>Sessions:</strong> Live each day at 12:00 PM Eastern</li>
+              <li style={{ marginBottom: '10px' }}><strong>Sessions:</strong> Live each day at 12:00 Noon Eastern</li>
               <li style={{ marginBottom: '10px' }}><strong>Where:</strong> Private Facebook group</li>
               <li style={{ marginBottom: 0 }}><strong>Cost:</strong> Free</li>
             </ul>

@@ -74,7 +74,7 @@ export default function ThankYouPage() {
               <p className="v2-body">The challenge runs:</p>
               <div className="v2-challenge-details">
                 <strong>March 16–20</strong><br />
-                Live each day at <strong>12:00 PM Eastern</strong><br />
+                Live each day at <strong>12:00 Noon Eastern</strong><br />
                 Sessions last about 60 minutes
               </div>
               <p className="v2-body">
