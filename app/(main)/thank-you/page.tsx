@@ -21,19 +21,13 @@ export default function ThankYouPage() {
         <div className="v2-container">
           <div className="v2-success-icon" style={{ margin: '0 auto 20px' }}>✓</div>
           <h1 className="v2-h1">You&apos;re In</h1>
-          <p className="v2-subhead">
+          <p className="v2-subhead" style={{ marginBottom: '16px' }}>
             Your spot in The Emotional Freedom Challenge is confirmed.
           </p>
-        </div>
-      </section>
-
-      {/* Confirmation */}
-      <section className="v2-section">
-        <div className="v2-container v2-max-w-narrow">
-          <p className="v2-body">
+          <p className="v2-body v2-text-center v2-muted-text" style={{ maxWidth: '600px', margin: '0 auto 8px' }}>
             We&apos;ve sent you an email with everything you need to participate.
           </p>
-          <p className="v2-body" style={{ fontWeight: 500 }}>
+          <p className="v2-body v2-text-center" style={{ maxWidth: '600px', margin: '0 auto', fontWeight: 500 }}>
             What you do next will determine how much you actually get from the week.
           </p>
         </div>
@@ -44,7 +38,6 @@ export default function ThankYouPage() {
         <div className="v2-container">
           <span className="v2-kicker v2-text-center" style={{ display: 'block' }}>Your Next Steps</span>
           <h2 className="v2-h2 v2-text-center">Three Things to Do Now</h2>
-          <div className="v2-spacer--sm"></div>
           <div className="v2-steps-section">
 
             <div className="v2-step">
@@ -129,7 +122,7 @@ export default function ThankYouPage() {
       </section>
 
       {/* VIP Upsell */}
-      <section className="v2-section">
+      <section className="v2-section" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
         <div className="v2-container--sm">
           <div className="v2-upgrade-card" style={{ maxWidth: '540px', margin: '0 auto' }}>
             <span className="v2-kicker v2-text-center" style={{ display: 'block', marginBottom: '8px' }}>Still Thinking About VIP?</span>
@@ -148,7 +141,7 @@ export default function ThankYouPage() {
       </section>
 
       {/* Final Note */}
-      <section className="v2-section">
+      <section className="v2-section" style={{ paddingTop: '40px' }}>
         <div className="v2-container v2-max-w-narrow">
           <h2 className="v2-h2">A Final Note</h2>
           <p className="v2-body">

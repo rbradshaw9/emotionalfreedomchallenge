@@ -23,19 +23,13 @@ export default function VipConfirmedPage() {
             ⭐ VIP Access Confirmed
           </div>
           <h1 className="v2-h1">You&apos;re All Set</h1>
-          <p className="v2-subhead">
+          <p className="v2-subhead" style={{ marginBottom: '16px' }}>
             Your VIP upgrade for The Emotional Freedom Challenge is confirmed.
           </p>
-        </div>
-      </section>
-
-      {/* Confirmation */}
-      <section className="v2-section">
-        <div className="v2-container v2-max-w-narrow">
-          <p className="v2-body">
+          <p className="v2-body v2-text-center v2-muted-text" style={{ maxWidth: '600px', margin: '0 auto 8px' }}>
             You now have full VIP access — recordings, extended Q&amp;A after each session, and everything else included in the upgrade.
           </p>
-          <p className="v2-body">
+          <p className="v2-body v2-text-center v2-muted-text" style={{ maxWidth: '600px', margin: '0 auto' }}>
             Check your inbox for a confirmation email with all the details.
           </p>
         </div>
@@ -46,7 +40,6 @@ export default function VipConfirmedPage() {
         <div className="v2-container">
           <span className="v2-kicker v2-text-center" style={{ display: 'block' }}>Your VIP Access</span>
           <h2 className="v2-h2 v2-text-center">What&apos;s Included in Your VIP Access</h2>
-          <div className="v2-spacer--sm"></div>
           <div className="v2-benefits-list v2-max-w-narrow" style={{ margin: '0 auto' }}>
             <div className="v2-benefit-item">
               <span className="v2-benefit-icon">💬</span>
@@ -78,7 +71,6 @@ export default function VipConfirmedPage() {
         <div className="v2-container">
           <span className="v2-kicker v2-text-center" style={{ display: 'block' }}>Action Items</span>
           <h2 className="v2-h2 v2-text-center">Your Next Steps</h2>
-          <div className="v2-spacer--sm"></div>
           <div className="v2-steps-section">
 
             <div className="v2-step">
