@@ -24,10 +24,10 @@ export default function ThankYouPage() {
           <p className="v2-subhead" style={{ marginBottom: '16px' }}>
             Your spot in The Emotional Freedom Challenge is confirmed.
           </p>
-          <p className="v2-body v2-text-center v2-muted-text" style={{ maxWidth: '600px', margin: '0 auto 8px' }}>
+          <p className="v2-body v2-text-center v2-muted-text" style={{ maxWidth: '720px', margin: '0 auto 8px' }}>
             We&apos;ve sent you an email with everything you need to participate.
           </p>
-          <p className="v2-body v2-text-center" style={{ maxWidth: '600px', margin: '0 auto', fontWeight: 500 }}>
+          <p className="v2-body v2-text-center" style={{ maxWidth: '720px', margin: '0 auto', fontWeight: 500 }}>
             What you do next will determine how much you actually get from the week.
           </p>
         </div>
