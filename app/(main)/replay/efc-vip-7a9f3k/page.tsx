@@ -8,15 +8,15 @@ const videoData = [
     active: true,
     mainSession: {
       label: 'Main Training',
-      title: 'Understanding Emotional Freedom',
-      description: 'Discover the foundations of emotional freedom and learn why old patterns keep repeating.',
+      title: 'The Positivity Model: Reclaim Emotional Ownership',
+      description: "Most people believe their emotions are caused by what happens to them — other people's behavior, the news, their past, their stress, their circumstances. That belief quietly steals our freedom. On Day 1, you'll learn the Positivity Model and discover the powerful truth about where emotions really come from. We'll address anxiety, depression, resentment, and overwhelm — not by minimizing them, but by understanding them. As you learn to make peace with your past, your present, and even your future, you step into emotional ownership.",
       videoUrl: 'https://player.vimeo.com/video/000000001',
       duration: '~60 min',
     },
     vipSession: {
       label: 'VIP Session',
-      title: 'Day 1 VIP — Deep Dive & Q&A',
-      description: "Extended coaching, personalized Q&A, and deeper application of today's core concepts.",
+      title: 'Day 1 VIP — Q&A, Surprise Guests & Extended Discussion',
+      description: 'Challenge Task: The Gratitude Power-Up — 25 daily gratitudes, with at least half focused on the hard things. Not toxic positivity. Real empowerment. Finding strength and growth in what once felt heavy.',
       videoUrl: 'https://player.vimeo.com/video/000000002',
       duration: '~30 min',
     },
@@ -26,15 +26,15 @@ const videoData = [
     active: false,
     mainSession: {
       label: 'Main Training',
-      title: 'Breaking Free from Limiting Beliefs',
-      description: 'Identify and transform the beliefs that have been holding you back from true freedom.',
+      title: 'Creation of What Is To Be: From Discontent to Design',
+      description: "Discontent is a powerful signal. On Day 2, we explore the creation side of the Positivity Model and walk through the 6-Phase Creation Process: Discontent, The Choice, The Question, The Plan, The Work, and The Manifestation. Instead of feeling stuck in what is, you'll learn how to intentionally create what could be. Emotional freedom expands when you realize you are here to design the life that previously pushed you around.",
       videoUrl: '',
       duration: '~60 min',
     },
     vipSession: {
       label: 'VIP Session',
-      title: 'Day 2 VIP — Deep Dive & Q&A',
-      description: "Extended coaching, personalized Q&A, and deeper application of today's core concepts.",
+      title: 'Day 2 VIP — Q&A, Surprise Guests & Extended Discussion',
+      description: 'Challenge Task: Better By 8 — Each day, choose one meaningful action that will make your life, relationships, health, or work just a little better by 8:00. Small steps. Real momentum.',
       videoUrl: '',
       duration: '~30 min',
     },
@@ -44,15 +44,15 @@ const videoData = [
     active: false,
     mainSession: {
       label: 'Main Training',
-      title: 'The Power of Emotional Awareness',
-      description: 'Learn to recognize and work with your emotions rather than being controlled by them.',
+      title: 'Two Determinant Paradigms: Victim or Agent',
+      description: "Every emotionally charged moment reveals a choice — even when it doesn't feel like it. On Day 3, we'll dive into the two paradigms that determine your experience of life: the Victim paradigm and the Agent paradigm. Will you choose to blame, or response-ability — your ability to choose your response. When you understand this shift, resentment softens, power returns, and clarity replaces chaos. Emotional freedom grows when you stop asking, \"Why is this happening to me?\" and start asking, \"Who will I choose to be in this?\"",
       videoUrl: '',
       duration: '~60 min',
     },
     vipSession: {
       label: 'VIP Session',
-      title: 'Day 3 VIP — Deep Dive & Q&A',
-      description: "Extended coaching, personalized Q&A, and deeper application of today's core concepts.",
+      title: 'Day 3 VIP — Q&A, Surprise Guests & Extended Discussion',
+      description: 'Challenge Task: Upside Down — For 24 hours, intentionally disrupt something routine. This simple exercise builds awareness, flexibility, and proof that you can choose differently.',
       videoUrl: '',
       duration: '~30 min',
     },
@@ -62,15 +62,15 @@ const videoData = [
     active: false,
     mainSession: {
       label: 'Main Training',
-      title: 'Creating New Patterns',
-      description: 'Practical techniques for establishing new, healthier emotional patterns that last.',
+      title: 'The Influence Quadrant: Expand Your Impact',
+      description: "So much emotional turmoil comes from trying to control what isn't ours to control — to the neglect of what we CAN control. On Day 4, we explore the Influence Quadrant and discover where your true power lies. You'll see how your emotional freedom affects not just you, but every relationship you touch. Service becomes a stabilizing force. Instead of being drained by others, you'll learn how to engage from strength.",
       videoUrl: '',
       duration: '~60 min',
     },
     vipSession: {
       label: 'VIP Session',
-      title: 'Day 4 VIP — Deep Dive & Q&A',
-      description: "Extended coaching, personalized Q&A, and deeper application of today's core concepts.",
+      title: 'Day 4 VIP — Q&A, Surprise Guests & Extended Discussion',
+      description: "Challenge Task: Free Three — Make a meaningful difference for three people — one in your family, one in your work or community, and one you don't even know. Emotional freedom deepens when contribution expands.",
       videoUrl: '',
       duration: '~30 min',
     },
@@ -80,15 +80,15 @@ const videoData = [
     active: false,
     mainSession: {
       label: 'Main Training',
-      title: 'Living in Emotional Freedom',
-      description: "Integrate everything you've learned and create your personal plan for sustained freedom.",
+      title: 'Commitment and Courage: Move Forward with Intention',
+      description: "Insight without commitment fades. On our final day, we explore the 4 C's — Commitment, Courage, Capability, and Confidence — and why momentum matters. You can steer a moving vehicle. A parked one? Not so much. Emotional freedom is a practice built on courageous commitment. You'll identify your next right step and solidify the gains you've made this week.",
       videoUrl: '',
       duration: '~60 min',
     },
     vipSession: {
       label: 'VIP Session',
-      title: 'Day 5 VIP — Deep Dive & Q&A',
-      description: "Extended coaching, personalized Q&A, and deeper application of today's core concepts.",
+      title: 'Day 5 VIP — Q&A, Surprise Guests & Extended Discussion',
+      description: 'Challenge Task: The Next Right Thing — Commit to the next right thing — however small or bold that may be. Choose the next physical step toward that promise you made to yourself or others. This is not a place you come to — it is a place you go from! You are not alone. Notice your abundant sources of support. You complete this challenge equipped to move forward with clarity and power.',
       videoUrl: '',
       duration: '~30 min',
     },
@@ -112,21 +112,14 @@ function ReplayPageInner() {
 
   return (
     <>
-      <div className="v2-replay-header">
-        <div className="v2-container--md">
-          <h1 className="v2-h1" style={{ color: '#fff', marginBottom: '8px' }}>Challenge Replays</h1>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '17px' }}>Access your session recordings</p>
-        </div>
-      </div>
-
       <div className="v2-orientation-section">
         <div className="v2-container--md">
           <div className="v2-orientation-card">
-            <h2 className="v2-h3" style={{ marginBottom: '12px' }}>Welcome to Your VIP Replays</h2>
+            <h2 className="v2-h3" style={{ marginBottom: '12px' }}>Welcome to Your VIP Recordings</h2>
             <p className="v2-body">
               Each day includes two recordings: the <strong>Main Training</strong> session and your
-              exclusive <strong>VIP Session</strong> with extended coaching and live Q&amp;A.
-              Watch in order for the best experience, and revisit any session as often as you like.
+              exclusive <strong>VIP Session</strong> with live Q&amp;A, special surprise guests, and extended discussion.
+              Revisit any session as often as you like.
             </p>
           </div>
         </div>
