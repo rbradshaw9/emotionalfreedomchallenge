@@ -34,8 +34,13 @@ export default function PartnerRegisterForm() {
     const nativeSubmit = HTMLFormElement.prototype.submit.bind(form);
 
     form.submit = function () {
-      // Check required fields + email format — browser scrolls to first invalid field
-      if (!form.reportValidity()) return;
+      // Find the first invalid required field and scroll to it
+      const firstInvalid = form.querySelector(':invalid') as HTMLElement | null;
+      if (firstInvalid) {
+        firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        firstInvalid.focus();
+        return;
+      }
       setPasswordError('');
       const strengthError = validatePassword(password);
       if (strengthError) {
