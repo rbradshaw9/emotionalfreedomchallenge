@@ -10,6 +10,14 @@ export default function PartnerRegisterForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
+  const validatePassword = (pw: string): string | null => {
+    if (pw.length < 8) return 'Password must be at least 8 characters.';
+    if (!/[A-Z]/.test(pw)) return 'Password must include at least one uppercase letter.';
+    if (!/[a-z]/.test(pw)) return 'Password must include at least one lowercase letter.';
+    if (!/[0-9]/.test(pw)) return 'Password must include at least one number.';
+    return null;
+  };
+
   // Override form.submit so that when Infusionsoft's reCAPTCHA script calls
   // form.submit() directly (bypassing the submit event), our validation still runs.
   useEffect(() => {
@@ -19,12 +27,13 @@ export default function PartnerRegisterForm() {
 
     form.submit = function () {
       setPasswordError('');
-      if (password !== confirmPassword) {
-        setPasswordError('Passwords do not match. Please try again.');
+      const strengthError = validatePassword(password);
+      if (strengthError) {
+        setPasswordError(strengthError);
         return;
       }
-      if (password.length < 8) {
-        setPasswordError('Password must be at least 8 characters.');
+      if (password !== confirmPassword) {
+        setPasswordError('Passwords do not match. Please try again.');
         return;
       }
       setIsSubmitting(true);
@@ -35,19 +44,17 @@ export default function PartnerRegisterForm() {
   // Fallback for browsers that do fire the submit event
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     setPasswordError('');
-
+    const strengthError = validatePassword(password);
+    if (strengthError) {
+      e.preventDefault();
+      setPasswordError(strengthError);
+      return;
+    }
     if (password !== confirmPassword) {
       e.preventDefault();
       setPasswordError('Passwords do not match. Please try again.');
       return;
     }
-
-    if (password.length < 8) {
-      e.preventDefault();
-      setPasswordError('Password must be at least 8 characters.');
-      return;
-    }
-
     setIsSubmitting(true);
   };
 
@@ -129,7 +136,7 @@ export default function PartnerRegisterForm() {
           <label htmlFor="inf_other_Password">Password *</label>
         </div>
         <p className="v2-field-hint" style={{ marginTop: '-12px', marginBottom: '20px' }}>
-          At least 8 characters — include uppercase, lowercase, and a number.
+          Must be at least 8 characters and include an uppercase letter, a lowercase letter, and a number.
         </p>
 
         <div className="v2-form-group">
