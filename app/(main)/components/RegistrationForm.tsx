@@ -22,7 +22,7 @@ export default function RegistrationForm() {
       >
         <input name="inf_form_xid" type="hidden" value="9f8fabd0cb80c3d4232d104b7905ff0f" />
         <input name="inf_form_name" type="hidden" value="Registered for EFC" />
-        <input name="infusionsoft_version" type="hidden" value="1.70.0.902929" />
+        <input name="infusionsoft_version" type="hidden" value="1.70.0.905848" />
 
         <div className="v2-form-group">
           <input
@@ -48,9 +48,20 @@ export default function RegistrationForm() {
           <label htmlFor="inf_field_Email_v2">Email Address *</label>
         </div>
 
+        <div className="v2-form-group">
+          <input
+            id="inf_field_Phone1_v2"
+            name="inf_field_Phone1"
+            placeholder=" "
+            type="tel"
+            autoComplete="tel"
+          />
+          <label htmlFor="inf_field_Phone1_v2">Mobile Phone</label>
+        </div>
+
         <div className="infusion-submit">
           <button type="submit" disabled={isSubmitting}>
-            {isSubmitting ? 'Reserving your spot…' : 'Join the Challenge — It\'s Free'}
+            {isSubmitting ? 'Reserving your spot…' : 'YES! Reserve My Free Spot'}
           </button>
         </div>
 
