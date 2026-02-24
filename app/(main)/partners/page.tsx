@@ -14,10 +14,10 @@ export default function PartnersPage() {
         <div className="v2-container--md">
           <p className="v2-kicker">Partner Program</p>
           <h1 className="v2-h1">
-            Partner with the Emotional Freedom Challenge
+            Partner with The Emotional Freedom Challenge
           </h1>
           <p className="v2-subhead">
-            We&apos;re inviting a small group of aligned partners to share the Emotional Freedom Challenge with audiences who value personal growth, emotional awareness, and lasting change.
+            We&apos;re inviting a small group of aligned partners to share The Emotional Freedom Challenge with audiences who value personal growth, emotional awareness, and lasting change.
           </p>
           <p className="v2-body v2-text-center v2-muted-text" style={{ maxWidth: '740px', margin: '0 auto 0' }}>
             This is a relationship-based partnership built on trust, integrity, and mutual fit — not a mass affiliate program.
@@ -70,7 +70,7 @@ export default function PartnersPage() {
 
           <h3 className="v2-h4" style={{ marginBottom: '12px' }}>What participants experience:</h3>
           <p className="v2-body">Over five live sessions, participants will:</p>
-          <ul className="v2-checklist" style={{ marginBottom: '24px' }}>
+          <ul className="v2-list v2-checklist" style={{ marginBottom: '24px' }}>
             <li>Learn the difference between emotions, thoughts, and choice</li>
             <li>Identify emotional triggers and habitual reactions</li>
             <li>Practice creating space between stimulus and response</li>
@@ -149,7 +149,7 @@ export default function PartnersPage() {
           <h2 className="v2-h2" style={{ marginBottom: '24px' }}>Sharing the Challenge</h2>
           <p className="v2-body">We make sharing straightforward and respectful of your audience relationship.</p>
           <p className="v2-body">As a partner, you can:</p>
-          <ul className="v2-checklist" style={{ marginBottom: '24px' }}>
+          <ul className="v2-list v2-checklist" style={{ marginBottom: '24px' }}>
             <li>Use our ready-to-share email and social copy</li>
             <li>Customize our materials or create your own content</li>
             <li>Share when it feels natural and aligned</li>
@@ -170,7 +170,7 @@ export default function PartnersPage() {
             <div className="v2-preview-card">
               <div className="v2-preview-icon">🏠</div>
               <h3 className="v2-h4">Main Landing Page</h3>
-              <p className="v2-body">Where participants learn about and register for the Emotional Freedom Challenge.</p>
+              <p className="v2-body">Where participants learn about and register for The Emotional Freedom Challenge.</p>
               <Link href="/" target="_blank" className="v2-btn v2-btn-outline">
                 View Landing Page
               </Link>

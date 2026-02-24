@@ -19,7 +19,7 @@ export default function PartnerConfirmedPage() {
             </h1>
 
             <p className="v2-body v2-text-center">
-              Your partner application for the Emotional Freedom Challenge has been successfully submitted.
+              Your partner application for The Emotional Freedom Challenge has been successfully submitted.
             </p>
             <p className="v2-body v2-text-center">
               We appreciate your interest in partnering with us and taking the time to apply. Our team reviews each application carefully to ensure alignment and the best possible experience for everyone involved.
@@ -41,12 +41,12 @@ export default function PartnerConfirmedPage() {
             </div>
 
             <p className="v2-body v2-text-center" style={{ marginBottom: '24px' }}>
-              We&apos;re grateful for your interest in supporting emotional growth and personal development through the Emotional Freedom Challenge. We&apos;ll be in touch soon.
+              We&apos;re grateful for your interest in supporting emotional growth and personal development through The Emotional Freedom Challenge. We&apos;ll be in touch soon.
             </p>
 
             <div style={{ textAlign: 'center' }}>
               <Link href="/" className="v2-btn v2-btn-outline">
-                Return to the Emotional Freedom Challenge
+                Return to The Emotional Freedom Challenge
               </Link>
             </div>
           </div>

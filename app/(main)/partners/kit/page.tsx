@@ -42,13 +42,12 @@ export default function V2PartnerKitPage() {
 
   const getEmail1Subject = () => `Someone I trust is hosting this`;
   const getEmail1Preview = () => `A free live challenge I'm recommending`;
-  const getEmail1Body = () => `Hello,
+  const getEmail1Body = () => `Hey Friend,
 
-I want to share something I genuinely recommend.
+Your emotional freedom matters to me, which is why I feel to share this with you.
+My friend and colleague, Dr. Paul Jenkins, is hosting a free live experience called The Emotional Freedom Challenge. This challenge runs March 16–20, live each day at 12:00 Noon Eastern Time.
 
-Dr. Paul Jenkins is hosting a free live experience called The Emotional Freedom Challenge, running March 16–20, live each day at 12:00 Noon Eastern.
-
-Paul has spent decades teaching emotional responsibility and intentional response in a way that's practical and grounded. What I appreciate most about his work is that it's clear, respectful, and focused on personal choice rather than labels or diagnosis.
+Dr. Paul has spent decades teaching emotional ownership and intentional response in a way that's practical and grounded. What I appreciate most about his work is that it's clear, positive, and focused on personal choice rather than labels or diagnoses.
 
 If you're interested in developing more awareness around how you respond emotionally—especially in daily situations—this is worth a look.
 
@@ -58,17 +57,17 @@ ${getReferralLink()}
 —
 [PARTNER NAME]`;
 
-  const getEmail2Subject = () => `A Thoughtful Approach to Emotional Growth`;
+  const getEmail2Subject = () => `A Powerful Approach to Emotional Freedom`;
   const getEmail2Preview = () => `Hosted by Dr. Paul Jenkins`;
   const getEmail2Body = () => `Hello,
 
-I wanted to pass along a resource from someone I respect in the personal development space.
+You're probably going to thank me for this resource from someone I respect in the personal development space.
 
 Dr. Paul Jenkins is a clinical psychologist and educator who has spent years teaching people how to take ownership of their emotional responses and live more intentionally.
 
-He's hosting a free, live Emotional Freedom Challenge from March 16–20, meeting daily at 12:00 Noon Eastern.
+He's hosting The Emotional Freedom Challenge from March 16–20, meeting daily at 12:00 Noon Eastern Time. It's free, live, and virtual.
 
-The sessions are practical and focused on real-life application—work, relationships, and everyday stress.
+The sessions are practical and focused on real-life application—work, relationships, and everyday stress. Your personal "lunch and learn" for the week.
 
 If that sounds useful to you, here are the details:
 ${getReferralLink()}
@@ -77,16 +76,16 @@ ${getReferralLink()}
 [PARTNER NAME]`;
 
   const getEmail3Subject = () => `Why I'm Sharing This with You`;
-  const getEmail3Preview = () => `A different kind of emotional work`;
-  const getEmail3Body = () => `Hello,
+  const getEmail3Preview = () => `A better approach to emotional freedom`;
+  const getEmail3Body = () => `Hey friend,
 
-I'm sharing this because it aligns with how I think about growth and responsibility.
+You might be wondering why I'm inviting you to The Emotional Freedom Challenge. This aligns with how I think about growth and responsibility.
 
-Dr. Paul Jenkins teaches emotional awareness without hype, pressure, or jargon. His work centers on recognizing emotional patterns and learning to respond with intention rather than habit.
+Dr. Paul Jenkins teaches emotional awareness and ownership from a perspective of positive psychology. His work centers on recognizing emotional patterns and learning to operate the equipment of our own mind so we respond with intention rather than habit.
 
-He's hosting a free live Emotional Freedom Challenge from March 16–20, live each day at 12:00 Noon Eastern.
+Dr. Paul is hosting this free challenge March 16–20, live and virtual each day at 12:00 Noon Eastern Time.
 
-If you appreciate thoughtful, grounded approaches to personal growth, you may find this valuable.
+If you appreciate thoughtful, grounded approaches to personal growth, you may want to schedule this in for your lunchtime that week.
 
 More information is here:
 ${getReferralLink()}
@@ -94,15 +93,15 @@ ${getReferralLink()}
 —
 [PARTNER NAME]`;
 
-  const getEmail4Subject = () => `A Free Live Challenge Worth Considering`;
+  const getEmail4Subject = () => `Up for a challenge that has an impact?`;
   const getEmail4Preview = () => `Hosted by Dr. Paul Jenkins`;
-  const getEmail4Body = () => `Hello,
+  const getEmail4Body = () => `Friend,
 
-I wanted to let you know about a free live challenge coming up that's being led by Dr. Paul Jenkins.
+You need to know about a free live challenge coming up that's going to have a very meaningful impact.
 
-Paul is known for helping people understand how emotional reactions shape daily life—and how to respond more intentionally without overcomplicating the process.
+My friend, Dr. Paul Jenkins, is known for helping people understand how emotional reactions shape daily life—and how to respond more intentionally without overcomplicating the process.
 
-The Emotional Freedom Challenge runs March 16–20, live at 12:00 Noon Eastern, and each session lasts about an hour.
+The Emotional Freedom Challenge runs March 16–20, live at 12:00 Noon Eastern Time, and each session lasts about an hour. Perfect for a "lunch-and-learn" in the middle of your day.
 
 There's also an optional VIP experience with extended Q&A for those who want deeper discussion.
 
@@ -112,34 +111,36 @@ ${getReferralLink()}
 —
 [PARTNER NAME]`;
 
-  const getEmail5Subject = () => `Starts Tomorrow`;
+  const getEmail5Subject = () => `The Challenge Starts Tomorrow`;
   const getEmail5Preview = () => `Sharing one last reminder`;
   const getEmail5Body = () => `Hello,
 
-I wanted to send one last reminder about a free live challenge starting tomorrow.
+You deserve one quick reminder about that free live challenge this week.
 
-Dr. Paul Jenkins begins The Emotional Freedom Challenge on March 16, live at 12:00 Noon Eastern.
+My friend, Dr. Paul Jenkins, is hosting The Emotional Freedom Challenge starting tomorrow, March 16, live at 12:00 Noon Eastern.
 
-If you've followed my recommendations before, you know I don't share things lightly. Paul's work is thoughtful, respectful, and genuinely useful for anyone wanting to be more intentional in how they respond emotionally.
+If you've followed my recommendations before, you know I don't share things lightly. Dr. Paul's work is thoughtful, respectful, and genuinely useful for anyone wanting to be more intentional in how they respond emotionally.
 
 If this feels timely for you, you can register here:
 ${getReferralLink()}
 
+You're welcome ;)
+
 —
 [PARTNER NAME]`;
 
-  const getSocial1 = () => `I'm recommending this because I trust the person leading it.
+  const getSocial1 = () => `Do you trust your friends… to take care of your friends?
 
-Dr. Paul Jenkins has spent years teaching emotional responsibility and intentional response in a clear, grounded way. He's hosting a free live Emotional Freedom Challenge from March 16–20, live each day at 12 PM Eastern.
+My friend, Dr. Paul Jenkins, has spent the past few decades as a Positivity Psychologist teaching emotional responsibility and intentional response in a clear, grounded way. He's hosting a free live Emotional Freedom Challenge from March 16–20, live each day at 12 PM Eastern.
 
 If emotional awareness is something you want to strengthen, this is worth checking out.
 
 Details here:
 ${getReferralLink()}`;
 
-  const getSocial2 = () => `If you don't know Dr. Paul Jenkins yet, this is a good introduction.
+  const getSocial2 = () => `If you don't know Dr. Paul Jenkins yet, let me introduce you.
 
-He's a clinical psychologist and educator who focuses on emotional ownership and intentional response—without hype or jargon.
+He's a Positivity Psychologist and educator who focuses on emotional ownership and intentional response—in ways that are actually understandable and enjoyable.
 
 He's hosting a free live Emotional Freedom Challenge
 📅 March 16–20
@@ -150,7 +151,7 @@ ${getReferralLink()}`;
 
   const getSocial3 = () => `One reason I appreciate Dr. Paul Jenkins' work is that it's practical and respectful. He teaches people how to respond emotionally with intention rather than habit.
 
-He's leading a free live Emotional Freedom Challenge starting March 16.
+Dr. Paul is leading a free live Emotional Freedom Challenge starting March 16.
 
 If that approach resonates with you, you can learn more here:
 ${getReferralLink()}`;
@@ -159,14 +160,14 @@ ${getReferralLink()}`;
 
 Dr. Paul Jenkins helps people recognize those patterns and respond more intentionally. He's hosting a free live Emotional Freedom Challenge from March 16–20, live at noon Eastern.
 
-I think many of you would appreciate his approach.
+I think you might appreciate his approach.
 
 Details here:
 ${getReferralLink()}`;
 
-  const getSocial5 = () => `This starts soon and I wanted to share it again.
+  const getSocial5 = () => `This starts soon.
 
-Dr. Paul Jenkins begins the Emotional Freedom Challenge on March 16, live at 12 PM Eastern.
+Dr. Paul Jenkins is starting up The Emotional Freedom Challenge on March 16, live at 12 Noon Eastern.
 
 It's a thoughtful, practical introduction to emotional awareness and intentional response.
 
@@ -217,9 +218,10 @@ ${getReferralLink()}`;
       <section className="v2-hero">
         <div className="v2-container--md">
           <p className="v2-kicker">Partner Resources</p>
-          <h1 className="v2-h1">Partner Marketing Kit</h1>
+          <h1 className="v2-h1">Partner Promotion Kit</h1>
+          <p className="v2-kicker" style={{ marginTop: '8px', marginBottom: '20px' }}>5 Days to Emotional Ownership</p>
           <p className="v2-subhead">
-            Everything you need to share The Emotional Freedom Challenge with your audience.
+            Thank you for being willing to share this experience with your audience. Below are ready-to-use options you can copy, paste, or customize in your own voice.
           </p>
         </div>
       </section>
@@ -254,9 +256,9 @@ ${getReferralLink()}`;
           <aside className="v2-kit-sidebar">
             <div>
               <p style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--v2-muted)', marginBottom: '12px' }}>On this page</p>
-              <a href="#email-swipes" className="v2-sidebar-link">✉ Email Swipes</a>
+              <a href="#email-swipes" className="v2-sidebar-link">✉ Email Invitations</a>
               <a href="#social-posts" className="v2-sidebar-link">📱 Social Media Copy</a>
-              <a href="#tracking-notes" className="v2-sidebar-link">📊 Tracking &amp; Notes</a>
+              <a href="#tracking-notes" className="v2-sidebar-link">📊 Tracking &amp; Links</a>
               <div style={{ marginTop: '32px', padding: '16px', background: 'var(--v2-bg-muted)', borderRadius: '12px' }}>
                 <p style={{ fontWeight: 600, marginBottom: '6px', fontSize: '14px' }}>Need help?</p>
                 <p style={{ fontSize: '13px', color: 'var(--v2-muted)', marginBottom: '10px' }}>Our partner support team is available to assist with your campaigns.</p>
@@ -269,7 +271,7 @@ ${getReferralLink()}`;
             <section id="email-swipes" className="v2-kit-section">
               <div className="v2-kit-section-header">
                 <div className="v2-kit-section-icon">✉</div>
-                <h2 className="v2-h2">1. Email Swipes</h2>
+                <h2 className="v2-h2">1. Email Invitations</h2>
               </div>
 
               <EmailBlock title="Email 1 — Personal Trust Transfer" subjectFn={getEmail1Subject} previewFn={getEmail1Preview} bodyFn={getEmail1Body} ids={[1, 2, 3]} />
@@ -302,20 +304,32 @@ ${getReferralLink()}`;
             <section id="tracking-notes" className="v2-kit-section">
               <div className="v2-kit-section-header">
                 <div className="v2-kit-section-icon">📊</div>
-                <h2 className="v2-h2">3. Tracking &amp; Notes</h2>
+                <h2 className="v2-h2">3. Tracking &amp; Links</h2>
               </div>
               <ul className="v2-notes-list">
-                <li>Each partner receives a unique referral tracking link</li>
-                <li>Tracking applies to:
+                <li>Each partner will receive a unique registration link for tracking</li>
+                <li>Referral tracking applies to:
                   <ul>
                     <li>VIP upgrades</li>
                     <li>Coaching enrollments</li>
                   </ul>
                 </li>
+                <li>Partners will receive clear reporting and payouts after the challenge</li>
+                <li>If you need your link or have questions, just let us know</li>
+              </ul>
+
+              <h3 className="v2-h4" style={{ marginTop: '32px', marginBottom: '12px' }}>Important Notes for Partners</h3>
+              <ul className="v2-notes-list">
+                <li>No selling is required</li>
                 <li>You are welcome to customize language to fit your voice</li>
-                <li>One share is appreciated; multiple shares are optional</li>
+                <li>One share is appreciated; multiple shares would make you my hero!</li>
                 <li>This is a free experience — please present it as such</li>
               </ul>
+
+              <div style={{ marginTop: '32px', padding: '20px 24px', background: 'var(--v2-bg-muted)', borderRadius: 'var(--v2-radius-sm)', borderLeft: '4px solid var(--v2-primary)' }}>
+                <h3 className="v2-h4" style={{ marginBottom: '8px' }}>Optional Personal Blurb</h3>
+                <p className="v2-body" style={{ margin: 0 }}>I&apos;m sharing this because emotional ownership is foundational, and this experience offers a clear, respectful way to explore it.</p>
+              </div>
             </section>
 
             <section className="v2-kit-section" style={{ borderTop: '1px solid var(--v2-border)', paddingTop: '40px' }}>
