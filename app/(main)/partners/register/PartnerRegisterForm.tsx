@@ -140,8 +140,7 @@ export default function PartnerRegisterForm() {
 
         <div className="infusion-submit" style={{ marginTop: '24px' }}>
           <button
-            className="infusion-recaptcha v2-btn v2-btn-primary"
-            id="recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab"
+            className="v2-btn v2-btn-primary"
             type="submit"
             disabled={isSubmitting}
           >
@@ -153,10 +152,7 @@ export default function PartnerRegisterForm() {
       </form>
 
       <Script src="https://bl843.infusionsoft.app/app/webTracking/getTrackingCode" strategy="afterInteractive" />
-      <Script src="https://bl843.infusionsoft.com/resources/external/recaptcha/production/recaptcha.js?b=1.70.0.905848-hf-202602232108" strategy="afterInteractive" />
-      <Script src="https://bl843.infusionsoft.com/resources/external/recaptcha/production/enterpriseRecaptcha.js?b=1.70.0.905848-hf-202602232108" strategy="afterInteractive" />
       <Script src="https://bl843.infusionsoft.com/app/timezone/timezoneInputJs?xid=4c9b8b75fc0b1e19505d18dac0e1a6ab" strategy="afterInteractive" />
-      <Script src="https://bl843.infusionsoft.com/js/jquery/jquery-3.3.1.js" strategy="afterInteractive" />
       <Script src="https://bl843.infusionsoft.app/app/webform/overwriteRefererJs" strategy="afterInteractive" />
     </div>
   );
