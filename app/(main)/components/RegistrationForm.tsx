@@ -1,6 +1,15 @@
+'use client';
+
+import { useState } from 'react';
 import Script from 'next/script';
 
 export default function RegistrationForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = () => {
+    setIsSubmitting(true);
+  };
+
   return (
     <>
       <form
@@ -9,6 +18,7 @@ export default function RegistrationForm() {
         className="infusion-form"
         id="inf_form_9f8fabd0cb80c3d4232d104b7905ff0f"
         method="POST"
+        onSubmit={handleSubmit}
       >
         <input name="inf_form_xid" type="hidden" value="9f8fabd0cb80c3d4232d104b7905ff0f" />
         <input name="inf_form_name" type="hidden" value="Registered for EFC" />
@@ -39,13 +49,13 @@ export default function RegistrationForm() {
         </div>
 
         <div className="infusion-submit">
-          <button type="submit">
-            Join the Challenge — It&apos;s Free
+          <button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Reserving your spot…' : 'Join the Challenge — It\'s Free'}
           </button>
         </div>
 
         <p className="v2-disclaimer">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '4px' }}><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '4px' }}><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
           No credit card. No spam. Unsubscribe anytime.
         </p>
 

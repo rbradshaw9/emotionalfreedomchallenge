@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, Suspense } from 'react';
+import { CHALLENGE } from '@/lib/challengeConfig';
 
 const videoData = [
   {
@@ -188,10 +189,10 @@ function ReplayPageInner() {
                       <h2 className="v2-h3" style={{ marginBottom: '8px' }}>Day {currentDay.day} — Coming Soon</h2>
                       <p className="v2-body" style={{ color: 'var(--v2-muted)', marginBottom: '8px' }}>
                         Both recordings will be available after the live session on{' '}
-                        <strong>March {15 + currentDay.day}, 2026</strong>.
+                        <strong>March {CHALLENGE.startDayOffset + currentDay.day}, 2026</strong>.
                       </p>
                       <p style={{ fontSize: '14px', color: 'var(--v2-muted)' }}>
-                        Check back after 12:00 Noon Eastern on that day.
+                        Check back after {CHALLENGE.sessionTime} on that day.
                       </p>
                     </div>
                   </div>
@@ -249,15 +250,10 @@ function ReplayPageInner() {
             with one of our Certified Positivity Practitioners. This is your opportunity
             to get personalized guidance and take your experience to the next level.
           </p>
-          <a
-            href="https://calendly.com/placeholder"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="v2-btn v2-btn-primary v2-btn-lg"
-          >
-            Schedule Your Breakthrough Call
-          </a>
-          <p className="v2-body v2-text-center" style={{ marginTop: '16px', fontSize: '13px', opacity: 0.7 }}>
+          <p className="v2-body" style={{ marginBottom: '8px' }}>
+            Scheduling opens at the start of the challenge — watch your email for a direct link from Dr. Paul.
+          </p>
+          <p className="v2-body v2-text-center" style={{ fontSize: '13px', opacity: 0.7, marginBottom: 0 }}>
             This scheduling link is exclusive to VIP members.
           </p>
         </div>

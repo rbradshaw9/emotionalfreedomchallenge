@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CHALLENGE } from '@/lib/challengeConfig';
 
 export const metadata: Metadata = {
   title: 'You\'re Registered - The Emotional Freedom Challenge',
@@ -9,7 +10,7 @@ export default function ThankYouPage() {
   const googleCalendarUrl =
     'https://calendar.google.com/calendar/render?action=TEMPLATE' +
     '&text=The+Emotional+Freedom+Challenge+%E2%80%94+Live+Session' +
-    '&dates=20260316T170000Z/20260316T180000Z' +
+    `&dates=${CHALLENGE.calendarStartISO}/${CHALLENGE.calendarEndISO}` +
     '&details=Live+sessions+take+place+inside+the+private+Facebook+group.' +
     '&recur=RRULE:FREQ=DAILY;COUNT=5' +
     '&ctz=America/New_York';
@@ -65,8 +66,8 @@ export default function ThankYouPage() {
               <h2>Step 2: Put the Sessions on Your Calendar</h2>
               <p className="v2-body">The challenge runs:</p>
               <div className="v2-challenge-details">
-                <strong>Monday, March 16 – Friday, March 20</strong><br />
-                Live each day at <strong>12:00 Noon Eastern</strong><br />
+                <strong>{CHALLENGE.startDateFull} – {CHALLENGE.endDateFull}</strong><br />
+                Live each day at <strong>{CHALLENGE.sessionTime}</strong><br />
                 Sessions run about an hour each day.
               </div>
               <p className="v2-body">
@@ -131,11 +132,14 @@ export default function ThankYouPage() {
               VIP members get private Q&amp;A after each session, special surprise guests, and full recordings to revisit anytime — all for a one-time payment of <strong>$27</strong>.
             </p>
             <a
-              href="https://bl843.infusionsoft.app/app/orderForms/cdb82d2b-34ac-443e-aba9-2c63993be424"
+              href="/getvip"
               className="v2-btn v2-btn-primary v2-btn-lg v2-btn-block"
             >
               Add VIP Access for $27
             </a>
+            <p style={{ fontSize: '13px', color: 'var(--v2-muted)', marginTop: '10px', marginBottom: 0, textAlign: 'center' }}>
+              Not satisfied? Email us within 30 days for a full refund.
+            </p>
           </div>
         </div>
       </section>

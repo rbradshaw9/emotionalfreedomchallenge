@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
+import { CHALLENGE } from '@/lib/challengeConfig';
 
 export const metadata: Metadata = {
   title: 'VIP Access Confirmed - The Emotional Freedom Challenge',
-  description: 'Your VIP upgrade is confirmed. Access recordings, live Q&A, and companion materials during the Emotional Freedom Challenge.',
+  description: 'Your VIP upgrade is confirmed. Access recordings, live Q&A, and companion materials during The Emotional Freedom Challenge.',
 };
 
 export default function VipConfirmedPage() {
   const googleCalendarUrl =
     'https://calendar.google.com/calendar/render?action=TEMPLATE' +
     '&text=The+Emotional+Freedom+Challenge+%E2%80%94+Live+Session' +
-    '&dates=20260316T170000Z/20260316T180000Z' +
+    `&dates=${CHALLENGE.calendarStartISO}/${CHALLENGE.calendarEndISO}` +
     '&details=Live+sessions+take+place+inside+the+private+Facebook+group.' +
     '&recur=RRULE:FREQ=DAILY;COUNT=5' +
     '&ctz=America/New_York';
@@ -98,8 +99,8 @@ export default function VipConfirmedPage() {
               <h2>Step 2: Add the Sessions to Your Calendar</h2>
               <p className="v2-body">The challenge runs:</p>
               <div className="v2-challenge-details">
-                <strong>March 16–20</strong><br />
-                Live each day at <strong>12:00 Noon Eastern</strong><br />
+                <strong>{CHALLENGE.dateRangeShort}</strong><br />
+                Live each day at <strong>{CHALLENGE.sessionTime}</strong><br />
                 Sessions last about 60 minutes, followed by VIP Q&amp;A
               </div>
               <div className="v2-calendar-links">
@@ -150,7 +151,7 @@ export default function VipConfirmedPage() {
             <a href="tel:+18013807981">+1 801-380-7981</a>
           </p>
           <p className="v2-body v2-muted-text" style={{ marginTop: '24px', fontStyle: 'italic' }}>
-            We&apos;re looking forward to seeing you on March 16.
+            We&apos;re looking forward to seeing you on {CHALLENGE.startDate}.
           </p>
           <p className="v2-body" style={{ fontWeight: 700 }}>
             — Dr. Paul Jenkins &amp; Team

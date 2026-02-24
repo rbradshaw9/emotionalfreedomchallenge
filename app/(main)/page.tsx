@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import RegistrationForm from '@/app/(main)/components/RegistrationForm';
 import Image from 'next/image';
+import { CHALLENGE } from '@/lib/challengeConfig';
 
 export const metadata: Metadata = {
   title: 'The Emotional Freedom Challenge | Free 5-Day Experience with Dr. Paul Jenkins',
-  description: 'Join Dr. Paul Jenkins for a free, live 5-day experience exploring emotional ownership, self-awareness, and lasting personal change. March 16–20, 2026.',
+  description: `Join Dr. Paul Jenkins for a free, live 5-day experience exploring emotional ownership, self-awareness, and lasting personal change. ${CHALLENGE.dateRange}.`,
 };
 
 export default function RegistrationPage() {
@@ -15,7 +16,7 @@ export default function RegistrationPage() {
         <div className="v2-container">
           <div className="v2-event-pill">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '4px' }}><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-            March 16–20, 2026 · Free Live Online Event
+            {CHALLENGE.dateRange} · Free Live Online Event
           </div>
 
           <h1 className="v2-headline">
@@ -75,7 +76,7 @@ export default function RegistrationPage() {
           <div className="v2-text-center" style={{ marginBottom: '32px' }}>
             <span className="v2-kicker">Register Now</span>
             <h2 className="v2-h2">Reserve Your Free Spot</h2>
-            <p className="v2-body v2-muted-text">Sessions are live March 16–20 at 12:00 Noon Eastern. Free to attend.</p>
+            <p className="v2-body v2-muted-text">Sessions are live {CHALLENGE.dateRangeShort} at {CHALLENGE.sessionTime}. Free to attend.</p>
           </div>
           <div className="v2-form-card">
             <RegistrationForm />
@@ -201,6 +202,35 @@ export default function RegistrationPage() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="v2-section v2-section-muted">
+        <div className="v2-container">
+          <span className="v2-kicker v2-text-center" style={{ display: 'block' }}>What People Say</span>
+          <h2 className="v2-h2 v2-text-center">Real Results from Real People</h2>
+          <div className="v2-spacer--sm"></div>
+          <div className="v2-grid-3">
+            <div className="v2-card">
+              <p className="v2-body" style={{ fontStyle: 'italic', marginBottom: '16px' }}>
+                &ldquo;My teen son came to me and said &lsquo;Mom, I can really see you change and not yelling anymore.&rsquo;&rdquo;
+              </p>
+              <p className="v2-body" style={{ fontWeight: 600, marginBottom: 0 }}>— Kimberli S.</p>
+            </div>
+            <div className="v2-card">
+              <p className="v2-body" style={{ fontStyle: 'italic', marginBottom: '16px' }}>
+                &ldquo;I gained a lot of great practical information about how to practice positive psychology in my life.&rdquo;
+              </p>
+              <p className="v2-body" style={{ fontWeight: 600, marginBottom: 0 }}>— Chelsea B.</p>
+            </div>
+            <div className="v2-card">
+              <p className="v2-body" style={{ fontStyle: 'italic', marginBottom: '16px' }}>
+                &ldquo;He&apos;s very funny. Down to earth and very real.&rdquo;
+              </p>
+              <p className="v2-body" style={{ fontWeight: 600, marginBottom: 0 }}>— Susan D.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section className="v2-section">
         <div className="v2-container">
@@ -209,8 +239,8 @@ export default function RegistrationPage() {
           <div className="v2-spacer--sm"></div>
           <div className="v2-card v2-max-w-narrow" style={{ background: 'var(--v2-bg-muted)', margin: '0 auto' }}>
             <ul className="v2-list" style={{ margin: 0 }}>
-              <li style={{ marginBottom: '10px' }}><strong>Dates:</strong> March 16–20, 2026</li>
-              <li style={{ marginBottom: '10px' }}><strong>Sessions:</strong> Live each day at 12:00 Noon Eastern</li>
+              <li style={{ marginBottom: '10px' }}><strong>Dates:</strong> {CHALLENGE.dateRange}</li>
+              <li style={{ marginBottom: '10px' }}><strong>Sessions:</strong> Live each day at {CHALLENGE.sessionTime}</li>
               <li style={{ marginBottom: '10px' }}><strong>Where:</strong> Private Facebook group</li>
               <li style={{ marginBottom: 0 }}><strong>Cost:</strong> Free</li>
             </ul>

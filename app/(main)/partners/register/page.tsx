@@ -14,7 +14,7 @@ export default function PartnerRegister() {
           <p className="v2-kicker">Partner Program</p>
           <h1 className="v2-h1">Partner Registration</h1>
           <p className="v2-subhead">
-            Thanks for taking the next step. This page is for invited partners to complete registration for the Emotional Freedom Challenge.
+            Thanks for taking the next step. This page is for invited partners to complete registration for The Emotional Freedom Challenge.
           </p>
         </div>
       </section>
@@ -41,7 +41,7 @@ export default function PartnerRegister() {
         <div className="v2-container--md">
           <h2 className="v2-h2" style={{ marginBottom: '16px' }}>What Happens Next</h2>
           <p className="v2-body">Once you complete this registration:</p>
-          <ul className="v2-checklist" style={{ marginBottom: '32px' }}>
+          <ul className="v2-list v2-checklist" style={{ marginBottom: '32px' }}>
             <li><strong>Immediate confirmation</strong> — You&apos;ll be registered as an official referral partner</li>
             <li><strong>Within 1 business day</strong> — We&apos;ll send your unique referral link</li>
             <li><strong>Partner resources</strong> — You&apos;ll receive ready-to-share email and social copy</li>
@@ -101,6 +101,10 @@ export default function PartnerRegister() {
                 We pay commissions via PayPal. No account?{' '}
                 <a href="https://paypal.com" target="_blank" rel="noopener noreferrer">Create one at paypal.com</a>.
               </p>
+
+              <div style={{ marginBottom: '20px', padding: '12px 16px', background: 'var(--v2-bg-muted)', borderRadius: '8px', fontSize: '14px', lineHeight: '1.5' }}>
+                <strong>Creating your partner login:</strong> These credentials give you access to your personal partner dashboard where you can view referrals and track commissions.
+              </div>
 
               <div className="v2-form-group">
                 <input id="inf_other_Username_pr" name="inf_other_Username" placeholder=" " type="text" required autoComplete="username" />

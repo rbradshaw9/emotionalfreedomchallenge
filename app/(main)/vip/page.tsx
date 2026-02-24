@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'VIP Upgrade - The Emotional Freedom Challenge',
-  description: 'Upgrade to VIP access for live Q&A sessions, full recordings, and deeper engagement with Dr. Paul Jenkins during the Emotional Freedom Challenge.',
+  description: 'Upgrade to VIP access for live Q&A sessions, full recordings, and deeper engagement with Dr. Paul Jenkins during The Emotional Freedom Challenge.',
 };
 
 export default function VIPPage() {
@@ -30,8 +30,8 @@ export default function VIPPage() {
 
           {/* Above-the-fold CTA */}
           <div className="v2-upgrade-card" style={{ maxWidth: '540px', margin: '0 auto' }}>
-            <div className="v2-badge v2-badge--accent" style={{ marginBottom: '16px' }}>
-              Limited Spots Available
+            <div className="v2-badge v2-badge--success" style={{ marginBottom: '16px' }}>
+              ✓ &nbsp;30-Day Money-Back Guarantee
             </div>
             <div className="v2-price-row">
               <span className="v2-price-strike">$297 value</span>
@@ -53,12 +53,15 @@ export default function VIPPage() {
               </div>
             </div>
             <a
-              href="https://bl843.infusionsoft.app/app/orderForms/cdb82d2b-34ac-443e-aba9-2c63993be424"
+              href="/getvip"
               className="v2-btn v2-btn-primary v2-btn-lg v2-btn-block"
               style={{ marginTop: '20px' }}
             >
               Yes — Add VIP Access for $27
             </a>
+            <p style={{ fontSize: '13px', color: 'var(--v2-muted)', marginTop: '10px', marginBottom: 0, textAlign: 'center' }}>
+              Not satisfied? Email us within 30 days for a full refund.
+            </p>
             <div className="v2-secondary-path" style={{ marginTop: '12px' }}>
               <Link href="/thank-you" className="v2-no-thanks">
                 No thanks — Continue without VIP
@@ -195,11 +198,14 @@ export default function VIPPage() {
             <h2 className="v2-h2">👉 Add VIP Access for $27</h2>
             <p className="v2-muted-text" style={{ marginBottom: '24px' }}>(one-time payment)</p>
             <a
-              href="https://bl843.infusionsoft.app/app/orderForms/cdb82d2b-34ac-443e-aba9-2c63993be424"
+              href="/getvip"
               className="v2-btn v2-btn-primary v2-btn-lg v2-btn-block"
             >
               Yes — Add VIP Access
             </a>
+            <p style={{ fontSize: '13px', color: 'var(--v2-muted)', marginTop: '12px', marginBottom: 0, textAlign: 'center' }}>
+              Not satisfied? Email us within 30 days for a full refund.
+            </p>
             <div className="v2-secondary-path" style={{ marginTop: '16px' }}>
               <p className="v2-muted-text" style={{ fontSize: '14px', marginBottom: '8px' }}>Or continue without VIP</p>
               <Link href="/thank-you" className="v2-no-thanks">
