@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Script from 'next/script';
 
 export default function PartnerRegisterForm() {
@@ -10,8 +10,30 @@ export default function PartnerRegisterForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
+  // Override form.submit so that when Infusionsoft's reCAPTCHA script calls
+  // form.submit() directly (bypassing the submit event), our validation still runs.
+  useEffect(() => {
+    if (!formRef.current) return;
+    const form = formRef.current;
+    const nativeSubmit = HTMLFormElement.prototype.submit.bind(form);
+
+    form.submit = function () {
+      setPasswordError('');
+      if (password !== confirmPassword) {
+        setPasswordError('Passwords do not match. Please try again.');
+        return;
+      }
+      if (password.length < 8) {
+        setPasswordError('Password must be at least 8 characters.');
+        return;
+      }
+      setIsSubmitting(true);
+      nativeSubmit();
+    };
+  }, [password, confirmPassword]);
+
+  // Fallback for browsers that do fire the submit event
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    // Clear previous error
     setPasswordError('');
 
     if (password !== confirmPassword) {
@@ -140,7 +162,8 @@ export default function PartnerRegisterForm() {
 
         <div className="infusion-submit" style={{ marginTop: '24px' }}>
           <button
-            className="v2-btn v2-btn-primary"
+            className="infusion-recaptcha v2-btn v2-btn-primary"
+            id="recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab"
             type="submit"
             disabled={isSubmitting}
           >
@@ -152,6 +175,8 @@ export default function PartnerRegisterForm() {
       </form>
 
       <Script src="https://bl843.infusionsoft.app/app/webTracking/getTrackingCode" strategy="afterInteractive" />
+      <Script src="https://bl843.infusionsoft.com/resources/external/recaptcha/production/recaptcha.js?b=1.70.0.905848-hf-202602232108" strategy="afterInteractive" />
+      <Script src="https://bl843.infusionsoft.com/resources/external/recaptcha/production/enterpriseRecaptcha.js?b=1.70.0.905848-hf-202602232108" strategy="afterInteractive" />
       <Script src="https://bl843.infusionsoft.com/app/timezone/timezoneInputJs?xid=4c9b8b75fc0b1e19505d18dac0e1a6ab" strategy="afterInteractive" />
       <Script src="https://bl843.infusionsoft.app/app/webform/overwriteRefererJs" strategy="afterInteractive" />
     </div>
