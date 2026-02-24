@@ -59,6 +59,10 @@ export default function RegistrationForm() {
           <label htmlFor="inf_field_Phone1_v2">Mobile Phone</label>
         </div>
 
+        <p className="v2-reminder-note">
+          📅 Add your mobile number and we&apos;ll send you event reminders so you don&apos;t miss a session.
+        </p>
+
         <div className="infusion-submit">
           <button type="submit" disabled={isSubmitting}>
             {isSubmitting ? 'Reserving your spot…' : 'YES! Reserve My Free Spot'}
