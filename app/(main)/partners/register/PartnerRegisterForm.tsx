@@ -9,6 +9,14 @@ export default function PartnerRegisterForm() {
   const [passwordError, setPasswordError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const errorRef = useRef<HTMLParagraphElement>(null);
+
+  // Scroll to error message whenever it appears
+  useEffect(() => {
+    if (passwordError && errorRef.current) {
+      errorRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [passwordError]);
 
   const validatePassword = (pw: string): string | null => {
     if (pw.length < 8) return 'Password must be at least 8 characters.';
@@ -26,6 +34,8 @@ export default function PartnerRegisterForm() {
     const nativeSubmit = HTMLFormElement.prototype.submit.bind(form);
 
     form.submit = function () {
+      // Check required fields + email format — browser scrolls to first invalid field
+      if (!form.reportValidity()) return;
       setPasswordError('');
       const strengthError = validatePassword(password);
       if (strengthError) {
@@ -154,7 +164,7 @@ export default function PartnerRegisterForm() {
         </div>
 
         {passwordError && (
-          <p style={{ color: '#c0392b', fontSize: '14px', marginTop: '-12px', marginBottom: '16px', fontWeight: 500 }}>
+          <p ref={errorRef} style={{ color: '#c0392b', fontSize: '14px', marginTop: '-12px', marginBottom: '16px', fontWeight: 500 }}>
             ⚠ {passwordError}
           </p>
         )}
