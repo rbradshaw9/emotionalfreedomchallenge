@@ -87,21 +87,27 @@ export default function PartnersPage() {
         <div className="v2-container--md">
           <h2 className="v2-h2 v2-text-center" style={{ marginBottom: '8px' }}>Partner Compensation</h2>
           <p className="v2-body v2-text-center" style={{ marginBottom: '40px' }}>
-            We believe in fairly compensating partners who help extend the reach of this work.
+            We believe in fairly compensating partners who help extend the reach of this work. Attendees may purchase any of our offers — here&apos;s what you earn for each.
           </p>
           
           <div className="v2-compensation-cards">
             <div className="v2-compensation-card">
-              <div className="v2-compensation-icon">🎯</div>
-              <div className="v2-compensation-amount">$1,000</div>
-              <h3 className="v2-h4">Per Coaching Client</h3>
-              <p className="v2-body">Earn $1,000 for each coaching client who enrolls through your referral.</p>
+              <div className="v2-compensation-icon">🌱</div>
+              <div className="v2-compensation-amount">$50</div>
+              <h3 className="v2-h4">Live on Purpose Central</h3>
+              <p className="v2-body">Earn $50 for each new member who enrolls in the Live on Purpose Central membership through your referral.</p>
             </div>
             <div className="v2-compensation-card">
-              <div className="v2-compensation-icon">⭐</div>
-              <div className="v2-compensation-amount">50%</div>
-              <h3 className="v2-h4">VIP Upgrade Commission</h3>
-              <p className="v2-body">Receive 50% commission on VIP upgrades from your referrals.</p>
+              <div className="v2-compensation-icon">🎓</div>
+              <div className="v2-compensation-amount">$200</div>
+              <h3 className="v2-h4">Positivity Practitioner Certification</h3>
+              <p className="v2-body">Earn $200 for each new enrollee in the Positivity Practitioner Certification program.</p>
+            </div>
+            <div className="v2-compensation-card">
+              <div className="v2-compensation-icon">🎯</div>
+              <div className="v2-compensation-amount">$500</div>
+              <h3 className="v2-h4">Executive Coaching</h3>
+              <p className="v2-body">Earn $500 for each new private coaching client who enrolls through your referral.</p>
             </div>
           </div>
 

@@ -250,9 +250,15 @@ function ReplayPageInner() {
             with one of our Certified Positivity Practitioners. This is your opportunity
             to get personalized guidance and take your experience to the next level.
           </p>
-          <p className="v2-body" style={{ marginBottom: '8px' }}>
-            Scheduling opens at the start of the challenge — watch your email for a direct link from Dr. Paul.
-          </p>
+          <a
+            href="https://calendly.com/liveonpurpose-team/free"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="v2-btn"
+            style={{ display: 'inline-block', marginBottom: '16px' }}
+          >
+            Schedule Your Breakthrough Call
+          </a>
           <p className="v2-body v2-text-center" style={{ fontSize: '13px', opacity: 0.7, marginBottom: 0 }}>
             This scheduling link is exclusive to VIP members.
           </p>

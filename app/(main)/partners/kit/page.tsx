@@ -310,8 +310,9 @@ ${getReferralLink()}`;
                 <li>Each partner will receive a unique registration link for tracking</li>
                 <li>Referral tracking applies to:
                   <ul>
-                    <li>VIP upgrades</li>
-                    <li>Coaching enrollments</li>
+                    <li>Live on Purpose Central membership ($50/enrollment)</li>
+                    <li>Positivity Practitioner Certification ($200/enrollment)</li>
+                    <li>Executive Coaching ($500/client)</li>
                   </ul>
                 </li>
                 <li>Partners will receive clear reporting and payouts after the challenge</li>

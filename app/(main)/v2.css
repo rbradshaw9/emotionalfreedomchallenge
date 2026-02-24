@@ -806,6 +806,9 @@
 @media (min-width: 640px) {
   .efc-v2 .v2-compensation-cards { grid-template-columns: 1fr 1fr; }
 }
+@media (min-width: 900px) {
+  .efc-v2 .v2-compensation-cards { grid-template-columns: repeat(3, 1fr); }
+}
 .efc-v2 .v2-compensation-card {
   background: var(--v2-bg);
   border: 2px solid var(--v2-primary);
