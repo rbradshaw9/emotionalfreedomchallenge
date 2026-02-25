@@ -158,7 +158,12 @@ export default function PartnerRegister() {
               <p id="pw-error" style={{ color: '#c0392b', fontSize: '14px', marginBottom: '16px', fontWeight: 500, display: 'none' }}></p>
 
               <div className="infusion-submit" style={{ marginTop: '24px' }}>
-                <button className="infusion-recaptcha v2-btn v2-btn-primary" id="recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab" type="submit">
+                {/* Real reCAPTCHA button — hidden, triggered programmatically after validation */}
+                <button className="infusion-recaptcha" id="recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab" type="submit" style={{ display: 'none' }}>
+                  Sign Me Up!
+                </button>
+                {/* Visible button — validates then clicks the real button */}
+                <button id="partner-submit-visible" type="button" className="v2-btn v2-btn-primary">
                   Sign Me Up!
                 </button>
               </div>
@@ -173,11 +178,12 @@ export default function PartnerRegister() {
             <Script src="https://bl843.infusionsoft.com/js/jquery/jquery-3.3.1.js" strategy="afterInteractive" />
             <Script src="https://bl843.infusionsoft.app/app/webform/overwriteRefererJs" strategy="afterInteractive" />
 
-            {/* Client-side validation — capture-phase click fires BEFORE reCAPTCHA */}
-            <Script id="partner-form-validation" strategy="lazyOnload">{`
+            {/* Client-side validation — our button validates, then clicks the hidden reCAPTCHA button */}
+            <Script id="partner-form-validation" strategy="afterInteractive">{`
               (function() {
-                var btn = document.getElementById('recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab');
-                if (!btn) return;
+                var visibleBtn = document.getElementById('partner-submit-visible');
+                var realBtn = document.getElementById('recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab');
+                if (!visibleBtn || !realBtn) return;
                 var errorEl = document.getElementById('pw-error');
 
                 var required = [
@@ -193,18 +199,18 @@ export default function PartnerRegister() {
                 function showError(msg, scrollTo) {
                   errorEl.textContent = '\\u26a0 ' + msg;
                   errorEl.style.display = 'block';
-                  if (scrollTo) scrollTo.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                  scrollTo && scrollTo.focus();
+                  if (scrollTo) {
+                    scrollTo.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    scrollTo.focus();
+                  }
                 }
 
-                btn.addEventListener('click', function(e) {
+                visibleBtn.addEventListener('click', function() {
                   if (errorEl) errorEl.style.display = 'none';
 
                   for (var i = 0; i < required.length; i++) {
                     var el = document.getElementById(required[i].id);
                     if (!el || !el.value.trim()) {
-                      e.preventDefault();
-                      e.stopImmediatePropagation();
                       showError(required[i].label + ' is required.', el);
                       return;
                     }
@@ -212,54 +218,28 @@ export default function PartnerRegister() {
 
                   var email = document.getElementById('inf_field_Email').value.trim();
                   if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
                     showError('Please enter a valid email address.', document.getElementById('inf_field_Email'));
                     return;
                   }
 
                   var paypal = document.getElementById('inf_custom_PayPalEmail').value.trim();
                   if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(paypal)) {
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
                     showError('Please enter a valid PayPal email address.', document.getElementById('inf_custom_PayPalEmail'));
                     return;
                   }
 
                   var pw = document.getElementById('inf_other_Password').value;
-                  if (pw.length < 8) {
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
-                    showError('Password must be at least 8 characters.', document.getElementById('inf_other_Password'));
-                    return;
-                  }
-                  if (!/[A-Z]/.test(pw)) {
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
-                    showError('Password must include at least one uppercase letter.', document.getElementById('inf_other_Password'));
-                    return;
-                  }
-                  if (!/[a-z]/.test(pw)) {
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
-                    showError('Password must include at least one lowercase letter.', document.getElementById('inf_other_Password'));
-                    return;
-                  }
-                  if (!/[0-9]/.test(pw)) {
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
-                    showError('Password must include at least one number.', document.getElementById('inf_other_Password'));
-                    return;
-                  }
+                  if (pw.length < 8) { showError('Password must be at least 8 characters.', document.getElementById('inf_other_Password')); return; }
+                  if (!/[A-Z]/.test(pw)) { showError('Password must include at least one uppercase letter.', document.getElementById('inf_other_Password')); return; }
+                  if (!/[a-z]/.test(pw)) { showError('Password must include at least one lowercase letter.', document.getElementById('inf_other_Password')); return; }
+                  if (!/[0-9]/.test(pw)) { showError('Password must include at least one number.', document.getElementById('inf_other_Password')); return; }
 
                   var cpw = document.getElementById('inf_other_RetypePassword').value;
-                  if (pw !== cpw) {
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
-                    showError('Passwords do not match. Please try again.', document.getElementById('inf_other_RetypePassword'));
-                    return;
-                  }
-                }, true);
+                  if (pw !== cpw) { showError('Passwords do not match. Please try again.', document.getElementById('inf_other_RetypePassword')); return; }
+
+                  // All valid — trigger the hidden reCAPTCHA button
+                  realBtn.click();
+                });
               })();
             `}</Script>
           </div>
