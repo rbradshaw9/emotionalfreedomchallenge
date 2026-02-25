@@ -117,7 +117,7 @@ ${getReferralLink()}
 
 You deserve one quick reminder about that free live challenge this week.
 
-My friend, Dr. Paul Jenkins, is hosting The Emotional Freedom Challenge starting tomorrow, March 16, live at 12:00 Noon Eastern.
+My friend, Dr. Paul Jenkins, is hosting The Emotional Freedom Challenge starting tomorrow March 16, live at 12:00 Noon Eastern.
 
 If you've followed my recommendations before, you know I don't share things lightly. Dr. Paul's work is thoughtful, respectful, and genuinely useful for anyone wanting to be more intentional in how they respond emotionally.
 
@@ -310,9 +310,8 @@ ${getReferralLink()}`;
                 <li>Each partner will receive a unique registration link for tracking</li>
                 <li>Referral tracking applies to:
                   <ul>
-                    <li>Live on Purpose Central membership ($50/enrollment)</li>
-                    <li>Positivity Practitioner Certification ($200/enrollment)</li>
-                    <li>Executive Coaching ($500/client)</li>
+                    <li>VIP upgrades</li>
+                    <li>Coaching enrollments</li>
                   </ul>
                 </li>
                 <li>Partners will receive clear reporting and payouts after the challenge</li>
