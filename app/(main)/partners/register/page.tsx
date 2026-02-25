@@ -124,9 +124,6 @@ export default function PartnerRegister() {
                 <label htmlFor="inf_other_RetypePassword">Confirm Password *</label>
               </div>
 
-              {/* Password error display — populated by vanilla JS below */}
-              <p id="pw-error" style={{ color: '#c0392b', fontSize: '14px', marginTop: '-8px', marginBottom: '16px', fontWeight: 500, display: 'none' }}></p>
-
               <div className="infusion-field" style={{ display: 'none' }}>
                 <div className="infusion-radio">
                   <div className="options-container">
@@ -157,6 +154,9 @@ export default function PartnerRegister() {
                 </div>
               </div>
 
+              {/* Validation error display — populated by vanilla JS below */}
+              <p id="pw-error" style={{ color: '#c0392b', fontSize: '14px', marginBottom: '16px', fontWeight: 500, display: 'none' }}></p>
+
               <div className="infusion-submit" style={{ marginTop: '24px' }}>
                 <button className="infusion-recaptcha v2-btn v2-btn-primary" id="recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab" type="submit">
                   Sign Me Up!
@@ -173,49 +173,93 @@ export default function PartnerRegister() {
             <Script src="https://bl843.infusionsoft.com/js/jquery/jquery-3.3.1.js" strategy="afterInteractive" />
             <Script src="https://bl843.infusionsoft.app/app/webform/overwriteRefererJs" strategy="afterInteractive" />
 
-            {/* Client-side password validation — runs after Infusionsoft scripts bind */}
-            <Script id="partner-pw-validation" strategy="lazyOnload">{`
+            {/* Client-side validation — capture-phase click fires BEFORE reCAPTCHA */}
+            <Script id="partner-form-validation" strategy="lazyOnload">{`
               (function() {
-                var form = document.getElementById('inf_form_4c9b8b75fc0b1e19505d18dac0e1a6ab');
-                if (!form) return;
+                var btn = document.getElementById('recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab');
+                if (!btn) return;
                 var errorEl = document.getElementById('pw-error');
-                var nativeSubmit = HTMLFormElement.prototype.submit.bind(form);
-                form.submit = function() {
-                  var pw = document.getElementById('inf_other_Password').value;
-                  var cpw = document.getElementById('inf_other_RetypePassword').value;
+
+                var required = [
+                  { id: 'inf_field_FirstName', label: 'First Name' },
+                  { id: 'inf_field_LastName', label: 'Last Name' },
+                  { id: 'inf_field_Email', label: 'Email Address' },
+                  { id: 'inf_custom_PayPalEmail', label: 'PayPal Email' },
+                  { id: 'inf_other_Username', label: 'Username' },
+                  { id: 'inf_other_Password', label: 'Password' },
+                  { id: 'inf_other_RetypePassword', label: 'Confirm Password' }
+                ];
+
+                function showError(msg, scrollTo) {
+                  errorEl.textContent = '\\u26a0 ' + msg;
+                  errorEl.style.display = 'block';
+                  if (scrollTo) scrollTo.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  scrollTo && scrollTo.focus();
+                }
+
+                btn.addEventListener('click', function(e) {
                   if (errorEl) errorEl.style.display = 'none';
+
+                  for (var i = 0; i < required.length; i++) {
+                    var el = document.getElementById(required[i].id);
+                    if (!el || !el.value.trim()) {
+                      e.preventDefault();
+                      e.stopImmediatePropagation();
+                      showError(required[i].label + ' is required.', el);
+                      return;
+                    }
+                  }
+
+                  var email = document.getElementById('inf_field_Email').value.trim();
+                  if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    showError('Please enter a valid email address.', document.getElementById('inf_field_Email'));
+                    return;
+                  }
+
+                  var paypal = document.getElementById('inf_custom_PayPalEmail').value.trim();
+                  if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(paypal)) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    showError('Please enter a valid PayPal email address.', document.getElementById('inf_custom_PayPalEmail'));
+                    return;
+                  }
+
+                  var pw = document.getElementById('inf_other_Password').value;
                   if (pw.length < 8) {
-                    errorEl.textContent = '\\u26a0 Password must be at least 8 characters.';
-                    errorEl.style.display = 'block';
-                    errorEl.scrollIntoView({behavior:'smooth',block:'center'});
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    showError('Password must be at least 8 characters.', document.getElementById('inf_other_Password'));
                     return;
                   }
                   if (!/[A-Z]/.test(pw)) {
-                    errorEl.textContent = '\\u26a0 Password must include at least one uppercase letter.';
-                    errorEl.style.display = 'block';
-                    errorEl.scrollIntoView({behavior:'smooth',block:'center'});
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    showError('Password must include at least one uppercase letter.', document.getElementById('inf_other_Password'));
                     return;
                   }
                   if (!/[a-z]/.test(pw)) {
-                    errorEl.textContent = '\\u26a0 Password must include at least one lowercase letter.';
-                    errorEl.style.display = 'block';
-                    errorEl.scrollIntoView({behavior:'smooth',block:'center'});
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    showError('Password must include at least one lowercase letter.', document.getElementById('inf_other_Password'));
                     return;
                   }
                   if (!/[0-9]/.test(pw)) {
-                    errorEl.textContent = '\\u26a0 Password must include at least one number.';
-                    errorEl.style.display = 'block';
-                    errorEl.scrollIntoView({behavior:'smooth',block:'center'});
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    showError('Password must include at least one number.', document.getElementById('inf_other_Password'));
                     return;
                   }
+
+                  var cpw = document.getElementById('inf_other_RetypePassword').value;
                   if (pw !== cpw) {
-                    errorEl.textContent = '\\u26a0 Passwords do not match. Please try again.';
-                    errorEl.style.display = 'block';
-                    errorEl.scrollIntoView({behavior:'smooth',block:'center'});
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    showError('Passwords do not match. Please try again.', document.getElementById('inf_other_RetypePassword'));
                     return;
                   }
-                  nativeSubmit();
-                };
+                }, true);
               })();
             `}</Script>
           </div>
