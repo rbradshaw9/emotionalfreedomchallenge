@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, Suspense } from 'react';
+import { useState, Suspense, useEffect } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { CHALLENGE } from '@/lib/challengeConfig';
 
 const videoData = [
@@ -99,9 +100,25 @@ const videoData = [
 type VideoTab = 'main' | 'vip';
 
 function ReplayPageInner() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
   const firstActiveDay = videoData.find(v => v.active)?.day ?? 1;
-  const [selectedDay, setSelectedDay] = useState(firstActiveDay);
-  const [activeTab, setActiveTab] = useState<VideoTab>('main');
+
+  const paramDay = Number(searchParams.get('day'));
+  const paramTab = searchParams.get('tab') as VideoTab | null;
+  const initialDay = (paramDay >= 1 && paramDay <= 5) ? paramDay : firstActiveDay;
+  const initialTab: VideoTab = paramTab === 'vip' ? 'vip' : 'main';
+
+  const [selectedDay, setSelectedDay] = useState<number>(initialDay);
+  const [activeTab, setActiveTab] = useState<VideoTab>(initialTab);
+
+  // Keep URL in sync whenever selection changes
+  useEffect(() => {
+    const params = new URLSearchParams();
+    params.set('day', String(selectedDay));
+    params.set('tab', activeTab);
+    router.replace(`?${params.toString()}`, { scroll: false });
+  }, [selectedDay, activeTab, router]);
 
   const currentDay = videoData.find(v => v.day === selectedDay) || videoData[0];
   const currentSession = activeTab === 'main' ? currentDay.mainSession : currentDay.vipSession;
