@@ -73,16 +73,19 @@ export default function PartnerRegister() {
                 <input id="inf_field_FirstName" name="inf_field_FirstName" placeholder=" " type="text" />
                 <label htmlFor="inf_field_FirstName">First Name *</label>
               </div>
+              <p id="err-first-name" style={{ color: '#c0392b', fontSize: '13px', margin: '-8px 0 14px', fontWeight: 500, display: 'none' }}></p>
 
               <div className="v2-form-group">
                 <input id="inf_field_LastName" name="inf_field_LastName" placeholder=" " type="text" />
                 <label htmlFor="inf_field_LastName">Last Name *</label>
               </div>
+              <p id="err-last-name" style={{ color: '#c0392b', fontSize: '13px', margin: '-8px 0 14px', fontWeight: 500, display: 'none' }}></p>
 
               <div className="v2-form-group">
                 <input id="inf_field_Email" name="inf_field_Email" placeholder=" " type="text" />
                 <label htmlFor="inf_field_Email">Email Address *</label>
               </div>
+              <p id="err-email" style={{ color: '#c0392b', fontSize: '13px', margin: '-8px 0 14px', fontWeight: 500, display: 'none' }}></p>
 
               <div className="v2-form-group">
                 <input id="inf_field_Phone1" name="inf_field_Phone1" placeholder=" " type="text" />
@@ -101,6 +104,7 @@ export default function PartnerRegister() {
                 We pay commissions via PayPal. No account?{' '}
                 <a href="https://paypal.com" target="_blank" rel="noopener noreferrer">Create one at paypal.com</a>.
               </p>
+              <p id="err-paypal" style={{ color: '#c0392b', fontSize: '13px', margin: '-8px 0 14px', fontWeight: 500, display: 'none' }}></p>
 
               <div style={{ marginBottom: '20px', padding: '12px 16px', background: 'var(--v2-bg-muted)', borderRadius: '8px', fontSize: '14px', lineHeight: '1.5' }}>
                 <strong>Creating your partner login:</strong> These credentials give you access to your personal partner dashboard where you can view referrals and track commissions.
@@ -110,6 +114,7 @@ export default function PartnerRegister() {
                 <input id="inf_other_Username" name="inf_other_Username" placeholder=" " type="text" />
                 <label htmlFor="inf_other_Username">Username *</label>
               </div>
+              <p id="err-username" style={{ color: '#c0392b', fontSize: '13px', margin: '-8px 0 14px', fontWeight: 500, display: 'none' }}></p>
 
               <div className="v2-form-group">
                 <input id="inf_other_Password" name="inf_other_Password" placeholder=" " type="password" />
@@ -118,11 +123,13 @@ export default function PartnerRegister() {
               <p className="v2-field-hint" style={{ marginTop: '-12px', marginBottom: '20px' }}>
                 Must be at least 8 characters and include an uppercase letter, a lowercase letter, and a number.
               </p>
+              <p id="err-password" style={{ color: '#c0392b', fontSize: '13px', margin: '-8px 0 14px', fontWeight: 500, display: 'none' }}></p>
 
               <div className="v2-form-group">
                 <input id="inf_other_RetypePassword" name="inf_other_RetypePassword" placeholder=" " type="password" />
                 <label htmlFor="inf_other_RetypePassword">Confirm Password *</label>
               </div>
+              <p id="err-confirm" style={{ color: '#c0392b', fontSize: '13px', margin: '-8px 0 14px', fontWeight: 500, display: 'none' }}></p>
 
               <div className="infusion-field" style={{ display: 'none' }}>
                 <div className="infusion-radio">
@@ -154,9 +161,6 @@ export default function PartnerRegister() {
                 </div>
               </div>
 
-              {/* Validation error display — populated by vanilla JS below */}
-              <p id="pw-error" style={{ color: '#c0392b', fontSize: '14px', marginBottom: '16px', fontWeight: 500, display: 'none' }}></p>
-
               <div className="infusion-submit" style={{ marginTop: '24px' }}>
                 {/* Real reCAPTCHA button — hidden, triggered programmatically after validation */}
                 <button className="infusion-recaptcha" id="recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab" type="submit" style={{ display: 'none' }}>
@@ -184,60 +188,100 @@ export default function PartnerRegister() {
                 var visibleBtn = document.getElementById('partner-submit-visible');
                 var realBtn = document.getElementById('recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab');
                 if (!visibleBtn || !realBtn) return;
-                var errorEl = document.getElementById('pw-error');
 
-                var required = [
-                  { id: 'inf_field_FirstName', label: 'First Name' },
-                  { id: 'inf_field_LastName', label: 'Last Name' },
-                  { id: 'inf_field_Email', label: 'Email Address' },
-                  { id: 'inf_custom_PayPalEmail', label: 'PayPal Email' },
-                  { id: 'inf_other_Username', label: 'Username' },
-                  { id: 'inf_other_Password', label: 'Password' },
-                  { id: 'inf_other_RetypePassword', label: 'Confirm Password' }
-                ];
+                var ERROR_IDS = ['err-first-name','err-last-name','err-email','err-paypal','err-username','err-password','err-confirm'];
+                var FIELD_MAP = {
+                  'err-first-name': 'inf_field_FirstName',
+                  'err-last-name':  'inf_field_LastName',
+                  'err-email':      'inf_field_Email',
+                  'err-paypal':     'inf_custom_PayPalEmail',
+                  'err-username':   'inf_other_Username',
+                  'err-password':   'inf_other_Password',
+                  'err-confirm':    'inf_other_RetypePassword'
+                };
 
-                function showError(msg, scrollTo) {
-                  errorEl.textContent = '\\u26a0 ' + msg;
-                  errorEl.style.display = 'block';
-                  if (scrollTo) {
-                    scrollTo.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    scrollTo.focus();
-                  }
+                function showErr(id, msg) {
+                  var el = document.getElementById(id);
+                  if (el) { el.textContent = '\\u26a0 ' + msg; el.style.display = 'block'; }
+                }
+                function clearErr(id) {
+                  var el = document.getElementById(id);
+                  if (el) { el.textContent = ''; el.style.display = 'none'; }
+                }
+                function clearAll() { ERROR_IDS.forEach(clearErr); }
+
+                function validatePw(pw) {
+                  if (pw.length < 8) return 'Password must be at least 8 characters.';
+                  if (!/[A-Z]/.test(pw)) return 'Must include at least one uppercase letter.';
+                  if (!/[a-z]/.test(pw)) return 'Must include at least one lowercase letter.';
+                  if (!/[0-9]/.test(pw)) return 'Must include at least one number.';
+                  return null;
                 }
 
+                // Real-time: check match while typing confirm password
+                var confirmEl = document.getElementById('inf_other_RetypePassword');
+                var passwordEl = document.getElementById('inf_other_Password');
+                confirmEl.addEventListener('input', function() {
+                  if (!this.value) { clearErr('err-confirm'); return; }
+                  if (passwordEl.value !== this.value) showErr('err-confirm', 'Passwords do not match.');
+                  else clearErr('err-confirm');
+                });
+                // Real-time: re-check strength and match while typing password
+                passwordEl.addEventListener('input', function() {
+                  var pw = this.value;
+                  if (!pw) { clearErr('err-password'); clearErr('err-confirm'); return; }
+                  var err = validatePw(pw);
+                  if (err) showErr('err-password', err); else clearErr('err-password');
+                  if (confirmEl.value) {
+                    if (pw !== confirmEl.value) showErr('err-confirm', 'Passwords do not match.');
+                    else clearErr('err-confirm');
+                  }
+                });
+
                 visibleBtn.addEventListener('click', function() {
-                  if (errorEl) errorEl.style.display = 'none';
+                  clearAll();
+                  var hasError = false;
 
-                  for (var i = 0; i < required.length; i++) {
-                    var el = document.getElementById(required[i].id);
-                    if (!el || !el.value.trim()) {
-                      showError(required[i].label + ' is required.', el);
-                      return;
-                    }
+                  function reqField(fieldId, errId, label) {
+                    var el = document.getElementById(fieldId);
+                    if (!el || !el.value.trim()) { showErr(errId, label + ' is required.'); hasError = true; }
                   }
 
-                  var email = document.getElementById('inf_field_Email').value.trim();
-                  if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
-                    showError('Please enter a valid email address.', document.getElementById('inf_field_Email'));
-                    return;
-                  }
+                  reqField('inf_field_FirstName', 'err-first-name', 'First Name');
+                  reqField('inf_field_LastName',  'err-last-name',  'Last Name');
 
-                  var paypal = document.getElementById('inf_custom_PayPalEmail').value.trim();
-                  if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(paypal)) {
-                    showError('Please enter a valid PayPal email address.', document.getElementById('inf_custom_PayPalEmail'));
-                    return;
-                  }
+                  var emailVal = document.getElementById('inf_field_Email').value.trim();
+                  if (!emailVal) { showErr('err-email', 'Email Address is required.'); hasError = true; }
+                  else if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(emailVal)) { showErr('err-email', 'Please enter a valid email address.'); hasError = true; }
+
+                  var paypalVal = document.getElementById('inf_custom_PayPalEmail').value.trim();
+                  if (!paypalVal) { showErr('err-paypal', 'PayPal Email is required.'); hasError = true; }
+                  else if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(paypalVal)) { showErr('err-paypal', 'Please enter a valid PayPal email address.'); hasError = true; }
+
+                  reqField('inf_other_Username', 'err-username', 'Username');
 
                   var pw = document.getElementById('inf_other_Password').value;
-                  if (pw.length < 8) { showError('Password must be at least 8 characters.', document.getElementById('inf_other_Password')); return; }
-                  if (!/[A-Z]/.test(pw)) { showError('Password must include at least one uppercase letter.', document.getElementById('inf_other_Password')); return; }
-                  if (!/[a-z]/.test(pw)) { showError('Password must include at least one lowercase letter.', document.getElementById('inf_other_Password')); return; }
-                  if (!/[0-9]/.test(pw)) { showError('Password must include at least one number.', document.getElementById('inf_other_Password')); return; }
+                  if (!pw) { showErr('err-password', 'Password is required.'); hasError = true; }
+                  else { var pwErr = validatePw(pw); if (pwErr) { showErr('err-password', pwErr); hasError = true; } }
 
                   var cpw = document.getElementById('inf_other_RetypePassword').value;
-                  if (pw !== cpw) { showError('Passwords do not match. Please try again.', document.getElementById('inf_other_RetypePassword')); return; }
+                  if (!cpw) { showErr('err-confirm', 'Please confirm your password.'); hasError = true; }
+                  else if (pw && pw !== cpw) { showErr('err-confirm', 'Passwords do not match.'); hasError = true; }
 
-                  // All valid — trigger the hidden reCAPTCHA button
+                  if (hasError) {
+                    // Scroll to the topmost visible error and focus its field
+                    for (var i = 0; i < ERROR_IDS.length; i++) {
+                      var errEl = document.getElementById(ERROR_IDS[i]);
+                      if (errEl && errEl.style.display !== 'none' && errEl.textContent) {
+                        errEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        var fieldEl = document.getElementById(FIELD_MAP[ERROR_IDS[i]]);
+                        if (fieldEl) fieldEl.focus();
+                        break;
+                      }
+                    }
+                    return;
+                  }
+
                   realBtn.click();
                 });
               })();
