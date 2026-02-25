@@ -7,19 +7,19 @@ import { CHALLENGE } from '@/lib/challengeConfig';
 const videoData = [
   {
     day: 1,
-    active: false,
+    active: true,
     mainSession: {
       label: 'Main Training',
       title: 'The Positivity Model: Reclaim Emotional Ownership',
       description: "Most people believe their emotions are caused by what happens to them — other people's behavior, the news, their past, their stress, their circumstances. That belief quietly steals our freedom. On Day 1, you'll learn the Positivity Model and discover the powerful truth about where emotions really come from. We'll address anxiety, depression, resentment, and overwhelm — not by minimizing them, but by understanding them. As you learn to make peace with your past, your present, and even your future, you step into emotional ownership.",
-      videoUrl: 'https://player.vimeo.com/video/000000001',
+      videoUrl: 'https://player.vimeo.com/video/76979871',
       duration: '~60 min',
     },
     vipSession: {
       label: 'VIP Session',
       title: 'Day 1 VIP — Q&A, Surprise Guests & Extended Discussion',
       description: 'Challenge Task: The Gratitude Power-Up — 25 daily gratitudes, with at least half focused on the hard things. Not toxic positivity. Real empowerment. Finding strength and growth in what once felt heavy.',
-      videoUrl: 'https://player.vimeo.com/video/000000002',
+      videoUrl: 'https://player.vimeo.com/video/108650530',
       duration: '~30 min',
     },
   },
@@ -171,9 +171,9 @@ function ReplayPageInner() {
                     <div className="v2-video-wrapper">
                       <iframe
                         key={`${selectedDay}-${activeTab}`}
-                        src={currentSession.videoUrl}
+                        src={`${currentSession.videoUrl}?badge=0&byline=0&portrait=0&title=0`}
                         title={currentSession.title}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allow="autoplay; fullscreen; picture-in-picture"
                         allowFullScreen
                         style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
                       />
