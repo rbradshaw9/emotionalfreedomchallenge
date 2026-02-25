@@ -254,7 +254,7 @@ function ReplayPageInner() {
             href="https://calendly.com/liveonpurpose-team/free"
             target="_blank"
             rel="noopener noreferrer"
-            className="v2-btn"
+            className="v2-btn v2-btn-primary"
             style={{ display: 'inline-block', marginBottom: '16px' }}
           >
             Schedule Your Breakthrough Call
