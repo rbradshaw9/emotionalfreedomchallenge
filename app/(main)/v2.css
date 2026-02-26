@@ -798,24 +798,28 @@
 
 /* ── Compensation Cards ─────────────────────────────────── */
 .efc-v2 .v2-compensation-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   margin: 32px 0;
-}
-@media (min-width: 640px) {
-  .efc-v2 .v2-compensation-cards { grid-template-columns: 1fr 1fr; }
-}
-@media (min-width: 1024px) {
-  .efc-v2 .v2-compensation-cards { grid-template-columns: repeat(4, 1fr); }
 }
 .efc-v2 .v2-compensation-card {
   background: var(--v2-bg);
   border: 2px solid var(--v2-primary);
   border-radius: var(--v2-radius);
-  padding: 32px 24px;
-  text-align: center;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
   box-shadow: var(--v2-shadow-sm);
+  text-align: left;
+}
+@media (max-width: 639px) {
+  .efc-v2 .v2-compensation-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 24px;
+  }
 }
 .efc-v2 .v2-compensation-icon { font-size: 32px; margin-bottom: 10px; }
 .efc-v2 .v2-compensation-amount {
