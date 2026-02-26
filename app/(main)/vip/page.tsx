@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'VIP Upgrade - The Emotional Freedom Challenge',
@@ -9,6 +10,12 @@ export const metadata: Metadata = {
 export default function VIPPage() {
   return (
     <>
+      {/* GA4 Registration Event */}
+      <Script id="ga4-registration-event" strategy="afterInteractive">{`
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'complete_efc_registration' });
+      `}</Script>
+
       {/* Hero */}
       <section className="v2-hero v2-hero--compact">
         <div className="v2-container">

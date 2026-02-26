@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { CHALLENGE } from '@/lib/challengeConfig';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'VIP Access Confirmed - The Emotional Freedom Challenge',
@@ -17,6 +18,19 @@ export default function VipConfirmedPage() {
 
   return (
     <>
+      {/* GA4 VIP Purchase Event */}
+      <Script id="ga4-vip-purchase-event" strategy="afterInteractive">{`
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'purchase_vip',
+          ecommerce: {
+            currency: 'USD',
+            value: 27,
+            items: [{ item_name: 'EFC VIP Access', price: 27, quantity: 1 }]
+          }
+        });
+      `}</Script>
+
       {/* Hero */}
       <section className="v2-hero">
         <div className="v2-container">
