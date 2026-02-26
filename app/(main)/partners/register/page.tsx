@@ -114,6 +114,7 @@ export default function PartnerRegister() {
                 <input id="inf_other_Username" name="inf_other_Username" placeholder=" " type="text" />
                 <label htmlFor="inf_other_Username">Username *</label>
               </div>
+              <p className="v2-field-hint" style={{ marginTop: '-12px', marginBottom: '8px' }}>Letters and numbers only — no spaces, hyphens, or special characters (e.g. <strong>NOVA138</strong> not <strong>NOVA-138</strong>).</p>
               <p id="err-username" style={{ color: '#c0392b', fontSize: '13px', margin: '-8px 0 14px', fontWeight: 500, display: 'none' }}></p>
 
               <div className="v2-form-group">
@@ -264,7 +265,9 @@ export default function PartnerRegister() {
                   if (!paypalVal) { showErr('err-paypal', 'PayPal Email is required.'); hasError = true; }
                   else if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(paypalVal)) { showErr('err-paypal', 'Please enter a valid PayPal email address.'); hasError = true; }
 
-                  reqField('inf_other_Username', 'err-username', 'Username');
+                  var usernameVal = document.getElementById('inf_other_Username').value.trim();
+                  if (!usernameVal) { showErr('err-username', 'Username is required.'); hasError = true; }
+                  else if (!/^[a-zA-Z0-9]+$/.test(usernameVal)) { showErr('err-username', 'Username can only contain letters and numbers — no spaces, hyphens, or special characters.'); hasError = true; }
 
                   var pw = document.getElementById('inf_other_Password').value;
                   if (!pw) { showErr('err-password', 'Password is required.'); hasError = true; }
