@@ -162,10 +162,14 @@ export default function PartnerRegister() {
               </div>
 
               <div className="infusion-submit" style={{ marginTop: '24px' }}>
+                {/* Single button: user clicks this directly, our script intercepts for validation,
+                    calls preventDefault only on errors, otherwise lets the genuine user gesture
+                    reach Infusionsoft's reCAPTCHA handler naturally (programmatic .click() is
+                    blocked by reCAPTCHA as a bot-detection measure) */}
                 <button
-                  id="partner-submit-btn"
+                  className="infusion-recaptcha v2-btn v2-btn-primary"
+                  id="recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab"
                   type="submit"
-                  className="v2-btn v2-btn-primary"
                 >
                   Sign Me Up!
                 </button>
@@ -175,14 +179,20 @@ export default function PartnerRegister() {
             </form>
 
             <Script src="https://bl843.infusionsoft.app/app/webTracking/getTrackingCode" strategy="afterInteractive" />
+            <Script src="https://bl843.infusionsoft.com/resources/external/recaptcha/production/recaptcha.js?b=1.70.0.905848-hf-202602232108" strategy="afterInteractive" />
+            <Script src="https://bl843.infusionsoft.com/resources/external/recaptcha/production/enterpriseRecaptcha.js?b=1.70.0.905848-hf-202602232108" strategy="afterInteractive" />
             <Script src="https://bl843.infusionsoft.com/app/timezone/timezoneInputJs?xid=4c9b8b75fc0b1e19505d18dac0e1a6ab" strategy="afterInteractive" />
             <Script src="https://bl843.infusionsoft.com/js/jquery/jquery-3.3.1.js" strategy="afterInteractive" />
             <Script src="https://bl843.infusionsoft.app/app/webform/overwriteRefererJs" strategy="afterInteractive" />
 
-            {/* Client-side validation — preventDefault on errors, let native submit through on success */}
+            {/* Client-side validation — intercept the reCAPTCHA button click, preventDefault
+                 on validation failure only. On success, do nothing: the original user gesture
+                 flows through naturally to Infusionsoft's reCAPTCHA handler.
+                 IMPORTANT: programmatic .click() is blocked by reCAPTCHA (bot detection),
+                 so we must never synthesise a click — only intercept real ones. */}
             <Script id="partner-form-validation" strategy="afterInteractive">{`
               (function() {
-                var visibleBtn = document.getElementById('partner-submit-btn');
+                var visibleBtn = document.getElementById('recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab');
                 if (!visibleBtn) return;
 
                 var ERROR_IDS = ['err-first-name','err-last-name','err-email','err-paypal','err-username','err-password','err-confirm'];
