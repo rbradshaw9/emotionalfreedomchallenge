@@ -186,8 +186,11 @@ export default function PartnerRegister() {
             <Script id="partner-form-validation" strategy="afterInteractive">{`
               (function() {
                 var visibleBtn = document.getElementById('partner-submit-visible');
-                var realBtn = document.getElementById('recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab');
-                if (!visibleBtn || !realBtn) return;
+                if (!visibleBtn) return;
+                // NOTE: do NOT grab realBtn here at init time.
+                // The Infusionsoft reCAPTCHA script also loads afterInteractive and may
+                // replace/re-create that hidden button element, leaving a stale reference.
+                // Instead, look it up fresh on every click.
 
                 var ERROR_IDS = ['err-first-name','err-last-name','err-email','err-paypal','err-username','err-password','err-confirm'];
                 var FIELD_MAP = {
@@ -282,7 +285,16 @@ export default function PartnerRegister() {
                     return;
                   }
 
-                  realBtn.click();
+                  // Look up fresh here — reCAPTCHA scripts may have replaced the element
+                  // since page load, so a reference captured at init time can be stale.
+                  var realBtn = document.getElementById('recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab');
+                  if (realBtn) {
+                    realBtn.click();
+                  } else {
+                    // Fallback: submit the form directly if the reCAPTCHA button is gone
+                    var form = document.getElementById('inf_form_4c9b8b75fc0b1e19505d18dac0e1a6ab');
+                    if (form) form.submit();
+                  }
                 });
               })();
             `}</Script>
