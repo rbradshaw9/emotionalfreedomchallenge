@@ -92,6 +92,12 @@ export default function PartnersPage() {
           
           <div className="v2-compensation-cards">
             <div className="v2-compensation-card">
+              <div className="v2-compensation-icon">⭐</div>
+              <div className="v2-compensation-amount">50%</div>
+              <h3 className="v2-h4">VIP Upgrade</h3>
+              <p className="v2-body">Earn 50% commission on every VIP upgrade purchased by participants you refer to the challenge.</p>
+            </div>
+            <div className="v2-compensation-card">
               <div className="v2-compensation-icon">🌱</div>
               <div className="v2-compensation-amount">$50</div>
               <h3 className="v2-h4">Live on Purpose Central</h3>
