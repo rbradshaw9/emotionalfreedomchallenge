@@ -162,12 +162,15 @@ export default function PartnerRegister() {
               </div>
 
               <div className="infusion-submit" style={{ marginTop: '24px' }}>
-                {/* Real reCAPTCHA button — hidden, triggered programmatically after validation */}
-                <button className="infusion-recaptcha" id="recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab" type="submit" style={{ display: 'none' }}>
-                  Sign Me Up!
-                </button>
-                {/* Visible button — validates then clicks the real button */}
-                <button id="partner-submit-visible" type="button" className="v2-btn v2-btn-primary">
+                {/* Single button: user clicks this directly, our script intercepts for validation,
+                    calls preventDefault only on errors, otherwise lets the genuine user gesture
+                    reach Infusionsoft's reCAPTCHA handler naturally (programmatic .click() is
+                    blocked by reCAPTCHA as a bot-detection measure) */}
+                <button
+                  className="infusion-recaptcha v2-btn v2-btn-primary"
+                  id="recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab"
+                  type="submit"
+                >
                   Sign Me Up!
                 </button>
               </div>
@@ -182,15 +185,15 @@ export default function PartnerRegister() {
             <Script src="https://bl843.infusionsoft.com/js/jquery/jquery-3.3.1.js" strategy="afterInteractive" />
             <Script src="https://bl843.infusionsoft.app/app/webform/overwriteRefererJs" strategy="afterInteractive" />
 
-            {/* Client-side validation — our button validates, then clicks the hidden reCAPTCHA button */}
+            {/* Client-side validation — intercept the reCAPTCHA button click, preventDefault
+                 on validation failure only. On success, do nothing: the original user gesture
+                 flows through naturally to Infusionsoft's reCAPTCHA handler.
+                 IMPORTANT: programmatic .click() is blocked by reCAPTCHA (bot detection),
+                 so we must never synthesise a click — only intercept real ones. */}
             <Script id="partner-form-validation" strategy="afterInteractive">{`
               (function() {
-                var visibleBtn = document.getElementById('partner-submit-visible');
+                var visibleBtn = document.getElementById('recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab');
                 if (!visibleBtn) return;
-                // NOTE: do NOT grab realBtn here at init time.
-                // The Infusionsoft reCAPTCHA script also loads afterInteractive and may
-                // replace/re-create that hidden button element, leaving a stale reference.
-                // Instead, look it up fresh on every click.
 
                 var ERROR_IDS = ['err-first-name','err-last-name','err-email','err-paypal','err-username','err-password','err-confirm'];
                 var FIELD_MAP = {
@@ -241,7 +244,7 @@ export default function PartnerRegister() {
                   }
                 });
 
-                visibleBtn.addEventListener('click', function() {
+                visibleBtn.addEventListener('click', function(e) {
                   clearAll();
                   var hasError = false;
 
@@ -272,7 +275,9 @@ export default function PartnerRegister() {
                   else if (pw && pw !== cpw) { showErr('err-confirm', 'Passwords do not match.'); hasError = true; }
 
                   if (hasError) {
-                    // Scroll to the topmost visible error and focus its field
+                    // Block the submission and scroll to the first error
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
                     for (var i = 0; i < ERROR_IDS.length; i++) {
                       var errEl = document.getElementById(ERROR_IDS[i]);
                       if (errEl && errEl.style.display !== 'none' && errEl.textContent) {
@@ -284,17 +289,8 @@ export default function PartnerRegister() {
                     }
                     return;
                   }
-
-                  // Look up fresh here — reCAPTCHA scripts may have replaced the element
-                  // since page load, so a reference captured at init time can be stale.
-                  var realBtn = document.getElementById('recaptcha_4c9b8b75fc0b1e19505d18dac0e1a6ab');
-                  if (realBtn) {
-                    realBtn.click();
-                  } else {
-                    // Fallback: submit the form directly if the reCAPTCHA button is gone
-                    var form = document.getElementById('inf_form_4c9b8b75fc0b1e19505d18dac0e1a6ab');
-                    if (form) form.submit();
-                  }
+                  // Validation passed — do NOT call preventDefault.
+                  // The genuine user click continues to Infusionsoft's reCAPTCHA handler.
                 });
               })();
             `}</Script>
