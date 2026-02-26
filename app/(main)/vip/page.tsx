@@ -10,7 +10,7 @@ export default function VIPPage() {
   return (
     <>
       {/* Hero */}
-      <section className="v2-hero" style={{ padding: '60px 0 72px' }}>
+      <section className="v2-hero v2-hero--compact">
         <div className="v2-container">
           <div className="v2-badge v2-badge--success" style={{ marginBottom: '16px' }}>
             ✓ &nbsp;You&apos;re Registered
@@ -77,19 +77,19 @@ export default function VIPPage() {
           <h2 className="v2-h2">A Pattern Most People Recognize</h2>
           <p className="v2-body">Most people don&apos;t intend to put off or procrastinate their emotional freedom for later.</p>
           <p className="v2-body">
-            They simply need to &ldquo;think about it,&rdquo;<br />
-            or &ldquo;see how the week goes,&rdquo;<br />
-            or &ldquo;figure some things out first,&rdquo;<br />
+            They simply need to &ldquo;think about it,&rdquo;
+            or &ldquo;see how the week goes,&rdquo;
+            or &ldquo;figure some things out first,&rdquo;
             or &ldquo;come back to this when things slow down.&rdquo;
           </p>
           <p className="v2-body">
-            And then the challenge ends.<br />
-            Life happens.<br />
+            And then the challenge ends.
+            Life happens.
             The same patterns show up again.
           </p>
           <p className="v2-body">
-            We keep doing what we have been doing — habit.<br />
-            <strong>Default is down!</strong><br />
+            We keep doing what we have been doing — habit.
+            <strong>Default is down!</strong>
             Elevation requires effort.
           </p>
           <p className="v2-body">
@@ -185,8 +185,7 @@ export default function VIPPage() {
             If you&apos;re comfortable just attending live and seeing what you notice, that&apos;s fine too.
           </p>
           <p className="v2-body" style={{ fontWeight: 500 }}>
-            But this is the moment when most people either lean in —<br />
-            or default back to how things usually go.
+            But this is the moment when most people either lean in — or default back to how things usually go.
           </p>
         </div>
       </section>

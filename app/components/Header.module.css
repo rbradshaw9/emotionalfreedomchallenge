@@ -88,6 +88,10 @@
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 0.625rem 0.75rem;
+  }
+
   .logoImage {
     max-width: 180px;
     max-height: 40px;

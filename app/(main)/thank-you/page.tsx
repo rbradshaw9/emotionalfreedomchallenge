@@ -97,7 +97,7 @@ export default function ThankYouPage() {
                 I know when someone is truly committed by two documents — their calendar and their bank statement.
               </p>
               <p className="v2-body" style={{ marginBottom: 0 }}>
-                Show your calendar that you are committed now.<br />
+                Show your calendar that you are committed now.
                 If you want to show commitment in your bank statement, grab the VIP option.
               </p>
             </div>

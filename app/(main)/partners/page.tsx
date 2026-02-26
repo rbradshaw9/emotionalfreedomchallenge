@@ -123,7 +123,7 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      <section className="v2-section" style={{ backgroundColor: 'var(--v2-primary)', color: '#fff', textAlign: 'center', padding: '64px 24px' }}>
+      <section className="v2-section v2-section--cta-banner" style={{ backgroundColor: 'var(--v2-primary)', color: '#fff', textAlign: 'center' }}>
         <div className="v2-container--sm">
           <h2 className="v2-h2" style={{ color: '#fff', marginBottom: '16px' }}>Does This Feel Like a Good Fit?</h2>
           <p className="v2-body" style={{ color: 'rgba(255,255,255,0.85)', marginBottom: '32px' }}>
@@ -206,7 +206,7 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      <section className="v2-section" style={{ textAlign: 'center', padding: '64px 24px' }}>
+      <section className="v2-section" style={{ textAlign: 'center' }}>
         <div className="v2-container--sm">
           <Link href="/partners/register" className="v2-btn v2-btn-primary v2-btn-lg">
             Apply to Become a Partner

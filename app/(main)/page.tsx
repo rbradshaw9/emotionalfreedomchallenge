@@ -50,13 +50,13 @@ export default function RegistrationPage() {
             Are you ready to stop being emotionally hijacked by circumstances, other people, or your own thought patterns — and start living with greater peace, clarity, and confidence?
           </p>
           <p className="v2-body">
-            Most people don&apos;t think of themselves as emotionally reactive.<br />
-            They are generally reasonable, stable people who sometimes get frustrated…<br />
-            or overwhelmed…<br />
+            Most people don&apos;t think of themselves as emotionally reactive.
+            They are generally reasonable, stable people who sometimes get frustrated…
+            or overwhelmed…
             or say things they wish they had handled differently.
           </p>
           <p className="v2-body">
-            And usually, that description is completely fair.<br />
+            And usually, that description is completely fair.
             Until the same moments keep showing up again, and again, and… Aaargh!
           </p>
           <p className="v2-body">
@@ -125,8 +125,8 @@ export default function RegistrationPage() {
           <div className="v2-spacer--sm"></div>
           <div className="v2-max-w-narrow" style={{ margin: '0 auto' }}>
             <p className="v2-body">
-              Over five live sessions, Dr. Paul Jenkins will walk through how emotional reactions actually form — and why they often override good intentions.<br />
-              Not in abstract terms.<br />
+              Over five live sessions, Dr. Paul Jenkins will walk through how emotional reactions actually form — and why they often override good intentions.
+              Not in abstract terms.
               In everyday situations people recognize immediately.
             </p>
             <p className="v2-body">During the week, you&apos;ll begin to see:</p>

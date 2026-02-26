@@ -53,7 +53,7 @@ export default function PartnerRegister() {
 
       <section className="v2-section v2-section-muted">
         <div className="v2-container--sm">
-          <div style={{ background: '#fff', borderRadius: '18px', padding: '40px', boxShadow: '0 4px 24px rgba(0,0,0,0.08)' }}>
+          <div className="v2-form-card" style={{ maxWidth: '100%' }}>
             <form
               acceptCharset="UTF-8"
               action="https://bl843.infusionsoft.com/app/form/process/4c9b8b75fc0b1e19505d18dac0e1a6ab"
