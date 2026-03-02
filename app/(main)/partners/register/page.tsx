@@ -16,6 +16,9 @@ export default function PartnerRegister() {
           <p className="v2-subhead">
             Thanks for taking the next step. This page is for invited partners to complete registration for The Emotional Freedom Challenge.
           </p>
+          <p className="v2-body v2-text-center" style={{ marginTop: '12px' }}>
+            📅 <strong>March 16–20</strong> &nbsp;·&nbsp; 🕛 <strong>Noon – 1:00 PM Eastern</strong> each day &nbsp;·&nbsp; ⭐ VIP session immediately follows
+          </p>
         </div>
       </section>
 
@@ -45,6 +48,7 @@ export default function PartnerRegister() {
             <li><strong>Immediate confirmation</strong> — You&apos;ll be registered as an official referral partner</li>
             <li><strong>Within 1 business day</strong> — We&apos;ll send your unique referral link</li>
             <li><strong>Partner resources</strong> — You&apos;ll receive ready-to-share email and social copy</li>
+            <li><strong>Challenge runs March 16–20</strong> — One hour per day, noon to 1:00 PM Eastern, with a VIP session immediately following each day</li>
             <li><strong>No pressure</strong> — Share when and how it feels right for your audience</li>
           </ul>
           <p className="v2-body">Questions? Our team is here to support you every step of the way.</p>
