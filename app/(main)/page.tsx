@@ -25,6 +25,9 @@ export default function RegistrationPage() {
           <p className="v2-subhead">
             A free, live 5-day experience with Dr. Paul Jenkins
           </p>
+          <p style={{ textAlign: 'center', fontSize: '16px', color: 'var(--v2-muted)', marginTop: '8px', marginBottom: '0' }}>
+            🕛 <strong>Noon – 1:00 PM Eastern</strong> each day &nbsp;·&nbsp; ⭐ VIP session immediately follows
+          </p>
 
           <div className="v2-trust-bar">
             <div className="v2-trust-item">
