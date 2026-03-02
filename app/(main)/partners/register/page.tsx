@@ -7,6 +7,7 @@ export const metadata: Metadata = {
 };
 
 export default function PartnerRegister() {
+  // force-deploy: March 2 2026
   return (
     <>
       <section className="v2-hero">
