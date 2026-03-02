@@ -45,7 +45,7 @@ export default function V2PartnerKitPage() {
   const getEmail1Body = () => `Hey Friend,
 
 Your emotional freedom matters to me, which is why I feel to share this with you.
-My friend and colleague, Dr. Paul Jenkins, is hosting a free live experience called The Emotional Freedom Challenge. This challenge runs March 16–20, live each day at 12:00 Noon Eastern Time.
+My friend and colleague, Dr. Paul Jenkins, is hosting a free live experience called The Emotional Freedom Challenge. This challenge runs March 16–20, live each day from 12:00 Noon to 1:00 PM Eastern Time.
 
 Dr. Paul has spent decades teaching emotional ownership and intentional response in a way that's practical and grounded. What I appreciate most about his work is that it's clear, positive, and focused on personal choice rather than labels or diagnoses.
 
@@ -65,7 +65,7 @@ You're probably going to thank me for this resource from someone I respect in th
 
 Dr. Paul Jenkins is a clinical psychologist and educator who has spent years teaching people how to take ownership of their emotional responses and live more intentionally.
 
-He's hosting The Emotional Freedom Challenge from March 16–20, meeting daily at 12:00 Noon Eastern Time. It's free, live, and virtual.
+He's hosting The Emotional Freedom Challenge from March 16–20, live each day from 12:00 Noon to 1:00 PM Eastern. It's free, live, and virtual. VIP members stay on for an extended session immediately after.
 
 The sessions are practical and focused on real-life application—work, relationships, and everyday stress. Your personal "lunch and learn" for the week.
 
@@ -83,7 +83,7 @@ You might be wondering why I'm inviting you to The Emotional Freedom Challenge. 
 
 Dr. Paul Jenkins teaches emotional awareness and ownership from a perspective of positive psychology. His work centers on recognizing emotional patterns and learning to operate the equipment of our own mind so we respond with intention rather than habit.
 
-Dr. Paul is hosting this free challenge March 16–20, live and virtual each day at 12:00 Noon Eastern Time.
+Dr. Paul is hosting this free challenge March 16–20, live and virtual each day from 12:00 Noon to 1:00 PM Eastern. There's also an optional VIP session immediately following each day for those who want to go deeper.
 
 If you appreciate thoughtful, grounded approaches to personal growth, you may want to schedule this in for your lunchtime that week.
 
@@ -117,7 +117,7 @@ ${getReferralLink()}
 
 You deserve one quick reminder about that free live challenge this week.
 
-My friend, Dr. Paul Jenkins, is hosting The Emotional Freedom Challenge starting tomorrow March 16, live at 12:00 Noon Eastern.
+My friend, Dr. Paul Jenkins, is hosting The Emotional Freedom Challenge starting tomorrow March 16, live from 12:00 Noon to 1:00 PM Eastern each day. A VIP extended session follows immediately after for those who upgrade.
 
 If you've followed my recommendations before, you know I don't share things lightly. Dr. Paul's work is thoughtful, respectful, and genuinely useful for anyone wanting to be more intentional in how they respond emotionally.
 
@@ -131,7 +131,7 @@ You're welcome ;)
 
   const getSocial1 = () => `Do you trust your friends… to take care of your friends?
 
-My friend, Dr. Paul Jenkins, has spent the past few decades as a Positivity Psychologist teaching emotional responsibility and intentional response in a clear, grounded way. He's hosting a free live Emotional Freedom Challenge from March 16–20, live each day at 12 PM Eastern.
+My friend, Dr. Paul Jenkins, has spent the past few decades as a Positivity Psychologist teaching emotional responsibility and intentional response in a clear, grounded way. He's hosting a free live Emotional Freedom Challenge from March 16–20, noon to 1 PM Eastern each day (with an optional VIP session immediately after).
 
 If emotional awareness is something you want to strengthen, this is worth checking out.
 
@@ -144,21 +144,22 @@ He's a Positivity Psychologist and educator who focuses on emotional ownership a
 
 He's hosting a free live Emotional Freedom Challenge
 📅 March 16–20
-🕛 12 PM Eastern
+🕛 12:00–1:00 PM Eastern each day
+⭐ Optional VIP session follows immediately after
 
 More info here:
 ${getReferralLink()}`;
 
   const getSocial3 = () => `One reason I appreciate Dr. Paul Jenkins' work is that it's practical and respectful. He teaches people how to respond emotionally with intention rather than habit.
 
-Dr. Paul is leading a free live Emotional Freedom Challenge starting March 16.
+Dr. Paul is leading a free live Emotional Freedom Challenge starting March 16 — one hour a day, noon to 1 PM Eastern, with an optional VIP session immediately after each day.
 
 If that approach resonates with you, you can learn more here:
 ${getReferralLink()}`;
 
   const getSocial4 = () => `Emotional reactions shape more of daily life than most people realize.
 
-Dr. Paul Jenkins helps people recognize those patterns and respond more intentionally. He's hosting a free live Emotional Freedom Challenge from March 16–20, live at noon Eastern.
+Dr. Paul Jenkins helps people recognize those patterns and respond more intentionally. He's hosting a free live Emotional Freedom Challenge from March 16–20 — one hour a day, noon to 1 PM Eastern. VIP members can stay for an extended session right after.
 
 I think you might appreciate his approach.
 
@@ -167,7 +168,7 @@ ${getReferralLink()}`;
 
   const getSocial5 = () => `This starts soon.
 
-Dr. Paul Jenkins is starting up The Emotional Freedom Challenge on March 16, live at 12 Noon Eastern.
+Dr. Paul Jenkins is starting up The Emotional Freedom Challenge on March 16 — one hour a day, 12 Noon to 1 PM Eastern. VIP members stay on for an extended session right after.
 
 It's a thoughtful, practical introduction to emotional awareness and intentional response.
 

@@ -69,7 +69,10 @@ export default function PartnersPage() {
           </p>
 
           <h3 className="v2-h4" style={{ marginBottom: '12px' }}>What participants experience:</h3>
-          <p className="v2-body">Over five live sessions, participants will:</p>
+          <p className="v2-body">Over five live sessions (March 16–20, noon to 1:00 PM Eastern each day), participants will:</p>
+          <p className="v2-body" style={{ marginBottom: '8px' }}>
+            <strong>Schedule:</strong> Each session runs one hour — noon to 1:00 PM Eastern. A VIP extended session follows immediately after for VIP members.
+          </p>
           <ul className="v2-list v2-checklist" style={{ marginBottom: '24px' }}>
             <li>Learn the difference between emotions, thoughts, and choice</li>
             <li>Identify emotional triggers and habitual reactions</li>
