@@ -76,7 +76,7 @@ export default function RegistrationPage() {
           <div className="v2-text-center" style={{ marginBottom: '32px' }}>
             <span className="v2-kicker">Register Now</span>
             <h2 className="v2-h2">Reserve Your Free Spot</h2>
-            <p className="v2-body v2-muted-text">Sessions are live {CHALLENGE.dateRangeShort} at {CHALLENGE.sessionTime}. Free to attend.</p>
+            <p className="v2-body v2-muted-text">Sessions are live {CHALLENGE.dateRangeShort}, {CHALLENGE.sessionTimeRange}. Free to attend. VIP session follows immediately after.</p>
           </div>
           <div className="v2-form-card">
             <RegistrationForm />
@@ -240,7 +240,8 @@ export default function RegistrationPage() {
           <div className="v2-card v2-max-w-narrow" style={{ background: 'var(--v2-bg-muted)', margin: '0 auto' }}>
             <ul className="v2-list" style={{ margin: 0 }}>
               <li style={{ marginBottom: '10px' }}><strong>Dates:</strong> {CHALLENGE.dateRange}</li>
-              <li style={{ marginBottom: '10px' }}><strong>Sessions:</strong> Live each day at {CHALLENGE.sessionTime}</li>
+              <li style={{ marginBottom: '10px' }}><strong>Sessions:</strong> Live each day, {CHALLENGE.sessionTimeRange}</li>
+              <li style={{ marginBottom: '10px' }}><strong>VIP Session:</strong> Follows immediately after each daily session</li>
               <li style={{ marginBottom: '10px' }}><strong>Where:</strong> Private Facebook group</li>
               <li style={{ marginBottom: 0 }}><strong>Cost:</strong> Free</li>
             </ul>

@@ -9,6 +9,7 @@ export const CHALLENGE = {
   startDateFull: 'Monday, March 16',
   endDateFull: 'Friday, March 20',
   sessionTime: '12:00 Noon Eastern',
+  sessionTimeRange: 'Noon – 1:00 PM Eastern',
   year: '2026',
   // UTC equivalents of 12:00 Noon Eastern (UTC-5) for calendar links
   calendarStartISO: '20260316T170000Z',
