@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { CHALLENGE } from '@/lib/challengeConfig';
+import { CHALLENGE } from '@/app/lib/challengeConfig';
 
 export const metadata: Metadata = {
   title: 'You\'re Registered - The Emotional Freedom Challenge',

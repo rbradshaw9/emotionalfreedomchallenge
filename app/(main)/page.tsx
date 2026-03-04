@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import RegistrationForm from '@/app/(main)/components/RegistrationForm';
 import Image from 'next/image';
-import { CHALLENGE } from '@/lib/challengeConfig';
+import { CHALLENGE } from '@/app/lib/challengeConfig';
 
 export const metadata: Metadata = {
   title: 'The Emotional Freedom Challenge | Free 5-Day Experience with Dr. Paul Jenkins',

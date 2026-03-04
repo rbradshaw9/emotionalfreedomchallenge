@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { CHALLENGE } from '@/lib/challengeConfig';
+import { CHALLENGE } from '@/app/lib/challengeConfig';
 import Script from 'next/script';
 
 export const metadata: Metadata = {

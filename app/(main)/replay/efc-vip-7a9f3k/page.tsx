@@ -2,7 +2,7 @@
 
 import { useState, Suspense, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { CHALLENGE } from '@/lib/challengeConfig';
+import { CHALLENGE } from '@/app/lib/challengeConfig';
 
 const videoData = [
   {
