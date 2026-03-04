@@ -111,8 +111,13 @@ export default function PartnerRegister() {
               </p>
               <p id="err-paypal" style={{ color: '#c0392b', fontSize: '13px', margin: '-8px 0 14px', fontWeight: 500, display: 'none' }}></p>
 
-              <div style={{ marginBottom: '20px', padding: '12px 16px', background: 'var(--v2-bg-muted)', borderRadius: '8px', fontSize: '14px', lineHeight: '1.5' }}>
-                <strong>Creating your partner login:</strong> These credentials give you access to your personal partner dashboard where you can view referrals and track commissions.
+              <div className="section-title">
+                <span>Part 3 - Create Your Partner Account</span>
+              </div>
+
+              <div style={{ marginBottom: '20px', padding: '14px 16px', background: '#fef9ec', border: '1px solid #f0d070', borderRadius: '8px', fontSize: '14px', lineHeight: '1.6' }}>
+                <p style={{ margin: '0 0 6px 0' }}><strong>⚠️ This is NOT your PayPal username and password.</strong></p>
+                <p style={{ margin: 0 }}>You are creating a <strong>new account for your referral partner dashboard</strong> — a separate login where you can view your referrals, track clicks, and monitor commissions. Choose any username and password you like; it does not need to match any existing account.</p>
               </div>
 
               <div className="v2-form-group">
