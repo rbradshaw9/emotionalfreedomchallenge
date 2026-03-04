@@ -124,7 +124,7 @@ export default function PartnerRegister() {
                 <input id="inf_other_Username" name="inf_other_Username" placeholder=" " type="text" />
                 <label htmlFor="inf_other_Username">Username *</label>
               </div>
-              <p className="v2-field-hint" style={{ marginTop: '-12px', marginBottom: '8px' }}>Letters and numbers only — no spaces, hyphens, or special characters (e.g. <strong>NOVA138</strong> not <strong>NOVA-138</strong>).</p>
+              <p className="v2-field-hint" style={{ marginTop: '-12px', marginBottom: '8px' }}>Letters and numbers only — no spaces, hyphens, or special characters (e.g. <strong>STAR42</strong> not <strong>STAR-42</strong>).</p>
               <p id="err-username" style={{ color: '#c0392b', fontSize: '13px', margin: '-8px 0 14px', fontWeight: 500, display: 'none' }}></p>
 
               <div className="v2-form-group">
