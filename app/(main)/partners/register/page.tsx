@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
@@ -20,6 +21,14 @@ export default function PartnerRegister() {
           <p className="v2-body v2-text-center" style={{ marginTop: '12px' }}>
             📅 <strong>March 16–20</strong> &nbsp;·&nbsp; 🕛 <strong>Noon – 1:00 PM Eastern</strong> each day &nbsp;·&nbsp; ⭐ VIP session immediately follows
           </p>
+
+          <div style={{ marginTop: '24px', padding: '14px 18px', background: '#fef9ec', border: '1px solid #f0d070', borderRadius: '8px', fontSize: '14px', lineHeight: '1.6', textAlign: 'left', maxWidth: '640px', margin: '24px auto 0' }}>
+            <strong>📌 Note:</strong> Registering as a referral partner does <strong>not</strong> automatically register you as an attendee of The Emotional Freedom Challenge. If you&apos;d also like to attend the challenge yourself, please{' '}
+            <Link href="https://theemotionalfreedomchallenge.com" target="_blank" rel="noopener noreferrer" style={{ color: '#7c5cbf', textDecoration: 'underline' }}>
+              register here
+            </Link>
+            .
+          </div>
         </div>
       </section>
 
@@ -185,6 +194,13 @@ export default function PartnerRegister() {
                   Sign Me Up!
                 </button>
               </div>
+
+              <p style={{ marginTop: '16px', fontSize: '13px', color: '#666', lineHeight: '1.5', textAlign: 'center' }}>
+                <strong>Reminder:</strong> This registers you as a referral partner only — it does not register you for the challenge.{' '}
+                <Link href="https://theemotionalfreedomchallenge.com" target="_blank" rel="noopener noreferrer" style={{ color: '#7c5cbf' }}>
+                  Register here to attend the challenge.
+                </Link>
+              </p>
 
               <input type="text" name="inf-sbt" style={{ display: 'none' }} />
             </form>

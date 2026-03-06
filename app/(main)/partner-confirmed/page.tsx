@@ -40,6 +40,16 @@ export default function PartnerConfirmedPage() {
               </p>
             </div>
 
+            <div style={{ margin: '20px 0', padding: '14px 18px', background: '#fef9ec', border: '1px solid #f0d070', borderRadius: '8px', fontSize: '14px', lineHeight: '1.6' }}>
+              <p style={{ margin: 0 }}>
+                <strong>📌 Reminder:</strong> Registering as a referral partner does <strong>not</strong> automatically register you as an attendee of The Emotional Freedom Challenge. If you&apos;d like to attend the challenge yourself, you can{' '}
+                <a href="https://theemotionalfreedomchallenge.com" target="_blank" rel="noopener noreferrer" style={{ color: '#7c5cbf', textDecoration: 'underline' }}>
+                  register here
+                </a>
+                .
+              </p>
+            </div>
+
             <p className="v2-body v2-text-center" style={{ marginBottom: '24px' }}>
               We&apos;re grateful for your interest in supporting emotional growth and personal development through The Emotional Freedom Challenge. We&apos;ll be in touch soon.
             </p>
