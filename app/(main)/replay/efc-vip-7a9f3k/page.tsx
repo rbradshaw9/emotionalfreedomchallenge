@@ -20,7 +20,6 @@ const videoData = [
         'Challenge Task: The Gratitude Power-Up — 25 gratitudes per day, with at least half focused on the hard stuff',
       ],
       videoUrl: 'https://player.vimeo.com/video/1174112981',
-      duration: '~60 min',
     },
     vipSession: {
       label: 'VIP Session',
@@ -34,7 +33,6 @@ const videoData = [
         'Deep dive on the Gratitude Power-Up: why it works, how to do it right, and what to expect',
       ],
       videoUrl: 'https://player.vimeo.com/video/1174113342',
-      duration: '~30 min',
     },
   },
   {
@@ -45,14 +43,12 @@ const videoData = [
       title: 'Creation of What Is To Be: From Discontent to Design',
       description: "Discontent is a powerful signal. On Day 2, we explore the creation side of the Positivity Model and walk through the 6-Phase Creation Process: Discontent, The Choice, The Question, The Plan, The Work, and The Manifestation. Instead of feeling stuck in what is, you'll learn how to intentionally create what could be. Emotional freedom expands when you realize you are here to design the life that previously pushed you around.",
       videoUrl: '',
-      duration: '~60 min',
     },
     vipSession: {
       label: 'VIP Session',
       title: 'Day 2 VIP — Q&A, Surprise Guests & Extended Discussion',
       description: 'Challenge Task: Better By 8 — Each day, choose one meaningful action that will make your life, relationships, health, or work just a little better by 8:00. Small steps. Real momentum.',
       videoUrl: '',
-      duration: '~30 min',
     },
   },
   {
@@ -63,14 +59,12 @@ const videoData = [
       title: 'Two Determinant Paradigms: Victim or Agent',
       description: "Every emotionally charged moment reveals a choice — even when it doesn't feel like it. On Day 3, we'll dive into the two paradigms that determine your experience of life: the Victim paradigm and the Agent paradigm. Will you choose to blame, or response-ability — your ability to choose your response. When you understand this shift, resentment softens, power returns, and clarity replaces chaos. Emotional freedom grows when you stop asking, \"Why is this happening to me?\" and start asking, \"Who will I choose to be in this?\"",
       videoUrl: '',
-      duration: '~60 min',
     },
     vipSession: {
       label: 'VIP Session',
       title: 'Day 3 VIP — Q&A, Surprise Guests & Extended Discussion',
       description: 'Challenge Task: Upside Down — For 24 hours, intentionally disrupt something routine. This simple exercise builds awareness, flexibility, and proof that you can choose differently.',
       videoUrl: '',
-      duration: '~30 min',
     },
   },
   {
@@ -81,14 +75,12 @@ const videoData = [
       title: 'The Influence Quadrant: Expand Your Impact',
       description: "So much emotional turmoil comes from trying to control what isn't ours to control — to the neglect of what we CAN control. On Day 4, we explore the Influence Quadrant and discover where your true power lies. You'll see how your emotional freedom affects not just you, but every relationship you touch. Service becomes a stabilizing force. Instead of being drained by others, you'll learn how to engage from strength.",
       videoUrl: '',
-      duration: '~60 min',
     },
     vipSession: {
       label: 'VIP Session',
       title: 'Day 4 VIP — Q&A, Surprise Guests & Extended Discussion',
       description: "Challenge Task: Free Three — Make a meaningful difference for three people — one in your family, one in your work or community, and one you don't even know. Emotional freedom deepens when contribution expands.",
       videoUrl: '',
-      duration: '~30 min',
     },
   },
   {
@@ -99,14 +91,12 @@ const videoData = [
       title: 'Commitment and Courage: Move Forward with Intention',
       description: "Insight without commitment fades. On our final day, we explore the 4 C's — Commitment, Courage, Capability, and Confidence — and why momentum matters. You can steer a moving vehicle. A parked one? Not so much. Emotional freedom is a practice built on courageous commitment. You'll identify your next right step and solidify the gains you've made this week.",
       videoUrl: '',
-      duration: '~60 min',
     },
     vipSession: {
       label: 'VIP Session',
       title: 'Day 5 VIP — Q&A, Surprise Guests & Extended Discussion',
       description: 'Challenge Task: The Next Right Thing — Commit to the next right thing — however small or bold that may be. Choose the next physical step toward that promise you made to yourself or others. This is not a place you come to — it is a place you go from! You are not alone. Notice your abundant sources of support. You complete this challenge equipped to move forward with clarity and power.',
       videoUrl: '',
-      duration: '~30 min',
     },
   },
 ];
@@ -170,14 +160,12 @@ function ReplayPageInner() {
                       className={`v2-tab-btn${activeTab === 'main' ? ' v2-tab-btn-active' : ''}`}
                     >
                       {currentDay.mainSession.label}
-                      <span style={{ display: 'block', fontSize: '12px', opacity: 0.7, fontWeight: 400 }}>{currentDay.mainSession.duration}</span>
                     </button>
                     <button
                       onClick={() => setActiveTab('vip')}
                       className={`v2-tab-btn v2-tab-btn-vip${activeTab === 'vip' ? ' v2-tab-btn-active' : ''}`}
                     >
                       {currentDay.vipSession.label}
-                      <span style={{ display: 'block', fontSize: '12px', opacity: 0.7, fontWeight: 400 }}>{currentDay.vipSession.duration}</span>
                     </button>
                   </div>
 
