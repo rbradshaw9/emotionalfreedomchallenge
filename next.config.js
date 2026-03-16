@@ -8,6 +8,11 @@ const nextConfig = {
         destination: 'https://bl843.infusionsoft.app/app/orderForms/cdb82d2b-34ac-443e-aba9-2c63993be424',
         permanent: false,
       },
+      {
+        source: '/facebook',
+        destination: 'https://www.facebook.com/groups/emotionalfreedomchallengemarch2026',
+        permanent: false,
+      },
     ]
   },
   async headers() {
