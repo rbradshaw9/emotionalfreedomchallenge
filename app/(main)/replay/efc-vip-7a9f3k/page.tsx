@@ -11,14 +11,28 @@ const videoData = [
     mainSession: {
       label: 'Main Training',
       title: 'The Positivity Model: Reclaim Emotional Ownership',
-      description: "Dr. Paul opens with a raw, personal story — a minivan trip to Seattle, a prepaid Visa card from his father-in-law to buy gas, and a private financial collapse that landed him in bankruptcy. Then an octogenarian sixth-degree black belt named Mary Louise Zeller said four words that changed everything: \"The troops are not coming.\" And then five more: \"We are the troops.\" Day 1 introduces the Positivity Model — the foundational framework for the entire challenge. You'll discover the powerful truth about where emotions really come from (hint: it's not your circumstances), and begin building the awareness that makes emotional freedom possible. This is where it all begins.",
+      description: 'Day 1 lays the entire foundation. Dr. Paul shares a defining personal story and introduces the Positivity Model — the framework that makes emotional freedom a real, achievable practice.',
+      bullets: [
+        'The Positivity Model — the foundational framework for understanding where emotions actually come from',
+        "Dr. Paul's raw origin story: a minivan, a prepaid Visa card for gas, and a financial collapse that ended in bankruptcy",
+        'Meet Mary Louise Zeller — the 80-year-old, 6th-degree black belt who delivered the breakthrough: "The troops are not coming. We are the troops."',
+        'Why waiting for circumstances to change quietly robs you of emotional freedom — and what to do instead',
+        'Challenge Task: The Gratitude Power-Up — 25 gratitudes per day, with at least half focused on the hard stuff',
+      ],
       videoUrl: 'https://player.vimeo.com/video/1174112981',
       duration: '~60 min',
     },
     vipSession: {
       label: 'VIP Session',
       title: 'Day 1 VIP — Coach Blue Robinson & The Gratitude Power-Up',
-      description: "Dr. Paul is joined by special guest Coach Blue Robinson — founder of Addict to Athlete, certified positivity practitioner, and the only addiction recovery program Dr. Paul has ever endorsed. Blue reflects on Day 1 through the lens of years working with people who believe their choice has been taken away — and why that belief is the most dangerous one of all. They discuss awareness as the precursor to choice, what it means to \"take your mark\" in life, and why movement equals healing. Plus: a deep dive into today's challenge task, the Gratitude Power-Up.",
+      description: 'After the main session, Dr. Paul is joined by special guest Coach Blue Robinson for a live Q&A, an honest conversation about choice and awareness, and a practical breakdown of today\'s challenge task.',
+      bullets: [
+        'Special guest: Coach Blue Robinson, founder of Addict to Athlete — the only addiction recovery program Dr. Paul has ever endorsed',
+        'Why "my choice was taken from me" is the most dangerous belief — and how awareness is the key that unlocks freedom',
+        'The "Take Your Mark" framework: take your place, get focused, and keep moving forward',
+        'Live Q&A with VIP members — real-time coaching and connection from Dr. Paul',
+        'Deep dive on the Gratitude Power-Up: why it works, how to do it right, and what to expect',
+      ],
       videoUrl: 'https://player.vimeo.com/video/1174113342',
       duration: '~30 min',
     },
@@ -190,12 +204,26 @@ function ReplayPageInner() {
                     </div>
                   )}
 
-                  <div style={{ padding: '24px 0' }}>
-                    <h2 className="v2-h3" style={{ marginBottom: '8px' }}>Day {currentDay.day}: {currentDay.mainSession.title}</h2>
-                    <p className="v2-body" style={{ color: 'var(--v2-muted)', marginBottom: '8px' }}>{currentDay.mainSession.description}</p>
-                    <p className="v2-body" style={{ color: 'var(--v2-muted)', marginBottom: '8px' }}>
-                      <strong>Challenge Task:</strong>{currentDay.vipSession.description.replace('Challenge Task:', '')}
+                  <div style={{ padding: '28px 0 36px' }}>
+                    <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.09em', color: 'var(--v2-primary)', marginBottom: '6px' }}>
+                      {currentSession.label}
                     </p>
+                    <h2 className="v2-h3" style={{ marginBottom: '14px' }}>
+                      Day {currentDay.day}: {currentSession.title}
+                    </h2>
+                    <p className="v2-body" style={{ color: 'var(--v2-muted)', marginBottom: '22px', lineHeight: 1.75 }}>
+                      {currentSession.description}
+                    </p>
+                    {'bullets' in currentSession && Array.isArray((currentSession as {bullets?: string[]}).bullets) && (currentSession as {bullets?: string[]}).bullets!.length > 0 && (
+                      <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                        {(currentSession as {bullets?: string[]}).bullets!.map((bullet, i) => (
+                          <li key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', fontSize: '15px', lineHeight: 1.65, color: 'var(--v2-muted)' }}>
+                            <span style={{ color: 'var(--v2-primary)', fontWeight: 700, flexShrink: 0, marginTop: '2px' }}>→</span>
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </>
               ) : (
@@ -213,11 +241,15 @@ function ReplayPageInner() {
                       </p>
                     </div>
                   </div>
-                  <div style={{ padding: '24px 0' }}>
-                    <h2 className="v2-h3" style={{ marginBottom: '8px' }}>Day {currentDay.day}: {currentDay.mainSession.title}</h2>
-                    <p className="v2-body" style={{ color: 'var(--v2-muted)', marginBottom: '8px' }}>{currentDay.mainSession.description}</p>
-                    <p className="v2-body" style={{ color: 'var(--v2-muted)' }}>
-                      <strong>Challenge Task:</strong>{currentDay.vipSession.description.replace('Challenge Task:', '')}
+                  <div style={{ padding: '28px 0 36px' }}>
+                    <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.09em', color: 'var(--v2-muted)', marginBottom: '6px', opacity: 0.6 }}>
+                      Main Training
+                    </p>
+                    <h2 className="v2-h3" style={{ marginBottom: '14px' }}>
+                      Day {currentDay.day}: {currentDay.mainSession.title}
+                    </h2>
+                    <p className="v2-body" style={{ color: 'var(--v2-muted)', lineHeight: 1.75 }}>
+                      {currentDay.mainSession.description}
                     </p>
                   </div>
                 </>
