@@ -23,10 +23,10 @@ const videoData = [
     },
     vipSession: {
       label: 'VIP Session',
-      title: 'Day 1 VIP — Coach Blue Robinson & The Gratitude Power-Up',
-      description: 'After the main session, Dr. Paul is joined by special guest Coach Blue Robinson for a live Q&A, an honest conversation about choice and awareness, and a practical breakdown of today\'s challenge task.',
+      title: 'Day 1 VIP — Coach Blu Robinson & The Gratitude Power-Up',
+      description: 'After the main session, Dr. Paul is joined by special guest Coach Blu Robinson for a live Q&A, an honest conversation about choice and awareness, and a practical breakdown of today\'s challenge task.',
       bullets: [
-        'Special guest: Coach Blue Robinson, founder of Addict to Athlete — the only addiction recovery program Dr. Paul has ever endorsed',
+        'Special guest: Coach Blu Robinson, founder of Addict to Athlete — the only addiction recovery program Dr. Paul has ever endorsed',
         'Why "my choice was taken from me" is the most dangerous belief — and how awareness is the key that unlocks freedom',
         'The "Take Your Mark" framework: take your place, get focused, and keep moving forward',
         'Live Q&A with VIP members — real-time coaching and connection from Dr. Paul',
