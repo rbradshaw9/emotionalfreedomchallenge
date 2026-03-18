@@ -1,0 +1,630 @@
+/*
+ * keap-order-form.css
+ * Brand-matched styles for Keap/Infusionsoft order forms
+ *
+ * Usage:
+ * In your Keap order form's Custom Header field, paste:
+ * <link rel="stylesheet" href="https://theemotionalfreedomchallenge.com/keap-order-form.css">
+ *
+ * Live On Purpose — Dr. Paul Jenkins
+ */
+
+/* ── Fonts ─────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Design Tokens ─────────────────────────────────────────── */
+:root {
+  --efc-primary: #0071e3;
+  --efc-primary-hover: #005bb5;
+  --efc-text: #1d1d1f;
+  --efc-muted: #6e6e73;
+  --efc-bg: #ffffff;
+  --efc-bg-muted: #f5f5f7;
+  --efc-border: #d2d2d7;
+  --efc-border-focus: #0071e3;
+  --efc-success: #34c759;
+  --efc-error: #ff3b30;
+  --efc-radius: 12px;
+  --efc-radius-sm: 8px;
+  --efc-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05);
+  --efc-shadow-focus: 0 0 0 3px rgba(0,113,227,0.25);
+}
+
+/* ── Reset & Base ───────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--efc-bg-muted);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: var(--efc-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* ── Page Header (Logo + Trust) ─────────────────────────────── */
+.efc-order-header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--efc-border);
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.efc-order-header img {
+  height: 44px;
+  width: auto;
+}
+
+.efc-order-trust {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--efc-muted);
+}
+
+.efc-order-trust span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.efc-order-trust span::before {
+  content: '✓';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: var(--efc-success);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── Main Wrapper ───────────────────────────────────────────── */
+#orderFormWrapper,
+.order-form-wrapper,
+.infusion-form,
+#checkout_form,
+form[id*="order"],
+form[id*="Order"],
+form[class*="order"],
+#fuseaction_checkout {
+  max-width: 640px !important;
+  margin: 40px auto !important;
+  padding: 40px 40px !important;
+  background: #ffffff !important;
+  border-radius: 18px !important;
+  box-shadow: var(--efc-shadow), 0 8px 32px rgba(0,0,0,0.06) !important;
+  border: 1px solid var(--efc-border) !important;
+}
+
+/* Wide layout for 2-col order pages */
+.order-form-container,
+#checkout_page,
+.iPages-checkout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+/* ── Page & Section Headings ────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--efc-text);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.order-heading,
+.page-heading,
+h1.product-title,
+.product-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--efc-text);
+}
+
+.order-subheading,
+.page-subheading {
+  font-size: 15px;
+  color: var(--efc-muted);
+  margin-bottom: 28px;
+}
+
+/* ── Form Fieldsets & Sections ──────────────────────────────── */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+legend,
+.section-title,
+.infusion-field-label-container > label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--efc-muted);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.section-divider,
+hr {
+  border: none;
+  border-top: 1px solid var(--efc-border);
+  margin: 28px 0;
+}
+
+/* ── Labels ─────────────────────────────────────────────────── */
+label,
+.infusion-field label,
+.field-label,
+.control-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--efc-text);
+  margin-bottom: 6px;
+}
+
+.required-marker,
+label .required {
+  color: var(--efc-error);
+  margin-left: 2px;
+}
+
+/* ── Inputs ─────────────────────────────────────────────────── */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+input[type="search"],
+select,
+textarea {
+  display: block !important;
+  width: 100% !important;
+  padding: 11px 14px !important;
+  font-family: 'Inter', -apple-system, sans-serif !important;
+  font-size: 15px !important;
+  color: var(--efc-text) !important;
+  background: #ffffff !important;
+  border: 1.5px solid var(--efc-border) !important;
+  border-radius: var(--efc-radius-sm) !important;
+  outline: none !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  line-height: 1.5 !important;
+  box-shadow: none !important;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="password"]::placeholder,
+textarea::placeholder {
+  color: #b0b0b7;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--efc-border-focus) !important;
+  box-shadow: var(--efc-shadow-focus) !important;
+}
+
+input.error,
+select.error,
+textarea.error,
+input.has-error,
+select.has-error,
+textarea.has-error {
+  border-color: var(--efc-error) !important;
+  box-shadow: 0 0 0 3px rgba(255,59,48,0.15) !important;
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236e6e73' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 12px center !important;
+  padding-right: 40px !important;
+  cursor: pointer !important;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ── Form Row Layout ────────────────────────────────────────── */
+.infusion-field,
+.form-group,
+.field-group,
+.form-row {
+  margin-bottom: 18px;
+}
+
+.infusion-row,
+.form-row--split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── Credit Card Fields ─────────────────────────────────────── */
+.credit-card-section,
+.payment-section,
+.cc-fields {
+  background: var(--efc-bg-muted);
+  border-radius: var(--efc-radius);
+  padding: 24px;
+  margin-top: 8px;
+  border: 1px solid var(--efc-border);
+}
+
+.credit-card-icons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+/* ── Radio & Checkbox Buttons ────────────────────────────────── */
+input[type="radio"],
+input[type="checkbox"] {
+  width: 18px !important;
+  height: 18px !important;
+  border: 2px solid var(--efc-border) !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  accent-color: var(--efc-primary) !important;
+  flex-shrink: 0;
+  margin: 0 !important;
+}
+
+input[type="radio"] {
+  border-radius: 50% !important;
+}
+
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+  background: var(--efc-primary) !important;
+  border-color: var(--efc-primary) !important;
+}
+
+/* Payment option cards */
+.payment-option,
+.subscription-option,
+.product-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  border: 1.5px solid var(--efc-border);
+  border-radius: var(--efc-radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s;
+  margin-bottom: 12px;
+  background: #fff;
+}
+
+.payment-option:has(input:checked),
+.payment-option.selected,
+.subscription-option:has(input:checked) {
+  border-color: var(--efc-primary);
+  background: rgba(0,113,227,0.03);
+}
+
+/* ── Submit Button ──────────────────────────────────────────── */
+input[type="submit"],
+button[type="submit"],
+.submit-button,
+.order-button,
+.btn-order,
+#submit-button,
+.checkout-submit-btn,
+.infusion-submit {
+  display: block !important;
+  width: 100% !important;
+  padding: 15px 28px !important;
+  background: var(--efc-primary) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: var(--efc-radius) !important;
+  font-family: 'Inter', -apple-system, sans-serif !important;
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  transition: background 0.15s, transform 0.1s, box-shadow 0.15s !important;
+  box-shadow: 0 4px 14px rgba(0,113,227,0.3) !important;
+  margin-top: 20px !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  line-height: 1.4 !important;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover,
+.submit-button:hover,
+.order-button:hover {
+  background: var(--efc-primary-hover) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(0,113,227,0.35) !important;
+}
+
+input[type="submit"]:active,
+button[type="submit"]:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(0,113,227,0.25) !important;
+}
+
+/* ── Secure & Compliance Notes ──────────────────────────────── */
+.secure-note,
+.ssl-note,
+.order-secure,
+.checkout-security {
+  text-align: center;
+  font-size: 12px;
+  color: var(--efc-muted);
+  margin-top: 12px;
+}
+
+.secure-note-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--efc-muted);
+}
+
+/* ── Order Summary / Price Display ─────────────────────────── */
+.order-summary,
+.price-summary,
+.product-summary,
+.order-total {
+  background: var(--efc-bg-muted);
+  border: 1px solid var(--efc-border);
+  border-radius: var(--efc-radius);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.order-summary-row,
+.price-row,
+.line-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--efc-border);
+  font-size: 14px;
+}
+
+.order-summary-row:last-child,
+.price-row:last-child,
+.line-item:last-child {
+  border-bottom: none;
+}
+
+.order-total-row,
+.total-row {
+  padding-top: 12px;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--efc-text);
+}
+
+.price-amount {
+  font-weight: 600;
+  color: var(--efc-primary);
+}
+
+.price-original {
+  text-decoration: line-through;
+  color: var(--efc-muted);
+  font-weight: 400;
+  margin-right: 8px;
+}
+
+/* ── Error Messages ─────────────────────────────────────────── */
+.field-error,
+.error-message,
+.infusion-field-error,
+.has-error .help-block,
+span.error {
+  display: block;
+  color: var(--efc-error);
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.form-error-banner,
+.alert-error,
+div.error {
+  background: rgba(255,59,48,0.06);
+  border: 1px solid rgba(255,59,48,0.25);
+  border-radius: var(--efc-radius-sm);
+  padding: 12px 16px;
+  color: var(--efc-error);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/* ── Success State ──────────────────────────────────────────── */
+.order-success,
+.confirmation-message,
+.thank-you-message {
+  text-align: center;
+  padding: 48px 32px;
+}
+
+.order-success h2 {
+  font-size: 24px;
+  color: var(--efc-success);
+  margin-bottom: 12px;
+}
+
+/* ── Two-Column Checkout Layout ─────────────────────────────── */
+.checkout-left,
+.form-column-left {
+  flex: 1;
+}
+
+.checkout-right,
+.form-column-right {
+  width: 360px;
+  flex-shrink: 0;
+}
+
+.checkout-columns {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* ── Progress Steps ─────────────────────────────────────────── */
+.checkout-steps,
+.progress-steps {
+  display: flex;
+  gap: 0;
+  margin-bottom: 32px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--efc-border);
+}
+
+.checkout-step {
+  flex: 1;
+  padding: 12px 8px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--efc-muted);
+  background: var(--efc-bg-muted);
+  border-right: 1px solid var(--efc-border);
+}
+
+.checkout-step:last-child {
+  border-right: none;
+}
+
+.checkout-step.active,
+.checkout-step.current {
+  background: var(--efc-primary);
+  color: #fff;
+}
+
+.checkout-step.completed {
+  color: var(--efc-success);
+  background: rgba(52,199,89,0.06);
+}
+
+/* ── Keap-Specific Class Overrides ──────────────────────────── */
+.infusion-form {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.infusion-form .infusion-field {
+  margin-bottom: 18px;
+}
+
+.infusion-form .infusion-submit {
+  margin-top: 24px;
+}
+
+table.infusion-credit-card-table,
+table.infusion-billing-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.infusion-credit-card-table td,
+table.infusion-billing-table td {
+  padding: 0 0 18px;
+  vertical-align: top;
+}
+
+/* ── Mobile Responsive ──────────────────────────────────────── */
+@media (max-width: 700px) {
+  #orderFormWrapper,
+  .order-form-wrapper,
+  .infusion-form,
+  #checkout_form,
+  form[id*="order"],
+  form[id*="Order"] {
+    margin: 16px auto !important;
+    padding: 24px 20px !important;
+    border-radius: 14px !important;
+  }
+
+  .infusion-row,
+  .form-row--split {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .checkout-columns {
+    flex-direction: column;
+  }
+
+  .checkout-right {
+    width: 100%;
+  }
+
+  .efc-order-trust {
+    gap: 12px;
+    font-size: 11px;
+  }
+
+  input[type="submit"],
+  button[type="submit"],
+  .submit-button,
+  .order-button {
+    font-size: 15px !important;
+    padding: 14px 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #orderFormWrapper,
+  .order-form-wrapper {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-top: 1px solid var(--efc-border) !important;
+  }
+}
