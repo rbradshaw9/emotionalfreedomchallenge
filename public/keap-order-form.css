@@ -101,22 +101,15 @@ body {
 }
 
 /* ── Wrapper card (Keap's #wrapper) ────────────────────────── */
+/* Note: layout CSS sets padding: 48px 24px on #wrapper and max-width: 500px on #content/#rightbar */
 #wrapper {
   background: var(--efc-bg);
   border-radius: 18px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.04);
   overflow: hidden;
-  max-width: 640px;
-  margin: 24px auto;
 }
 
 #wrapper #rightbar { border-right: 1px solid var(--efc-border); }
-
-#content {
-  display: flex;
-  flex-direction: column;
-  padding: 0 28px;
-}
 
 /* ── Section containers ─────────────────────────────────────── */
 #productsContainer,
@@ -524,12 +517,10 @@ input[type="checkbox"]:checked {
 
 .orderSummarySubTotals { border-top: 1px solid var(--efc-border); padding-top: 12px; }
 
-.orderSummaryPrice,
-.orderSummaryTotal {
-  display: flex;
-  justify-content: space-between;
+/* layout CSS sets .orderSummaryPrice as display:flex with p{flex:1} — we add visual treatment only */
+.orderSummaryPrice {
   font-size: 14px;
-  padding: 6px 0;
+  color: var(--efc-muted);
 }
 
 .orderSummaryTotal {
@@ -539,6 +530,7 @@ input[type="checkbox"]:checked {
   padding-top: 12px;
 }
 
+/* layout CSS sets .upsell as display:flex with flex children — we add visual treatment only */
 .upsell {
   border: 1.5px solid var(--efc-border);
   border-radius: var(--efc-radius);
@@ -706,27 +698,12 @@ div.error {
 }
 
 /* ── Mobile Responsive ──────────────────────────────────────── */
-@media (max-width: 700px) {
+/* layout CSS handles #content-wrapper flex-direction, padding, and width at 840px */
+/* We only override visual properties here */
+@media (max-width: 840px) {
   #wrapper {
-    margin: 0;
     border-radius: 0;
     box-shadow: none;
-  }
-
-  #content { padding: 0 16px; }
-
-  .infusion-row,
-  .form-row--split {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .checkout-columns {
-    flex-direction: column;
-  }
-
-  .checkout-right {
-    width: 100%;
   }
 
   .button.block {
