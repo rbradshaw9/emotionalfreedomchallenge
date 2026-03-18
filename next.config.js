@@ -9,6 +9,11 @@ const nextConfig = {
         permanent: false,
       },
       {
+        source: '/special',
+        destination: 'https://bl843.infusionsoft.com/app/orderForms/emotional-freedom-special',
+        permanent: false,
+      },
+      {
         source: '/facebook',
         destination: 'https://www.facebook.com/groups/emotionalfreedomchallengemarch2026',
         permanent: false,
