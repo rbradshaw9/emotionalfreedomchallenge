@@ -1,12 +1,17 @@
 /*
  * keap-order-form.css
- * Brand-matched styles for Keap/Infusionsoft order forms
+ * Custom Theme CSS for Keap/Infusionsoft order forms
  *
- * Usage — paste into Keap order form Custom Header field:
- * <link rel="stylesheet" href="https://theemotionalfreedomchallenge.com/keap-order-form.css">
+ * WHERE TO PUT THIS: Order Form > Theme > Edit CSS
+ * (Replace the default CSS entirely with this file)
+ *
+ * Custom Header HTML (Theme > Custom Header — adds logo):
+ * <div style="text-align:center;padding:24px 20px 12px">
+ *   <img src="https://theemotionalfreedomchallenge.com/logo/emotional-freedom-challenge-logo.png"
+ *        alt="Emotional Freedom Challenge" style="height:48px;width:auto">
+ * </div>
  *
  * Live On Purpose — Dr. Paul Jenkins
- * Targets Keap's table-based order form HTML structure.
  */
 
 /* ── Fonts ─────────────────────────────────────────────────── */
@@ -95,90 +100,53 @@ body {
   flex-shrink: 0;
 }
 
-/* ── Main Wrapper ───────────────────────────────────────────── */
-/* Keap's actual wrapper IDs/classes */
-#order_form_div,
-div[id*="order_form"],
-#orderFormWrapper,
-.order-form-wrapper,
-.infusion-form,
-#checkout_form,
-form[id*="order"],
-form[id*="Order"],
-form[class*="order"],
-#fuseaction_checkout {
-  max-width: 640px !important;
-  margin: 40px auto !important;
-  background: #ffffff !important;
-  border-radius: 18px !important;
-  box-shadow: var(--efc-shadow), 0 8px 32px rgba(0,0,0,0.06) !important;
-  overflow: hidden !important;
+/* ── Wrapper card (Keap's #wrapper) ────────────────────────── */
+#wrapper {
+  background: var(--efc-bg);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.04);
+  overflow: hidden;
+  max-width: 640px;
+  margin: 24px auto;
 }
 
-/* ── Table reset — Keap uses table-based form layout ─────────── */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: none;
-}
-td, th {
-  border: none;
-  font-family: 'Inter', -apple-system, sans-serif;
-  color: var(--efc-text);
-  font-size: 15px;
+#wrapper #rightbar { border-right: 1px solid var(--efc-border); }
+
+#content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 28px;
 }
 
-/* Section header cells */
-td.section-title,
-td.sectionHeader,
-td[class*="section-title"],
-td[class*="sectionHeader"],
-td.tableTitle,
-td.heading,
-tr.section-header td,
-th {
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.07em !important;
-  color: var(--efc-muted) !important;
-  padding: 20px 28px 10px !important;
-  border-bottom: 1px solid var(--efc-border) !important;
-  background: var(--efc-bg-muted) !important;
+/* ── Section containers ─────────────────────────────────────── */
+#productsContainer,
+#shippingOptionsContainer {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--efc-border);
 }
 
-/* Product name cell */
-td.productName, td[class*="product-name"], td.itemName { font-weight: 600; }
+#productsContainer { padding: 4px 0 20px; }
 
-/* Price / total cells */
-td.productPrice, td.productTotal, td.itemTotal,
-td[class*="price"], td[class*="total"] {
-  text-align: right;
-  font-weight: 600;
-  color: var(--efc-primary);
+#paymentPlansContainer { border-top: 1px solid var(--efc-border); }
+
+#upsellContainer,
+#orderSummaryContainer,
+#paymentPlansContainer,
+#checkoutLinksContainer {
+  padding: 20px 0;
 }
 
-/* Field label cells */
-td.fieldLabel, td.field-label,
-td[class*="fieldLabel"], td[class*="field-label"] {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--efc-text);
-  padding: 14px 28px 2px;
-  vertical-align: middle;
-}
-td.fieldInput, td.field-input,
-td[class*="fieldInput"], td[class*="field-input"] {
-  padding: 2px 28px 14px;
-}
+#orderFormBillingEntry .checkboxOption { margin-bottom: 14px; }
 
-.req, span.req, em.req, .required {
-  color: var(--efc-error);
-  font-style: normal;
+/* Order Summary expander */
+#orderSummaryExpander {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-/* General cell padding */
-td { padding: 6px 28px; }
+#orderSummaryExpander > *:not(:last-child) { padding-right: 4px; }
+.orderSummaryExpanderLink { cursor: pointer; text-decoration: underline; color: var(--efc-primary); }
 
 /* Wide layout for 2-col order pages */
 .order-form-container,
@@ -260,6 +228,18 @@ label .required {
 }
 
 /* ── Inputs ─────────────────────────────────────────────────── */
+/* Keap theme targets: .input-field input, .select-field select */
+.input-field label,
+.select-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--efc-text);
+  margin-bottom: 6px;
+}
+
+.input-field input,
+.select-field select,
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -294,6 +274,8 @@ textarea::placeholder {
   color: #b0b0b7;
 }
 
+.input-field input:focus,
+.select-field select:focus,
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus,
@@ -362,7 +344,43 @@ textarea {
   opacity: 0.7;
 }
 
+/* ── Keap Form Row ──────────────────────────────────────────── */
+.form-row { margin-bottom: 18px; }
+
 /* ── Radio & Checkbox Buttons ────────────────────────────────── */
+/* Keap theme uses .radioOption / .checkboxOption card elements */
+.radioOption,
+.checkboxOption {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--efc-border);
+  border-radius: var(--efc-radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.radioOption:hover,
+.checkboxOption:hover {
+  border-color: var(--efc-primary);
+}
+
+.radioOption input:checked ~ .radioOptionDetails,
+.radioOption.selected {
+  border-color: var(--efc-primary);
+  background: rgba(0,113,227,0.03);
+}
+
+.radioOptionDetails {
+  flex: 1;
+  font-size: 14px;
+  color: var(--efc-text);
+  line-height: 1.4;
+}
+
 input[type="radio"],
 input[type="checkbox"] {
   width: 18px !important;
@@ -409,62 +427,65 @@ input[type="checkbox"]:checked {
 }
 
 /* ── Submit Button ──────────────────────────────────────────── */
-/* Keap renders the Place Order button as: <a href="javascript:Infusion.Ecomm.OrderForms.placeOrder(...)"> */
-a[href*="placeOrder"],
-a[href*="place_order"],
-a[href*="PlaceOrder"],
-a.orderButton,
-a[class*="orderBtn"],
-a[class*="order-btn"],
-#placeOrder,
-#place_order,
-input[type="submit"],
-button[type="submit"],
-.submit-button,
-.order-button,
-.btn-order,
-#submit-button,
-.checkout-submit-btn,
-.infusion-submit {
-  display: block !important;
-  width: 100% !important;
-  padding: 15px 28px !important;
-  background: var(--efc-primary) !important;
-  color: #ffffff !important;
-  border: none !important;
-  border-radius: var(--efc-radius) !important;
-  font-family: 'Inter', -apple-system, sans-serif !important;
-  font-size: 17px !important;
-  font-weight: 600 !important;
-  letter-spacing: -0.01em !important;
-  cursor: pointer !important;
-  text-align: center !important;
-  text-decoration: none !important;
-  transition: background 0.15s, transform 0.1s, box-shadow 0.15s !important;
-  box-shadow: 0 4px 14px rgba(0,113,227,0.3) !important;
-  margin-top: 20px !important;
-  -webkit-appearance: none !important;
-  appearance: none !important;
-  line-height: 1.4 !important;
+/* Keap Theme uses .button and .button.block */
+.button {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  background-color: var(--efc-primary);
+  border: 1px solid transparent;
+  border-radius: var(--efc-radius);
+  color: #fff;
+  padding: 14px 24px;
+  line-height: 1.4;
+  transition: background-color 0.15s, transform 0.1s, box-shadow 0.15s;
+  box-shadow: 0 4px 14px rgba(0,113,227,0.28);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
 }
 
-a[href*="placeOrder"]:hover,
-a.orderButton:hover,
-input[type="submit"]:hover,
-button[type="submit"]:hover,
-.submit-button:hover,
-.order-button:hover {
-  background: var(--efc-primary-hover) !important;
-  transform: translateY(-1px) !important;
-  color: #fff !important;
-  text-decoration: none !important;
-  box-shadow: 0 6px 20px rgba(0,113,227,0.35) !important;
+.button.block { width: 100%; }
+
+.button:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--efc-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0,113,227,0.36);
 }
 
-input[type="submit"]:active,
-button[type="submit"]:active {
-  transform: translateY(0) !important;
-  box-shadow: 0 2px 8px rgba(0,113,227,0.25) !important;
+.button:active {
+  color: #fff;
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.button.secondary {
+  background-color: transparent;
+  color: var(--efc-primary);
+  border-color: var(--efc-primary);
+  box-shadow: none;
+}
+
+.button.secondary:active, .button.secondary:hover {
+  background-color: var(--efc-primary);
+  color: #fff;
+  border-color: transparent;
+}
+
+.button[disabled] {
+  box-shadow: none;
+  cursor: default;
+  pointer-events: none;
+  background-color: var(--efc-border);
+  border: 1px solid transparent;
+  color: var(--efc-muted);
+  transform: none;
 }
 
 /* ── Secure & Compliance Notes ──────────────────────────────── */
@@ -487,6 +508,46 @@ button[type="submit"]:active {
   font-size: 12px;
   color: var(--efc-muted);
 }
+
+/* ── Keap Products & Order Summary ─────────────────────────── */
+.productImage { max-width: 80px; border-radius: 8px; }
+
+.productSubTotal,
+.productTotal,
+.productSubTotalPrice,
+.productOriginalPrice {
+  font-weight: 600;
+  color: var(--efc-primary);
+}
+
+.productOriginalPrice { text-decoration: line-through; color: var(--efc-muted); font-weight: 400; }
+
+.orderSummarySubTotals { border-top: 1px solid var(--efc-border); padding-top: 12px; }
+
+.orderSummaryPrice,
+.orderSummaryTotal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 6px 0;
+}
+
+.orderSummaryTotal {
+  font-weight: 700;
+  font-size: 17px;
+  border-top: 1px solid var(--efc-border);
+  padding-top: 12px;
+}
+
+.upsell {
+  border: 1.5px solid var(--efc-border);
+  border-radius: var(--efc-radius);
+  padding: 20px;
+  margin-bottom: 16px;
+  background: var(--efc-bg-muted);
+}
+
+.upsellOriginalPrice { text-decoration: line-through; color: var(--efc-muted); }
 
 /* ── Order Summary / Price Display ─────────────────────────── */
 .order-summary,
@@ -631,51 +692,28 @@ div.error {
   background: rgba(52,199,89,0.06);
 }
 
-/* ── Keap-Specific Class Overrides ──────────────────────────── */
-.infusion-form {
-  background: transparent !important;
-  padding: 0 !important;
+/* ── Company Logo Banner ────────────────────────────────────── */
+/* Keap displays the logo in #companyLogoTopBanner if set in Theme */
+#companyLogoTopBanner {
+  text-align: center;
+  padding: 24px 20px 12px;
+  border-bottom: 1px solid var(--efc-border);
 }
 
-.infusion-form .infusion-field {
-  margin-bottom: 18px;
-}
-
-.infusion-form .infusion-submit {
-  margin-top: 24px;
-}
-
-table.infusion-credit-card-table,
-table.infusion-billing-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-table.infusion-credit-card-table td,
-table.infusion-billing-table td {
-  padding: 0 0 18px;
-  vertical-align: top;
+#companyLogoTopBanner img {
+  height: 48px;
+  width: auto;
 }
 
 /* ── Mobile Responsive ──────────────────────────────────────── */
 @media (max-width: 700px) {
-  #order_form_div,
-  #orderFormWrapper,
-  .order-form-wrapper,
-  .infusion-form,
-  #checkout_form,
-  form[id*="order"],
-  form[id*="Order"] {
-    margin: 0 auto !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
+  #wrapper {
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
   }
 
-  td, th {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
+  #content { padding: 0 16px; }
 
   .infusion-row,
   .form-row--split {
@@ -691,15 +729,8 @@ table.infusion-billing-table td {
     width: 100%;
   }
 
-  a[href*="placeOrder"],
-  input[type="submit"],
-  button[type="submit"],
-  .submit-button,
-  .order-button {
-    font-size: 15px !important;
-    padding: 14px 20px !important;
-    width: calc(100% - 32px) !important;
-    margin-left: 16px !important;
-    margin-right: 16px !important;
+  .button.block {
+    font-size: 15px;
+    padding: 14px 20px;
   }
 }
