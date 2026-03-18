@@ -2,15 +2,15 @@
  * keap-order-form.css
  * Brand-matched styles for Keap/Infusionsoft order forms
  *
- * Usage:
- * In your Keap order form's Custom Header field, paste:
+ * Usage — paste into Keap order form Custom Header field:
  * <link rel="stylesheet" href="https://theemotionalfreedomchallenge.com/keap-order-form.css">
  *
  * Live On Purpose — Dr. Paul Jenkins
+ * Targets Keap's table-based order form HTML structure.
  */
 
 /* ── Fonts ─────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 /* ── Design Tokens ─────────────────────────────────────────── */
 :root {
@@ -96,6 +96,9 @@ body {
 }
 
 /* ── Main Wrapper ───────────────────────────────────────────── */
+/* Keap's actual wrapper IDs/classes */
+#order_form_div,
+div[id*="order_form"],
 #orderFormWrapper,
 .order-form-wrapper,
 .infusion-form,
@@ -106,12 +109,76 @@ form[class*="order"],
 #fuseaction_checkout {
   max-width: 640px !important;
   margin: 40px auto !important;
-  padding: 40px 40px !important;
   background: #ffffff !important;
   border-radius: 18px !important;
   box-shadow: var(--efc-shadow), 0 8px 32px rgba(0,0,0,0.06) !important;
-  border: 1px solid var(--efc-border) !important;
+  overflow: hidden !important;
 }
+
+/* ── Table reset — Keap uses table-based form layout ─────────── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+}
+td, th {
+  border: none;
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--efc-text);
+  font-size: 15px;
+}
+
+/* Section header cells */
+td.section-title,
+td.sectionHeader,
+td[class*="section-title"],
+td[class*="sectionHeader"],
+td.tableTitle,
+td.heading,
+tr.section-header td,
+th {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.07em !important;
+  color: var(--efc-muted) !important;
+  padding: 20px 28px 10px !important;
+  border-bottom: 1px solid var(--efc-border) !important;
+  background: var(--efc-bg-muted) !important;
+}
+
+/* Product name cell */
+td.productName, td[class*="product-name"], td.itemName { font-weight: 600; }
+
+/* Price / total cells */
+td.productPrice, td.productTotal, td.itemTotal,
+td[class*="price"], td[class*="total"] {
+  text-align: right;
+  font-weight: 600;
+  color: var(--efc-primary);
+}
+
+/* Field label cells */
+td.fieldLabel, td.field-label,
+td[class*="fieldLabel"], td[class*="field-label"] {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--efc-text);
+  padding: 14px 28px 2px;
+  vertical-align: middle;
+}
+td.fieldInput, td.field-input,
+td[class*="fieldInput"], td[class*="field-input"] {
+  padding: 2px 28px 14px;
+}
+
+.req, span.req, em.req, .required {
+  color: var(--efc-error);
+  font-style: normal;
+}
+
+/* General cell padding */
+td { padding: 6px 28px; }
 
 /* Wide layout for 2-col order pages */
 .order-form-container,
@@ -342,6 +409,15 @@ input[type="checkbox"]:checked {
 }
 
 /* ── Submit Button ──────────────────────────────────────────── */
+/* Keap renders the Place Order button as: <a href="javascript:Infusion.Ecomm.OrderForms.placeOrder(...)"> */
+a[href*="placeOrder"],
+a[href*="place_order"],
+a[href*="PlaceOrder"],
+a.orderButton,
+a[class*="orderBtn"],
+a[class*="order-btn"],
+#placeOrder,
+#place_order,
 input[type="submit"],
 button[type="submit"],
 .submit-button,
@@ -372,12 +448,16 @@ button[type="submit"],
   line-height: 1.4 !important;
 }
 
+a[href*="placeOrder"]:hover,
+a.orderButton:hover,
 input[type="submit"]:hover,
 button[type="submit"]:hover,
 .submit-button:hover,
 .order-button:hover {
   background: var(--efc-primary-hover) !important;
   transform: translateY(-1px) !important;
+  color: #fff !important;
+  text-decoration: none !important;
   box-shadow: 0 6px 20px rgba(0,113,227,0.35) !important;
 }
 
@@ -579,15 +659,22 @@ table.infusion-billing-table td {
 
 /* ── Mobile Responsive ──────────────────────────────────────── */
 @media (max-width: 700px) {
+  #order_form_div,
   #orderFormWrapper,
   .order-form-wrapper,
   .infusion-form,
   #checkout_form,
   form[id*="order"],
   form[id*="Order"] {
-    margin: 16px auto !important;
-    padding: 24px 20px !important;
-    border-radius: 14px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  td, th {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 
   .infusion-row,
@@ -604,27 +691,15 @@ table.infusion-billing-table td {
     width: 100%;
   }
 
-  .efc-order-trust {
-    gap: 12px;
-    font-size: 11px;
-  }
-
+  a[href*="placeOrder"],
   input[type="submit"],
   button[type="submit"],
   .submit-button,
   .order-button {
     font-size: 15px !important;
     padding: 14px 20px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  #orderFormWrapper,
-  .order-form-wrapper {
-    margin: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    border: none !important;
-    border-top: 1px solid var(--efc-border) !important;
+    width: calc(100% - 32px) !important;
+    margin-left: 16px !important;
+    margin-right: 16px !important;
   }
 }
