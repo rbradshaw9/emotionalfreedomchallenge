@@ -6,8 +6,7 @@ export const metadata: Metadata = {
   description: 'Get certified to teach proprietary positive psychology models. Master the Positivity Model, Control/Maturity Model, and Influence Quadrant — with a full year of expert training and support.',
 };
 
-// Replace with the actual Keap order form URL when ready
-const ORDER_FORM_URL = '#enroll';
+const ORDER_FORM_URL = 'https://bl843.infusionsoft.com/app/orderForms/emotional-freedom-special';
 
 export default function SpecialPage() {
   return (
