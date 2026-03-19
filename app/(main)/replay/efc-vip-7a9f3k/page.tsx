@@ -323,6 +323,89 @@ function ReplayPageInner() {
         </div>
       </div>
 
+      {selectedDay >= 4 && (
+        <section className="v2-section v2-section-muted" style={{ marginTop: '40px' }}>
+          <div className="v2-container--md">
+            <div style={{
+              background: '#fff',
+              border: '1px solid var(--v2-border-light)',
+              borderRadius: '16px',
+              padding: '40px 48px',
+              display: 'grid',
+              gridTemplateColumns: '1fr auto',
+              gap: '40px',
+              alignItems: 'center',
+            }}>
+              <div>
+                <div className="v2-badge" style={{ marginBottom: '14px' }}>Next Step</div>
+                <h2 className="v2-h3" style={{ marginBottom: '10px' }}>
+                  Become a Certified Positivity Practitioner
+                </h2>
+                <p className="v2-body" style={{ color: 'var(--v2-muted)', marginBottom: '20px', lineHeight: 1.75 }}>
+                  This week gave you the framework. The CPP program gives you the mastery — plus the certification, the community, and everything you need to use these principles in your own coaching, leadership, or personal practice.
+                </p>
+                <ul style={{ margin: '0 0 28px', padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {[
+                    '2-Day Live Breakthrough Event — April 16–17, 2026',
+                    'Full year of training, masterminds & resources',
+                    'Official CPP certification & licensing',
+                    '30-day money-back guarantee',
+                  ].map((item) => (
+                    <li key={item} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontSize: '15px', color: 'var(--v2-muted)', lineHeight: 1.6 }}>
+                      <span style={{ color: 'var(--v2-success, #34c759)', fontWeight: 700, flexShrink: 0, marginTop: '2px' }}>✓</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+                  <a
+                    href="https://theemotionalfreedomchallenge.com/special"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="v2-btn v2-btn-primary"
+                    style={{ display: 'inline-block' }}
+                  >
+                    Learn More &amp; Enroll
+                  </a>
+                  <span style={{ fontSize: '14px', color: 'var(--v2-muted)' }}>
+                    $2,997 — or 3 payments of $999
+                  </span>
+                </div>
+              </div>
+              <div style={{
+                textAlign: 'center',
+                background: 'linear-gradient(135deg, var(--v2-primary) 0%, #005bb5 100%)',
+                borderRadius: '12px',
+                padding: '28px 24px',
+                color: '#fff',
+                minWidth: '160px',
+              }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', opacity: 0.8, marginBottom: '8px' }}>Enroll today</div>
+                <div style={{ fontSize: '36px', fontWeight: 800, lineHeight: 1, marginBottom: '4px' }}>$2,997</div>
+                <div style={{ fontSize: '13px', opacity: 0.8, marginBottom: '16px' }}>or 3 × $999</div>
+                <a
+                  href="https://theemotionalfreedomchallenge.com/special"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'block',
+                    background: '#fff',
+                    color: 'var(--v2-primary)',
+                    fontWeight: 700,
+                    fontSize: '14px',
+                    borderRadius: '8px',
+                    padding: '10px 16px',
+                    textDecoration: 'none',
+                  }}
+                >
+                  Enroll Now →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="v2-section v2-section-dark" style={{ marginTop: '40px' }}>
         <div className="v2-container--sm" style={{ textAlign: 'center' }}>
           <div className="v2-badge" style={{ marginBottom: '16px' }}>VIP Exclusive</div>
