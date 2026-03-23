@@ -125,15 +125,49 @@ export default function OfferExpiredPage() {
           Contact Us — paul@drpauljenkins.com
         </a>
 
+        {/* Divider */}
+        <div style={{ borderTop: '1px solid #e8e8ed', margin: '28px 0 24px' }} />
+
         <p
           style={{
-            fontSize: '12px',
-            color: '#aeaeb2',
-            margin: '20px 0 0',
+            fontSize: '13px',
+            color: '#6e6e73',
+            margin: '0 0 4px',
+            lineHeight: '1.5',
           }}
         >
-          Positivity Practitioner Certification &nbsp;·&nbsp; DrPaulJenkins.com
+          We don&apos;t want to leave you hanging —
         </p>
+        <p
+          style={{
+            fontSize: '13px',
+            color: '#6e6e73',
+            margin: '0 0 16px',
+            lineHeight: '1.5',
+          }}
+        >
+          You can still join the Positivity Practitioner Certification at the standard enrollment rate.
+          The 1-on-1 bonus session with Dr. Paul is no longer included, but everything else is.
+        </p>
+        <a
+          href="https://positivitypractitioner.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-block',
+            background: 'transparent',
+            color: '#0071e3',
+            padding: '10px 24px',
+            borderRadius: '100px',
+            fontSize: '14px',
+            fontWeight: '600',
+            textDecoration: 'none',
+            border: '1.5px solid #0071e3',
+            letterSpacing: '-0.01em',
+          }}
+        >
+          Learn More at PositivityPractitioner.com →
+        </a>
       </div>
     </section>
   );
