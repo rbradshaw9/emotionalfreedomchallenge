@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build)",
+      "Bash(git add \"app/\\(main\\)/components/RegistrationForm.tsx\" \"app/\\(main\\)/page.tsx\" \"app/\\(main\\)/partners/components/FAQAccordion.tsx\" \"app/\\(main\\)/partners/register/page.tsx\" \"app/\\(main\\)/replay/efc-vip-7a9f3k/page.tsx\" \"app/\\(main\\)/thank-you/page.tsx\" \"app/\\(main\\)/vip-confirmed/page.tsx\" \"app/\\(main\\)/vip/page.tsx\" \"next.config.js\" \"app/\\(main\\)/replay/efc-vip-7a9f3k/error.tsx\" \"app/error.tsx\" \"lib/\")",
+      "Bash(git add -u \"app/v1/\")",
+      "Bash(git commit:*)",
+      "Bash(git push origin main)"
+    ]
+  }
+}

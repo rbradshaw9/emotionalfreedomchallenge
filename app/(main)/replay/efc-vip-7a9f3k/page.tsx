@@ -98,34 +98,18 @@ const videoData = [
   },
   {
     day: 4,
-    active: true,
+    active: false,
     mainSession: {
       label: 'Main Training',
       title: 'The Influence Quadrant: Expand Your Impact',
-      description: "So much emotional turmoil comes from trying to control what isn't ours to control — to the neglect of what we CAN control. On Day 4, Dr. Paul introduces the Seven Key Relationships and the Influence Quadrant — a model that maps exactly where your focus lands in every interaction and reveals the predictable emotional pitfalls that follow. You'll see how shifting your focus from yourself to the people around you is the move that dissolves anxiety, builds real connection, and creates the kind of influence that actually changes lives.",
-      bullets: [
-        'The Seven Key Relationships — Creator, Self, Spouse, Children, Extended Family, Other People, and Things — the context in which the Influence Quadrant plays out, and why their order is not arbitrary',
-        'The foundational premise: we do not control the other humans — our only real chance in every relationship is influence, and the Influence Quadrant shows you exactly how it works',
-        'Red (self-conscious) and Orange (insecure): why focusing on "how I feel about me" or "how you feel about me" creates anxiety and fragility — even when the feedback is positive',
-        'Purple (critical): the well-intentioned trap — how focusing on "how I feel about you" shows up as judgment and criticism, even for caring parents and well-meaning leaders',
-        'Green — the Influence Quadrant: when focus shifts to "how you feel about you," anxiety drops, people are drawn to you, and the kind of influence that actually changes lives becomes available',
-        'Challenge Task: Free Three — make a meaningful difference for three people today: one in your family, one in your work or community, and one you\'ve never even met',
-      ],
-      videoUrl: 'https://player.vimeo.com/video/1175253163',
+      description: "So much emotional turmoil comes from trying to control what isn't ours to control — to the neglect of what we CAN control. On Day 4, we explore the Influence Quadrant and discover where your true power lies. You'll see how your emotional freedom affects not just you, but every relationship you touch. Service becomes a stabilizing force. Instead of being drained by others, you'll learn how to engage from strength.",
+      videoUrl: '',
     },
     vipSession: {
       label: 'VIP Session',
-      title: 'Day 4 VIP — The Influence Quadrant in Real Life with Special Guest Heather Kennedy',
-      description: "After the main session, Dr. Paul is joined by professional speaker, leadership expert, and author Heather Kennedy for an extended conversation that puts the Influence Quadrant under a very practical lens — from the science of frustration and control to the surprising truth about confidence.",
-      bullets: [
-        'Special guest: Heather Kennedy — professional speaker, leadership expert, and author of For Starters (six principles of productivity for elevated leaders), and fellow member of the National Speakers Association',
-        '"The last time you were frustrated, it was a control issue" — Heather\'s sharp take on why we keep reaching for control even when we know we can\'t have it',
-        'Why confidence is overrated — how it waxes and wanes with circumstance and performance, and why the green quadrant offers a far more stable foundation than confidence ever could',
-        'The Outward Mindset (Arbinger Institute) — the book Heather recommends for anyone serious about keeping focus outward and serving from genuine strength',
-        'Why serving others actually energizes you — the reason the green quadrant produces what Heather calls a "speaker\'s high," and how to access that energy in everyday interactions',
-        'Live Q&A with Dr. Paul and Heather — real-time coaching and extended discussion on applying the Influence Quadrant to leadership, parenting, and business',
-      ],
-      videoUrl: 'https://player.vimeo.com/video/1175252724',
+      title: 'Day 4 VIP — Q&A, Surprise Guests & Extended Discussion',
+      description: "Challenge Task: Free Three — Make a meaningful difference for three people — one in your family, one in your work or community, and one you don't even know. Emotional freedom deepens when contribution expands.",
+      videoUrl: '',
     },
   },
   {
@@ -338,89 +322,6 @@ function ReplayPageInner() {
           </div>
         </div>
       </div>
-
-      {selectedDay >= 4 && (
-        <section className="v2-section v2-section-muted" style={{ marginTop: '40px' }}>
-          <div className="v2-container--md">
-            <div style={{
-              background: '#fff',
-              border: '1px solid var(--v2-border-light)',
-              borderRadius: '16px',
-              padding: '40px 48px',
-              display: 'grid',
-              gridTemplateColumns: '1fr auto',
-              gap: '40px',
-              alignItems: 'center',
-            }}>
-              <div>
-                <div className="v2-badge" style={{ marginBottom: '14px' }}>Next Step</div>
-                <h2 className="v2-h3" style={{ marginBottom: '10px' }}>
-                  Become a Certified Positivity Practitioner
-                </h2>
-                <p className="v2-body" style={{ color: 'var(--v2-muted)', marginBottom: '20px', lineHeight: 1.75 }}>
-                  This week gave you the framework. The CPP program gives you the mastery — plus the certification, the community, and everything you need to use these principles in your own coaching, leadership, or personal practice.
-                </p>
-                <ul style={{ margin: '0 0 28px', padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  {[
-                    '2-Day Live Breakthrough Event — April 16–17, 2026',
-                    'Full year of training, masterminds & resources',
-                    'Official CPP certification & licensing',
-                    '30-day money-back guarantee',
-                  ].map((item) => (
-                    <li key={item} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontSize: '15px', color: 'var(--v2-muted)', lineHeight: 1.6 }}>
-                      <span style={{ color: 'var(--v2-success, #34c759)', fontWeight: 700, flexShrink: 0, marginTop: '2px' }}>✓</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-                  <a
-                    href="https://theemotionalfreedomchallenge.com/special"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="v2-btn v2-btn-primary"
-                    style={{ display: 'inline-block' }}
-                  >
-                    Learn More &amp; Enroll
-                  </a>
-                  <span style={{ fontSize: '14px', color: 'var(--v2-muted)' }}>
-                    $2,997 — or 3 payments of $999
-                  </span>
-                </div>
-              </div>
-              <div style={{
-                textAlign: 'center',
-                background: 'linear-gradient(135deg, var(--v2-primary) 0%, #005bb5 100%)',
-                borderRadius: '12px',
-                padding: '28px 24px',
-                color: '#fff',
-                minWidth: '160px',
-              }}>
-                <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', opacity: 0.8, marginBottom: '8px' }}>Enroll today</div>
-                <div style={{ fontSize: '36px', fontWeight: 800, lineHeight: 1, marginBottom: '4px' }}>$2,997</div>
-                <div style={{ fontSize: '13px', opacity: 0.8, marginBottom: '16px' }}>or 3 × $999</div>
-                <a
-                  href="https://theemotionalfreedomchallenge.com/special"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'block',
-                    background: '#fff',
-                    color: 'var(--v2-primary)',
-                    fontWeight: 700,
-                    fontSize: '14px',
-                    borderRadius: '8px',
-                    padding: '10px 16px',
-                    textDecoration: 'none',
-                  }}
-                >
-                  Enroll Now →
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       <section className="v2-section v2-section-dark" style={{ marginTop: '40px' }}>
         <div className="v2-container--sm" style={{ textAlign: 'center' }}>
