@@ -20,12 +20,7 @@ export default function OfferExpiredPage() {
         fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
       }}
     >
-      {/* Logo */}
-      <img
-        src="https://theemotionalfreedomchallenge.com/logo/emotional-freedom-challenge-logo.png"
-        alt="Emotional Freedom Challenge"
-        style={{ maxWidth: '200px', marginBottom: '40px', height: 'auto' }}
-      />
+
 
       {/* Card */}
       <div
@@ -76,40 +71,40 @@ export default function OfferExpiredPage() {
             margin: '0 0 32px',
           }}
         >
-          The midnight deadline has passed and this limited-time pricing is no longer available.
-          We&apos;d love to help you explore current enrollment options.
+          The special bonus — including the private 1-on-1 session with Dr. Paul — was only
+          available until midnight. That window has closed, but you haven&apos;t missed
+          everything. The Positivity Practitioner Certification is still open.
         </p>
 
         {/* Divider */}
-        <div
-          style={{
-            borderTop: '1px solid #e8e8ed',
-            margin: '0 0 28px',
-          }}
-        />
+        <div style={{ borderTop: '1px solid #e8e8ed', margin: '0 0 28px' }} />
 
+        {/* Primary CTA — PositivityPractitioner.com */}
         <p
           style={{
             fontSize: '15px',
             color: '#1d1d1f',
             fontWeight: '600',
-            margin: '0 0 8px',
+            margin: '0 0 6px',
           }}
         >
-          Questions about joining?
+          We don&apos;t want to leave you hanging.
         </p>
         <p
           style={{
             fontSize: '14px',
             color: '#6e6e73',
-            margin: '0 0 24px',
+            margin: '0 0 20px',
+            lineHeight: '1.6',
           }}
         >
-          Reach out to Dr. Paul directly and we&apos;ll see what we can do.
+          You can still join the Positivity Practitioner Certification at the standard
+          enrollment rate — everything except the 1-on-1 bonus is included.
         </p>
-
         <a
-          href="mailto:paul@drpauljenkins.com"
+          href="https://positivitypractitioner.com"
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             display: 'inline-block',
             background: 'linear-gradient(135deg, #0071e3, #00408a)',
@@ -122,37 +117,25 @@ export default function OfferExpiredPage() {
             letterSpacing: '-0.01em',
           }}
         >
-          Contact Us — paul@drpauljenkins.com
+          Learn More at PositivityPractitioner.com →
         </a>
 
         {/* Divider */}
         <div style={{ borderTop: '1px solid #e8e8ed', margin: '28px 0 24px' }} />
 
+        {/* Secondary CTA — Email */}
         <p
           style={{
-            fontSize: '13px',
+            fontSize: '14px',
             color: '#6e6e73',
-            margin: '0 0 4px',
+            margin: '0 0 12px',
             lineHeight: '1.5',
           }}
         >
-          We don&apos;t want to leave you hanging —
-        </p>
-        <p
-          style={{
-            fontSize: '13px',
-            color: '#6e6e73',
-            margin: '0 0 16px',
-            lineHeight: '1.5',
-          }}
-        >
-          You can still join the Positivity Practitioner Certification at the standard enrollment rate.
-          The 1-on-1 bonus session with Dr. Paul is no longer included, but everything else is.
+          Still have questions? Reach out to Dr. Paul directly.
         </p>
         <a
-          href="https://positivitypractitioner.com"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="mailto:paul@drpauljenkins.com"
           style={{
             display: 'inline-block',
             background: 'transparent',
@@ -166,7 +149,7 @@ export default function OfferExpiredPage() {
             letterSpacing: '-0.01em',
           }}
         >
-          Learn More at PositivityPractitioner.com →
+          paul@drpauljenkins.com
         </a>
       </div>
     </section>
